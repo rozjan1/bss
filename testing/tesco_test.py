@@ -7,13 +7,13 @@ import json
 # list of facets/product types
 facets = {
   "b;T3ZvY2UlMjBhJTIwemVsZW5pbmE=": "Ovoce a zelenina",
-#  "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55": "Mléko, vejce a margaríny",
-#  "b;UGVrJUMzJUExcm5hJTdDVm9sbiVDMyVBOSUyMHBlJUM0JThEaXZv=": "Pekárna",
-#  "b;TWFzbyUyMGElMjBsYWglQzUlQUZka3k": "Maso a lahudky",
-#  "b;TXJhJUM1JUJFZW4lQzMlQTk": "Mražené",
-#  "b;VHJ2YW5saXYlQzMlQTk": "Trvanlivé",
-#  "b;TiVDMyVBMXBvamU": "Nápoje",
-#  "b;U3BlY2klQzMlQTFsbiVDMyVBRCUyMHYlQzMlQkQlQzUlQkVpdmE": "Speciální výživa",
+  "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55": "Mléko, vejce a margaríny",
+  "b;UGVrJUMzJUExcm5hJTdDVm9sbiVDMyVBOSUyMHBlJUM0JThEaXZv=": "Pekárna",
+  "b;TWFzbyUyMGElMjBsYWglQzUlQUZka3k": "Maso a lahudky",
+  "b;TXJhJUM1JUJFZW4lQzMlQTk": "Mražené",
+  "b;VHJ2YW5saXYlQzMlQTk": "Trvanlivé",
+  "b;TiVDMyVBMXBvamU": "Nápoje",
+  "b;U3BlY2klQzMlQTFsbiVDMyVBRCUyMHYlQzMlQkQlQzUlQkVpdmE": "Speciální výživa"
 }
 
 
