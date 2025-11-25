@@ -1,0 +1,3694 @@
+[{
+    "data": {
+        "category": {
+            "pageInformation": {
+                "totalCount": 943,
+                "pageNo": 1,
+                "pageId": null,
+                "count": 24,
+                "pageSize": 24,
+                "matchType": null,
+                "offset": 0,
+                "query": {
+                    "searchTerm": null,
+                    "actualTerm": null,
+                    "queryPhase": "primary",
+                    "__typename": "QueryType"
+                },
+                "__typename": "ListInfoType"
+            },
+            "results": [{
+                "node": {
+                    "typename": "ProductType",
+                    "context": null,
+                    "__typename": "ProductType",
+                    "sellers": {
+                        "__typename": "ProductSellers",
+                        "results": [{
+                            "id": "215351291",
+                            "__typename": "ProductType",
+                            "isForSale": true,
+                            "status": "AvailableForSale",
+                            "seller": null,
+                            "price": {
+                                "price": 59.9,
+                                "unitPrice": 239.6,
+                                "unitOfMeasure": "kg",
+                                "actual": 59.9,
+                                "__typename": "PriceType"
+                            },
+                            "promotions": [],
+                            "fulfilment": null
+                        }]
+                    },
+                    "id": "215351291",
+                    "tpnb": "215351291",
+                    "tpnc": "215351291",
+                    "gtin": "05051007118309",
+                    "adId": null,
+                    "baseProductId": "215351291",
+                    "title": "Tesco Máslo 82% tuku 250g",
+                    "brandName": "TESCO STANDARD",
+                    "shortDescription": null,
+                    "defaultImageUrl": "https://digitalcontent.api.tesco.com/v2/media/ghs/2455f81b-e16f-4e71-bd43-72f026d865ef/776ec313-b740-476c-82ca-afdb3930cc26.jpeg?h=225&w=225",
+                    "superDepartmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55",
+                    "media": {
+                        "defaultImage": {
+                            "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/2455f81b-e16f-4e71-bd43-72f026d865ef/776ec313-b740-476c-82ca-afdb3930cc26.jpeg",
+                            "aspectRatio": null,
+                            "__typename": "ProductMediaDefaultImageType"
+                        },
+                        "__typename": "ProductMediaType"
+                    },
+                    "images": {
+                        "display": [{
+                            "default": {
+                                "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/2455f81b-e16f-4e71-bd43-72f026d865ef/776ec313-b740-476c-82ca-afdb3930cc26.jpeg?h=225&w=225",
+                                "__typename": "ProductImageType"
+                            },
+                            "__typename": "ProductAlternativeImageType"
+                        }],
+                        "__typename": "ProductImagesType"
+                    },
+                    "quantityInBasket": null,
+                    "superDepartmentName": "Mléčné, vejce a margaríny",
+                    "departmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDTSVDMyVBMXNsbywlMjBtYXJnYXIlQzMlQURueSUyMGElMjBwb21heiVDMyVBMW5reQ==",
+                    "departmentName": "Máslo, margaríny a pomazánky",
+                    "aisleId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDTSVDMyVBMXNsbywlMjBtYXJnYXIlQzMlQURueSUyMGElMjBwb21heiVDMyVBMW5reSU3Q00lQzMlQTFzbG8=",
+                    "aisleName": "Máslo",
+                    "shelfId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDTSVDMyVBMXNsbywlMjBtYXJnYXIlQzMlQURueSUyMGElMjBwb21heiVDMyVBMW5reSU3Q00lQzMlQTFzbG8lN0NNJUMzJUExc2xv",
+                    "shelfName": "Máslo",
+                    "displayType": "Quantity",
+                    "productType": "SingleProduct",
+                    "charges": [],
+                    "averageWeight": 0,
+                    "bulkBuyLimit": 24,
+                    "maxQuantityAllowed": 24,
+                    "groupBulkBuyLimit": 0,
+                    "bulkBuyLimitMessage": null,
+                    "bulkBuyLimitGroupId": null,
+                    "timeRestrictedDelivery": null,
+                    "restrictedDelivery": null,
+                    "isInFavourites": null,
+                    "isNew": false,
+                    "isRestrictedOrderAmendment": null,
+                    "maxWeight": 0,
+                    "minWeight": 0,
+                    "increment": 0,
+                    "details": {
+                        "components": [{
+                            "isLowEverydayPricing": false,
+                            "__typename": "AdditionalInfo"
+                        }],
+                        "__typename": "ProductDetailsType"
+                    },
+                    "catchWeightList": null,
+                    "restrictions": [],
+                    "reviews": {
+                        "stats": {
+                            "noOfReviews": 14,
+                            "overallRating": 3,
+                            "overallRatingRange": 5,
+                            "__typename": "ReviewStatsType"
+                        },
+                        "__typename": "ReviewsType"
+                    },
+                    "modelMetadata": null
+                },
+                "__typename": "CompositeResultType"
+            }, {
+                "node": {
+                    "typename": "ProductType",
+                    "context": null,
+                    "__typename": "ProductType",
+                    "sellers": {
+                        "__typename": "ProductSellers",
+                        "results": [{
+                            "id": "218131111",
+                            "__typename": "ProductType",
+                            "isForSale": true,
+                            "status": "AvailableForSale",
+                            "seller": null,
+                            "price": {
+                                "price": 25.9,
+                                "unitPrice": 25.9,
+                                "unitOfMeasure": "l",
+                                "actual": 25.9,
+                                "__typename": "PriceType"
+                            },
+                            "promotions": [],
+                            "fulfilment": null
+                        }]
+                    },
+                    "id": "218131111",
+                    "tpnb": "218131111",
+                    "tpnc": "218131111",
+                    "gtin": "08593803224206",
+                    "adId": null,
+                    "baseProductId": "218131111",
+                    "title": "Madeta Jihočeské trvanlivé mléko polotučné 1,5% 1l",
+                    "brandName": "Madeta",
+                    "shortDescription": null,
+                    "defaultImageUrl": "https://digitalcontent.api.tesco.com/v2/media/ghs/7c7b9d2b-a74d-4a8d-a237-8522d2656580/b89d3b65-ed4e-4185-93df-e0a4d83200e8_1027036789.jpeg?h=225&w=225",
+                    "superDepartmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55",
+                    "media": {
+                        "defaultImage": {
+                            "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/7c7b9d2b-a74d-4a8d-a237-8522d2656580/b89d3b65-ed4e-4185-93df-e0a4d83200e8_1027036789.jpeg",
+                            "aspectRatio": null,
+                            "__typename": "ProductMediaDefaultImageType"
+                        },
+                        "__typename": "ProductMediaType"
+                    },
+                    "images": {
+                        "display": [{
+                            "default": {
+                                "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/7c7b9d2b-a74d-4a8d-a237-8522d2656580/b89d3b65-ed4e-4185-93df-e0a4d83200e8_1027036789.jpeg?h=225&w=225",
+                                "__typename": "ProductImageType"
+                            },
+                            "__typename": "ProductAlternativeImageType"
+                        }],
+                        "__typename": "ProductImagesType"
+                    },
+                    "quantityInBasket": null,
+                    "superDepartmentName": "Mléčné, vejce a margaríny",
+                    "departmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDTWwlQzMlQTlrbywlMjBtbCVDMyVBOSVDNCU4RG4lQzMlQTklMjBhJTIwam9ndXJ0b3YlQzMlQTklMjBuJUMzJUExcG9qZQ==",
+                    "departmentName": "Mléko, mléčné a jogurtové nápoje",
+                    "aisleId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDTWwlQzMlQTlrbywlMjBtbCVDMyVBOSVDNCU4RG4lQzMlQTklMjBhJTIwam9ndXJ0b3YlQzMlQTklMjBuJUMzJUExcG9qZSU3Q1RydmFubGl2JUMzJUE5JTIwbWwlQzMlQTlrbw==",
+                    "aisleName": "Trvanlivé mléko",
+                    "shelfId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDTWwlQzMlQTlrbywlMjBtbCVDMyVBOSVDNCU4RG4lQzMlQTklMjBhJTIwam9ndXJ0b3YlQzMlQTklMjBuJUMzJUExcG9qZSU3Q1RydmFubGl2JUMzJUE5JTIwbWwlQzMlQTlrbyU3Q1BvbG90dSVDNCU4RG4lQzMlQTklMjBtbCVDMyVBOWtv",
+                    "shelfName": "Polotučné mléko",
+                    "displayType": "Quantity",
+                    "productType": "SingleProduct",
+                    "charges": [],
+                    "averageWeight": 0,
+                    "bulkBuyLimit": 24,
+                    "maxQuantityAllowed": 24,
+                    "groupBulkBuyLimit": 0,
+                    "bulkBuyLimitMessage": null,
+                    "bulkBuyLimitGroupId": null,
+                    "timeRestrictedDelivery": null,
+                    "restrictedDelivery": null,
+                    "isInFavourites": null,
+                    "isNew": false,
+                    "isRestrictedOrderAmendment": null,
+                    "maxWeight": 0,
+                    "minWeight": 0,
+                    "increment": 0,
+                    "details": {
+                        "components": [{
+                            "isLowEverydayPricing": false,
+                            "__typename": "AdditionalInfo"
+                        }],
+                        "__typename": "ProductDetailsType"
+                    },
+                    "catchWeightList": null,
+                    "restrictions": [],
+                    "reviews": {
+                        "stats": {
+                            "noOfReviews": 1,
+                            "overallRating": 3,
+                            "overallRatingRange": 5,
+                            "__typename": "ReviewStatsType"
+                        },
+                        "__typename": "ReviewsType"
+                    },
+                    "modelMetadata": null
+                },
+                "__typename": "CompositeResultType"
+            }, {
+                "node": {
+                    "typename": "ProductType",
+                    "context": null,
+                    "__typename": "ProductType",
+                    "sellers": {
+                        "__typename": "ProductSellers",
+                        "results": [{
+                            "id": "219279706",
+                            "__typename": "ProductType",
+                            "isForSale": true,
+                            "status": "AvailableForSale",
+                            "seller": null,
+                            "price": {
+                                "price": 64.9,
+                                "unitPrice": 6.49,
+                                "unitOfMeasure": "kus",
+                                "actual": 64.9,
+                                "__typename": "PriceType"
+                            },
+                            "promotions": [],
+                            "fulfilment": null
+                        }]
+                    },
+                    "id": "219279706",
+                    "tpnb": "219279706",
+                    "tpnc": "219279706",
+                    "gtin": "05051007121163",
+                    "adId": null,
+                    "baseProductId": "219279706",
+                    "title": "Tesco Čerstvá vejce M 10 ks",
+                    "brandName": "TESCO STANDARD",
+                    "shortDescription": null,
+                    "defaultImageUrl": "https://digitalcontent.api.tesco.com/v2/media/ghs/925271ea-4c57-4747-bab2-fa66dc0ebd87/a743b12e-feb4-4a7c-ac4d-5ce4bbb3afd9_144976976.jpeg?h=225&w=225",
+                    "superDepartmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55",
+                    "media": {
+                        "defaultImage": {
+                            "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/925271ea-4c57-4747-bab2-fa66dc0ebd87/a743b12e-feb4-4a7c-ac4d-5ce4bbb3afd9_144976976.jpeg",
+                            "aspectRatio": null,
+                            "__typename": "ProductMediaDefaultImageType"
+                        },
+                        "__typename": "ProductMediaType"
+                    },
+                    "images": {
+                        "display": [{
+                            "default": {
+                                "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/925271ea-4c57-4747-bab2-fa66dc0ebd87/a743b12e-feb4-4a7c-ac4d-5ce4bbb3afd9_144976976.jpeg?h=225&w=225",
+                                "__typename": "ProductImageType"
+                            },
+                            "__typename": "ProductAlternativeImageType"
+                        }],
+                        "__typename": "ProductImagesType"
+                    },
+                    "quantityInBasket": null,
+                    "superDepartmentName": "Mléčné, vejce a margaríny",
+                    "departmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDVmVqY2UlMjBhJTIwZHJvJUM1JUJFZCVDMyVBRA==",
+                    "departmentName": "Vejce a droždí",
+                    "aisleId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDVmVqY2UlMjBhJTIwZHJvJUM1JUJFZCVDMyVBRCU3Q1ZlamNl",
+                    "aisleName": "Vejce",
+                    "shelfId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDVmVqY2UlMjBhJTIwZHJvJUM1JUJFZCVDMyVBRCU3Q1ZlamNlJTdDVmVqY2U=",
+                    "shelfName": "Vejce",
+                    "displayType": "Quantity",
+                    "productType": "SingleProduct",
+                    "charges": [],
+                    "averageWeight": 0,
+                    "bulkBuyLimit": 24,
+                    "maxQuantityAllowed": 24,
+                    "groupBulkBuyLimit": 0,
+                    "bulkBuyLimitMessage": null,
+                    "bulkBuyLimitGroupId": null,
+                    "timeRestrictedDelivery": null,
+                    "restrictedDelivery": null,
+                    "isInFavourites": null,
+                    "isNew": false,
+                    "isRestrictedOrderAmendment": null,
+                    "maxWeight": 0,
+                    "minWeight": 0,
+                    "increment": 0,
+                    "details": {
+                        "components": [{
+                            "isLowEverydayPricing": false,
+                            "__typename": "AdditionalInfo"
+                        }],
+                        "__typename": "ProductDetailsType"
+                    },
+                    "catchWeightList": null,
+                    "restrictions": [],
+                    "reviews": {
+                        "stats": {
+                            "noOfReviews": 3,
+                            "overallRating": 3.7,
+                            "overallRatingRange": 5,
+                            "__typename": "ReviewStatsType"
+                        },
+                        "__typename": "ReviewsType"
+                    },
+                    "modelMetadata": null
+                },
+                "__typename": "CompositeResultType"
+            }, {
+                "node": {
+                    "typename": "ProductType",
+                    "context": null,
+                    "__typename": "ProductType",
+                    "sellers": {
+                        "__typename": "ProductSellers",
+                        "results": [{
+                            "id": "211037571",
+                            "__typename": "ProductType",
+                            "isForSale": true,
+                            "status": "AvailableForSale",
+                            "seller": null,
+                            "price": {
+                                "price": 22.9,
+                                "unitPrice": 22.9,
+                                "unitOfMeasure": "l",
+                                "actual": 22.9,
+                                "__typename": "PriceType"
+                            },
+                            "promotions": [],
+                            "fulfilment": null
+                        }]
+                    },
+                    "id": "211037571",
+                    "tpnb": "211037571",
+                    "tpnc": "211037571",
+                    "gtin": "05051007118316",
+                    "adId": null,
+                    "baseProductId": "211037571",
+                    "title": "Tesco Mléko UHT polotučné 1,5% 1l",
+                    "brandName": "TESCO STANDARD",
+                    "shortDescription": null,
+                    "defaultImageUrl": "https://digitalcontent.api.tesco.com/v2/media/ghs/440d32d2-e30b-473b-a497-669f65a12f04/14298032-8bf7-4af1-aefc-736216d2146e.jpeg?h=225&w=225",
+                    "superDepartmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55",
+                    "media": {
+                        "defaultImage": {
+                            "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/440d32d2-e30b-473b-a497-669f65a12f04/14298032-8bf7-4af1-aefc-736216d2146e.jpeg",
+                            "aspectRatio": null,
+                            "__typename": "ProductMediaDefaultImageType"
+                        },
+                        "__typename": "ProductMediaType"
+                    },
+                    "images": {
+                        "display": [{
+                            "default": {
+                                "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/440d32d2-e30b-473b-a497-669f65a12f04/14298032-8bf7-4af1-aefc-736216d2146e.jpeg?h=225&w=225",
+                                "__typename": "ProductImageType"
+                            },
+                            "__typename": "ProductAlternativeImageType"
+                        }],
+                        "__typename": "ProductImagesType"
+                    },
+                    "quantityInBasket": null,
+                    "superDepartmentName": "Mléčné, vejce a margaríny",
+                    "departmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDTWwlQzMlQTlrbywlMjBtbCVDMyVBOSVDNCU4RG4lQzMlQTklMjBhJTIwam9ndXJ0b3YlQzMlQTklMjBuJUMzJUExcG9qZQ==",
+                    "departmentName": "Mléko, mléčné a jogurtové nápoje",
+                    "aisleId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDTWwlQzMlQTlrbywlMjBtbCVDMyVBOSVDNCU4RG4lQzMlQTklMjBhJTIwam9ndXJ0b3YlQzMlQTklMjBuJUMzJUExcG9qZSU3Q1RydmFubGl2JUMzJUE5JTIwbWwlQzMlQTlrbw==",
+                    "aisleName": "Trvanlivé mléko",
+                    "shelfId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDTWwlQzMlQTlrbywlMjBtbCVDMyVBOSVDNCU4RG4lQzMlQTklMjBhJTIwam9ndXJ0b3YlQzMlQTklMjBuJUMzJUExcG9qZSU3Q1RydmFubGl2JUMzJUE5JTIwbWwlQzMlQTlrbyU3Q1BvbG90dSVDNCU4RG4lQzMlQTklMjBtbCVDMyVBOWtv",
+                    "shelfName": "Polotučné mléko",
+                    "displayType": "Quantity",
+                    "productType": "SingleProduct",
+                    "charges": [],
+                    "averageWeight": 0,
+                    "bulkBuyLimit": 24,
+                    "maxQuantityAllowed": 24,
+                    "groupBulkBuyLimit": 0,
+                    "bulkBuyLimitMessage": null,
+                    "bulkBuyLimitGroupId": null,
+                    "timeRestrictedDelivery": null,
+                    "restrictedDelivery": null,
+                    "isInFavourites": null,
+                    "isNew": false,
+                    "isRestrictedOrderAmendment": null,
+                    "maxWeight": 0,
+                    "minWeight": 0,
+                    "increment": 0,
+                    "details": {
+                        "components": [{
+                            "isLowEverydayPricing": false,
+                            "__typename": "AdditionalInfo"
+                        }],
+                        "__typename": "ProductDetailsType"
+                    },
+                    "catchWeightList": null,
+                    "restrictions": [],
+                    "reviews": {
+                        "stats": {
+                            "noOfReviews": 1,
+                            "overallRating": 1,
+                            "overallRatingRange": 5,
+                            "__typename": "ReviewStatsType"
+                        },
+                        "__typename": "ReviewsType"
+                    },
+                    "modelMetadata": null
+                },
+                "__typename": "CompositeResultType"
+            }, {
+                "node": {
+                    "typename": "ProductType",
+                    "context": null,
+                    "__typename": "ProductType",
+                    "sellers": {
+                        "__typename": "ProductSellers",
+                        "results": [{
+                            "id": "200131150",
+                            "__typename": "ProductType",
+                            "isForSale": true,
+                            "status": "AvailableForSale",
+                            "seller": null,
+                            "price": {
+                                "price": 56.9,
+                                "unitPrice": 474.17,
+                                "unitOfMeasure": "kg",
+                                "actual": 56.9,
+                                "__typename": "PriceType"
+                            },
+                            "promotions": [{
+                                "id": "c16b8842-c1ca-4ccb-b925-f79c4eb67c31",
+                                "promotionType": null,
+                                "startDate": "2025-10-21T22:00:00Z",
+                                "endDate": "2025-10-23T22:00:00Z",
+                                "description": "38%",
+                                "unitSellingInfo": "290,83 Kč/kg",
+                                "price": {
+                                    "beforeDiscount": null,
+                                    "afterDiscount": 56.9,
+                                    "__typename": "PromotionPriceType"
+                                },
+                                "attributes": [],
+                                "__typename": "PromotionType"
+                            }],
+                            "fulfilment": null
+                        }]
+                    },
+                    "id": "200131150",
+                    "tpnb": "200131150",
+                    "tpnc": "200131150",
+                    "gtin": "08594008352008",
+                    "adId": null,
+                    "baseProductId": "200131150",
+                    "title": "Král Sýrů Hermelín originál 120g",
+                    "brandName": "Král Sýrů",
+                    "shortDescription": null,
+                    "defaultImageUrl": "https://digitalcontent.api.tesco.com/v2/media/ghs/7811c9ac-b916-4a28-be15-3dad1512f1b6/ff9fde2a-f1dd-4521-97c2-14cde2591726_1052124070.jpeg?h=225&w=225",
+                    "superDepartmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55",
+                    "media": {
+                        "defaultImage": {
+                            "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/7811c9ac-b916-4a28-be15-3dad1512f1b6/ff9fde2a-f1dd-4521-97c2-14cde2591726_1052124070.jpeg",
+                            "aspectRatio": null,
+                            "__typename": "ProductMediaDefaultImageType"
+                        },
+                        "__typename": "ProductMediaType"
+                    },
+                    "images": {
+                        "display": [{
+                            "default": {
+                                "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/7811c9ac-b916-4a28-be15-3dad1512f1b6/ff9fde2a-f1dd-4521-97c2-14cde2591726_1052124070.jpeg?h=225&w=225",
+                                "__typename": "ProductImageType"
+                            },
+                            "__typename": "ProductAlternativeImageType"
+                        }],
+                        "__typename": "ProductImagesType"
+                    },
+                    "quantityInBasket": null,
+                    "superDepartmentName": "Mléčné, vejce a margaríny",
+                    "departmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDUyVDMyVCRHJ5JTIwYSUyMHR2YXJvaHk=",
+                    "departmentName": "Sýry a tvarohy",
+                    "aisleId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDUyVDMyVCRHJ5JTIwYSUyMHR2YXJvaHklN0NQbCVDMyVBRHMlQzUlODhvdiVDMyVBOSUyMGElMjB6cmFqJUMzJUFEY2klMjBzJUMzJUJEcnk=",
+                    "aisleName": "Plísňové a zrajíci sýry",
+                    "shelfId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDUyVDMyVCRHJ5JTIwYSUyMHR2YXJvaHklN0NQbCVDMyVBRHMlQzUlODhvdiVDMyVBOSUyMGElMjB6cmFqJUMzJUFEY2klMjBzJUMzJUJEcnklN0NQbCVDMyVBRHMlQzUlODhvdiVDMyVBOSUyMHMlQzMlQkRyeQ==",
+                    "shelfName": "Plísňové sýry",
+                    "displayType": "Quantity",
+                    "productType": "SingleProduct",
+                    "charges": [],
+                    "averageWeight": 0,
+                    "bulkBuyLimit": 24,
+                    "maxQuantityAllowed": 24,
+                    "groupBulkBuyLimit": 0,
+                    "bulkBuyLimitMessage": null,
+                    "bulkBuyLimitGroupId": null,
+                    "timeRestrictedDelivery": null,
+                    "restrictedDelivery": null,
+                    "isInFavourites": null,
+                    "isNew": false,
+                    "isRestrictedOrderAmendment": null,
+                    "maxWeight": 0,
+                    "minWeight": 0,
+                    "increment": 0,
+                    "details": {
+                        "components": [{
+                            "isLowEverydayPricing": false,
+                            "__typename": "AdditionalInfo"
+                        }],
+                        "__typename": "ProductDetailsType"
+                    },
+                    "catchWeightList": null,
+                    "restrictions": [],
+                    "reviews": {
+                        "stats": {
+                            "noOfReviews": 1,
+                            "overallRating": 5,
+                            "overallRatingRange": 5,
+                            "__typename": "ReviewStatsType"
+                        },
+                        "__typename": "ReviewsType"
+                    },
+                    "modelMetadata": null
+                },
+                "__typename": "CompositeResultType"
+            }, {
+                "node": {
+                    "typename": "ProductType",
+                    "context": null,
+                    "__typename": "ProductType",
+                    "sellers": {
+                        "__typename": "ProductSellers",
+                        "results": [{
+                            "id": "218131135",
+                            "__typename": "ProductType",
+                            "isForSale": true,
+                            "status": "AvailableForSale",
+                            "seller": null,
+                            "price": {
+                                "price": 27.9,
+                                "unitPrice": 27.9,
+                                "unitOfMeasure": "l",
+                                "actual": 27.9,
+                                "__typename": "PriceType"
+                            },
+                            "promotions": [{
+                                "id": "d874b49e-35e3-411a-adf2-64e98d7fd0c7",
+                                "promotionType": null,
+                                "startDate": "2025-10-21T22:00:00Z",
+                                "endDate": "2025-10-23T22:00:00Z",
+                                "description": "Super cena",
+                                "unitSellingInfo": "19,90 Kč/l",
+                                "price": {
+                                    "beforeDiscount": null,
+                                    "afterDiscount": 27.9,
+                                    "__typename": "PromotionPriceType"
+                                },
+                                "attributes": [],
+                                "__typename": "PromotionType"
+                            }],
+                            "fulfilment": null
+                        }]
+                    },
+                    "id": "218131135",
+                    "tpnb": "218131135",
+                    "tpnc": "218131135",
+                    "gtin": "08593803224015",
+                    "adId": null,
+                    "baseProductId": "218131135",
+                    "title": "Madeta Jihočeské trvanlivé mléko plnotučné 3,5% 1l",
+                    "brandName": "Madeta",
+                    "shortDescription": null,
+                    "defaultImageUrl": "https://digitalcontent.api.tesco.com/v2/media/ghs/303b2d14-90a0-4190-9c1c-bfd28366b6cd/3db96cd0-a1e2-4551-b548-3126c43b4021_259088440.jpeg?h=225&w=225",
+                    "superDepartmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55",
+                    "media": {
+                        "defaultImage": {
+                            "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/303b2d14-90a0-4190-9c1c-bfd28366b6cd/3db96cd0-a1e2-4551-b548-3126c43b4021_259088440.jpeg",
+                            "aspectRatio": null,
+                            "__typename": "ProductMediaDefaultImageType"
+                        },
+                        "__typename": "ProductMediaType"
+                    },
+                    "images": {
+                        "display": [{
+                            "default": {
+                                "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/303b2d14-90a0-4190-9c1c-bfd28366b6cd/3db96cd0-a1e2-4551-b548-3126c43b4021_259088440.jpeg?h=225&w=225",
+                                "__typename": "ProductImageType"
+                            },
+                            "__typename": "ProductAlternativeImageType"
+                        }],
+                        "__typename": "ProductImagesType"
+                    },
+                    "quantityInBasket": null,
+                    "superDepartmentName": "Mléčné, vejce a margaríny",
+                    "departmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDTWwlQzMlQTlrbywlMjBtbCVDMyVBOSVDNCU4RG4lQzMlQTklMjBhJTIwam9ndXJ0b3YlQzMlQTklMjBuJUMzJUExcG9qZQ==",
+                    "departmentName": "Mléko, mléčné a jogurtové nápoje",
+                    "aisleId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDTWwlQzMlQTlrbywlMjBtbCVDMyVBOSVDNCU4RG4lQzMlQTklMjBhJTIwam9ndXJ0b3YlQzMlQTklMjBuJUMzJUExcG9qZSU3Q1RydmFubGl2JUMzJUE5JTIwbWwlQzMlQTlrbw==",
+                    "aisleName": "Trvanlivé mléko",
+                    "shelfId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDTWwlQzMlQTlrbywlMjBtbCVDMyVBOSVDNCU4RG4lQzMlQTklMjBhJTIwam9ndXJ0b3YlQzMlQTklMjBuJUMzJUExcG9qZSU3Q1RydmFubGl2JUMzJUE5JTIwbWwlQzMlQTlrbyU3Q1Bsbm90dSVDNCU4RG4lQzMlQTklMjBtbCVDMyVBOWtv",
+                    "shelfName": "Plnotučné mléko",
+                    "displayType": "Quantity",
+                    "productType": "SingleProduct",
+                    "charges": [],
+                    "averageWeight": 0,
+                    "bulkBuyLimit": 24,
+                    "maxQuantityAllowed": 24,
+                    "groupBulkBuyLimit": 0,
+                    "bulkBuyLimitMessage": null,
+                    "bulkBuyLimitGroupId": null,
+                    "timeRestrictedDelivery": null,
+                    "restrictedDelivery": null,
+                    "isInFavourites": null,
+                    "isNew": false,
+                    "isRestrictedOrderAmendment": null,
+                    "maxWeight": 0,
+                    "minWeight": 0,
+                    "increment": 0,
+                    "details": {
+                        "components": [{
+                            "isLowEverydayPricing": false,
+                            "__typename": "AdditionalInfo"
+                        }],
+                        "__typename": "ProductDetailsType"
+                    },
+                    "catchWeightList": null,
+                    "restrictions": [],
+                    "reviews": {
+                        "stats": {
+                            "noOfReviews": 2,
+                            "overallRating": 5,
+                            "overallRatingRange": 5,
+                            "__typename": "ReviewStatsType"
+                        },
+                        "__typename": "ReviewsType"
+                    },
+                    "modelMetadata": null
+                },
+                "__typename": "CompositeResultType"
+            }, {
+                "node": {
+                    "typename": "ProductType",
+                    "context": null,
+                    "__typename": "ProductType",
+                    "sellers": {
+                        "__typename": "ProductSellers",
+                        "results": [{
+                            "id": "120892990",
+                            "__typename": "ProductType",
+                            "isForSale": true,
+                            "status": "AvailableForSale",
+                            "seller": null,
+                            "price": {
+                                "price": 22.9,
+                                "unitPrice": 229,
+                                "unitOfMeasure": "kg",
+                                "actual": 22.9,
+                                "__typename": "PriceType"
+                            },
+                            "promotions": [],
+                            "fulfilment": null
+                        }]
+                    },
+                    "id": "120892990",
+                    "tpnb": "120892990",
+                    "tpnc": "120892990",
+                    "gtin": "05051007131506",
+                    "adId": null,
+                    "baseProductId": "120892990",
+                    "title": "Tesco Edam 30% polotvrdý polotučný sýr plátky 100g",
+                    "brandName": "TESCO STANDARD",
+                    "shortDescription": null,
+                    "defaultImageUrl": "https://digitalcontent.api.tesco.com/v2/media/ghs/7fff3422-a90b-483a-9d80-b235993d02fa/6c3da85a-2eed-4956-b9f4-edd6b27176a6.jpeg?h=225&w=225",
+                    "superDepartmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55",
+                    "media": {
+                        "defaultImage": {
+                            "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/7fff3422-a90b-483a-9d80-b235993d02fa/6c3da85a-2eed-4956-b9f4-edd6b27176a6.jpeg",
+                            "aspectRatio": null,
+                            "__typename": "ProductMediaDefaultImageType"
+                        },
+                        "__typename": "ProductMediaType"
+                    },
+                    "images": {
+                        "display": [{
+                            "default": {
+                                "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/7fff3422-a90b-483a-9d80-b235993d02fa/6c3da85a-2eed-4956-b9f4-edd6b27176a6.jpeg?h=225&w=225",
+                                "__typename": "ProductImageType"
+                            },
+                            "__typename": "ProductAlternativeImageType"
+                        }],
+                        "__typename": "ProductImagesType"
+                    },
+                    "quantityInBasket": null,
+                    "superDepartmentName": "Mléčné, vejce a margaríny",
+                    "departmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDUyVDMyVCRHJ5JTIwYSUyMHR2YXJvaHk=",
+                    "departmentName": "Sýry a tvarohy",
+                    "aisleId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDUyVDMyVCRHJ5JTIwYSUyMHR2YXJvaHklN0NQbCVDMyVBMXRrb3YlQzMlQTklMjBhJTIwc3Ryb3VoYW4lQzMlQTklMjBzJUMzJUJEcnk=",
+                    "aisleName": "Plátkové a strouhané sýry",
+                    "shelfId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDUyVDMyVCRHJ5JTIwYSUyMHR2YXJvaHklN0NQbCVDMyVBMXRrb3YlQzMlQTklMjBhJTIwc3Ryb3VoYW4lQzMlQTklMjBzJUMzJUJEcnklN0NQbCVDMyVBMXRrb3YlQzMlQTklMjBzJUMzJUJEcnk=",
+                    "shelfName": "Plátkové sýry",
+                    "displayType": "Quantity",
+                    "productType": "SingleProduct",
+                    "charges": [],
+                    "averageWeight": 0,
+                    "bulkBuyLimit": 24,
+                    "maxQuantityAllowed": 24,
+                    "groupBulkBuyLimit": 0,
+                    "bulkBuyLimitMessage": null,
+                    "bulkBuyLimitGroupId": null,
+                    "timeRestrictedDelivery": null,
+                    "restrictedDelivery": null,
+                    "isInFavourites": null,
+                    "isNew": false,
+                    "isRestrictedOrderAmendment": null,
+                    "maxWeight": 0,
+                    "minWeight": 0,
+                    "increment": 0,
+                    "details": {
+                        "components": [{
+                            "isLowEverydayPricing": false,
+                            "__typename": "AdditionalInfo"
+                        }],
+                        "__typename": "ProductDetailsType"
+                    },
+                    "catchWeightList": null,
+                    "restrictions": [],
+                    "reviews": {
+                        "stats": {
+                            "noOfReviews": null,
+                            "overallRating": null,
+                            "overallRatingRange": null,
+                            "__typename": "ReviewStatsType"
+                        },
+                        "__typename": "ReviewsType"
+                    },
+                    "modelMetadata": null
+                },
+                "__typename": "CompositeResultType"
+            }, {
+                "node": {
+                    "typename": "ProductType",
+                    "context": null,
+                    "__typename": "ProductType",
+                    "sellers": {
+                        "__typename": "ProductSellers",
+                        "results": [{
+                            "id": "219560286",
+                            "__typename": "ProductType",
+                            "isForSale": true,
+                            "status": "AvailableForSale",
+                            "seller": null,
+                            "price": {
+                                "price": 199,
+                                "unitPrice": 199,
+                                "unitOfMeasure": "kg",
+                                "actual": 199,
+                                "__typename": "PriceType"
+                            },
+                            "promotions": [{
+                                "id": "95176557",
+                                "promotionType": null,
+                                "startDate": "2025-10-21T22:00:00Z",
+                                "endDate": "2025-10-28T23:00:00Z",
+                                "description": "169,00 Kč/kg s Clubcard",
+                                "unitSellingInfo": "169,00 Kč/kg",
+                                "price": {
+                                    "beforeDiscount": null,
+                                    "afterDiscount": 199,
+                                    "__typename": "PromotionPriceType"
+                                },
+                                "attributes": ["CLUBCARD_PRICING"],
+                                "__typename": "PromotionType"
+                            }],
+                            "fulfilment": null
+                        }]
+                    },
+                    "id": "219560286",
+                    "tpnb": "219560286",
+                    "tpnc": "219560286",
+                    "gtin": "02800780000000",
+                    "adId": null,
+                    "baseProductId": "219560286",
+                    "title": "Zlatý Sýr Eidam 45%",
+                    "brandName": "Zlatý Sýr",
+                    "shortDescription": null,
+                    "defaultImageUrl": "https://digitalcontent.api.tesco.com/v2/media/ghs/efad1ecf-1ad5-4d77-8197-158c50db020d/669f026a-386a-4080-8c00-fcd3f9a585a9_268371199.jpeg?h=225&w=225",
+                    "superDepartmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55",
+                    "media": {
+                        "defaultImage": {
+                            "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/efad1ecf-1ad5-4d77-8197-158c50db020d/669f026a-386a-4080-8c00-fcd3f9a585a9_268371199.jpeg",
+                            "aspectRatio": null,
+                            "__typename": "ProductMediaDefaultImageType"
+                        },
+                        "__typename": "ProductMediaType"
+                    },
+                    "images": {
+                        "display": [{
+                            "default": {
+                                "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/efad1ecf-1ad5-4d77-8197-158c50db020d/669f026a-386a-4080-8c00-fcd3f9a585a9_268371199.jpeg?h=225&w=225",
+                                "__typename": "ProductImageType"
+                            },
+                            "__typename": "ProductAlternativeImageType"
+                        }],
+                        "__typename": "ProductImagesType"
+                    },
+                    "quantityInBasket": null,
+                    "superDepartmentName": "Mléčné, vejce a margaríny",
+                    "departmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDUyVDMyVCRHJ5JTIwYSUyMHR2YXJvaHk=",
+                    "departmentName": "Sýry a tvarohy",
+                    "aisleId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDUyVDMyVCRHJ5JTIwYSUyMHR2YXJvaHklN0NQdWx0b3YlQzMlQTklMjBzJUMzJUJEcnk=",
+                    "aisleName": "Pultové sýry",
+                    "shelfId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDUyVDMyVCRHJ5JTIwYSUyMHR2YXJvaHklN0NQdWx0b3YlQzMlQTklMjBzJUMzJUJEcnklN0NQdWx0b3YlQzMlQTklMjBzJUMzJUJEcnklMjBuZXV6ZW4lQzMlQTk=",
+                    "shelfName": "Pultové sýry neuzené",
+                    "displayType": "Quantity",
+                    "productType": "CatchWeightProducts",
+                    "charges": [],
+                    "averageWeight": 1.25,
+                    "bulkBuyLimit": 1,
+                    "maxQuantityAllowed": 1,
+                    "groupBulkBuyLimit": 0,
+                    "bulkBuyLimitMessage": null,
+                    "bulkBuyLimitGroupId": null,
+                    "timeRestrictedDelivery": null,
+                    "restrictedDelivery": null,
+                    "isInFavourites": null,
+                    "isNew": false,
+                    "isRestrictedOrderAmendment": null,
+                    "maxWeight": 2.4,
+                    "minWeight": 0.1,
+                    "increment": 100,
+                    "details": {
+                        "components": [{
+                            "isLowEverydayPricing": false,
+                            "__typename": "AdditionalInfo"
+                        }],
+                        "__typename": "ProductDetailsType"
+                    },
+                    "catchWeightList": [{
+                        "price": 19.9,
+                        "weight": 0.1,
+                        "default": true,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 39.8,
+                        "weight": 0.2,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 59.7,
+                        "weight": 0.3,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 79.6,
+                        "weight": 0.4,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 99.5,
+                        "weight": 0.5,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 119.4,
+                        "weight": 0.6,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 139.3,
+                        "weight": 0.7,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 159.2,
+                        "weight": 0.8,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 179.1,
+                        "weight": 0.9,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 199,
+                        "weight": 1,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 218.9,
+                        "weight": 1.1,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 238.8,
+                        "weight": 1.2,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 258.7,
+                        "weight": 1.3,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 278.6,
+                        "weight": 1.4,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 298.5,
+                        "weight": 1.5,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 318.4,
+                        "weight": 1.6,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 338.3,
+                        "weight": 1.7,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 358.2,
+                        "weight": 1.8,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 378.1,
+                        "weight": 1.9,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 398,
+                        "weight": 2,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 417.9,
+                        "weight": 2.1,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 437.8,
+                        "weight": 2.2,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 457.7,
+                        "weight": 2.3,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 477.6,
+                        "weight": 2.4,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }],
+                    "restrictions": [],
+                    "reviews": {
+                        "stats": {
+                            "noOfReviews": null,
+                            "overallRating": null,
+                            "overallRatingRange": null,
+                            "__typename": "ReviewStatsType"
+                        },
+                        "__typename": "ReviewsType"
+                    },
+                    "modelMetadata": null
+                },
+                "__typename": "CompositeResultType"
+            }, {
+                "node": {
+                    "typename": "ProductType",
+                    "context": null,
+                    "__typename": "ProductType",
+                    "sellers": {
+                        "__typename": "ProductSellers",
+                        "results": [{
+                            "id": "219279683",
+                            "__typename": "ProductType",
+                            "isForSale": true,
+                            "status": "AvailableForSale",
+                            "seller": null,
+                            "price": {
+                                "price": 67.9,
+                                "unitPrice": 6.79,
+                                "unitOfMeasure": "kus",
+                                "actual": 67.9,
+                                "__typename": "PriceType"
+                            },
+                            "promotions": [],
+                            "fulfilment": null
+                        }]
+                    },
+                    "id": "219279683",
+                    "tpnb": "219279683",
+                    "tpnc": "219279683",
+                    "gtin": "05051007148238",
+                    "adId": null,
+                    "baseProductId": "219279683",
+                    "title": "Tesco Čerstvá vejce z halového chovu L 10 ks",
+                    "brandName": "TESCO STANDARD",
+                    "shortDescription": null,
+                    "defaultImageUrl": "https://digitalcontent.api.tesco.com/v2/media/ghs/a2050ac0-e174-4d0c-8464-3b3cd5eeaf81/dbfc8390-f292-4731-9e92-568abe666eb3_25016934.jpeg?h=225&w=225",
+                    "superDepartmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55",
+                    "media": {
+                        "defaultImage": {
+                            "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/a2050ac0-e174-4d0c-8464-3b3cd5eeaf81/dbfc8390-f292-4731-9e92-568abe666eb3_25016934.jpeg",
+                            "aspectRatio": null,
+                            "__typename": "ProductMediaDefaultImageType"
+                        },
+                        "__typename": "ProductMediaType"
+                    },
+                    "images": {
+                        "display": [{
+                            "default": {
+                                "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/a2050ac0-e174-4d0c-8464-3b3cd5eeaf81/dbfc8390-f292-4731-9e92-568abe666eb3_25016934.jpeg?h=225&w=225",
+                                "__typename": "ProductImageType"
+                            },
+                            "__typename": "ProductAlternativeImageType"
+                        }],
+                        "__typename": "ProductImagesType"
+                    },
+                    "quantityInBasket": null,
+                    "superDepartmentName": "Mléčné, vejce a margaríny",
+                    "departmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDVmVqY2UlMjBhJTIwZHJvJUM1JUJFZCVDMyVBRA==",
+                    "departmentName": "Vejce a droždí",
+                    "aisleId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDVmVqY2UlMjBhJTIwZHJvJUM1JUJFZCVDMyVBRCU3Q1ZlamNl",
+                    "aisleName": "Vejce",
+                    "shelfId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDVmVqY2UlMjBhJTIwZHJvJUM1JUJFZCVDMyVBRCU3Q1ZlamNlJTdDVmVqY2U=",
+                    "shelfName": "Vejce",
+                    "displayType": "Quantity",
+                    "productType": "SingleProduct",
+                    "charges": [],
+                    "averageWeight": 0,
+                    "bulkBuyLimit": 24,
+                    "maxQuantityAllowed": 24,
+                    "groupBulkBuyLimit": 0,
+                    "bulkBuyLimitMessage": null,
+                    "bulkBuyLimitGroupId": null,
+                    "timeRestrictedDelivery": null,
+                    "restrictedDelivery": null,
+                    "isInFavourites": null,
+                    "isNew": false,
+                    "isRestrictedOrderAmendment": null,
+                    "maxWeight": 0,
+                    "minWeight": 0,
+                    "increment": 0,
+                    "details": {
+                        "components": [{
+                            "isLowEverydayPricing": false,
+                            "__typename": "AdditionalInfo"
+                        }],
+                        "__typename": "ProductDetailsType"
+                    },
+                    "catchWeightList": null,
+                    "restrictions": [],
+                    "reviews": {
+                        "stats": {
+                            "noOfReviews": 2,
+                            "overallRating": 1.5,
+                            "overallRatingRange": 5,
+                            "__typename": "ReviewStatsType"
+                        },
+                        "__typename": "ReviewsType"
+                    },
+                    "modelMetadata": null
+                },
+                "__typename": "CompositeResultType"
+            }, {
+                "node": {
+                    "typename": "ProductType",
+                    "context": null,
+                    "__typename": "ProductType",
+                    "sellers": {
+                        "__typename": "ProductSellers",
+                        "results": [{
+                            "id": "212354899",
+                            "__typename": "ProductType",
+                            "isForSale": true,
+                            "status": "AvailableForSale",
+                            "seller": null,
+                            "price": {
+                                "price": 25.9,
+                                "unitPrice": 25.9,
+                                "unitOfMeasure": "l",
+                                "actual": 25.9,
+                                "__typename": "PriceType"
+                            },
+                            "promotions": [],
+                            "fulfilment": null
+                        }]
+                    },
+                    "id": "212354899",
+                    "tpnb": "212354899",
+                    "tpnc": "212354899",
+                    "gtin": "05051007118323",
+                    "adId": null,
+                    "baseProductId": "212354899",
+                    "title": "Tesco Mléko UHT plnotoučné 3,5% 1l",
+                    "brandName": "TESCO STANDARD",
+                    "shortDescription": null,
+                    "defaultImageUrl": "https://digitalcontent.api.tesco.com/v2/media/ghs/5875f8d2-d342-4572-b924-b3d7daeeea5f/8a0fba0a-d61b-4ed2-bc84-1e94b60c799c.jpeg?h=225&w=225",
+                    "superDepartmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55",
+                    "media": {
+                        "defaultImage": {
+                            "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/5875f8d2-d342-4572-b924-b3d7daeeea5f/8a0fba0a-d61b-4ed2-bc84-1e94b60c799c.jpeg",
+                            "aspectRatio": null,
+                            "__typename": "ProductMediaDefaultImageType"
+                        },
+                        "__typename": "ProductMediaType"
+                    },
+                    "images": {
+                        "display": [{
+                            "default": {
+                                "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/5875f8d2-d342-4572-b924-b3d7daeeea5f/8a0fba0a-d61b-4ed2-bc84-1e94b60c799c.jpeg?h=225&w=225",
+                                "__typename": "ProductImageType"
+                            },
+                            "__typename": "ProductAlternativeImageType"
+                        }],
+                        "__typename": "ProductImagesType"
+                    },
+                    "quantityInBasket": null,
+                    "superDepartmentName": "Mléčné, vejce a margaríny",
+                    "departmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDTWwlQzMlQTlrbywlMjBtbCVDMyVBOSVDNCU4RG4lQzMlQTklMjBhJTIwam9ndXJ0b3YlQzMlQTklMjBuJUMzJUExcG9qZQ==",
+                    "departmentName": "Mléko, mléčné a jogurtové nápoje",
+                    "aisleId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDTWwlQzMlQTlrbywlMjBtbCVDMyVBOSVDNCU4RG4lQzMlQTklMjBhJTIwam9ndXJ0b3YlQzMlQTklMjBuJUMzJUExcG9qZSU3Q1RydmFubGl2JUMzJUE5JTIwbWwlQzMlQTlrbw==",
+                    "aisleName": "Trvanlivé mléko",
+                    "shelfId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDTWwlQzMlQTlrbywlMjBtbCVDMyVBOSVDNCU4RG4lQzMlQTklMjBhJTIwam9ndXJ0b3YlQzMlQTklMjBuJUMzJUExcG9qZSU3Q1RydmFubGl2JUMzJUE5JTIwbWwlQzMlQTlrbyU3Q1Bsbm90dSVDNCU4RG4lQzMlQTklMjBtbCVDMyVBOWtv",
+                    "shelfName": "Plnotučné mléko",
+                    "displayType": "Quantity",
+                    "productType": "SingleProduct",
+                    "charges": [],
+                    "averageWeight": 0,
+                    "bulkBuyLimit": 24,
+                    "maxQuantityAllowed": 24,
+                    "groupBulkBuyLimit": 0,
+                    "bulkBuyLimitMessage": null,
+                    "bulkBuyLimitGroupId": null,
+                    "timeRestrictedDelivery": null,
+                    "restrictedDelivery": null,
+                    "isInFavourites": null,
+                    "isNew": false,
+                    "isRestrictedOrderAmendment": null,
+                    "maxWeight": 0,
+                    "minWeight": 0,
+                    "increment": 0,
+                    "details": {
+                        "components": [{
+                            "isLowEverydayPricing": false,
+                            "__typename": "AdditionalInfo"
+                        }],
+                        "__typename": "ProductDetailsType"
+                    },
+                    "catchWeightList": null,
+                    "restrictions": [],
+                    "reviews": {
+                        "stats": {
+                            "noOfReviews": null,
+                            "overallRating": null,
+                            "overallRatingRange": null,
+                            "__typename": "ReviewStatsType"
+                        },
+                        "__typename": "ReviewsType"
+                    },
+                    "modelMetadata": null
+                },
+                "__typename": "CompositeResultType"
+            }, {
+                "node": {
+                    "typename": "ProductType",
+                    "context": null,
+                    "__typename": "ProductType",
+                    "sellers": {
+                        "__typename": "ProductSellers",
+                        "results": [{
+                            "id": "218868970",
+                            "__typename": "ProductType",
+                            "isForSale": true,
+                            "status": "AvailableForSale",
+                            "seller": null,
+                            "price": {
+                                "price": 239,
+                                "unitPrice": 239,
+                                "unitOfMeasure": "kg",
+                                "actual": 239,
+                                "__typename": "PriceType"
+                            },
+                            "promotions": [],
+                            "fulfilment": null
+                        }]
+                    },
+                    "id": "218868970",
+                    "tpnb": "218868970",
+                    "tpnc": "218868970",
+                    "gtin": "02804240000000",
+                    "adId": null,
+                    "baseProductId": "218868970",
+                    "title": "Gouda",
+                    "brandName": "Tesco ",
+                    "shortDescription": null,
+                    "defaultImageUrl": "https://digitalcontent.api.tesco.com/v2/media/ghs/c54c3f34-9432-4531-94be-92be8382c154/5c032451-c9cd-4555-9392-e7fcf4c3d2c4.jpeg?h=225&w=225",
+                    "superDepartmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55",
+                    "media": {
+                        "defaultImage": {
+                            "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/c54c3f34-9432-4531-94be-92be8382c154/5c032451-c9cd-4555-9392-e7fcf4c3d2c4.jpeg",
+                            "aspectRatio": null,
+                            "__typename": "ProductMediaDefaultImageType"
+                        },
+                        "__typename": "ProductMediaType"
+                    },
+                    "images": {
+                        "display": [{
+                            "default": {
+                                "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/c54c3f34-9432-4531-94be-92be8382c154/5c032451-c9cd-4555-9392-e7fcf4c3d2c4.jpeg?h=225&w=225",
+                                "__typename": "ProductImageType"
+                            },
+                            "__typename": "ProductAlternativeImageType"
+                        }],
+                        "__typename": "ProductImagesType"
+                    },
+                    "quantityInBasket": null,
+                    "superDepartmentName": "Mléčné, vejce a margaríny",
+                    "departmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDUyVDMyVCRHJ5JTIwYSUyMHR2YXJvaHk=",
+                    "departmentName": "Sýry a tvarohy",
+                    "aisleId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDUyVDMyVCRHJ5JTIwYSUyMHR2YXJvaHklN0NQdWx0b3YlQzMlQTklMjBzJUMzJUJEcnk=",
+                    "aisleName": "Pultové sýry",
+                    "shelfId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDUyVDMyVCRHJ5JTIwYSUyMHR2YXJvaHklN0NQdWx0b3YlQzMlQTklMjBzJUMzJUJEcnklN0NQdWx0b3YlQzMlQTklMjBzJUMzJUJEcnklMjBuZXV6ZW4lQzMlQTk=",
+                    "shelfName": "Pultové sýry neuzené",
+                    "displayType": "Quantity",
+                    "productType": "CatchWeightProducts",
+                    "charges": [],
+                    "averageWeight": 1.25,
+                    "bulkBuyLimit": 1,
+                    "maxQuantityAllowed": 1,
+                    "groupBulkBuyLimit": 0,
+                    "bulkBuyLimitMessage": null,
+                    "bulkBuyLimitGroupId": null,
+                    "timeRestrictedDelivery": null,
+                    "restrictedDelivery": null,
+                    "isInFavourites": null,
+                    "isNew": false,
+                    "isRestrictedOrderAmendment": null,
+                    "maxWeight": 2.4,
+                    "minWeight": 0.1,
+                    "increment": 100,
+                    "details": {
+                        "components": [{
+                            "isLowEverydayPricing": false,
+                            "__typename": "AdditionalInfo"
+                        }],
+                        "__typename": "ProductDetailsType"
+                    },
+                    "catchWeightList": [{
+                        "price": 23.9,
+                        "weight": 0.1,
+                        "default": true,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 47.8,
+                        "weight": 0.2,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 71.7,
+                        "weight": 0.3,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 95.6,
+                        "weight": 0.4,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 119.5,
+                        "weight": 0.5,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 143.4,
+                        "weight": 0.6,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 167.3,
+                        "weight": 0.7,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 191.2,
+                        "weight": 0.8,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 215.1,
+                        "weight": 0.9,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 239,
+                        "weight": 1,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 262.9,
+                        "weight": 1.1,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 286.8,
+                        "weight": 1.2,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 310.7,
+                        "weight": 1.3,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 334.6,
+                        "weight": 1.4,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 358.5,
+                        "weight": 1.5,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 382.4,
+                        "weight": 1.6,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 406.3,
+                        "weight": 1.7,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 430.2,
+                        "weight": 1.8,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 454.1,
+                        "weight": 1.9,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 478,
+                        "weight": 2,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 501.9,
+                        "weight": 2.1,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 525.8,
+                        "weight": 2.2,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 549.7,
+                        "weight": 2.3,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 573.6,
+                        "weight": 2.4,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }],
+                    "restrictions": [],
+                    "reviews": {
+                        "stats": {
+                            "noOfReviews": 4,
+                            "overallRating": 4,
+                            "overallRatingRange": 5,
+                            "__typename": "ReviewStatsType"
+                        },
+                        "__typename": "ReviewsType"
+                    },
+                    "modelMetadata": null
+                },
+                "__typename": "CompositeResultType"
+            }, {
+                "node": {
+                    "typename": "ProductType",
+                    "context": null,
+                    "__typename": "ProductType",
+                    "sellers": {
+                        "__typename": "ProductSellers",
+                        "results": [{
+                            "id": "200135622",
+                            "__typename": "ProductType",
+                            "isForSale": true,
+                            "status": "AvailableForSale",
+                            "seller": null,
+                            "price": {
+                                "price": 139,
+                                "unitPrice": 139,
+                                "unitOfMeasure": "kg",
+                                "actual": 139,
+                                "__typename": "PriceType"
+                            },
+                            "promotions": [{
+                                "id": "354d8a98-8257-46bf-abee-20efc35ffe12",
+                                "promotionType": null,
+                                "startDate": "2025-10-01T00:00:00Z",
+                                "endDate": "2025-10-29T00:00:00Z",
+                                "description": "36%, předtím 219.00 Kč",
+                                "unitSellingInfo": "139,00 Kč/kg",
+                                "price": {
+                                    "beforeDiscount": 219,
+                                    "afterDiscount": 139,
+                                    "__typename": "PromotionPriceType"
+                                },
+                                "attributes": [],
+                                "__typename": "PromotionType"
+                            }],
+                            "fulfilment": null
+                        }]
+                    },
+                    "id": "200135622",
+                    "tpnb": "200135622",
+                    "tpnc": "200135622",
+                    "gtin": "02831550000000",
+                    "adId": null,
+                    "baseProductId": "200135622",
+                    "title": "Eidam 30%",
+                    "brandName": "Tesco ",
+                    "shortDescription": null,
+                    "defaultImageUrl": "https://digitalcontent.api.tesco.com/v2/media/ghs/d13f709c-51a0-494c-88d0-d1a379e5c163/06b359e1-51d3-4a00-b00a-d9f9a4c073bd.jpeg?h=225&w=225",
+                    "superDepartmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55",
+                    "media": {
+                        "defaultImage": {
+                            "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/d13f709c-51a0-494c-88d0-d1a379e5c163/06b359e1-51d3-4a00-b00a-d9f9a4c073bd.jpeg",
+                            "aspectRatio": null,
+                            "__typename": "ProductMediaDefaultImageType"
+                        },
+                        "__typename": "ProductMediaType"
+                    },
+                    "images": {
+                        "display": [{
+                            "default": {
+                                "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/d13f709c-51a0-494c-88d0-d1a379e5c163/06b359e1-51d3-4a00-b00a-d9f9a4c073bd.jpeg?h=225&w=225",
+                                "__typename": "ProductImageType"
+                            },
+                            "__typename": "ProductAlternativeImageType"
+                        }],
+                        "__typename": "ProductImagesType"
+                    },
+                    "quantityInBasket": null,
+                    "superDepartmentName": "Mléčné, vejce a margaríny",
+                    "departmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDUyVDMyVCRHJ5JTIwYSUyMHR2YXJvaHk=",
+                    "departmentName": "Sýry a tvarohy",
+                    "aisleId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDUyVDMyVCRHJ5JTIwYSUyMHR2YXJvaHklN0NQdWx0b3YlQzMlQTklMjBzJUMzJUJEcnk=",
+                    "aisleName": "Pultové sýry",
+                    "shelfId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDUyVDMyVCRHJ5JTIwYSUyMHR2YXJvaHklN0NQdWx0b3YlQzMlQTklMjBzJUMzJUJEcnklN0NQdWx0b3YlQzMlQTklMjBzJUMzJUJEcnklMjBuZXV6ZW4lQzMlQTk=",
+                    "shelfName": "Pultové sýry neuzené",
+                    "displayType": "Quantity",
+                    "productType": "CatchWeightProducts",
+                    "charges": [],
+                    "averageWeight": 1.25,
+                    "bulkBuyLimit": 1,
+                    "maxQuantityAllowed": 1,
+                    "groupBulkBuyLimit": 0,
+                    "bulkBuyLimitMessage": null,
+                    "bulkBuyLimitGroupId": null,
+                    "timeRestrictedDelivery": null,
+                    "restrictedDelivery": null,
+                    "isInFavourites": null,
+                    "isNew": false,
+                    "isRestrictedOrderAmendment": null,
+                    "maxWeight": 2.4,
+                    "minWeight": 0.1,
+                    "increment": 100,
+                    "details": {
+                        "components": [{
+                            "isLowEverydayPricing": false,
+                            "__typename": "AdditionalInfo"
+                        }],
+                        "__typename": "ProductDetailsType"
+                    },
+                    "catchWeightList": [{
+                        "price": 13.9,
+                        "weight": 0.1,
+                        "default": true,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 27.8,
+                        "weight": 0.2,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 41.7,
+                        "weight": 0.3,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 55.6,
+                        "weight": 0.4,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 69.5,
+                        "weight": 0.5,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 83.4,
+                        "weight": 0.6,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 97.3,
+                        "weight": 0.7,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 111.2,
+                        "weight": 0.8,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 125.1,
+                        "weight": 0.9,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 139,
+                        "weight": 1,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 152.9,
+                        "weight": 1.1,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 166.8,
+                        "weight": 1.2,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 180.7,
+                        "weight": 1.3,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 194.6,
+                        "weight": 1.4,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 208.5,
+                        "weight": 1.5,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 222.4,
+                        "weight": 1.6,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 236.3,
+                        "weight": 1.7,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 250.2,
+                        "weight": 1.8,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 264.1,
+                        "weight": 1.9,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 278,
+                        "weight": 2,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 291.9,
+                        "weight": 2.1,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 305.8,
+                        "weight": 2.2,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 319.7,
+                        "weight": 2.3,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 333.6,
+                        "weight": 2.4,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }],
+                    "restrictions": [],
+                    "reviews": {
+                        "stats": {
+                            "noOfReviews": 4,
+                            "overallRating": 3.2,
+                            "overallRatingRange": 5,
+                            "__typename": "ReviewStatsType"
+                        },
+                        "__typename": "ReviewsType"
+                    },
+                    "modelMetadata": null
+                },
+                "__typename": "CompositeResultType"
+            }, {
+                "node": {
+                    "typename": "ProductType",
+                    "context": null,
+                    "__typename": "ProductType",
+                    "sellers": {
+                        "__typename": "ProductSellers",
+                        "results": [{
+                            "id": "205224642",
+                            "__typename": "ProductType",
+                            "isForSale": true,
+                            "status": "AvailableForSale",
+                            "seller": null,
+                            "price": {
+                                "price": 44.9,
+                                "unitPrice": 179.6,
+                                "unitOfMeasure": "kg",
+                                "actual": 44.9,
+                                "__typename": "PriceType"
+                            },
+                            "promotions": [{
+                                "id": "95206433",
+                                "promotionType": null,
+                                "startDate": "2025-10-21T22:00:00Z",
+                                "endDate": "2025-11-04T23:00:00Z",
+                                "description": "19,90 Kč Více než o polovinu nižší cena s Clubcard",
+                                "unitSellingInfo": "79,60 Kč/kg",
+                                "price": {
+                                    "beforeDiscount": null,
+                                    "afterDiscount": 44.9,
+                                    "__typename": "PromotionPriceType"
+                                },
+                                "attributes": ["CLUBCARD_PRICING"],
+                                "__typename": "PromotionType"
+                            }],
+                            "fulfilment": null
+                        }]
+                    },
+                    "id": "205224642",
+                    "tpnb": "205224642",
+                    "tpnc": "205224642",
+                    "gtin": "08719200198951",
+                    "adId": null,
+                    "baseProductId": "205224642",
+                    "title": "Hera Classic 250g",
+                    "brandName": "Hera",
+                    "shortDescription": null,
+                    "defaultImageUrl": "https://digitalcontent.api.tesco.com/v2/media/ghs/d90f0352-19f3-4f21-a8c7-2c3b10d68a9d/90dbaa97-9470-452b-8bd3-59b02aeba972_1842448300.jpeg?h=225&w=225",
+                    "superDepartmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55",
+                    "media": {
+                        "defaultImage": {
+                            "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/d90f0352-19f3-4f21-a8c7-2c3b10d68a9d/90dbaa97-9470-452b-8bd3-59b02aeba972_1842448300.jpeg",
+                            "aspectRatio": null,
+                            "__typename": "ProductMediaDefaultImageType"
+                        },
+                        "__typename": "ProductMediaType"
+                    },
+                    "images": {
+                        "display": [{
+                            "default": {
+                                "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/d90f0352-19f3-4f21-a8c7-2c3b10d68a9d/90dbaa97-9470-452b-8bd3-59b02aeba972_1842448300.jpeg?h=225&w=225",
+                                "__typename": "ProductImageType"
+                            },
+                            "__typename": "ProductAlternativeImageType"
+                        }],
+                        "__typename": "ProductImagesType"
+                    },
+                    "quantityInBasket": null,
+                    "superDepartmentName": "Mléčné, vejce a margaríny",
+                    "departmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDTSVDMyVBMXNsbywlMjBtYXJnYXIlQzMlQURueSUyMGElMjBwb21heiVDMyVBMW5reQ==",
+                    "departmentName": "Máslo, margaríny a pomazánky",
+                    "aisleId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDTSVDMyVBMXNsbywlMjBtYXJnYXIlQzMlQURueSUyMGElMjBwb21heiVDMyVBMW5reSU3Q01hcmdhciVDMyVBRG55",
+                    "aisleName": "Margaríny",
+                    "shelfId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDTSVDMyVBMXNsbywlMjBtYXJnYXIlQzMlQURueSUyMGElMjBwb21heiVDMyVBMW5reSU3Q01hcmdhciVDMyVBRG55JTdDTWFyZ2FyJUMzJUFEbnklMjBuYSUyMHBlJUM0JThEZW4lQzMlQUQlMjBhJTIwc21hJUM1JUJFZW4lQzMlQUQ=",
+                    "shelfName": "Margaríny na pečení a smažení",
+                    "displayType": "Quantity",
+                    "productType": "SingleProduct",
+                    "charges": [],
+                    "averageWeight": 0,
+                    "bulkBuyLimit": 24,
+                    "maxQuantityAllowed": 24,
+                    "groupBulkBuyLimit": 0,
+                    "bulkBuyLimitMessage": null,
+                    "bulkBuyLimitGroupId": null,
+                    "timeRestrictedDelivery": null,
+                    "restrictedDelivery": null,
+                    "isInFavourites": null,
+                    "isNew": false,
+                    "isRestrictedOrderAmendment": null,
+                    "maxWeight": 0,
+                    "minWeight": 0,
+                    "increment": 0,
+                    "details": {
+                        "components": [{
+                            "isLowEverydayPricing": false,
+                            "__typename": "AdditionalInfo"
+                        }],
+                        "__typename": "ProductDetailsType"
+                    },
+                    "catchWeightList": null,
+                    "restrictions": [],
+                    "reviews": {
+                        "stats": {
+                            "noOfReviews": null,
+                            "overallRating": null,
+                            "overallRatingRange": null,
+                            "__typename": "ReviewStatsType"
+                        },
+                        "__typename": "ReviewsType"
+                    },
+                    "modelMetadata": null
+                },
+                "__typename": "CompositeResultType"
+            }, {
+                "node": {
+                    "typename": "ProductType",
+                    "context": null,
+                    "__typename": "ProductType",
+                    "sellers": {
+                        "__typename": "ProductSellers",
+                        "results": [{
+                            "id": "218642129",
+                            "__typename": "ProductType",
+                            "isForSale": true,
+                            "status": "AvailableForSale",
+                            "seller": null,
+                            "price": {
+                                "price": 89.9,
+                                "unitPrice": 221.98,
+                                "unitOfMeasure": "l",
+                                "actual": 89.9,
+                                "__typename": "PriceType"
+                            },
+                            "promotions": [],
+                            "fulfilment": null
+                        }]
+                    },
+                    "id": "218642129",
+                    "tpnb": "218642129",
+                    "tpnc": "218642129",
+                    "gtin": "08720182085139",
+                    "adId": null,
+                    "baseProductId": "218642129",
+                    "title": "Hellmann's Majonéza originál 405ml",
+                    "brandName": "Hellmann's",
+                    "shortDescription": null,
+                    "defaultImageUrl": "https://digitalcontent.api.tesco.com/v2/media/ghs/476908fe-4241-4803-b40f-3b4740fe958f/dd3791de-514f-48a7-a997-c34fe36deef9_1977966430.jpeg?h=225&w=225",
+                    "superDepartmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55",
+                    "media": {
+                        "defaultImage": {
+                            "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/476908fe-4241-4803-b40f-3b4740fe958f/dd3791de-514f-48a7-a997-c34fe36deef9_1977966430.jpeg",
+                            "aspectRatio": null,
+                            "__typename": "ProductMediaDefaultImageType"
+                        },
+                        "__typename": "ProductMediaType"
+                    },
+                    "images": {
+                        "display": [{
+                            "default": {
+                                "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/476908fe-4241-4803-b40f-3b4740fe958f/dd3791de-514f-48a7-a997-c34fe36deef9_1977966430.jpeg?h=225&w=225",
+                                "__typename": "ProductImageType"
+                            },
+                            "__typename": "ProductAlternativeImageType"
+                        }],
+                        "__typename": "ProductImagesType"
+                    },
+                    "quantityInBasket": null,
+                    "superDepartmentName": "Mléčné, vejce a margaríny",
+                    "departmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDTWFqb24lQzMlQTl6eSwlMjBkcmVzaW5reSUyMGElMjB0YXRhcnNrJUMzJUE5JTIwb20lQzMlQTElQzQlOERreQ==",
+                    "departmentName": "Majonézy, dresinky a tatarské omáčky",
+                    "aisleId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDTWFqb24lQzMlQTl6eSwlMjBkcmVzaW5reSUyMGElMjB0YXRhcnNrJUMzJUE5JTIwb20lQzMlQTElQzQlOERreSU3Q01ham9uJUMzJUE5enk=",
+                    "aisleName": "Majonézy",
+                    "shelfId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDTWFqb24lQzMlQTl6eSwlMjBkcmVzaW5reSUyMGElMjB0YXRhcnNrJUMzJUE5JTIwb20lQzMlQTElQzQlOERreSU3Q01ham9uJUMzJUE5enklN0NNYWpvbiVDMyVBOXp5",
+                    "shelfName": "Majonézy",
+                    "displayType": "Quantity",
+                    "productType": "SingleProduct",
+                    "charges": [],
+                    "averageWeight": 0,
+                    "bulkBuyLimit": 24,
+                    "maxQuantityAllowed": 24,
+                    "groupBulkBuyLimit": 0,
+                    "bulkBuyLimitMessage": null,
+                    "bulkBuyLimitGroupId": null,
+                    "timeRestrictedDelivery": null,
+                    "restrictedDelivery": null,
+                    "isInFavourites": null,
+                    "isNew": false,
+                    "isRestrictedOrderAmendment": null,
+                    "maxWeight": 0,
+                    "minWeight": 0,
+                    "increment": 0,
+                    "details": {
+                        "components": [{
+                            "isLowEverydayPricing": false,
+                            "__typename": "AdditionalInfo"
+                        }],
+                        "__typename": "ProductDetailsType"
+                    },
+                    "catchWeightList": null,
+                    "restrictions": [],
+                    "reviews": {
+                        "stats": {
+                            "noOfReviews": null,
+                            "overallRating": null,
+                            "overallRatingRange": null,
+                            "__typename": "ReviewStatsType"
+                        },
+                        "__typename": "ReviewsType"
+                    },
+                    "modelMetadata": null
+                },
+                "__typename": "CompositeResultType"
+            }, {
+                "node": {
+                    "typename": "ProductType",
+                    "context": null,
+                    "__typename": "ProductType",
+                    "sellers": {
+                        "__typename": "ProductSellers",
+                        "results": [{
+                            "id": "105004789",
+                            "__typename": "ProductType",
+                            "isForSale": true,
+                            "status": "AvailableForSale",
+                            "seller": null,
+                            "price": {
+                                "price": 109.9,
+                                "unitPrice": 219.8,
+                                "unitOfMeasure": "l",
+                                "actual": 109.9,
+                                "__typename": "PriceType"
+                            },
+                            "promotions": [{
+                                "id": "94873952",
+                                "promotionType": null,
+                                "startDate": "2025-09-30T22:00:00Z",
+                                "endDate": "2025-10-28T23:00:00Z",
+                                "description": "57,90 Kč s Clubcard",
+                                "unitSellingInfo": "115,80 Kč/l",
+                                "price": {
+                                    "beforeDiscount": null,
+                                    "afterDiscount": 109.9,
+                                    "__typename": "PromotionPriceType"
+                                },
+                                "attributes": ["CLUBCARD_PRICING"],
+                                "__typename": "PromotionType"
+                            }],
+                            "fulfilment": null
+                        }]
+                    },
+                    "id": "105004789",
+                    "tpnb": "105004789",
+                    "tpnc": "105004789",
+                    "gtin": "08720182619587",
+                    "adId": null,
+                    "baseProductId": "105004789",
+                    "title": "Hellmann's Majonéza 500ml",
+                    "brandName": "Hellmann's",
+                    "shortDescription": null,
+                    "defaultImageUrl": "https://digitalcontent.api.tesco.com/v2/media/ghs/d72d399e-72a1-44eb-8027-daa1b61699a8/f6f10d01-4382-4b2d-a53f-de298e8ce03d_454642077.jpeg?h=225&w=225",
+                    "superDepartmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55",
+                    "media": {
+                        "defaultImage": {
+                            "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/d72d399e-72a1-44eb-8027-daa1b61699a8/f6f10d01-4382-4b2d-a53f-de298e8ce03d_454642077.jpeg",
+                            "aspectRatio": null,
+                            "__typename": "ProductMediaDefaultImageType"
+                        },
+                        "__typename": "ProductMediaType"
+                    },
+                    "images": {
+                        "display": [{
+                            "default": {
+                                "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/d72d399e-72a1-44eb-8027-daa1b61699a8/f6f10d01-4382-4b2d-a53f-de298e8ce03d_454642077.jpeg?h=225&w=225",
+                                "__typename": "ProductImageType"
+                            },
+                            "__typename": "ProductAlternativeImageType"
+                        }],
+                        "__typename": "ProductImagesType"
+                    },
+                    "quantityInBasket": null,
+                    "superDepartmentName": "Mléčné, vejce a margaríny",
+                    "departmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDTWFqb24lQzMlQTl6eSwlMjBkcmVzaW5reSUyMGElMjB0YXRhcnNrJUMzJUE5JTIwb20lQzMlQTElQzQlOERreQ==",
+                    "departmentName": "Majonézy, dresinky a tatarské omáčky",
+                    "aisleId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDTWFqb24lQzMlQTl6eSwlMjBkcmVzaW5reSUyMGElMjB0YXRhcnNrJUMzJUE5JTIwb20lQzMlQTElQzQlOERreSU3Q01ham9uJUMzJUE5enk=",
+                    "aisleName": "Majonézy",
+                    "shelfId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDTWFqb24lQzMlQTl6eSwlMjBkcmVzaW5reSUyMGElMjB0YXRhcnNrJUMzJUE5JTIwb20lQzMlQTElQzQlOERreSU3Q01ham9uJUMzJUE5enklN0NNYWpvbiVDMyVBOXp5",
+                    "shelfName": "Majonézy",
+                    "displayType": "Quantity",
+                    "productType": "SingleProduct",
+                    "charges": [],
+                    "averageWeight": 0,
+                    "bulkBuyLimit": 24,
+                    "maxQuantityAllowed": 24,
+                    "groupBulkBuyLimit": 0,
+                    "bulkBuyLimitMessage": null,
+                    "bulkBuyLimitGroupId": null,
+                    "timeRestrictedDelivery": null,
+                    "restrictedDelivery": null,
+                    "isInFavourites": null,
+                    "isNew": false,
+                    "isRestrictedOrderAmendment": null,
+                    "maxWeight": 0,
+                    "minWeight": 0,
+                    "increment": 0,
+                    "details": {
+                        "components": [{
+                            "isLowEverydayPricing": false,
+                            "__typename": "AdditionalInfo"
+                        }],
+                        "__typename": "ProductDetailsType"
+                    },
+                    "catchWeightList": null,
+                    "restrictions": [],
+                    "reviews": {
+                        "stats": {
+                            "noOfReviews": null,
+                            "overallRating": null,
+                            "overallRatingRange": null,
+                            "__typename": "ReviewStatsType"
+                        },
+                        "__typename": "ReviewsType"
+                    },
+                    "modelMetadata": null
+                },
+                "__typename": "CompositeResultType"
+            }, {
+                "node": {
+                    "typename": "ProductType",
+                    "context": null,
+                    "__typename": "ProductType",
+                    "sellers": {
+                        "__typename": "ProductSellers",
+                        "results": [{
+                            "id": "205160599",
+                            "__typename": "ProductType",
+                            "isForSale": true,
+                            "status": "AvailableForSale",
+                            "seller": null,
+                            "price": {
+                                "price": 4.9,
+                                "unitPrice": 116.67,
+                                "unitOfMeasure": "kg",
+                                "actual": 4.9,
+                                "__typename": "PriceType"
+                            },
+                            "promotions": [],
+                            "fulfilment": null
+                        }]
+                    },
+                    "id": "205160599",
+                    "tpnb": "205160599",
+                    "tpnc": "205160599",
+                    "gtin": "05900269202076",
+                    "adId": null,
+                    "baseProductId": "205160599",
+                    "title": " Čerstvé pekařské droždí 42g",
+                    "brandName": null,
+                    "shortDescription": null,
+                    "defaultImageUrl": "https://digitalcontent.api.tesco.com/v2/media/ghs/bc96910c-0d3a-43c8-999f-04fa6deedd0b/626d358e-91fb-43f4-a3ae-d5af19e8c18f.jpeg?h=225&w=225",
+                    "superDepartmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55",
+                    "media": {
+                        "defaultImage": {
+                            "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/bc96910c-0d3a-43c8-999f-04fa6deedd0b/626d358e-91fb-43f4-a3ae-d5af19e8c18f.jpeg",
+                            "aspectRatio": null,
+                            "__typename": "ProductMediaDefaultImageType"
+                        },
+                        "__typename": "ProductMediaType"
+                    },
+                    "images": {
+                        "display": [{
+                            "default": {
+                                "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/bc96910c-0d3a-43c8-999f-04fa6deedd0b/626d358e-91fb-43f4-a3ae-d5af19e8c18f.jpeg?h=225&w=225",
+                                "__typename": "ProductImageType"
+                            },
+                            "__typename": "ProductAlternativeImageType"
+                        }],
+                        "__typename": "ProductImagesType"
+                    },
+                    "quantityInBasket": null,
+                    "superDepartmentName": "Mléčné, vejce a margaríny",
+                    "departmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDVmVqY2UlMjBhJTIwZHJvJUM1JUJFZCVDMyVBRA==",
+                    "departmentName": "Vejce a droždí",
+                    "aisleId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDVmVqY2UlMjBhJTIwZHJvJUM1JUJFZCVDMyVBRCU3Q0RybyVDNSVCRWQlQzMlQUQ=",
+                    "aisleName": "Droždí",
+                    "shelfId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDVmVqY2UlMjBhJTIwZHJvJUM1JUJFZCVDMyVBRCU3Q0RybyVDNSVCRWQlQzMlQUQlN0NEcm8lQzUlQkVkJUMzJUFE",
+                    "shelfName": "Droždí",
+                    "displayType": "Quantity",
+                    "productType": "SingleProduct",
+                    "charges": [],
+                    "averageWeight": 0,
+                    "bulkBuyLimit": 24,
+                    "maxQuantityAllowed": 24,
+                    "groupBulkBuyLimit": 0,
+                    "bulkBuyLimitMessage": null,
+                    "bulkBuyLimitGroupId": null,
+                    "timeRestrictedDelivery": null,
+                    "restrictedDelivery": null,
+                    "isInFavourites": null,
+                    "isNew": false,
+                    "isRestrictedOrderAmendment": null,
+                    "maxWeight": 0,
+                    "minWeight": 0,
+                    "increment": 0,
+                    "details": {
+                        "components": [{
+                            "isLowEverydayPricing": false,
+                            "__typename": "AdditionalInfo"
+                        }],
+                        "__typename": "ProductDetailsType"
+                    },
+                    "catchWeightList": null,
+                    "restrictions": [],
+                    "reviews": {
+                        "stats": {
+                            "noOfReviews": null,
+                            "overallRating": null,
+                            "overallRatingRange": null,
+                            "__typename": "ReviewStatsType"
+                        },
+                        "__typename": "ReviewsType"
+                    },
+                    "modelMetadata": null
+                },
+                "__typename": "CompositeResultType"
+            }, {
+                "node": {
+                    "typename": "ProductType",
+                    "context": null,
+                    "__typename": "ProductType",
+                    "sellers": {
+                        "__typename": "ProductSellers",
+                        "results": [{
+                            "id": "219184475",
+                            "__typename": "ProductType",
+                            "isForSale": true,
+                            "status": "AvailableForSale",
+                            "seller": null,
+                            "price": {
+                                "price": 29.9,
+                                "unitPrice": 239.2,
+                                "unitOfMeasure": "kg",
+                                "actual": 29.9,
+                                "__typename": "PriceType"
+                            },
+                            "promotions": [{
+                                "id": "b7c118e6-7f9d-4ceb-9304-58df3a85b4b9",
+                                "promotionType": null,
+                                "startDate": "2025-10-21T22:00:00Z",
+                                "endDate": "2025-10-24T22:00:00Z",
+                                "description": "26%, předtím 40.90 Kč",
+                                "unitSellingInfo": "239,20 Kč/kg",
+                                "price": {
+                                    "beforeDiscount": 40.9,
+                                    "afterDiscount": 29.9,
+                                    "__typename": "PromotionPriceType"
+                                },
+                                "attributes": [],
+                                "__typename": "PromotionType"
+                            }],
+                            "fulfilment": null
+                        }]
+                    },
+                    "id": "219184475",
+                    "tpnb": "219184475",
+                    "tpnc": "219184475",
+                    "gtin": "08000430133035",
+                    "adId": null,
+                    "baseProductId": "219184475",
+                    "title": "Galbani Mozzarella 125g",
+                    "brandName": "Galbani",
+                    "shortDescription": null,
+                    "defaultImageUrl": "https://digitalcontent.api.tesco.com/v2/media/ghs/5456392a-6977-4aa3-8efa-28f11befdc73/410df8db-033d-4e7b-bfd7-9280099c7623_1740074352.jpeg?h=225&w=225",
+                    "superDepartmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55",
+                    "media": {
+                        "defaultImage": {
+                            "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/5456392a-6977-4aa3-8efa-28f11befdc73/410df8db-033d-4e7b-bfd7-9280099c7623_1740074352.jpeg",
+                            "aspectRatio": null,
+                            "__typename": "ProductMediaDefaultImageType"
+                        },
+                        "__typename": "ProductMediaType"
+                    },
+                    "images": {
+                        "display": [{
+                            "default": {
+                                "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/5456392a-6977-4aa3-8efa-28f11befdc73/410df8db-033d-4e7b-bfd7-9280099c7623_1740074352.jpeg?h=225&w=225",
+                                "__typename": "ProductImageType"
+                            },
+                            "__typename": "ProductAlternativeImageType"
+                        }],
+                        "__typename": "ProductImagesType"
+                    },
+                    "quantityInBasket": null,
+                    "superDepartmentName": "Mléčné, vejce a margaríny",
+                    "departmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDUyVDMyVCRHJ5JTIwYSUyMHR2YXJvaHk=",
+                    "departmentName": "Sýry a tvarohy",
+                    "aisleId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDUyVDMyVCRHJ5JTIwYSUyMHR2YXJvaHklN0NNb3p6YXJlbGE=",
+                    "aisleName": "Mozzarela",
+                    "shelfId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDUyVDMyVCRHJ5JTIwYSUyMHR2YXJvaHklN0NNb3p6YXJlbGElN0NNb3p6YXJlbGE=",
+                    "shelfName": "Mozzarela",
+                    "displayType": "Quantity",
+                    "productType": "SingleProduct",
+                    "charges": [],
+                    "averageWeight": 0,
+                    "bulkBuyLimit": 24,
+                    "maxQuantityAllowed": 24,
+                    "groupBulkBuyLimit": 0,
+                    "bulkBuyLimitMessage": null,
+                    "bulkBuyLimitGroupId": null,
+                    "timeRestrictedDelivery": null,
+                    "restrictedDelivery": null,
+                    "isInFavourites": null,
+                    "isNew": false,
+                    "isRestrictedOrderAmendment": null,
+                    "maxWeight": 0,
+                    "minWeight": 0,
+                    "increment": 0,
+                    "details": {
+                        "components": [{
+                            "isLowEverydayPricing": false,
+                            "__typename": "AdditionalInfo"
+                        }],
+                        "__typename": "ProductDetailsType"
+                    },
+                    "catchWeightList": null,
+                    "restrictions": [],
+                    "reviews": {
+                        "stats": {
+                            "noOfReviews": null,
+                            "overallRating": null,
+                            "overallRatingRange": null,
+                            "__typename": "ReviewStatsType"
+                        },
+                        "__typename": "ReviewsType"
+                    },
+                    "modelMetadata": null
+                },
+                "__typename": "CompositeResultType"
+            }, {
+                "node": {
+                    "typename": "ProductType",
+                    "context": null,
+                    "__typename": "ProductType",
+                    "sellers": {
+                        "__typename": "ProductSellers",
+                        "results": [{
+                            "id": "120049526",
+                            "__typename": "ProductType",
+                            "isForSale": true,
+                            "status": "AvailableForSale",
+                            "seller": null,
+                            "price": {
+                                "price": 19.9,
+                                "unitPrice": 99.5,
+                                "unitOfMeasure": "kg",
+                                "actual": 19.9,
+                                "__typename": "PriceType"
+                            },
+                            "promotions": [],
+                            "fulfilment": null
+                        }]
+                    },
+                    "id": "120049526",
+                    "tpnb": "120049526",
+                    "tpnc": "120049526",
+                    "gtin": "05051007138970",
+                    "adId": null,
+                    "baseProductId": "120049526",
+                    "title": "Tesco Zakysaná smetana 15 % 200g",
+                    "brandName": "TESCO STANDARD",
+                    "shortDescription": null,
+                    "defaultImageUrl": "https://digitalcontent.api.tesco.com/v2/media/ghs/1b653f85-7c00-4c03-8b1c-0eb559f903cc/2a8cdc35-438d-492f-9603-f31c6cbb20ec_998007315.jpeg?h=225&w=225",
+                    "superDepartmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55",
+                    "media": {
+                        "defaultImage": {
+                            "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/1b653f85-7c00-4c03-8b1c-0eb559f903cc/2a8cdc35-438d-492f-9603-f31c6cbb20ec_998007315.jpeg",
+                            "aspectRatio": null,
+                            "__typename": "ProductMediaDefaultImageType"
+                        },
+                        "__typename": "ProductMediaType"
+                    },
+                    "images": {
+                        "display": [{
+                            "default": {
+                                "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/1b653f85-7c00-4c03-8b1c-0eb559f903cc/2a8cdc35-438d-492f-9603-f31c6cbb20ec_998007315.jpeg?h=225&w=225",
+                                "__typename": "ProductImageType"
+                            },
+                            "__typename": "ProductAlternativeImageType"
+                        }],
+                        "__typename": "ProductImagesType"
+                    },
+                    "quantityInBasket": null,
+                    "superDepartmentName": "Mléčné, vejce a margaríny",
+                    "departmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDU21ldGFueSwlMjAlQzUlQTFsZWhhJUM0JThEa3klMjBhJTIwemFreXNhbiVDMyVBOSUyMHYlQzMlQkRyb2JreQ==",
+                    "departmentName": "Smetany, šlehačky a zakysané výrobky",
+                    "aisleId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDU21ldGFueSwlMjAlQzUlQTFsZWhhJUM0JThEa3klMjBhJTIwemFreXNhbiVDMyVBOSUyMHYlQzMlQkRyb2JreSU3QyVDNCU4Q2Vyc3R2JUMzJUE5",
+                    "aisleName": "Čerstvé",
+                    "shelfId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDU21ldGFueSwlMjAlQzUlQTFsZWhhJUM0JThEa3klMjBhJTIwemFreXNhbiVDMyVBOSUyMHYlQzMlQkRyb2JreSU3QyVDNCU4Q2Vyc3R2JUMzJUE5JTdDJUM0JThDZXJzdHYlQzMlQTk=",
+                    "shelfName": "Čerstvé",
+                    "displayType": "Quantity",
+                    "productType": "SingleProduct",
+                    "charges": [],
+                    "averageWeight": 0,
+                    "bulkBuyLimit": 24,
+                    "maxQuantityAllowed": 24,
+                    "groupBulkBuyLimit": 0,
+                    "bulkBuyLimitMessage": null,
+                    "bulkBuyLimitGroupId": null,
+                    "timeRestrictedDelivery": null,
+                    "restrictedDelivery": null,
+                    "isInFavourites": null,
+                    "isNew": false,
+                    "isRestrictedOrderAmendment": null,
+                    "maxWeight": 0,
+                    "minWeight": 0,
+                    "increment": 0,
+                    "details": {
+                        "components": [{
+                            "isLowEverydayPricing": false,
+                            "__typename": "AdditionalInfo"
+                        }],
+                        "__typename": "ProductDetailsType"
+                    },
+                    "catchWeightList": null,
+                    "restrictions": [],
+                    "reviews": {
+                        "stats": {
+                            "noOfReviews": null,
+                            "overallRating": null,
+                            "overallRatingRange": null,
+                            "__typename": "ReviewStatsType"
+                        },
+                        "__typename": "ReviewsType"
+                    },
+                    "modelMetadata": null
+                },
+                "__typename": "CompositeResultType"
+            }, {
+                "node": {
+                    "typename": "ProductType",
+                    "context": null,
+                    "__typename": "ProductType",
+                    "sellers": {
+                        "__typename": "ProductSellers",
+                        "results": [{
+                            "id": "200130719",
+                            "__typename": "ProductType",
+                            "isForSale": true,
+                            "status": "AvailableForSale",
+                            "seller": null,
+                            "price": {
+                                "price": 31.9,
+                                "unitPrice": 319,
+                                "unitOfMeasure": "kg",
+                                "actual": 31.9,
+                                "__typename": "PriceType"
+                            },
+                            "promotions": [{
+                                "id": "94877064",
+                                "promotionType": null,
+                                "startDate": "2025-09-30T22:00:00Z",
+                                "endDate": "2025-10-28T23:00:00Z",
+                                "description": "24,90 Kč s Clubcard",
+                                "unitSellingInfo": "249,00 Kč/kg",
+                                "price": {
+                                    "beforeDiscount": null,
+                                    "afterDiscount": 31.9,
+                                    "__typename": "PromotionPriceType"
+                                },
+                                "attributes": ["CLUBCARD_PRICING"],
+                                "__typename": "PromotionType"
+                            }],
+                            "fulfilment": null
+                        }]
+                    },
+                    "id": "200130719",
+                    "tpnb": "200130719",
+                    "tpnc": "200130719",
+                    "gtin": "08594008271002",
+                    "adId": null,
+                    "baseProductId": "200130719",
+                    "title": "Lučina Originál 100g",
+                    "brandName": "Lučina",
+                    "shortDescription": null,
+                    "defaultImageUrl": "https://digitalcontent.api.tesco.com/v2/media/ghs/04d9580f-e34b-4566-86d1-d393d44db3f7/3f8f456c-cfe0-45f9-85cf-52f7982417f7_1293283117.jpeg?h=225&w=225",
+                    "superDepartmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55",
+                    "media": {
+                        "defaultImage": {
+                            "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/04d9580f-e34b-4566-86d1-d393d44db3f7/3f8f456c-cfe0-45f9-85cf-52f7982417f7_1293283117.jpeg",
+                            "aspectRatio": null,
+                            "__typename": "ProductMediaDefaultImageType"
+                        },
+                        "__typename": "ProductMediaType"
+                    },
+                    "images": {
+                        "display": [{
+                            "default": {
+                                "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/04d9580f-e34b-4566-86d1-d393d44db3f7/3f8f456c-cfe0-45f9-85cf-52f7982417f7_1293283117.jpeg?h=225&w=225",
+                                "__typename": "ProductImageType"
+                            },
+                            "__typename": "ProductAlternativeImageType"
+                        }],
+                        "__typename": "ProductImagesType"
+                    },
+                    "quantityInBasket": null,
+                    "superDepartmentName": "Mléčné, vejce a margaríny",
+                    "departmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDUyVDMyVCRHJ5JTIwYSUyMHR2YXJvaHk=",
+                    "departmentName": "Sýry a tvarohy",
+                    "aisleId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDUyVDMyVCRHJ5JTIwYSUyMHR2YXJvaHklN0NUYXZlbiVDMyVBOSUyMGElMjB0ZXJtaXpvdmFuJUMzJUE5JTIwcyVDMyVCRHJ5",
+                    "aisleName": "Tavené a termizované sýry",
+                    "shelfId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDUyVDMyVCRHJ5JTIwYSUyMHR2YXJvaHklN0NUYXZlbiVDMyVBOSUyMGElMjB0ZXJtaXpvdmFuJUMzJUE5JTIwcyVDMyVCRHJ5JTdDVGVybWl6b3ZhbiVDMyVBOSUyMHMlQzMlQkRyeQ==",
+                    "shelfName": "Termizované sýry",
+                    "displayType": "Quantity",
+                    "productType": "SingleProduct",
+                    "charges": [],
+                    "averageWeight": 0,
+                    "bulkBuyLimit": 24,
+                    "maxQuantityAllowed": 24,
+                    "groupBulkBuyLimit": 0,
+                    "bulkBuyLimitMessage": null,
+                    "bulkBuyLimitGroupId": null,
+                    "timeRestrictedDelivery": null,
+                    "restrictedDelivery": null,
+                    "isInFavourites": null,
+                    "isNew": false,
+                    "isRestrictedOrderAmendment": null,
+                    "maxWeight": 0,
+                    "minWeight": 0,
+                    "increment": 0,
+                    "details": {
+                        "components": [{
+                            "isLowEverydayPricing": false,
+                            "__typename": "AdditionalInfo"
+                        }],
+                        "__typename": "ProductDetailsType"
+                    },
+                    "catchWeightList": null,
+                    "restrictions": [],
+                    "reviews": {
+                        "stats": {
+                            "noOfReviews": null,
+                            "overallRating": null,
+                            "overallRatingRange": null,
+                            "__typename": "ReviewStatsType"
+                        },
+                        "__typename": "ReviewsType"
+                    },
+                    "modelMetadata": null
+                },
+                "__typename": "CompositeResultType"
+            }, {
+                "node": {
+                    "typename": "ProductType",
+                    "context": null,
+                    "__typename": "ProductType",
+                    "sellers": {
+                        "__typename": "ProductSellers",
+                        "results": [{
+                            "id": "205122214",
+                            "__typename": "ProductType",
+                            "isForSale": true,
+                            "status": "AvailableForSale",
+                            "seller": null,
+                            "price": {
+                                "price": 68.9,
+                                "unitPrice": 173.55,
+                                "unitOfMeasure": "kg",
+                                "actual": 68.9,
+                                "__typename": "PriceType"
+                            },
+                            "promotions": [],
+                            "fulfilment": null
+                        }]
+                    },
+                    "id": "205122214",
+                    "tpnb": "205122214",
+                    "tpnc": "205122214",
+                    "gtin": "08594006840217",
+                    "adId": null,
+                    "baseProductId": "205122214",
+                    "title": "Tatra Salko Tradiční 397g",
+                    "brandName": "Tatra",
+                    "shortDescription": null,
+                    "defaultImageUrl": "https://digitalcontent.api.tesco.com/v2/media/ghs/f134a2db-8b00-4b15-94ec-6808945c7113/ad3d4aef-040b-44a6-b1f4-2a3a8808fac6_1501395956.jpeg?h=225&w=225",
+                    "superDepartmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55",
+                    "media": {
+                        "defaultImage": {
+                            "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/f134a2db-8b00-4b15-94ec-6808945c7113/ad3d4aef-040b-44a6-b1f4-2a3a8808fac6_1501395956.jpeg",
+                            "aspectRatio": null,
+                            "__typename": "ProductMediaDefaultImageType"
+                        },
+                        "__typename": "ProductMediaType"
+                    },
+                    "images": {
+                        "display": [{
+                            "default": {
+                                "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/f134a2db-8b00-4b15-94ec-6808945c7113/ad3d4aef-040b-44a6-b1f4-2a3a8808fac6_1501395956.jpeg?h=225&w=225",
+                                "__typename": "ProductImageType"
+                            },
+                            "__typename": "ProductAlternativeImageType"
+                        }],
+                        "__typename": "ProductImagesType"
+                    },
+                    "quantityInBasket": null,
+                    "superDepartmentName": "Mléčné, vejce a margaríny",
+                    "departmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDTWwlQzMlQTlrbywlMjBtbCVDMyVBOSVDNCU4RG4lQzMlQTklMjBhJTIwam9ndXJ0b3YlQzMlQTklMjBuJUMzJUExcG9qZQ==",
+                    "departmentName": "Mléko, mléčné a jogurtové nápoje",
+                    "aisleId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDTWwlQzMlQTlrbywlMjBtbCVDMyVBOSVDNCU4RG4lQzMlQTklMjBhJTIwam9ndXJ0b3YlQzMlQTklMjBuJUMzJUExcG9qZSU3Q0tvbmRlbnpvdmFuJUMzJUE5JTIwYSUyMHphaHUlQzUlQTF0JUM0JTlCbiVDMyVBOQ==",
+                    "aisleName": "Kondenzované a zahuštěné",
+                    "shelfId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDTWwlQzMlQTlrbywlMjBtbCVDMyVBOSVDNCU4RG4lQzMlQTklMjBhJTIwam9ndXJ0b3YlQzMlQTklMjBuJUMzJUExcG9qZSU3Q0tvbmRlbnpvdmFuJUMzJUE5JTIwYSUyMHphaHUlQzUlQTF0JUM0JTlCbiVDMyVBOSU3Q0tvbmRlbnpvdmFuJUMzJUE5JTIwYSUyMHphaHUlQzUlQTF0JUM0JTlCbiVDMyVBOQ==",
+                    "shelfName": "Kondenzované a zahuštěné",
+                    "displayType": "Quantity",
+                    "productType": "SingleProduct",
+                    "charges": [],
+                    "averageWeight": 0,
+                    "bulkBuyLimit": 24,
+                    "maxQuantityAllowed": 24,
+                    "groupBulkBuyLimit": 0,
+                    "bulkBuyLimitMessage": null,
+                    "bulkBuyLimitGroupId": null,
+                    "timeRestrictedDelivery": null,
+                    "restrictedDelivery": null,
+                    "isInFavourites": null,
+                    "isNew": false,
+                    "isRestrictedOrderAmendment": null,
+                    "maxWeight": 0,
+                    "minWeight": 0,
+                    "increment": 0,
+                    "details": {
+                        "components": [{
+                            "isLowEverydayPricing": false,
+                            "__typename": "AdditionalInfo"
+                        }],
+                        "__typename": "ProductDetailsType"
+                    },
+                    "catchWeightList": null,
+                    "restrictions": [],
+                    "reviews": {
+                        "stats": {
+                            "noOfReviews": null,
+                            "overallRating": null,
+                            "overallRatingRange": null,
+                            "__typename": "ReviewStatsType"
+                        },
+                        "__typename": "ReviewsType"
+                    },
+                    "modelMetadata": null
+                },
+                "__typename": "CompositeResultType"
+            }, {
+                "node": {
+                    "typename": "ProductType",
+                    "context": null,
+                    "__typename": "ProductType",
+                    "sellers": {
+                        "__typename": "ProductSellers",
+                        "results": [{
+                            "id": "220343492",
+                            "__typename": "ProductType",
+                            "isForSale": true,
+                            "status": "AvailableForSale",
+                            "seller": null,
+                            "price": {
+                                "price": 34.9,
+                                "unitPrice": 349,
+                                "unitOfMeasure": "kg",
+                                "actual": 34.9,
+                                "__typename": "PriceType"
+                            },
+                            "promotions": [],
+                            "fulfilment": null
+                        }]
+                    },
+                    "id": "220343492",
+                    "tpnb": "220343492",
+                    "tpnc": "220343492",
+                    "gtin": "05051007160216",
+                    "adId": null,
+                    "baseProductId": "220343492",
+                    "title": "Tesco Gouda 48% plátky 100g",
+                    "brandName": "TESCO STANDARD",
+                    "shortDescription": null,
+                    "defaultImageUrl": "https://digitalcontent.api.tesco.com/v2/media/ghs/b9a34a33-5699-4597-9ea1-cc1724d09678/b6f026cd-c3da-4fa3-9b2f-45e0f8b164c4_1984209758.jpeg?h=225&w=225",
+                    "superDepartmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55",
+                    "media": {
+                        "defaultImage": {
+                            "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/b9a34a33-5699-4597-9ea1-cc1724d09678/b6f026cd-c3da-4fa3-9b2f-45e0f8b164c4_1984209758.jpeg",
+                            "aspectRatio": null,
+                            "__typename": "ProductMediaDefaultImageType"
+                        },
+                        "__typename": "ProductMediaType"
+                    },
+                    "images": {
+                        "display": [{
+                            "default": {
+                                "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/b9a34a33-5699-4597-9ea1-cc1724d09678/b6f026cd-c3da-4fa3-9b2f-45e0f8b164c4_1984209758.jpeg?h=225&w=225",
+                                "__typename": "ProductImageType"
+                            },
+                            "__typename": "ProductAlternativeImageType"
+                        }],
+                        "__typename": "ProductImagesType"
+                    },
+                    "quantityInBasket": null,
+                    "superDepartmentName": "Mléčné, vejce a margaríny",
+                    "departmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDUyVDMyVCRHJ5JTIwYSUyMHR2YXJvaHk=",
+                    "departmentName": "Sýry a tvarohy",
+                    "aisleId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDUyVDMyVCRHJ5JTIwYSUyMHR2YXJvaHklN0NQbCVDMyVBMXRrb3YlQzMlQTklMjBhJTIwc3Ryb3VoYW4lQzMlQTklMjBzJUMzJUJEcnk=",
+                    "aisleName": "Plátkové a strouhané sýry",
+                    "shelfId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDUyVDMyVCRHJ5JTIwYSUyMHR2YXJvaHklN0NQbCVDMyVBMXRrb3YlQzMlQTklMjBhJTIwc3Ryb3VoYW4lQzMlQTklMjBzJUMzJUJEcnklN0NQbCVDMyVBMXRrb3YlQzMlQTklMjBzJUMzJUJEcnk=",
+                    "shelfName": "Plátkové sýry",
+                    "displayType": "Quantity",
+                    "productType": "SingleProduct",
+                    "charges": [],
+                    "averageWeight": 0,
+                    "bulkBuyLimit": 24,
+                    "maxQuantityAllowed": 24,
+                    "groupBulkBuyLimit": 0,
+                    "bulkBuyLimitMessage": null,
+                    "bulkBuyLimitGroupId": null,
+                    "timeRestrictedDelivery": null,
+                    "restrictedDelivery": null,
+                    "isInFavourites": null,
+                    "isNew": false,
+                    "isRestrictedOrderAmendment": null,
+                    "maxWeight": 0,
+                    "minWeight": 0,
+                    "increment": 0,
+                    "details": {
+                        "components": [{
+                            "isLowEverydayPricing": false,
+                            "__typename": "AdditionalInfo"
+                        }],
+                        "__typename": "ProductDetailsType"
+                    },
+                    "catchWeightList": null,
+                    "restrictions": [],
+                    "reviews": {
+                        "stats": {
+                            "noOfReviews": null,
+                            "overallRating": null,
+                            "overallRatingRange": null,
+                            "__typename": "ReviewStatsType"
+                        },
+                        "__typename": "ReviewsType"
+                    },
+                    "modelMetadata": null
+                },
+                "__typename": "CompositeResultType"
+            }, {
+                "node": {
+                    "typename": "ProductType",
+                    "context": null,
+                    "__typename": "ProductType",
+                    "sellers": {
+                        "__typename": "ProductSellers",
+                        "results": [{
+                            "id": "218209377",
+                            "__typename": "ProductType",
+                            "isForSale": true,
+                            "status": "AvailableForSale",
+                            "seller": null,
+                            "price": {
+                                "price": 69.9,
+                                "unitPrice": 279.6,
+                                "unitOfMeasure": "kg",
+                                "actual": 69.9,
+                                "__typename": "PriceType"
+                            },
+                            "promotions": [],
+                            "fulfilment": null
+                        }]
+                    },
+                    "id": "218209377",
+                    "tpnb": "218209377",
+                    "tpnc": "218209377",
+                    "gtin": "08593803421216",
+                    "adId": null,
+                    "baseProductId": "218209377",
+                    "title": "Madeta Jihočeské máslo 250g",
+                    "brandName": "Madeta",
+                    "shortDescription": null,
+                    "defaultImageUrl": "https://digitalcontent.api.tesco.com/v2/media/ghs/2cd49c04-1c80-42ea-b735-08919a302100/489deaef-cf8b-43c1-82b4-baddd69ec16b.jpeg?h=225&w=225",
+                    "superDepartmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55",
+                    "media": {
+                        "defaultImage": {
+                            "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/2cd49c04-1c80-42ea-b735-08919a302100/489deaef-cf8b-43c1-82b4-baddd69ec16b.jpeg",
+                            "aspectRatio": null,
+                            "__typename": "ProductMediaDefaultImageType"
+                        },
+                        "__typename": "ProductMediaType"
+                    },
+                    "images": {
+                        "display": [{
+                            "default": {
+                                "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/2cd49c04-1c80-42ea-b735-08919a302100/489deaef-cf8b-43c1-82b4-baddd69ec16b.jpeg?h=225&w=225",
+                                "__typename": "ProductImageType"
+                            },
+                            "__typename": "ProductAlternativeImageType"
+                        }],
+                        "__typename": "ProductImagesType"
+                    },
+                    "quantityInBasket": null,
+                    "superDepartmentName": "Mléčné, vejce a margaríny",
+                    "departmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDTSVDMyVBMXNsbywlMjBtYXJnYXIlQzMlQURueSUyMGElMjBwb21heiVDMyVBMW5reQ==",
+                    "departmentName": "Máslo, margaríny a pomazánky",
+                    "aisleId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDTSVDMyVBMXNsbywlMjBtYXJnYXIlQzMlQURueSUyMGElMjBwb21heiVDMyVBMW5reSU3Q00lQzMlQTFzbG8=",
+                    "aisleName": "Máslo",
+                    "shelfId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDTSVDMyVBMXNsbywlMjBtYXJnYXIlQzMlQURueSUyMGElMjBwb21heiVDMyVBMW5reSU3Q00lQzMlQTFzbG8lN0NNJUMzJUExc2xv",
+                    "shelfName": "Máslo",
+                    "displayType": "Quantity",
+                    "productType": "SingleProduct",
+                    "charges": [],
+                    "averageWeight": 0,
+                    "bulkBuyLimit": 24,
+                    "maxQuantityAllowed": 24,
+                    "groupBulkBuyLimit": 0,
+                    "bulkBuyLimitMessage": null,
+                    "bulkBuyLimitGroupId": null,
+                    "timeRestrictedDelivery": null,
+                    "restrictedDelivery": null,
+                    "isInFavourites": null,
+                    "isNew": false,
+                    "isRestrictedOrderAmendment": null,
+                    "maxWeight": 0,
+                    "minWeight": 0,
+                    "increment": 0,
+                    "details": {
+                        "components": [{
+                            "isLowEverydayPricing": false,
+                            "__typename": "AdditionalInfo"
+                        }],
+                        "__typename": "ProductDetailsType"
+                    },
+                    "catchWeightList": null,
+                    "restrictions": [],
+                    "reviews": {
+                        "stats": {
+                            "noOfReviews": 4,
+                            "overallRating": 1.8,
+                            "overallRatingRange": 5,
+                            "__typename": "ReviewStatsType"
+                        },
+                        "__typename": "ReviewsType"
+                    },
+                    "modelMetadata": null
+                },
+                "__typename": "CompositeResultType"
+            }, {
+                "node": {
+                    "typename": "ProductType",
+                    "context": null,
+                    "__typename": "ProductType",
+                    "sellers": {
+                        "__typename": "ProductSellers",
+                        "results": [{
+                            "id": "130292947",
+                            "__typename": "ProductType",
+                            "isForSale": true,
+                            "status": "AvailableForSale",
+                            "seller": null,
+                            "price": {
+                                "price": 389,
+                                "unitPrice": 389,
+                                "unitOfMeasure": "kg",
+                                "actual": 389,
+                                "__typename": "PriceType"
+                            },
+                            "promotions": [{
+                                "id": "94881233",
+                                "promotionType": null,
+                                "startDate": "2025-09-30T22:00:00Z",
+                                "endDate": "2025-10-28T23:00:00Z",
+                                "description": "279,00 Kč/kg s Clubcard",
+                                "unitSellingInfo": "279,00 Kč/kg",
+                                "price": {
+                                    "beforeDiscount": null,
+                                    "afterDiscount": 389,
+                                    "__typename": "PromotionPriceType"
+                                },
+                                "attributes": ["CLUBCARD_PRICING"],
+                                "__typename": "PromotionType"
+                            }],
+                            "fulfilment": null
+                        }]
+                    },
+                    "id": "130292947",
+                    "tpnb": "130292947",
+                    "tpnc": "130292947",
+                    "gtin": "02816570000000",
+                    "adId": null,
+                    "baseProductId": "130292947",
+                    "title": "Zlatý Sýr Cheddar",
+                    "brandName": "Zlatý Sýr",
+                    "shortDescription": null,
+                    "defaultImageUrl": "https://digitalcontent.api.tesco.com/v2/media/ghs/0efc0153-b68f-4f33-8fb0-e5694a966332/f200b44e-e3ab-441c-b954-3548661d8af9_1450674489.jpeg?h=225&w=225",
+                    "superDepartmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55",
+                    "media": {
+                        "defaultImage": {
+                            "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/0efc0153-b68f-4f33-8fb0-e5694a966332/f200b44e-e3ab-441c-b954-3548661d8af9_1450674489.jpeg",
+                            "aspectRatio": null,
+                            "__typename": "ProductMediaDefaultImageType"
+                        },
+                        "__typename": "ProductMediaType"
+                    },
+                    "images": {
+                        "display": [{
+                            "default": {
+                                "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/0efc0153-b68f-4f33-8fb0-e5694a966332/f200b44e-e3ab-441c-b954-3548661d8af9_1450674489.jpeg?h=225&w=225",
+                                "__typename": "ProductImageType"
+                            },
+                            "__typename": "ProductAlternativeImageType"
+                        }, {
+                            "default": {
+                                "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/14c66fc8-f170-4662-9188-d96eb9a66d4e/88ece244-3b6c-48f2-ba5e-837b7dc5ca0a_328721722.jpeg?h=225&w=225",
+                                "__typename": "ProductImageType"
+                            },
+                            "__typename": "ProductAlternativeImageType"
+                        }],
+                        "__typename": "ProductImagesType"
+                    },
+                    "quantityInBasket": null,
+                    "superDepartmentName": "Mléčné, vejce a margaríny",
+                    "departmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDUyVDMyVCRHJ5JTIwYSUyMHR2YXJvaHk=",
+                    "departmentName": "Sýry a tvarohy",
+                    "aisleId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDUyVDMyVCRHJ5JTIwYSUyMHR2YXJvaHklN0NQdWx0b3YlQzMlQTklMjBzJUMzJUJEcnk=",
+                    "aisleName": "Pultové sýry",
+                    "shelfId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDUyVDMyVCRHJ5JTIwYSUyMHR2YXJvaHklN0NQdWx0b3YlQzMlQTklMjBzJUMzJUJEcnklN0NQdWx0b3YlQzMlQTklMjBzJUMzJUJEcnklMjBuZXV6ZW4lQzMlQTk=",
+                    "shelfName": "Pultové sýry neuzené",
+                    "displayType": "Quantity",
+                    "productType": "CatchWeightProducts",
+                    "charges": [],
+                    "averageWeight": 1.25,
+                    "bulkBuyLimit": 1,
+                    "maxQuantityAllowed": 1,
+                    "groupBulkBuyLimit": 0,
+                    "bulkBuyLimitMessage": null,
+                    "bulkBuyLimitGroupId": null,
+                    "timeRestrictedDelivery": null,
+                    "restrictedDelivery": null,
+                    "isInFavourites": null,
+                    "isNew": false,
+                    "isRestrictedOrderAmendment": null,
+                    "maxWeight": 2.4,
+                    "minWeight": 0.1,
+                    "increment": 100,
+                    "details": {
+                        "components": [{
+                            "isLowEverydayPricing": false,
+                            "__typename": "AdditionalInfo"
+                        }],
+                        "__typename": "ProductDetailsType"
+                    },
+                    "catchWeightList": [{
+                        "price": 38.9,
+                        "weight": 0.1,
+                        "default": true,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 77.8,
+                        "weight": 0.2,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 116.7,
+                        "weight": 0.3,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 155.6,
+                        "weight": 0.4,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 194.5,
+                        "weight": 0.5,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 233.4,
+                        "weight": 0.6,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 272.3,
+                        "weight": 0.7,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 311.2,
+                        "weight": 0.8,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 350.1,
+                        "weight": 0.9,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 389,
+                        "weight": 1,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 427.9,
+                        "weight": 1.1,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 466.8,
+                        "weight": 1.2,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 505.7,
+                        "weight": 1.3,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 544.6,
+                        "weight": 1.4,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 583.5,
+                        "weight": 1.5,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 622.4,
+                        "weight": 1.6,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 661.3,
+                        "weight": 1.7,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 700.2,
+                        "weight": 1.8,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 739.1,
+                        "weight": 1.9,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 778,
+                        "weight": 2,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 816.9,
+                        "weight": 2.1,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 855.8,
+                        "weight": 2.2,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 894.7,
+                        "weight": 2.3,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }, {
+                        "price": 933.6,
+                        "weight": 2.4,
+                        "default": false,
+                        "__typename": "CatchWeightInfoType"
+                    }],
+                    "restrictions": [],
+                    "reviews": {
+                        "stats": {
+                            "noOfReviews": 2,
+                            "overallRating": 1,
+                            "overallRatingRange": 5,
+                            "__typename": "ReviewStatsType"
+                        },
+                        "__typename": "ReviewsType"
+                    },
+                    "modelMetadata": null
+                },
+                "__typename": "CompositeResultType"
+            }, {
+                "node": {
+                    "typename": "ProductType",
+                    "context": null,
+                    "__typename": "ProductType",
+                    "sellers": {
+                        "__typename": "ProductSellers",
+                        "results": [{
+                            "id": "200348565",
+                            "__typename": "ProductType",
+                            "isForSale": true,
+                            "status": "AvailableForSale",
+                            "seller": null,
+                            "price": {
+                                "price": 11.9,
+                                "unitPrice": 79.33,
+                                "unitOfMeasure": "kg",
+                                "actual": 11.9,
+                                "__typename": "PriceType"
+                            },
+                            "promotions": [{
+                                "id": "9ac441e5-6620-4f94-86bc-8efc02f6d7de",
+                                "promotionType": null,
+                                "startDate": "2025-10-17T22:00:00Z",
+                                "endDate": "2025-10-25T22:00:00Z",
+                                "description": "33%, předtím 17.90 Kč",
+                                "unitSellingInfo": "79,33 Kč/kg",
+                                "price": {
+                                    "beforeDiscount": 17.9,
+                                    "afterDiscount": 11.9,
+                                    "__typename": "PromotionPriceType"
+                                },
+                                "attributes": [],
+                                "__typename": "PromotionType"
+                            }],
+                            "fulfilment": null
+                        }]
+                    },
+                    "id": "200348565",
+                    "tpnb": "200348565",
+                    "tpnc": "200348565",
+                    "gtin": "08593807567132",
+                    "adId": null,
+                    "baseProductId": "200348565",
+                    "title": "Olma Florian Smetanový jogurt jahoda 150g",
+                    "brandName": "Olma",
+                    "shortDescription": null,
+                    "defaultImageUrl": "https://digitalcontent.api.tesco.com/v2/media/ghs/03de6125-d700-42d0-815a-6b80f75b7707/da0557e7-78d8-4209-877a-ad4073e5a825_631701389.jpeg?h=225&w=225",
+                    "superDepartmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55",
+                    "media": {
+                        "defaultImage": {
+                            "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/03de6125-d700-42d0-815a-6b80f75b7707/da0557e7-78d8-4209-877a-ad4073e5a825_631701389.jpeg",
+                            "aspectRatio": null,
+                            "__typename": "ProductMediaDefaultImageType"
+                        },
+                        "__typename": "ProductMediaType"
+                    },
+                    "images": {
+                        "display": [{
+                            "default": {
+                                "url": "https://digitalcontent.api.tesco.com/v2/media/ghs/03de6125-d700-42d0-815a-6b80f75b7707/da0557e7-78d8-4209-877a-ad4073e5a825_631701389.jpeg?h=225&w=225",
+                                "__typename": "ProductImageType"
+                            },
+                            "__typename": "ProductAlternativeImageType"
+                        }],
+                        "__typename": "ProductImagesType"
+                    },
+                    "quantityInBasket": null,
+                    "superDepartmentName": "Mléčné, vejce a margaríny",
+                    "departmentId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDSm9ndXJ0eSUyMGElMjBkZXplcnR5",
+                    "departmentName": "Jogurty a dezerty",
+                    "aisleId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDSm9ndXJ0eSUyMGElMjBkZXplcnR5JTdDT2NodWNlbiVDMyVBOSUyMGpvZ3VydHk=",
+                    "aisleName": "Ochucené jogurty",
+                    "shelfId": "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55JTdDSm9ndXJ0eSUyMGElMjBkZXplcnR5JTdDT2NodWNlbiVDMyVBOSUyMGpvZ3VydHklN0NQbG5vdHUlQzQlOERuJUMzJUE5JTIwb2NodWNlbiVDMyVBOSUyMGpvZ3VydHk=",
+                    "shelfName": "Plnotučné ochucené jogurty",
+                    "displayType": "Quantity",
+                    "productType": "SingleProduct",
+                    "charges": [],
+                    "averageWeight": 0,
+                    "bulkBuyLimit": 24,
+                    "maxQuantityAllowed": 24,
+                    "groupBulkBuyLimit": 0,
+                    "bulkBuyLimitMessage": null,
+                    "bulkBuyLimitGroupId": null,
+                    "timeRestrictedDelivery": null,
+                    "restrictedDelivery": null,
+                    "isInFavourites": null,
+                    "isNew": false,
+                    "isRestrictedOrderAmendment": null,
+                    "maxWeight": 0,
+                    "minWeight": 0,
+                    "increment": 0,
+                    "details": {
+                        "components": [{
+                            "isLowEverydayPricing": false,
+                            "__typename": "AdditionalInfo"
+                        }],
+                        "__typename": "ProductDetailsType"
+                    },
+                    "catchWeightList": null,
+                    "restrictions": [],
+                    "reviews": {
+                        "stats": {
+                            "noOfReviews": null,
+                            "overallRating": null,
+                            "overallRatingRange": null,
+                            "__typename": "ReviewStatsType"
+                        },
+                        "__typename": "ReviewsType"
+                    },
+                    "modelMetadata": null
+                },
+                "__typename": "CompositeResultType"
+            }],
+            "facetLists": [{
+                "__typename": "ProductListFacetsType",
+                "category": "Superdepartment",
+                "categoryId": "superDepartment",
+                "facets": [{
+                    "facetId": "Mléčné, vejce a margaríny",
+                    "facetName": "Mléčné, vejce a margaríny",
+                    "binCount": 979,
+                    "isSelected": true,
+                    "__typename": "FacetType"
+                }]
+            }, {
+                "__typename": "ProductListFacetsType",
+                "category": "Department",
+                "categoryId": "department",
+                "facets": [{
+                    "facetId": "BIO",
+                    "facetName": "BIO",
+                    "binCount": 19,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Mléko, mléčné a jogurtové nápoje",
+                    "facetName": "Mléko, mléčné a jogurtové nápoje",
+                    "binCount": 118,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Jogurty a dezerty",
+                    "facetName": "Jogurty a dezerty",
+                    "binCount": 346,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Smetany, šlehačky a zakysané výrobky",
+                    "facetName": "Smetany, šlehačky a zakysané výrobky",
+                    "binCount": 34,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Sýry a tvarohy",
+                    "facetName": "Sýry a tvarohy",
+                    "binCount": 347,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Máslo, margaríny a pomazánky",
+                    "facetName": "Máslo, margaríny a pomazánky",
+                    "binCount": 56,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Majonézy, dresinky a tatarské omáčky",
+                    "facetName": "Majonézy, dresinky a tatarské omáčky",
+                    "binCount": 48,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Vejce a droždí",
+                    "facetName": "Vejce a droždí",
+                    "binCount": 11,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }]
+            }, {
+                "__typename": "ProductListFacetsType",
+                "category": "Brand",
+                "categoryId": "brands",
+                "facets": [{
+                    "facetId": "Tesco",
+                    "facetName": "Tesco",
+                    "binCount": 136,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Madeta",
+                    "facetName": "Madeta",
+                    "binCount": 74,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Zott",
+                    "facetName": "Zott",
+                    "binCount": 49,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Milko",
+                    "facetName": "Milko",
+                    "binCount": 44,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Mlékárna Kunín",
+                    "facetName": "Mlékárna Kunín",
+                    "binCount": 31,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Müller",
+                    "facetName": "Müller",
+                    "binCount": 31,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Olma",
+                    "facetName": "Olma",
+                    "binCount": 31,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Ehrmann",
+                    "facetName": "Ehrmann",
+                    "binCount": 27,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Président",
+                    "facetName": "Président",
+                    "binCount": 25,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Activia",
+                    "facetName": "Activia",
+                    "binCount": 24,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Lučina",
+                    "facetName": "Lučina",
+                    "binCount": 23,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Tatra",
+                    "facetName": "Tatra",
+                    "binCount": 19,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Choceňská Mlékárna",
+                    "facetName": "Choceňská Mlékárna",
+                    "binCount": 18,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Hellmann's",
+                    "facetName": "Hellmann's",
+                    "binCount": 17,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Liptov",
+                    "facetName": "Liptov",
+                    "binCount": 17,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Mlékárna Valašské Meziříčí",
+                    "facetName": "Mlékárna Valašské Meziříčí",
+                    "binCount": 17,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Pribináček",
+                    "facetName": "Pribináček",
+                    "binCount": 16,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Gervais",
+                    "facetName": "Gervais",
+                    "binCount": 15,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Hollandia",
+                    "facetName": "Hollandia",
+                    "binCount": 15,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Apetito",
+                    "facetName": "Apetito",
+                    "binCount": 13,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Unbranded",
+                    "facetName": "Unbranded",
+                    "binCount": 13,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Kinder",
+                    "facetName": "Kinder",
+                    "binCount": 12,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Smetanito",
+                    "facetName": "Smetanito",
+                    "binCount": 12,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Actimel",
+                    "facetName": "Actimel",
+                    "binCount": 11,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Tesco Finest",
+                    "facetName": "Tesco Finest",
+                    "binCount": 11,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Bohušovická mlékárna",
+                    "facetName": "Bohušovická mlékárna",
+                    "binCount": 10,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Fantasia",
+                    "facetName": "Fantasia",
+                    "binCount": 9,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Krajanka",
+                    "facetName": "Krajanka",
+                    "binCount": 9,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Veselá Kráva",
+                    "facetName": "Veselá Kráva",
+                    "binCount": 9,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Leerdammer",
+                    "facetName": "Leerdammer",
+                    "binCount": 8,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Sedlčanský",
+                    "facetName": "Sedlčanský",
+                    "binCount": 8,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Spak",
+                    "facetName": "Spak",
+                    "binCount": 8,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Agricol",
+                    "facetName": "Agricol",
+                    "binCount": 7,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Bohemilk",
+                    "facetName": "Bohemilk",
+                    "binCount": 7,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Král Sýrů",
+                    "facetName": "Král Sýrů",
+                    "binCount": 7,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "YoPro",
+                    "facetName": "YoPro",
+                    "binCount": 7,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "AGRO-LA",
+                    "facetName": "AGRO-LA",
+                    "binCount": 6,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Bobík",
+                    "facetName": "Bobík",
+                    "binCount": 6,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Galbani",
+                    "facetName": "Galbani",
+                    "binCount": 6,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Kiri",
+                    "facetName": "Kiri",
+                    "binCount": 6,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Kostíci",
+                    "facetName": "Kostíci",
+                    "binCount": 6,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Rama",
+                    "facetName": "Rama",
+                    "binCount": 6,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Vitana",
+                    "facetName": "Vitana",
+                    "binCount": 6,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "A.W.",
+                    "facetName": "A.W.",
+                    "binCount": 5,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Creamfields",
+                    "facetName": "Creamfields",
+                    "binCount": 5,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Flora",
+                    "facetName": "Flora",
+                    "binCount": 4,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Hochwald",
+                    "facetName": "Hochwald",
+                    "binCount": 4,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Kapucín",
+                    "facetName": "Kapucín",
+                    "binCount": 4,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Krolewski",
+                    "facetName": "Krolewski",
+                    "binCount": 4,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Lye Cross Farm",
+                    "facetName": "Lye Cross Farm",
+                    "binCount": 4,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Meggle",
+                    "facetName": "Meggle",
+                    "binCount": 4,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Moravia",
+                    "facetName": "Moravia",
+                    "binCount": 4,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "ProActiv",
+                    "facetName": "ProActiv",
+                    "binCount": 4,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Babybel",
+                    "facetName": "Babybel",
+                    "binCount": 3,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Dobrý Den",
+                    "facetName": "Dobrý Den",
+                    "binCount": 3,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Gran Moravia",
+                    "facetName": "Gran Moravia",
+                    "binCount": 3,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Italat",
+                    "facetName": "Italat",
+                    "binCount": 3,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Zlatý Sýr",
+                    "facetName": "Zlatý Sýr",
+                    "binCount": 3,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Bambino",
+                    "facetName": "Bambino",
+                    "binCount": 2,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Carte d’Or",
+                    "facetName": "Carte d’Or",
+                    "binCount": 2,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Danette",
+                    "facetName": "Danette",
+                    "binCount": 2,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Debic",
+                    "facetName": "Debic",
+                    "binCount": 2,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Energy Coffee",
+                    "facetName": "Energy Coffee",
+                    "binCount": 2,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Jaroměřická Mlékárna",
+                    "facetName": "Jaroměřická Mlékárna",
+                    "binCount": 2,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Milsy",
+                    "facetName": "Milsy",
+                    "binCount": 2,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Omega",
+                    "facetName": "Omega",
+                    "binCount": 2,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Parmalat",
+                    "facetName": "Parmalat",
+                    "binCount": 2,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Perla",
+                    "facetName": "Perla",
+                    "binCount": 2,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Pragolaktos",
+                    "facetName": "Pragolaktos",
+                    "binCount": 2,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Starbucks",
+                    "facetName": "Starbucks",
+                    "binCount": 2,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Šumavský",
+                    "facetName": "Šumavský",
+                    "binCount": 2,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Alfa",
+                    "facetName": "Alfa",
+                    "binCount": 1,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Ammerländer",
+                    "facetName": "Ammerländer",
+                    "binCount": 1,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Balsýr",
+                    "facetName": "Balsýr",
+                    "binCount": 1,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Blaník",
+                    "facetName": "Blaník",
+                    "binCount": 1,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Buona",
+                    "facetName": "Buona",
+                    "binCount": 1,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Ceres ",
+                    "facetName": "Ceres ",
+                    "binCount": 1,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Créme Bonjour",
+                    "facetName": "Créme Bonjour",
+                    "binCount": 1,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Džiugas",
+                    "facetName": "Džiugas",
+                    "binCount": 1,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Fala",
+                    "facetName": "Fala",
+                    "binCount": 1,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Heinz",
+                    "facetName": "Heinz",
+                    "binCount": 1,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Hell",
+                    "facetName": "Hell",
+                    "binCount": 1,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Hera",
+                    "facetName": "Hera",
+                    "binCount": 1,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Iva",
+                    "facetName": "Iva",
+                    "binCount": 1,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Laura",
+                    "facetName": "Laura",
+                    "binCount": 1,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Lurpak",
+                    "facetName": "Lurpak",
+                    "binCount": 1,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Mlékárna Radonice",
+                    "facetName": "Mlékárna Radonice",
+                    "binCount": 1,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Nickelodeon",
+                    "facetName": "Nickelodeon",
+                    "binCount": 1,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Philadelphia",
+                    "facetName": "Philadelphia",
+                    "binCount": 1,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Prima",
+                    "facetName": "Prima",
+                    "binCount": 1,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Unrbanded",
+                    "facetName": "Unrbanded",
+                    "binCount": 1,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Vitala",
+                    "facetName": "Vitala",
+                    "binCount": 1,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Zanetti",
+                    "facetName": "Zanetti",
+                    "binCount": 1,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Zorba",
+                    "facetName": "Zorba",
+                    "binCount": 1,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }, {
+                    "facetId": "Zálesák",
+                    "facetName": "Zálesák",
+                    "binCount": 1,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }]
+            }, {
+                "__typename": "ProductListFacetsType",
+                "category": "Promotion",
+                "categoryId": "offers",
+                "facets": [{
+                    "facetId": "offers",
+                    "facetName": "Special Offers",
+                    "binCount": 236,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }]
+            }, {
+                "__typename": "ProductListFacetsType",
+                "category": "New",
+                "categoryId": "new",
+                "facets": [{
+                    "facetId": "new",
+                    "facetName": "New",
+                    "binCount": 0,
+                    "isSelected": false,
+                    "__typename": "FacetType"
+                }]
+            }],
+            "facets": null,
+            "options": {
+                "sortBy": ["relevance", "price-ascending", "price-descending"],
+                "__typename": "ListOptionsType"
+            },
+            "__typename": "ProductListType"
+        }
+    },
+    "status": 200
+}]

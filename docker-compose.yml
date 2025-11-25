@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+      - ./testing/tesco_products.json:/usr/share/nginx/html/tesco_products.json:ro
+    restart: unless-stopped

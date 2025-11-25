@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Supermarket - Tesco (Demo)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">Tesco Demo</div>
+    <div class="search-cart">
+      <input id="search" placeholder="Search products or brands..." />
+      <button id="cart-btn">Cart (<span id="cart-count">0</span>)</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <aside class="filters">
+      <h3>Categories</h3>
+      <div id="categories"></div>
+      <h3>Sort</h3>
+      <select id="sort">
+        <option value="default">Featured</option>
+        <option value="price-asc">Price: Low → High</option>
+        <option value="price-desc">Price: High → Low</option>
+      </select>
+    </aside>
+
+    <section class="products-area">
+      <div id="product-grid" class="product-grid"></div>
+    </section>
+  </main>
+
+  <div id="cart-modal" class="modal hidden">
+    <div class="modal-content">
+      <button id="close-cart" class="close">×</button>
+      <h2>Your cart</h2>
+      <div id="cart-items"></div>
+      <div class="cart-footer">
+        <div>Total: £<span id="cart-total">0.00</span></div>
+        <button id="checkout">Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">Demo supermarket frontend — loads static JSON from <code>testing/tesco_products.json</code></footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
