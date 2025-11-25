@@ -3,48 +3,55 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Supermarket - Tesco (Demo)</title>
+  <title>Supermarket Browse — BSS</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="header">
-    <div class="logo">Tesco Demo</div>
-    <div class="search-cart">
-      <input id="search" placeholder="Search products or brands..." />
-      <button id="cart-btn">Cart (<span id="cart-count">0</span>)</button>
+  <header class="topbar">
+    <div class="brand">BSS Supermarket Viewer</div>
+    <div class="controls">
+      <select id="sourceSelect" aria-label="Select supermarket">
+        <option value="data/tesco_products.json">Tesco</option>
+        <option value="data/albert_products.json">Albert</option>
+      </select>
+      <input id="search" placeholder="Search products..." />
+      <select id="sort">
+        <option value="relevance">Relevance</option>
+        <option value="price-asc">Price: low → high</option>
+        <option value="price-desc">Price: high → low</option>
+        <option value="name-asc">Name: A → Z</option>
+        <option value="name-desc">Name: Z → A</option>
+      </select>
     </div>
   </header>
 
   <main class="container">
-    <aside class="filters">
-      <h3>Categories</h3>
-      <div id="categories"></div>
-      <h3>Sort</h3>
-      <select id="sort">
-        <option value="default">Featured</option>
-        <option value="price-asc">Price: Low → High</option>
-        <option value="price-desc">Price: High → Low</option>
+    <aside class="sidebar">
+      <h3>Filters</h3>
+      <label>Category</label>
+      <select id="categoryFilter">
+        <option value="">All categories</option>
       </select>
+      <label>Price range</label>
+      <div class="price-inputs">
+        <input id="priceMin" type="number" placeholder="Min" min="0" step="1" />
+        <input id="priceMax" type="number" placeholder="Max" min="0" step="1" />
+      </div>
+      <label class="checkbox-label">
+        <input type="checkbox" id="saleOnly" /> Only on sale
+      </label>
+      <button id="applyFilters">Apply</button>
+      <div class="notes">Tip: click a product to open image in full size.</div>
     </aside>
 
-    <section class="products-area">
-      <div id="product-grid" class="product-grid"></div>
+    <section class="content">
+      <div id="meta" class="meta">Loading products…</div>
+      <div id="grid" class="grid"></div>
+      <div id="pager" class="pager"></div>
     </section>
   </main>
 
-  <div id="cart-modal" class="modal hidden">
-    <div class="modal-content">
-      <button id="close-cart" class="close">×</button>
-      <h2>Your cart</h2>
-      <div id="cart-items"></div>
-      <div class="cart-footer">
-        <div>Total: £<span id="cart-total">0.00</span></div>
-        <button id="checkout">Checkout</button>
-      </div>
-    </div>
-  </div>
-
-  <footer class="footer">Demo supermarket frontend — loads static JSON from <code>testing/tesco_products.json</code></footer>
+  <footer class="footer">Built from local JSON data • Dockerized static site</footer>
 
   <script src="app.js"></script>
 </body>

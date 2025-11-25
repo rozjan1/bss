@@ -1,181 +1,142 @@
-// When served from the container the file is mounted at the web root as /tesco_products.json
-const PRODUCTS_JSON = '/tesco_products.json';
+const selectors = {
+  source: document.getElementById('sourceSelect'),
+  search: document.getElementById('search'),
+  sort: document.getElementById('sort'),
+  grid: document.getElementById('grid'),
+  meta: document.getElementById('meta'),
+  category: document.getElementById('categoryFilter'),
+  priceMin: document.getElementById('priceMin'),
+  priceMax: document.getElementById('priceMax'),
+  saleOnly: document.getElementById('saleOnly'),
+  applyFilters: document.getElementById('applyFilters'),
+  pager: document.getElementById('pager')
+}
 
-let products = [];
-let cart = JSON.parse(localStorage.getItem('cart') || '{}');
+let products = []
+let filtered = []
+let page = 1
+const PAGE_SIZE = 48
 
-const $ = sel => document.querySelector(sel);
-const $$ = sel => Array.from(document.querySelectorAll(sel));
+function fmtPrice(v){ if(v==null) return '—'; return Number(v).toFixed(2) + ' Kč' }
 
-async function loadProducts(){
+function parsePrice(raw){
+  if(raw == null) return null
+  if(typeof raw === 'number') return raw
+  // try to extract numeric parts (handles "9,90 Kč" or "9.90" )
+  const s = String(raw).replace(/\s|Kč|CZK/gi, '').replace(',', '.').replace(/[^0-9.\-]/g,'')
+  const n = parseFloat(s)
+  return Number.isFinite(n) ? n : null
+}
+
+function normalizeProduct(p){
+  // attach a normalized numeric price used for sorting/filtering
+  const sale = parsePrice(p.sale_price ?? p.sale_price)
+  const orig = parsePrice(p.original_price ?? p.original_price)
+  const fallback = parsePrice(p.price ?? p.original_price)
+  p._price = sale ?? orig ?? fallback ?? (p.sale_ppu ?? p.original_ppu ?? null)
+  return p
+}
+
+async function loadSource(url){
+  selectors.meta.textContent = 'Loading products…'
   try{
-    const res = await fetch(PRODUCTS_JSON);
-    const raw = await res.json();
+    const res = await fetch(url)
+    const raw = await res.json()
+    products = raw.map(normalizeProduct)
+    filtered = products.slice()
+    populateCategories()
+    page = 1
+    render()
+  }catch(e){ selectors.meta.textContent = 'Failed to load: '+e.message }
+}
 
-    // normalize different possible shapes:
-    // - an array at the root
-    // - { products: [...] }
-    // - { data: { products: [...] } }
-    if(Array.isArray(raw)){
-      products = raw;
-    } else if(raw && Array.isArray(raw.products)){
-      products = raw.products;
-    } else if(raw && raw.data && Array.isArray(raw.data.products)){
-      products = raw.data.products;
-    } else if(raw && raw.results && Array.isArray(raw.results)){
-      products = raw.results;
-    } else {
-      // attempt to find the first array value in the object
-      const firstArray = Object.values(raw).find(v=>Array.isArray(v));
-      products = firstArray || [];
+function populateCategories(){
+  const cats = Array.from(new Set(products.map(p=>p.product_category||p.category||'Other'))).filter(Boolean).sort()
+  selectors.category.innerHTML = '<option value="">All categories</option>' + cats.map(c=>`<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`).join('')
+}
+
+function escapeHtml(s){ return (s+'').replace(/[&<>"']/g, c=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c])) }
+
+function applyAllFilters(){
+  const q = selectors.search.value.trim().toLowerCase()
+  const terms = q.split(/\s+/).filter(Boolean)
+  const cat = selectors.category.value
+  const min = parseFloat(selectors.priceMin.value)
+  const max = parseFloat(selectors.priceMax.value)
+  const saleOnly = selectors.saleOnly.checked
+
+  filtered = products.filter(p=>{
+    if(cat && (p.product_category||p.category||'') !== cat) return false
+    
+    const price = p._price
+    if(price != null) {
+      if(!isNaN(min) && min > 0 && price < min) return false
+      if(!isNaN(max) && max > 0 && price > max) return false
     }
-  }catch(e){
-    console.error('Failed to load products', e);
-    products = [];
+
+    if(saleOnly) {
+      const isSale = (p.sale_price != null && p.sale_price !== p.original_price) || !!p.sale_requirement
+      if(!isSale) return false
+    }
+
+    if(terms.length > 0){ 
+      const name = (p.item_name||p.name||p.title||'').toLowerCase()
+      if(!terms.every(term => name.includes(term))) return false
+    }
+    return true
+  })
+
+  const sort = selectors.sort.value
+  if(sort==='price-asc') filtered.sort((a,b)=>( (a._price??Infinity)-(b._price??Infinity) ))
+  if(sort==='price-desc') filtered.sort((a,b)=>( (b._price??-Infinity)-(a._price??-Infinity) ))
+  if(sort==='name-asc') filtered.sort((a,b)=> (a.item_name||a.name||'').localeCompare(b.item_name||b.name||'') )
+  if(sort==='name-desc') filtered.sort((a,b)=> (b.item_name||b.name||'').localeCompare(a.item_name||a.name||'') )
+  
+  page = 1
+  render()
+}
+
+function render(){
+  selectors.meta.textContent = `Showing ${filtered.length} products — page ${page}`
+  selectors.grid.innerHTML = ''
+  const start = (page-1)*PAGE_SIZE
+  const pageItems = filtered.slice(start, start+PAGE_SIZE)
+  for(const p of pageItems){
+    const card = document.createElement('div'); card.className='card'
+    const img = document.createElement('img'); img.src = p.image_url || p.image || '';
+    img.alt = p.item_name || p.name || ''
+    img.addEventListener('click', ()=> window.open(img.src, '_blank'))
+    const title = document.createElement('div'); title.className='title'; title.textContent = p.item_name || p.name || 'Unnamed'
+    const metaRow = document.createElement('div'); metaRow.className='metaRow'
+  const price = document.createElement('div'); price.className='price'; price.textContent = fmtPrice(p._price)
+  const ppu = document.createElement('div'); ppu.className='ppu'; ppu.textContent = (p.sale_ppu??p.original_ppu??'') ? `${p.sale_ppu??p.original_ppu} Kč / ${p.unit_code??''}` : ''
+    metaRow.appendChild(price); metaRow.appendChild(ppu)
+    const cat = document.createElement('div'); cat.className='ppu'; cat.textContent = p.product_category || ''
+    const badge = document.createElement('div'); if(p.sale_requirement){ badge.className='badge'; badge.textContent = p.sale_requirement }
+    card.appendChild(img); card.appendChild(title); card.appendChild(metaRow); card.appendChild(cat); if(p.sale_requirement) card.appendChild(badge)
+    selectors.grid.appendChild(card)
   }
+  renderPager()
 }
 
-function currency(n){
-  return Number(n).toFixed(2);
+function renderPager(){
+  const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE))
+  selectors.pager.innerHTML = ''
+  if(totalPages<=1) return
+  const prev = document.createElement('button'); prev.textContent='◀ Prev'; prev.disabled = page<=1; prev.onclick=()=>{ page--; render() }
+  const next = document.createElement('button'); next.textContent='Next ▶'; next.disabled = page>=totalPages; next.onclick=()=>{ page++; render() }
+  selectors.pager.appendChild(prev)
+  const info = document.createElement('span'); info.style.margin='0 12px'; info.textContent = `${page} / ${totalPages}`
+  selectors.pager.appendChild(info)
+  selectors.pager.appendChild(next)
 }
 
-function renderCategories(){
-  const cats = [...new Set(products.map(p=>p.category || 'Uncategorized'))];
-  const container = $('#categories');
-  container.innerHTML = '';
-  cats.forEach(c=>{
-    const btn = document.createElement('button');
-    btn.textContent = c;
-    btn.className = 'cat-btn';
-    btn.onclick = ()=>{
-      $$('#product-grid .card').forEach(card=>{
-        card.style.display = (card.dataset.category===c || c==='All') ? '' : 'none';
-      });
-    };
-    container.appendChild(btn);
-  });
-  // add show all
-  const all = document.createElement('button');
-  all.textContent = 'All';
-  all.onclick = ()=> $$('#product-grid .card').forEach(card=>card.style.display='');
-  container.prepend(all);
-}
+selectors.source.addEventListener('change', e=> loadSource(e.target.value))
+selectors.search.addEventListener('input', ()=>{ page=1; applyAllFilters() })
+selectors.sort.addEventListener('change', applyAllFilters)
+selectors.applyFilters.addEventListener('click', applyAllFilters)
+selectors.priceMin.addEventListener('input', applyAllFilters)
+selectors.saleOnly.addEventListener('change', applyAllFilters)
 
-function renderProducts(items){
-  const grid = $('#product-grid');
-  grid.innerHTML = '';
-  if(!items || items.length===0){
-    grid.innerHTML = '<div style="padding:24px;color:#666">No products found in the JSON file.</div>';
-    return;
-  }
-  items.forEach(p=>{
-    const card = document.createElement('div');
-    card.className = 'card';
-    card.dataset.sku = p.sku || p.id || '';
-    card.dataset.category = p.category || 'Uncategorized';
-
-  const img = document.createElement('img');
-  img.src = p.image || p.image_url || p.thumbnail || (p.images && p.images[0]) || 'https://via.placeholder.com/220x140?text=No+Image';
-    img.alt = p.title || p.name || 'Product';
-
-    const title = document.createElement('div');
-    title.className = 'title';
-    title.textContent = p.title || p.name || 'Untitled';
-
-    const meta = document.createElement('div');
-    meta.className = 'meta';
-  meta.textContent = p.brand ? p.brand : (p.manufacturer || p.supplier || '');
-
-    const price = document.createElement('div');
-    price.className = 'price';
-  // price fields vary per dataset
-  const priceVal = p.price || p.unit_price || p.price_including_tax || p.sale_price || p.price_gross || 0;
-  price.textContent = '£' + currency(priceVal);
-
-    const btn = document.createElement('button');
-    btn.textContent = 'Add to cart';
-    btn.onclick = ()=> addToCart(p);
-
-    card.appendChild(img);
-    card.appendChild(title);
-    card.appendChild(meta);
-    card.appendChild(price);
-    card.appendChild(btn);
-    grid.appendChild(card);
-  });
-}
-
-function addToCart(p){
-  const key = p.sku || p.id || p.ean || p.upc || p.name;
-  if(!cart[key]) cart[key] = {...p, qty:0};
-  cart[key].qty += 1;
-  saveCart();
-  updateCartUI();
-}
-
-function saveCart(){
-  localStorage.setItem('cart', JSON.stringify(cart));
-}
-
-function updateCartUI(){
-  const count = Object.values(cart).reduce((s,i)=>s + (i.qty||0),0);
-  $('#cart-count').textContent = count;
-}
-
-function openCart(){
-  $('#cart-modal').classList.remove('hidden');
-  const container = $('#cart-items');
-  container.innerHTML = '';
-  let total = 0;
-  Object.values(cart).forEach(item=>{
-    const div = document.createElement('div');
-    div.className = 'cart-item';
-    const img = document.createElement('img');
-    img.src = item.image || item.image_url || 'https://via.placeholder.com/64';
-    const meta = document.createElement('div');
-    meta.innerHTML = `<div style="font-weight:600">${item.title||item.name}</div><div>£${currency(item.price||item.unit_price||0)} × ${item.qty}</div>`;
-    const controls = document.createElement('div');
-    controls.innerHTML = `<button class="qty-minus">-</button><button class="qty-plus">+</button><button class="remove">Remove</button>`;
-
-    controls.querySelector('.qty-minus').onclick = ()=>{ item.qty = Math.max(0,(item.qty||0)-1); if(item.qty===0) delete cart[item.sku||item.id||item.name]; saveCart(); openCart(); updateCartUI(); };
-    controls.querySelector('.qty-plus').onclick = ()=>{ item.qty = (item.qty||0)+1; saveCart(); openCart(); updateCartUI(); };
-    controls.querySelector('.remove').onclick = ()=>{ delete cart[item.sku||item.id||item.name]; saveCart(); openCart(); updateCartUI(); };
-
-    div.appendChild(img);
-    div.appendChild(meta);
-    div.appendChild(controls);
-    container.appendChild(div);
-    total += (Number(item.price||item.unit_price||0) * (item.qty||0));
-  });
-  $('#cart-total').textContent = currency(total);
-}
-
-function closeCart(){
-  $('#cart-modal').classList.add('hidden');
-}
-
-function setupHandlers(){
-  $('#cart-btn').onclick = openCart;
-  $('#close-cart').onclick = closeCart;
-  $('#search').addEventListener('input', e=>{
-    const q = e.target.value.toLowerCase().trim();
-    const filtered = products.filter(p=>((p.title||p.name||'').toLowerCase().includes(q) || (p.brand||'').toLowerCase().includes(q)));
-    renderProducts(filtered);
-  });
-  $('#sort').onchange = e=>{
-    const val = e.target.value;
-    let items = [...products];
-    if(val==='price-asc') items.sort((a,b)=>(a.price||a.unit_price||0)-(b.price||b.unit_price||0));
-    if(val==='price-desc') items.sort((a,b)=>(b.price||b.unit_price||0)-(a.price||a.unit_price||0));
-    renderProducts(items);
-  };
-  $('#checkout').onclick = ()=> alert('Checkout demo — not implemented');
-}
-
-(async function init(){
-  await loadProducts();
-  renderCategories();
-  renderProducts(products);
-  setupHandlers();
-  updateCartUI();
-})();
+// initial load
+loadSource(selectors.source.value)

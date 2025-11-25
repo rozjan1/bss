@@ -1,5 +1,6 @@
 import requests
 from time import sleep
+import json
 
 
 categories = {
@@ -173,3 +174,7 @@ if __name__ == "__main__":
     
     print("====================================")
     print(all_products)
+
+    # Save collected products to a JSON file
+    with open('albert_products.json', 'w', encoding='utf-8') as f:
+        json.dump(all_products, f, ensure_ascii=False, indent=2)
