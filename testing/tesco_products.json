@@ -3,7 +3,11 @@
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
         "item_name": "Banány",
+<<<<<<< HEAD
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/ee3ef4f4-a231-4929-80c5-04fc03fe953f/03739895-8f6c-427e-9c71-008bc5840ad2.jpeg?h=225&w=225",
+=======
+        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/2d20ffcb-e1e7-4dc5-8005-e2750e3f9886/bddaca60-ea8a-4ff1-a4a2-cd9739212388.jpeg?h=225&w=225",
+>>>>>>> 3ab677cd3cc5b13ceb07d96685439e6f8e9fb6b1
         "original_price": 6.82,
         "original_ppu": 39.9,
         "sale_price": 6.82,
@@ -28,10 +32,17 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Okurka hadovka",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/9d02ceb2-6554-47ef-9a03-4e915731e108/fa786fa8-3741-4db6-b9d5-374ec69de944_2136958363.jpeg?h=225&w=225",
+<<<<<<< HEAD
         "original_price": 23.9,
         "original_ppu": 23.9,
         "sale_price": 23.9,
         "sale_ppu": 23.9,
+=======
+        "original_price": 24.9,
+        "original_ppu": 24.9,
+        "sale_price": 24.9,
+        "sale_ppu": 24.9,
+>>>>>>> 3ab677cd3cc5b13ceb07d96685439e6f8e9fb6b1
         "unit_code": "kus",
         "sale_requirement": null
     },
@@ -39,11 +50,11 @@
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
         "item_name": "Cibule volná",
-        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/12cd8912-88c4-4c1c-a643-6618ac4119e7/9c5dc9ff-ec73-4d41-af4d-2700e2513dd4.jpeg?h=225&w=225",
-        "original_price": 3.77,
-        "original_ppu": 27.9,
-        "sale_price": 3.77,
-        "sale_ppu": 27.9,
+        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/71ad5b00-2b4e-4057-ab57-ec203b6c357d/e401c4fc-1093-40d6-84e3-9de57b4dd893.jpeg?h=225&w=225",
+        "original_price": 2.69,
+        "original_ppu": 19.9,
+        "sale_price": 2.69,
+        "sale_ppu": 19.9,
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -52,10 +63,10 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Paprika červená",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/1fcd27ab-5e2a-478f-acca-d2fdcc220f8d/945a06ad-20c0-43ee-be67-e1f361dbbc83_778176460.jpeg?h=225&w=225",
-        "original_price": 17.5,
-        "original_ppu": 79.9,
-        "sale_price": 17.5,
-        "sale_ppu": 79.9,
+        "original_price": 19.69,
+        "original_ppu": 89.9,
+        "sale_price": 19.69,
+        "sale_ppu": 89.9,
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -63,7 +74,11 @@
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
         "item_name": "Mrkev",
+<<<<<<< HEAD
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/15cf9f52-d07c-4c4d-a204-e334bdbfe76b/0e9c4c19-ebf7-4d9a-a989-4e741c39a7a9.jpeg?h=225&w=225",
+=======
+        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/d9d7e7d6-5d3b-4acc-b34b-60bb385fa37b/57a9538a-0d51-4097-9d33-52289fb20fe0.jpeg?h=225&w=225",
+>>>>>>> 3ab677cd3cc5b13ceb07d96685439e6f8e9fb6b1
         "original_price": 2.17,
         "original_ppu": 9.9,
         "sale_price": 2.17,
@@ -76,10 +91,17 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Citróny",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/1a551e03-99f2-48d6-9e89-6648725c9f52/42ec51aa-ee29-4fa5-9c28-561456d3755d.jpeg?h=225&w=225",
+<<<<<<< HEAD
         "original_price": 8.56,
         "original_ppu": 43.9,
         "sale_price": 8.56,
         "sale_ppu": 43.9,
+=======
+        "original_price": 11.68,
+        "original_ppu": 59.9,
+        "sale_price": 11.68,
+        "sale_ppu": 59.9,
+>>>>>>> 3ab677cd3cc5b13ceb07d96685439e6f8e9fb6b1
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -126,10 +148,15 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/158cf759-a2e2-47f5-96ca-694f765cacce/99f870c8-0266-4c0d-a275-e58af95c02d2_486058717.jpeg?h=225&w=225",
         "original_price": 10.93,
         "original_ppu": 49.9,
+<<<<<<< HEAD
         "sale_price": 34.9,
         "sale_ppu": 34.9,
+=======
+        "sale_price": 10.93,
+        "sale_ppu": 49.9,
+>>>>>>> 3ab677cd3cc5b13ceb07d96685439e6f8e9fb6b1
         "unit_code": "kg",
-        "sale_requirement": "tesco_clubcard"
+        "sale_requirement": null
     },
     {
         "source": "tesco",
@@ -160,10 +187,17 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Celer",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/d4a420bd-7e8a-4d20-ae38-47a13a5e3d37/208fd4ec-d0fe-4ee7-a3cf-475afc9f3af8_275352559.jpeg?h=225&w=225",
+<<<<<<< HEAD
         "original_price": 4.22,
         "original_ppu": 14.9,
         "sale_price": 4.22,
         "sale_ppu": 14.9,
+=======
+        "original_price": 9.88,
+        "original_ppu": 34.9,
+        "sale_price": 9.88,
+        "sale_ppu": 34.9,
+>>>>>>> 3ab677cd3cc5b13ceb07d96685439e6f8e9fb6b1
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -171,11 +205,19 @@
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
         "item_name": "Česnek",
+<<<<<<< HEAD
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/d5c36b8c-b2f0-44f3-bbc7-997b61c828b6/827bd5aa-3ce9-477e-ae88-cb5262aabed1.jpeg?h=225&w=225",
         "original_price": 5.82,
         "original_ppu": 109.9,
         "sale_price": 5.82,
         "sale_ppu": 109.9,
+=======
+        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/46b63c8e-d015-4517-9314-7b88fb623514/665ff8d3-43cc-44af-a9bb-23f4570fdf83.jpeg?h=225&w=225",
+        "original_price": 8.96,
+        "original_ppu": 169,
+        "sale_price": 8.96,
+        "sale_ppu": 169,
+>>>>>>> 3ab677cd3cc5b13ceb07d96685439e6f8e9fb6b1
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -220,10 +262,17 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Kakichurma",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/472626ee-822c-44b6-af17-63d9455a7997/85cbe976-a20f-4052-b572-1e4e93880835_1598499106.jpeg?h=225&w=225",
+<<<<<<< HEAD
         "original_price": 8.9,
         "original_ppu": 8.9,
         "sale_price": 8.9,
         "sale_ppu": 8.9,
+=======
+        "original_price": 6.9,
+        "original_ppu": 6.9,
+        "sale_price": 6.9,
+        "sale_ppu": 6.9,
+>>>>>>> 3ab677cd3cc5b13ceb07d96685439e6f8e9fb6b1
         "unit_code": "kus",
         "sale_requirement": null
     },
@@ -234,10 +283,10 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/ae8e3c0b-3724-4170-b3bf-e2493a5a18e2/54be1b67-66c4-44b5-8193-810759595e86_515899824.jpeg?h=225&w=225",
         "original_price": 7.62,
         "original_ppu": 39.9,
-        "sale_price": 18.9,
-        "sale_ppu": 18.9,
+        "sale_price": 7.62,
+        "sale_ppu": 39.9,
         "unit_code": "kg",
-        "sale_requirement": "tesco_clubcard"
+        "sale_requirement": null
     },
     {
         "source": "tesco",
@@ -256,16 +305,17 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Rajčata keříková",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/c4b58db0-1964-46ef-af9d-5effd99e246e/87ffbbf1-7ec5-43ed-b998-cf56daa83781_1481057450.jpeg?h=225&w=225",
-        "original_price": 6.99,
-        "original_ppu": 69.9,
-        "sale_price": 6.99,
-        "sale_ppu": 69.9,
+        "original_price": 4.49,
+        "original_ppu": 44.9,
+        "sale_price": 4.49,
+        "sale_ppu": 44.9,
         "unit_code": "kg",
         "sale_requirement": null
     },
     {
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
+<<<<<<< HEAD
         "item_name": "Evelina Jablko",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/407037bf-3696-494e-b82c-8fe0c13543f7/65e2631e-bee9-4142-be74-0727c2fda82d_1164123815.jpeg?h=225&w=225",
         "original_price": 11.98,
@@ -284,6 +334,14 @@
         "original_ppu": 79.9,
         "sale_price": 6.63,
         "sale_ppu": 79.9,
+=======
+        "item_name": "Paprika bílá",
+        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/4412e9a3-94ab-48d6-b144-a949b7a41da5/7ee3aa4e-4eaf-49bf-b431-8b4cfe366383_374755582.jpeg?h=225&w=225",
+        "original_price": 4.14,
+        "original_ppu": 49.9,
+        "sale_price": 4.14,
+        "sale_ppu": 49.9,
+>>>>>>> 3ab677cd3cc5b13ceb07d96685439e6f8e9fb6b1
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -304,12 +362,12 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Pomeranče 1kg",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/69c05193-27c2-4885-a2c6-48ec648f8649/594920f1-315a-4c8e-81e9-9853c02ab7a1_1172919206.jpeg?h=225&w=225",
-        "original_price": 44.9,
-        "original_ppu": 44.9,
-        "sale_price": 44.9,
-        "sale_ppu": 44.9,
+        "original_price": 49.9,
+        "original_ppu": 49.9,
+        "sale_price": 29.9,
+        "sale_ppu": 29.9,
         "unit_code": "kg",
-        "sale_requirement": null
+        "sale_requirement": "tesco_clubcard"
     },
     {
         "source": "tesco",
@@ -340,23 +398,42 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Citróny 500g",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/de631e01-e3fe-493c-a46a-36cd8a2597d5/d4c7797d-d5c7-4619-b835-fee4d7fa1915_1066580974.jpeg?h=225&w=225",
-        "original_price": 44.9,
-        "original_ppu": 89.8,
-        "sale_price": 44.9,
-        "sale_ppu": 89.8,
+        "original_price": 39.9,
+        "original_ppu": 79.8,
+        "sale_price": 24.9,
+        "sale_ppu": 49.8,
         "unit_code": "kg",
-        "sale_requirement": null
+        "sale_requirement": "tesco_clubcard"
     },
     {
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
         "item_name": "Ananas",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/9a746b28-6af1-4f1e-bb31-42e8f57c60bf/48a783dd-edce-41c1-9c74-f7432b5fd561_1987255852.jpeg?h=225&w=225",
+<<<<<<< HEAD
         "original_price": 39.9,
         "original_ppu": 39.9,
         "sale_price": 39.9,
         "sale_ppu": 39.9,
+=======
+        "original_price": 34.9,
+        "original_ppu": 34.9,
+        "sale_price": 34.9,
+        "sale_ppu": 34.9,
+>>>>>>> 3ab677cd3cc5b13ceb07d96685439e6f8e9fb6b1
         "unit_code": "kus",
+        "sale_requirement": null
+    },
+    {
+        "source": "tesco",
+        "product_category": "Ovoce a zelenina",
+        "item_name": "Brambory konzumní pozdní 5kg",
+        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/34b0039e-2298-46c8-a899-034767d20076/71214eed-26d0-407e-ba3c-40a3564e9e95_1599003392.jpeg?h=225&w=225",
+        "original_price": 79.9,
+        "original_ppu": 15.98,
+        "sale_price": 79.9,
+        "sale_ppu": 15.98,
+        "unit_code": "kg",
         "sale_requirement": null
     },
     {
@@ -378,20 +455,20 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/c70378f2-d8f2-4801-b1f8-8b651694dbf3/7c7018e7-619f-4706-82cd-25d758f7d3e6_1226009502.jpeg?h=225&w=225",
         "original_price": 7.38,
         "original_ppu": 39.9,
-        "sale_price": 29.9,
-        "sale_ppu": 29.9,
+        "sale_price": 7.38,
+        "sale_ppu": 39.9,
         "unit_code": "kg",
-        "sale_requirement": "tesco_clubcard"
+        "sale_requirement": null
     },
     {
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
         "item_name": "Pomelo ks",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/d6b405ac-56eb-4cca-9859-503fd56e50eb/8ada281a-6a74-4579-baeb-f2ead47acd5a_1826868247.jpeg?h=225&w=225",
-        "original_price": 69.9,
-        "original_ppu": 69.9,
-        "sale_price": 39.9,
-        "sale_ppu": 39.9,
+        "original_price": 59.9,
+        "original_ppu": 59.9,
+        "sale_price": 29.9,
+        "sale_ppu": 29.9,
         "unit_code": "kus",
         "sale_requirement": "tesco_clubcard"
     },
@@ -400,10 +477,10 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Mandarinky 1kg",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/7460ca0d-844c-4173-a77b-9002fdd97763/65cc876f-d760-4016-a37a-1198a29b17bc_1036919676.jpeg?h=225&w=225",
-        "original_price": 54.9,
-        "original_ppu": 54.9,
-        "sale_price": 54.9,
-        "sale_ppu": 54.9,
+        "original_price": 19.9,
+        "original_ppu": 19.9,
+        "sale_price": 19.9,
+        "sale_ppu": 19.9,
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -412,10 +489,17 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Paprika mix 500g",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/ff87459f-9de9-4941-a94d-d2e3eaafcf18/1d17bbae-6c17-4f08-aba1-e7e73e6cdcc6.jpeg?h=225&w=225",
+<<<<<<< HEAD
         "original_price": 34.9,
         "original_ppu": 69.8,
         "sale_price": 34.9,
         "sale_ppu": 69.8,
+=======
+        "original_price": 59.9,
+        "original_ppu": 119.8,
+        "sale_price": 59.9,
+        "sale_ppu": 119.8,
+>>>>>>> 3ab677cd3cc5b13ceb07d96685439e6f8e9fb6b1
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -424,10 +508,10 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Paprika žlutá",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/701dae8b-88ae-4859-b154-0253ce1543e8/5cba64f8-df7b-46a7-9e28-8b7735960f2a_1664698936.jpeg?h=225&w=225",
-        "original_price": 19.18,
-        "original_ppu": 79.9,
-        "sale_price": 19.18,
-        "sale_ppu": 79.9,
+        "original_price": 21.58,
+        "original_ppu": 89.9,
+        "sale_price": 21.58,
+        "sale_ppu": 89.9,
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -438,10 +522,10 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/3dd3f70c-d2cc-4a03-b46f-3559eb22e435/46164d86-735a-4acf-88aa-cc36037cd21e_1994380334.jpeg?h=225&w=225",
         "original_price": 12.9,
         "original_ppu": 12.9,
-        "sale_price": 12.9,
-        "sale_ppu": 12.9,
+        "sale_price": 10.9,
+        "sale_ppu": 10.9,
         "unit_code": "kus",
-        "sale_requirement": null
+        "sale_requirement": "tesco_clubcard"
     },
     {
         "source": "tesco",
@@ -520,10 +604,10 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Pomelo červené ks",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/0806b0ec-b853-492d-95ad-03952ab738a4/ef668b80-e89b-4571-8f64-1a8bac505855_332438041.jpeg?h=225&w=225",
-        "original_price": 69.9,
-        "original_ppu": 69.9,
-        "sale_price": 39.9,
-        "sale_ppu": 39.9,
+        "original_price": 59.9,
+        "original_ppu": 59.9,
+        "sale_price": 29.9,
+        "sale_ppu": 29.9,
         "unit_code": "kus",
         "sale_requirement": "tesco_clubcard"
     },
@@ -543,7 +627,7 @@
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Mandle jádra neloupaná 500g",
-        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/d815b3cd-91c4-49a2-bd23-5008473f3a46/cf052f4d-0856-420a-8bec-dea02d5c7cd0_1199609062.jpeg?h=225&w=225",
+        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/5a012bdf-aa31-44aa-b369-d72340316fd0/cec6b03f-5b95-4de1-a98f-559a69ca4be1.jpeg?h=225&w=225",
         "original_price": 99.9,
         "original_ppu": 199.8,
         "sale_price": 99.9,
@@ -568,10 +652,17 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "The Grower's Harvest Cibule kuchyňská žlutá 1kg",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/1b7f48be-ab8f-4e23-a56f-139e1380dcdd/ad932519-6009-410f-9942-37a72c965338_561134874.jpeg?h=225&w=225",
+<<<<<<< HEAD
         "original_price": 9.9,
         "original_ppu": 9.9,
         "sale_price": 9.9,
         "sale_ppu": 9.9,
+=======
+        "original_price": 19.9,
+        "original_ppu": 19.9,
+        "sale_price": 19.9,
+        "sale_ppu": 19.9,
+>>>>>>> 3ab677cd3cc5b13ceb07d96685439e6f8e9fb6b1
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -580,10 +671,10 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Mango ks",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/0f2f19b2-af3d-4a46-be5e-3855ced07b4d/1b484519-333b-4a0f-9842-15fc6c9e2f63_955862955.jpeg?h=225&w=225",
-        "original_price": 39.9,
-        "original_ppu": 39.9,
-        "sale_price": 39.9,
-        "sale_ppu": 39.9,
+        "original_price": 24.9,
+        "original_ppu": 24.9,
+        "sale_price": 24.9,
+        "sale_ppu": 24.9,
         "unit_code": "kus",
         "sale_requirement": null
     },
@@ -616,12 +707,19 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Brokolice 500g",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/f0815b23-7cc3-45cf-9678-f2b566fbfe40/850b5dfd-d3ce-4171-b4b6-35e155330841_1518398711.jpeg?h=225&w=225",
+<<<<<<< HEAD
         "original_price": 27.9,
         "original_ppu": 55.8,
         "sale_price": 27.9,
         "sale_ppu": 55.8,
+=======
+        "original_price": 22.9,
+        "original_ppu": 45.8,
+        "sale_price": 22.9,
+        "sale_ppu": 45.8,
+>>>>>>> 3ab677cd3cc5b13ceb07d96685439e6f8e9fb6b1
         "unit_code": "kg",
-        "sale_requirement": "tesco_clubcard"
+        "sale_requirement": null
     },
     {
         "source": "tesco",
@@ -652,10 +750,17 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Jablka Pink Lady",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/77c4edd7-ec59-44e8-ad74-12f8690c0934/51e228b7-78df-47aa-80b0-6cd7a4d0b96c_1777374886.jpeg?h=225&w=225",
+<<<<<<< HEAD
         "original_price": 13.98,
         "original_ppu": 69.9,
         "sale_price": 13.98,
         "sale_ppu": 69.9,
+=======
+        "original_price": 12.98,
+        "original_ppu": 64.9,
+        "sale_price": 12.98,
+        "sale_ppu": 64.9,
+>>>>>>> 3ab677cd3cc5b13ceb07d96685439e6f8e9fb6b1
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -712,10 +817,17 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Finest Hrozno bezpeckové tmavé 400g",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/7ff1a966-8e0e-4003-8df3-290413a35dfd/bc7340ee-ad7f-4164-ba98-df453fbb466c_385397517.jpeg?h=225&w=225",
+<<<<<<< HEAD
         "original_price": 79.9,
         "original_ppu": 199.75,
         "sale_price": 79.9,
         "sale_ppu": 199.75,
+=======
+        "original_price": 89.9,
+        "original_ppu": 224.75,
+        "sale_price": 89.9,
+        "sale_ppu": 224.75,
+>>>>>>> 3ab677cd3cc5b13ceb07d96685439e6f8e9fb6b1
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -726,10 +838,10 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/c72962e3-528b-4a33-8208-a8db1d642451/7c586fba-027f-4d51-9c7c-8b6f2d528a3f_1075801512.jpeg?h=225&w=225",
         "original_price": 149.9,
         "original_ppu": 149.9,
-        "sale_price": 149.9,
-        "sale_ppu": 149.9,
+        "sale_price": 109.9,
+        "sale_ppu": 109.9,
         "unit_code": "kg",
-        "sale_requirement": null
+        "sale_requirement": "tesco_clubcard"
     },
     {
         "source": "tesco",
@@ -738,8 +850,8 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/feab6f44-5e7a-4d8b-9459-bb85962b1ad5/074cb7e4-a52c-4ded-b8ab-5fff49b13223_737642800.jpeg?h=225&w=225",
         "original_price": 79.9,
         "original_ppu": 159.8,
-        "sale_price": 63.9,
-        "sale_ppu": 127.8,
+        "sale_price": 59.9,
+        "sale_ppu": 119.8,
         "unit_code": "kg",
         "sale_requirement": "tesco_clubcard"
     },
@@ -774,10 +886,10 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/f4cee1c6-331c-48a3-b650-20d4e44bbd4e/83946654-80ad-4179-8245-ea63d0a1426b_1897796236.jpeg?h=225&w=225",
         "original_price": 39.9,
         "original_ppu": 199.5,
-        "sale_price": 39.9,
-        "sale_ppu": 199.5,
+        "sale_price": 27.9,
+        "sale_ppu": 139.5,
         "unit_code": "kg",
-        "sale_requirement": null
+        "sale_requirement": "tesco_clubcard"
     },
     {
         "source": "tesco",
@@ -796,10 +908,10 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Hrozny tmavé",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/8ff0ed7d-3965-4db3-b806-8b3c10271158/5daf55ac-9791-41e9-9443-2feee7861e5c_555627687.jpeg?h=225&w=225",
-        "original_price": 79.9,
-        "original_ppu": 79.9,
-        "sale_price": 79.9,
-        "sale_ppu": 79.9,
+        "original_price": 119.9,
+        "original_ppu": 119.9,
+        "sale_price": 119.9,
+        "sale_ppu": 119.9,
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -854,24 +966,24 @@
     {
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
-        "item_name": "Tesco Vlašské ořechy mleté 200g",
-        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/1e9b8769-a95c-4205-a0b6-c1e873ddca96/52c510ff-53db-4a81-93c1-3960bc904fa5_1320492575.jpeg?h=225&w=225",
+        "item_name": "Tesco Vlašské ořechy mletá jádra 200g",
+        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/684d5048-f59e-4dad-973d-9cd523851469/bd9de70b-e2a8-43a6-83e7-d0fec4163922_1541046618.jpeg?h=225&w=225",
         "original_price": 84.9,
         "original_ppu": 424.5,
-        "sale_price": 84.9,
-        "sale_ppu": 424.5,
+        "sale_price": 59.9,
+        "sale_ppu": 299.5,
         "unit_code": "kg",
-        "sale_requirement": null
+        "sale_requirement": "tesco_clubcard"
     },
     {
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Kešu ořechy jádra nepražená 200g",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/b7f9a6e0-b3b6-4972-b5c0-413e6808a456/e1dd4708-80c4-4dea-97e2-78e4a8f1f3f0_188657667.jpeg?h=225&w=225",
-        "original_price": 77.9,
-        "original_ppu": 389.5,
-        "sale_price": 77.9,
-        "sale_ppu": 389.5,
+        "original_price": 54.9,
+        "original_ppu": 274.5,
+        "sale_price": 54.9,
+        "sale_ppu": 274.5,
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -880,10 +992,10 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Jablka Granny Smith",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/a5c52b14-e948-416c-bcf7-1393f5b8a56c/ab8ec76b-ff75-4e90-b6ce-87892e02bb2e_942467550.jpeg?h=225&w=225",
-        "original_price": 8.43,
-        "original_ppu": 49.9,
-        "sale_price": 8.43,
-        "sale_ppu": 49.9,
+        "original_price": 6.74,
+        "original_ppu": 39.9,
+        "sale_price": 6.74,
+        "sale_ppu": 39.9,
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -916,10 +1028,17 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "The Grower's Harvest Rajčata 1kg",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/f7530d52-5702-43bd-b4e2-20316aae376f/f96f9cb8-a7f1-4985-b060-a014c3a3be14_1849486641.jpeg?h=225&w=225",
+<<<<<<< HEAD
         "original_price": 69.9,
         "original_ppu": 69.9,
         "sale_price": 69.9,
         "sale_ppu": 69.9,
+=======
+        "original_price": 59.9,
+        "original_ppu": 59.9,
+        "sale_price": 59.9,
+        "sale_ppu": 59.9,
+>>>>>>> 3ab677cd3cc5b13ceb07d96685439e6f8e9fb6b1
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -930,8 +1049,8 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/2bb7a815-3d33-4922-bc9f-962c014db20f/f1752c4e-0ba4-4c38-ab25-1056145af03d_1912095921.jpeg?h=225&w=225",
         "original_price": 109,
         "original_ppu": 109,
-        "sale_price": 79.9,
-        "sale_ppu": 79.9,
+        "sale_price": 74.9,
+        "sale_ppu": 74.9,
         "unit_code": "kg",
         "sale_requirement": "tesco_clubcard"
     },
@@ -940,10 +1059,10 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Čerstvě Utrženo Nelinka cherry rajčata třešňovitá v hroznech 250g",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/f57a5dd5-2d6e-4125-a1d8-31f729ee0ee9/118195fa-e45d-4928-b35d-8fc2c7286d40_1645444311.jpeg?h=225&w=225",
-        "original_price": 69.9,
-        "original_ppu": 279.6,
-        "sale_price": 69.9,
-        "sale_ppu": 279.6,
+        "original_price": 79.9,
+        "original_ppu": 319.6,
+        "sale_price": 79.9,
+        "sale_ppu": 319.6,
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -974,26 +1093,14 @@
     {
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
-        "item_name": "Tesco Eat Fresh Petržel hladkolistá 80g",
-        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/37daff6b-1a78-41bb-8c03-00ae7470940b/74a4998b-9da8-48e4-9f86-e2b14e92e566_381264807.jpeg?h=225&w=225",
-        "original_price": 31.9,
-        "original_ppu": 398.75,
-        "sale_price": 31.9,
-        "sale_ppu": 398.75,
-        "unit_code": "kg",
-        "sale_requirement": null
-    },
-    {
-        "source": "tesco",
-        "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Žampion zahradní 250g",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/bb6872a8-a1b5-444b-aa97-ed0677f60644/5cbb7b43-5f35-4488-bdf7-e6d147b6a5a2_137682687.jpeg?h=225&w=225",
         "original_price": 37.9,
         "original_ppu": 151.6,
-        "sale_price": 24.9,
-        "sale_ppu": 99.6,
+        "sale_price": 37.9,
+        "sale_ppu": 151.6,
         "unit_code": "kg",
-        "sale_requirement": "tesco_clubcard"
+        "sale_requirement": null
     },
     {
         "source": "tesco",
@@ -1014,10 +1121,10 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/5456ad7e-6a63-4b48-a622-b21fc2560054/f23d0d4f-1cc4-4aa8-9b59-64c98dbe1008_1188509804.jpeg?h=225&w=225",
         "original_price": 59.9,
         "original_ppu": 1996.67,
-        "sale_price": 59.9,
-        "sale_ppu": 1996.67,
+        "sale_price": 44.9,
+        "sale_ppu": 1496.67,
         "unit_code": "kg",
-        "sale_requirement": null
+        "sale_requirement": "tesco_clubcard"
     },
     {
         "source": "tesco",
@@ -1026,10 +1133,10 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/56e58601-d1e6-4e0b-b620-e606b8883333/ccd64d7c-ea8b-4378-990e-82c8c77cbc83_1277559238.jpeg?h=225&w=225",
         "original_price": 79.9,
         "original_ppu": 399.5,
-        "sale_price": 79.9,
-        "sale_ppu": 399.5,
+        "sale_price": 59.9,
+        "sale_ppu": 299.5,
         "unit_code": "kg",
-        "sale_requirement": null
+        "sale_requirement": "tesco_clubcard"
     },
     {
         "source": "tesco",
@@ -1096,10 +1203,10 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Rozinky 200g",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/a1c923d5-3dd2-467c-bbd1-aab515814668/36c5132a-5233-4aed-960c-0a32e00c689f_684236450.jpeg?h=225&w=225",
-        "original_price": 27.9,
-        "original_ppu": 139.5,
-        "sale_price": 27.9,
-        "sale_ppu": 139.5,
+        "original_price": 21.9,
+        "original_ppu": 109.5,
+        "sale_price": 21.9,
+        "sale_ppu": 109.5,
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -1146,10 +1253,10 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/9a5b8eed-8df4-4a95-80da-3281bfe3b786/5a6eaec3-6f99-44ed-bb5e-89bfca8b7831_506057346.jpeg?h=225&w=225",
         "original_price": 31.56,
         "original_ppu": 39.9,
-        "sale_price": 24.9,
-        "sale_ppu": 24.9,
+        "sale_price": 31.56,
+        "sale_ppu": 39.9,
         "unit_code": "kg",
-        "sale_requirement": "tesco_clubcard"
+        "sale_requirement": null
     },
     {
         "source": "tesco",
@@ -1182,10 +1289,10 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/d47d2de9-97b3-4c43-9373-33f51d9f5118/92b8440d-5e5e-437b-a1f0-85a65aaa0eb7_1389234209.jpeg?h=225&w=225",
         "original_price": 59.9,
         "original_ppu": 1996.67,
-        "sale_price": 59.9,
-        "sale_ppu": 1996.67,
+        "sale_price": 44.9,
+        "sale_ppu": 1496.67,
         "unit_code": "kg",
-        "sale_requirement": null
+        "sale_requirement": "tesco_clubcard"
     },
     {
         "source": "tesco",
@@ -1206,10 +1313,10 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/d328f643-737d-4cfe-8728-ba1d60b6d375/bab6ea95-a6e1-4d38-9678-5154d229dbcc_737849806.jpeg?h=225&w=225",
         "original_price": 49.9,
         "original_ppu": 199.6,
-        "sale_price": 34.9,
-        "sale_ppu": 139.6,
+        "sale_price": 49.9,
+        "sale_ppu": 199.6,
         "unit_code": "kg",
-        "sale_requirement": "tesco_clubcard"
+        "sale_requirement": null
     },
     {
         "source": "tesco",
@@ -1230,8 +1337,8 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/8fcdd649-0ccd-489f-b451-a2ea43a141bf/244b1ed7-fe7c-4dbf-beab-afc4fbcf0448_211581967.jpeg?h=225&w=225",
         "original_price": 29.9,
         "original_ppu": 299,
-        "sale_price": 22.9,
-        "sale_ppu": 229.0,
+        "sale_price": 19.9,
+        "sale_ppu": 199.0,
         "unit_code": "kg",
         "sale_requirement": "tesco_clubcard"
     },
@@ -1242,14 +1349,29 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/afd40404-037b-4354-92ed-1daedfb30e7f/3293bcc3-1479-4812-beff-39bbbfd4d1a7_2079924984.jpeg?h=225&w=225",
         "original_price": 79.9,
         "original_ppu": 399.5,
+        "sale_price": 59.9,
+        "sale_ppu": 299.5,
+        "unit_code": "kg",
+        "sale_requirement": "tesco_clubcard"
+    },
+    {
+        "source": "tesco",
+        "product_category": "Ovoce a zelenina",
+<<<<<<< HEAD
+=======
+        "item_name": "Tesco Rajčata cherry 250g",
+        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/e11811a6-4d78-4cb2-af0e-c671651f04d7/6403cc61-8d05-477c-a99e-3289707c8d5b_1102860043.jpeg?h=225&w=225",
+        "original_price": 79.9,
+        "original_ppu": 319.6,
         "sale_price": 79.9,
-        "sale_ppu": 399.5,
+        "sale_ppu": 319.6,
         "unit_code": "kg",
         "sale_requirement": null
     },
     {
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
+>>>>>>> 3ab677cd3cc5b13ceb07d96685439e6f8e9fb6b1
         "item_name": "Tesco Mandle jádra blanšírovaná mletá 200g",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/0d479852-e615-47cc-b0db-0dd677f930fc/ac7ebf06-aa2e-42fc-85c0-685e4261967e_1383732277.jpeg?h=225&w=225",
         "original_price": 49.9,
@@ -1290,20 +1412,29 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/9cd3d1bf-479d-48b6-876e-8aba6d78b547/0a4fa4cc-b0ab-487a-b4d8-7a3e6b03b985_1257951165.jpeg?h=225&w=225",
         "original_price": 29.9,
         "original_ppu": 299,
-        "sale_price": 22.9,
-        "sale_ppu": 229.0,
+        "sale_price": 19.9,
+        "sale_ppu": 199.0,
         "unit_code": "kg",
         "sale_requirement": "tesco_clubcard"
     },
     {
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
+<<<<<<< HEAD
         "item_name": "Cherry rajčata",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/fe92087d-2d2b-4bbe-9780-75022a44c089/e9e15ddc-0dad-45c8-859d-49df50816dab_1405484110.jpeg?h=225&w=225",
         "original_price": 199,
         "original_ppu": 199,
         "sale_price": 199,
         "sale_ppu": 199,
+=======
+        "item_name": "Hrušky červené",
+        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/c71dd1f4-c4f9-4585-804c-314a2c501614/2956f397-2d7f-4473-bd38-8801f5e8f4ee_113689961.jpeg?h=225&w=225",
+        "original_price": 8.99,
+        "original_ppu": 59.9,
+        "sale_price": 8.99,
+        "sale_ppu": 59.9,
+>>>>>>> 3ab677cd3cc5b13ceb07d96685439e6f8e9fb6b1
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -1312,6 +1443,7 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Jahody 250g",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/21332dd2-caf3-4daf-b630-1954df333ad0/78afee98-14ab-48bb-8085-b4f1e5d39f16_1700994333.jpeg?h=225&w=225",
+<<<<<<< HEAD
         "original_price": 69.9,
         "original_ppu": 279.6,
         "sale_price": 69.9,
@@ -1328,6 +1460,12 @@
         "original_ppu": 997.5,
         "sale_price": 39.9,
         "sale_ppu": 997.5,
+=======
+        "original_price": 79.9,
+        "original_ppu": 319.6,
+        "sale_price": 79.9,
+        "sale_ppu": 319.6,
+>>>>>>> 3ab677cd3cc5b13ceb07d96685439e6f8e9fb6b1
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -1386,10 +1524,10 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/1c32a6af-620a-4519-a2f6-cb26792939c8/5c5713ac-1c36-427f-89e5-f23e6f7c6464_1451557900.jpeg?h=225&w=225",
         "original_price": 51.9,
         "original_ppu": 103.8,
-        "sale_price": 39.9,
-        "sale_ppu": 79.8,
+        "sale_price": 51.9,
+        "sale_ppu": 103.8,
         "unit_code": "kg",
-        "sale_requirement": "tesco_clubcard"
+        "sale_requirement": null
     },
     {
         "source": "tesco",
@@ -1446,10 +1584,10 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/1746623e-93a9-4f75-a66e-2428b526c8d0/1bb946ff-3e30-4a21-b013-dbc1c6ab5081_306863814.jpeg?h=225&w=225",
         "original_price": 214.9,
         "original_ppu": 429.8,
-        "sale_price": 169.9,
-        "sale_ppu": 339.8,
+        "sale_price": 214.9,
+        "sale_ppu": 429.8,
         "unit_code": "kg",
-        "sale_requirement": "tesco_clubcard"
+        "sale_requirement": null
     },
     {
         "source": "tesco",
@@ -1470,10 +1608,10 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/4587bd5a-e1fd-4d02-9305-b92f3855b897/020db86a-7f6c-4eee-9ca8-bc0c6a81ff38_1460332165.jpeg?h=225&w=225",
         "original_price": 189.9,
         "original_ppu": 379.8,
-        "sale_price": 149.9,
-        "sale_ppu": 299.8,
+        "sale_price": 189.9,
+        "sale_ppu": 379.8,
         "unit_code": "kg",
-        "sale_requirement": "tesco_clubcard"
+        "sale_requirement": null
     },
     {
         "source": "tesco",
@@ -1482,10 +1620,10 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/b9bed50f-4db9-497e-95d2-c65a4df2cbc5/f9c093bb-cf93-4300-9e31-74d95009e0ad_779029985.jpeg?h=225&w=225",
         "original_price": 69.9,
         "original_ppu": 69.9,
-        "sale_price": 44.9,
-        "sale_ppu": 44.9,
+        "sale_price": 69.9,
+        "sale_ppu": 69.9,
         "unit_code": "kg",
-        "sale_requirement": "tesco_clubcard"
+        "sale_requirement": null
     },
     {
         "source": "tesco",
@@ -1504,16 +1642,31 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Petržel 350g",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/db59bb25-0ce4-4032-ad64-eb27839c229b/76a09968-e181-4003-b9f9-1288c4f46670_1843180095.jpeg?h=225&w=225",
-        "original_price": 39.9,
-        "original_ppu": 114,
-        "sale_price": 39.9,
-        "sale_ppu": 114,
+        "original_price": 34.9,
+        "original_ppu": 99.71,
+        "sale_price": 34.9,
+        "sale_ppu": 99.71,
         "unit_code": "kg",
         "sale_requirement": null
     },
     {
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
+<<<<<<< HEAD
+=======
+        "item_name": "Tesco Salát římský",
+        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/adc7d67a-acf0-4d66-9f90-af8e77856613/ff74a4c7-a233-4d50-abe4-7eb5c07015b1_2023925654.jpeg?h=225&w=225",
+        "original_price": 34.9,
+        "original_ppu": 34.9,
+        "sale_price": 34.9,
+        "sale_ppu": 34.9,
+        "unit_code": "kus",
+        "sale_requirement": null
+    },
+    {
+        "source": "tesco",
+        "product_category": "Ovoce a zelenina",
+>>>>>>> 3ab677cd3cc5b13ceb07d96685439e6f8e9fb6b1
         "item_name": "Tesco Rajčata cherry 400g",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/bd227329-da9c-486b-a061-1aa96bfa2c9f/19ff03d3-4513-46c1-9e35-e56bf27f980c_1857173907.jpeg?h=225&w=225",
         "original_price": 69.9,
@@ -1530,10 +1683,10 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/b464a1dc-afa3-43f8-b86a-b3364aba68c9/d199fbeb-7978-40f7-96c9-1147851f837d_272663434.jpeg?h=225&w=225",
         "original_price": 189.9,
         "original_ppu": 379.8,
-        "sale_price": 149.9,
-        "sale_ppu": 299.8,
+        "sale_price": 189.9,
+        "sale_ppu": 379.8,
         "unit_code": "kg",
-        "sale_requirement": "tesco_clubcard"
+        "sale_requirement": null
     },
     {
         "source": "tesco",
@@ -1542,20 +1695,20 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/7cf33edf-7963-40c3-bbfe-9dc51f753ded/dd777f2e-1539-4c54-a750-5f98c63ee8a1_1673980487.jpeg?h=225&w=225",
         "original_price": 44.9,
         "original_ppu": 224.5,
-        "sale_price": 44.9,
-        "sale_ppu": 224.5,
+        "sale_price": 39.9,
+        "sale_ppu": 199.5,
         "unit_code": "kg",
-        "sale_requirement": null
+        "sale_requirement": "tesco_clubcard"
     },
     {
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
         "item_name": "Hrozny bílé",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/23e27b80-b4a5-40e3-8d4c-106c17299fa5/5ee53e2b-b52c-4e00-b827-1f72315e4e1a_504587790.jpeg?h=225&w=225",
-        "original_price": 89.9,
-        "original_ppu": 89.9,
-        "sale_price": 89.9,
-        "sale_ppu": 89.9,
+        "original_price": 119.9,
+        "original_ppu": 119.9,
+        "sale_price": 119.9,
+        "sale_ppu": 119.9,
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -1624,10 +1777,10 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Pistácie ve skořápce pražené solené 200g",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/8ab042f0-cd0f-40eb-bc55-f17387013b7a/d7b96537-9027-4a8f-af28-6a5959ea3589_1143232749.jpeg?h=225&w=225",
-        "original_price": 95.9,
-        "original_ppu": 479.5,
-        "sale_price": 95.9,
-        "sale_ppu": 479.5,
+        "original_price": 69.9,
+        "original_ppu": 349.5,
+        "sale_price": 69.9,
+        "sale_ppu": 349.5,
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -1648,10 +1801,10 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Švestky vypeckované 200g",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/cf560b9b-2537-4645-96a3-a5fd373bf365/5ef737c1-136b-4f4b-b251-7a0622d4cbb2.jpeg?h=225&w=225",
-        "original_price": 39.9,
-        "original_ppu": 199.5,
-        "sale_price": 39.9,
-        "sale_ppu": 199.5,
+        "original_price": 29.9,
+        "original_ppu": 149.5,
+        "sale_price": 29.9,
+        "sale_ppu": 149.5,
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -1660,10 +1813,10 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Cibule bílá",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/ca3cca91-3231-4c24-a8ed-8f2589d63ecd/643c141b-e0d3-4f11-a123-61bef14b0546_344526347.jpeg?h=225&w=225",
-        "original_price": 9.33,
-        "original_ppu": 49.9,
-        "sale_price": 9.33,
-        "sale_ppu": 49.9,
+        "original_price": 8.4,
+        "original_ppu": 44.9,
+        "sale_price": 8.4,
+        "sale_ppu": 44.9,
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -1672,10 +1825,17 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Hrozno bílé bezpeckové 500g",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/d643c6a1-a636-4c88-b54b-89716e03269f/108e42b8-d51a-4ae9-b06e-e1c7349c92c8_405430402.jpeg?h=225&w=225",
+<<<<<<< HEAD
         "original_price": 79.9,
         "original_ppu": 159.8,
         "sale_price": 79.9,
         "sale_ppu": 159.8,
+=======
+        "original_price": 89.9,
+        "original_ppu": 179.8,
+        "sale_price": 89.9,
+        "sale_ppu": 179.8,
+>>>>>>> 3ab677cd3cc5b13ceb07d96685439e6f8e9fb6b1
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -1698,10 +1858,10 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/97697c58-8fc0-440d-beaf-8dbbb2a2973c/e3ef1a09-6fda-4ad7-b0be-288f46d10754_599556599.jpeg?h=225&w=225",
         "original_price": 169.9,
         "original_ppu": 339.8,
-        "sale_price": 134.9,
-        "sale_ppu": 269.8,
+        "sale_price": 169.9,
+        "sale_ppu": 339.8,
         "unit_code": "kg",
-        "sale_requirement": "tesco_clubcard"
+        "sale_requirement": null
     },
     {
         "source": "tesco",
@@ -1732,10 +1892,10 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Čerstvě Utrženo Strabena cherry rajčata třešňovitá v hroznech 250g",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/16f05edf-4e68-4d4a-98f3-28ff4fb02bc4/832e0afc-e4b0-42a7-bef7-f37c8dec8f39_738382644.jpeg?h=225&w=225",
-        "original_price": 69.9,
-        "original_ppu": 279.6,
-        "sale_price": 69.9,
-        "sale_ppu": 279.6,
+        "original_price": 79.9,
+        "original_ppu": 319.6,
+        "sale_price": 79.9,
+        "sale_ppu": 319.6,
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -1748,6 +1908,18 @@
         "original_ppu": 599.33,
         "sale_price": 89.9,
         "sale_ppu": 599.33,
+        "unit_code": "kg",
+        "sale_requirement": null
+    },
+    {
+        "source": "tesco",
+        "product_category": "Ovoce a zelenina",
+        "item_name": "Jablka Crimson Snow",
+        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/92fa849e-1577-4cd6-b311-e222290719f2/75b59d44-dc63-4f66-af64-ab0c31a6099b_143370572.jpeg?h=225&w=225",
+        "original_price": 8.99,
+        "original_ppu": 59.9,
+        "sale_price": 8.99,
+        "sale_ppu": 59.9,
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -1770,10 +1942,10 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/8e6f9335-7862-424d-ae88-3a9859fcd990/77126526-306e-4900-a1ca-b3d271e544e7_1069933642.jpeg?h=225&w=225",
         "original_price": 26.9,
         "original_ppu": 76.86,
-        "sale_price": 18.9,
-        "sale_ppu": 54.0,
+        "sale_price": 26.9,
+        "sale_ppu": 76.86,
         "unit_code": "kg",
-        "sale_requirement": "tesco_clubcard"
+        "sale_requirement": null
     },
     {
         "source": "tesco",
@@ -1803,7 +1975,7 @@
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Jednoporcový salát 100g",
-        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/3b8be96c-ab6b-4028-a7a8-c336806cb42d/45fa2f3a-430e-4e67-a136-c8585f7ea107.jpeg?h=225&w=225",
+        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/3a6c07b3-e298-4a9e-bab7-cbbd2edda682/ef214160-b65a-4054-9dfb-fa0cdabe3063.jpeg?h=225&w=225",
         "original_price": 19.9,
         "original_ppu": 199,
         "sale_price": 19.9,
@@ -1814,12 +1986,24 @@
     {
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
+        "item_name": "Křen praný",
+        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/d5cb1627-e95f-4652-9217-39e2a04220e2/3525ebc8-94c2-43da-aca7-9eb9b29dccc9_450560950.jpeg?h=225&w=225",
+        "original_price": 63.51,
+        "original_ppu": 219,
+        "sale_price": 63.51,
+        "sale_ppu": 219,
+        "unit_code": "kg",
+        "sale_requirement": null
+    },
+    {
+        "source": "tesco",
+        "product_category": "Ovoce a zelenina",
         "item_name": "Dýně Hokkaido",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/b2b162c8-e61d-41c4-a6fc-5e57a36be2c4/902119ab-4fc9-43da-85fa-4fd6e107ae71_750588881.jpeg?h=225&w=225",
-        "original_price": 119.7,
-        "original_ppu": 39.9,
-        "sale_price": 119.7,
-        "sale_ppu": 39.9,
+        "original_price": 89.7,
+        "original_ppu": 29.9,
+        "sale_price": 89.7,
+        "sale_ppu": 29.9,
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -1876,12 +2060,12 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Bio citróny 500g",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/17418384-3784-4ace-85e4-830d103e6595/e4aae1e4-7cfa-4842-b54c-aaacb7a26d05_1678360349.jpeg?h=225&w=225",
-        "original_price": 59.9,
-        "original_ppu": 119.8,
-        "sale_price": 44.9,
-        "sale_ppu": 89.8,
+        "original_price": 49.9,
+        "original_ppu": 99.8,
+        "sale_price": 49.9,
+        "sale_ppu": 99.8,
         "unit_code": "kg",
-        "sale_requirement": "tesco_clubcard"
+        "sale_requirement": null
     },
     {
         "source": "tesco",
@@ -1960,10 +2144,10 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Pomerančová šťáva 1l",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/0cefa4d4-2c2d-43ea-a5f7-63ad50e70e8a/34ce7ec4-a094-4cd9-9e8e-b0b89bf4796b_876404078.jpeg?h=225&w=225",
-        "original_price": 74.9,
-        "original_ppu": 74.9,
-        "sale_price": 74.9,
-        "sale_ppu": 74.9,
+        "original_price": 88.9,
+        "original_ppu": 88.9,
+        "sale_price": 88.9,
+        "sale_ppu": 88.9,
         "unit_code": "l",
         "sale_requirement": null
     },
@@ -1986,10 +2170,10 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/bac35f99-0c37-4af3-8ac3-06005640ad8d/07cd5170-fa2b-4b29-8b44-88270209f2bc_665433026.jpeg?h=225&w=225",
         "original_price": 69.9,
         "original_ppu": 349.5,
-        "sale_price": 54.9,
-        "sale_ppu": 274.5,
+        "sale_price": 69.9,
+        "sale_ppu": 349.5,
         "unit_code": "kg",
-        "sale_requirement": "tesco_clubcard"
+        "sale_requirement": null
     },
     {
         "source": "tesco",
@@ -2007,7 +2191,7 @@
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Semena chia 100g",
-        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/f8a5e51a-1af2-4914-a3a1-cdf893b52c1b/b15dee92-0f19-4808-a0f2-4efec6faabb8_454653392.jpeg?h=225&w=225",
+        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/6cf4ce06-0ad6-4c09-98a4-617abfbf9d46/2eef159d-3c12-4257-b424-949c9e600141_956111725.jpeg?h=225&w=225",
         "original_price": 24.9,
         "original_ppu": 249,
         "sale_price": 19.9,
@@ -2068,10 +2252,10 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Bio hrášek 300g",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/fb8fa32a-adec-4ad6-acb4-a08070610a96/1743b4c8-983b-4031-9e1a-207da288a6a9_409412480.jpeg?h=225&w=225",
-        "original_price": 38.9,
-        "original_ppu": 129.67,
-        "sale_price": 38.9,
-        "sale_ppu": 129.67,
+        "original_price": 41.9,
+        "original_ppu": 139.67,
+        "sale_price": 41.9,
+        "sale_ppu": 139.67,
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -2094,20 +2278,20 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/c3139016-21e4-4b90-8d96-26fd6dab5c46/685d5162-df2b-4303-8b16-2bfdfb80080e_1977524764.jpeg?h=225&w=225",
         "original_price": 29.9,
         "original_ppu": 149.5,
-        "sale_price": 29.9,
-        "sale_ppu": 149.5,
+        "sale_price": 21.9,
+        "sale_ppu": 109.5,
         "unit_code": "kg",
-        "sale_requirement": null
+        "sale_requirement": "tesco_clubcard"
     },
     {
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Para ořechy jádra 150g",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/0ed80a6b-d232-4a85-a90b-1a10fcd9fb3f/605fa8db-a6a9-4321-bba9-51d8641ab1cb_132418948.jpeg?h=225&w=225",
-        "original_price": 74.9,
-        "original_ppu": 499.33,
-        "sale_price": 74.9,
-        "sale_ppu": 499.33,
+        "original_price": 88.9,
+        "original_ppu": 592.67,
+        "sale_price": 88.9,
+        "sale_ppu": 592.67,
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -2128,10 +2312,10 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "The Grower's Harvest Hrušky zelené koš 1kg",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/059c660c-7c0c-4daa-802c-f5770323b81d/717fbf4f-95f0-4d2e-8bef-0abe90e017f8_1824655067.jpeg?h=225&w=225",
-        "original_price": 39.9,
-        "original_ppu": 39.9,
-        "sale_price": 39.9,
-        "sale_ppu": 39.9,
+        "original_price": 34.9,
+        "original_ppu": 34.9,
+        "sale_price": 34.9,
+        "sale_ppu": 34.9,
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -2190,10 +2374,10 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/7ff16c2b-6106-4656-8efd-31be5aa60ceb/9bde4a34-3007-42d6-a4a6-c70b760c6b36_1444447799.jpeg?h=225&w=225",
         "original_price": 26.9,
         "original_ppu": 76.86,
-        "sale_price": 18.9,
-        "sale_ppu": 54.0,
+        "sale_price": 26.9,
+        "sale_ppu": 76.86,
         "unit_code": "kg",
-        "sale_requirement": "tesco_clubcard"
+        "sale_requirement": null
     },
     {
         "source": "tesco",
@@ -2260,12 +2444,24 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "H+H Kysané zelí 700g",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/dfa6c5c6-00a6-45ba-b4f0-fe57c12414cf/d2cfd03f-d548-492a-b444-b037459e340c_582350817.jpeg?h=225&w=225",
-        "original_price": 31.9,
-        "original_ppu": 45.57,
-        "sale_price": 31.9,
-        "sale_ppu": 45.57,
+        "original_price": 29.9,
+        "original_ppu": 42.71,
+        "sale_price": 29.9,
+        "sale_ppu": 42.71,
         "unit_code": "kg",
         "sale_requirement": null
+    },
+    {
+        "source": "tesco",
+        "product_category": "Ovoce a zelenina",
+        "item_name": "České Houby Lesní směs 30g",
+        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/9f2b6f01-fef4-4661-9c72-f24635b05313/d1f3fda7-0a07-44f3-824f-783d650e3a47_104909032.jpeg?h=225&w=225",
+        "original_price": 69.9,
+        "original_ppu": 2330,
+        "sale_price": 54.9,
+        "sale_ppu": 1830.0,
+        "unit_code": "kg",
+        "sale_requirement": "tesco_clubcard"
     },
     {
         "source": "tesco",
@@ -2298,10 +2494,10 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/4beb1500-188c-4278-9b55-ff259ec34bdb/ab5a0e6a-cefd-434f-8c8b-978d2d6bb1c4_1994399626.jpeg?h=225&w=225",
         "original_price": 74.9,
         "original_ppu": 374.5,
-        "sale_price": 74.9,
-        "sale_ppu": 374.5,
+        "sale_price": 54.9,
+        "sale_ppu": 274.5,
         "unit_code": "kg",
-        "sale_requirement": null
+        "sale_requirement": "tesco_clubcard"
     },
     {
         "source": "tesco",
@@ -2310,20 +2506,20 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/66e262d5-fa78-4f3d-b3cd-db1134c771b8/9e2eeb9b-8540-47e9-abbf-713c03f61681_545570137.jpeg?h=225&w=225",
         "original_price": 69.9,
         "original_ppu": 139.8,
-        "sale_price": 59.9,
-        "sale_ppu": 119.8,
+        "sale_price": 69.9,
+        "sale_ppu": 139.8,
         "unit_code": "kg",
-        "sale_requirement": "tesco_clubcard"
+        "sale_requirement": null
     },
     {
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
-        "item_name": "Tesco Pistácie neloupané pražené nesolené 200g",
-        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/2afd3c05-9d64-4eb9-843c-e0de9929bf75/4dbb5fbe-bc74-4b1b-b13c-261a27d4abd9_2038865250.jpeg?h=225&w=225",
-        "original_price": 95.9,
-        "original_ppu": 479.5,
-        "sale_price": 95.9,
-        "sale_ppu": 479.5,
+        "item_name": "Tesco Pistácie ve skořápce pražené nesolené 200g",
+        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/617bc5a7-78fa-4511-9175-2353b6be033f/c8cac349-1111-4faa-98bc-a4c20f95e56e_594384360.jpeg?h=225&w=225",
+        "original_price": 69.9,
+        "original_ppu": 349.5,
+        "sale_price": 69.9,
+        "sale_ppu": 349.5,
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -2378,8 +2574,8 @@
     {
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
-        "item_name": "Tesco Směs nepražených jader kešu ořechů, rozinek, plodů kustovnice čínské a moruše bílé 100g",
-        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/da4fc2cc-e386-475c-9474-ed91192558f5/3f5e4e1d-3d77-4913-bf0f-8afb22e511e1_1210293497.jpeg?h=225&w=225",
+        "item_name": "Tesco Směs nepražených jader kešu ořechů, rozinek, sušených plodů kustovnice čínské a moruše 100g",
+        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/aa15e656-908b-4d29-91de-9ec66f0d608a/7e248650-ff9d-43c9-beea-19afa65b4d1e_631712500.jpeg?h=225&w=225",
         "original_price": 39.9,
         "original_ppu": 399,
         "sale_price": 39.9,
@@ -2428,10 +2624,10 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Mák modrý celý 200g",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/e07ea0b6-cb02-40bf-bbad-08e1624d42d8/a8b91dec-809b-4229-82a7-9315cff64ad7.jpeg?h=225&w=225",
-        "original_price": 37.9,
-        "original_ppu": 189.5,
-        "sale_price": 37.9,
-        "sale_ppu": 189.5,
+        "original_price": 29.9,
+        "original_ppu": 149.5,
+        "sale_price": 29.9,
+        "sale_ppu": 149.5,
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -2440,10 +2636,10 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Carpe Diem Kombucha 0,75l",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/ffee38ee-df7b-4ac2-84d3-3a670b9ef603/a6a426c9-3801-4c05-9227-e87f6ecee5eb_1780820148.jpeg?h=225&w=225",
-        "original_price": 59.9,
-        "original_ppu": 79.87,
-        "sale_price": 59.9,
-        "sale_ppu": 79.87,
+        "original_price": 63.9,
+        "original_ppu": 85.2,
+        "sale_price": 63.9,
+        "sale_ppu": 85.2,
         "unit_code": "l",
         "sale_requirement": null
     },
@@ -2452,10 +2648,17 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Bio cherry rajčata 250g",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/570091c6-cd9a-43ce-9ec0-ea631e53c6a6/0aff0ba8-de34-444a-93c1-d1eee45de37c_1060777596.jpeg?h=225&w=225",
+<<<<<<< HEAD
         "original_price": 44.9,
         "original_ppu": 179.6,
         "sale_price": 44.9,
         "sale_ppu": 179.6,
+=======
+        "original_price": 39.9,
+        "original_ppu": 159.6,
+        "sale_price": 39.9,
+        "sale_ppu": 159.6,
+>>>>>>> 3ab677cd3cc5b13ceb07d96685439e6f8e9fb6b1
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -2476,10 +2679,10 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Zelí červené",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/78d8334f-c47b-4095-889c-98efc54ed97f/937c4870-5ffb-4b6d-8bcb-94c263199324_981632397.jpeg?h=225&w=225",
-        "original_price": 44.85,
-        "original_ppu": 29.9,
-        "sale_price": 44.85,
-        "sale_ppu": 29.9,
+        "original_price": 37.35,
+        "original_ppu": 24.9,
+        "sale_price": 37.35,
+        "sale_ppu": 24.9,
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -2494,6 +2697,18 @@
         "sale_ppu": 544.55,
         "unit_code": "kg",
         "sale_requirement": "tesco_clubcard"
+    },
+    {
+        "source": "tesco",
+        "product_category": "Ovoce a zelenina",
+        "item_name": "Pitahaya červená volná ks",
+        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/840c9496-c6f6-4948-b1c7-a100061cdc7d/75399bb5-8d9d-4575-89d0-db3d6f69ee03_639101513.jpeg?h=225&w=225",
+        "original_price": 129.9,
+        "original_ppu": 129.9,
+        "sale_price": 129.9,
+        "sale_ppu": 129.9,
+        "unit_code": "kus",
+        "sale_requirement": null
     },
     {
         "source": "tesco",
@@ -2523,7 +2738,7 @@
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Směs nepražených jader skořápkových plodů 100g",
-        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/9f9e22a5-d75d-4ea1-814d-bb6c622c3e98/077d1fe2-82a0-4848-b094-21824fdf6872_952252526.jpeg?h=225&w=225",
+        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/a2cfaf2e-1d00-4a6d-99f9-945b39053ea2/c4e62f5d-4102-408c-8e63-a7fa63636d0f_1604461010.jpeg?h=225&w=225",
         "original_price": 39.9,
         "original_ppu": 399,
         "sale_price": 39.9,
@@ -2536,10 +2751,10 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Pistácie jádra nesolená 100g",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/faad54cd-5fe7-459c-bb0f-b8b3b96170bb/3220d708-963e-443e-a79f-2ef923d04699_1697542191.jpeg?h=225&w=225",
-        "original_price": 96.9,
-        "original_ppu": 969,
-        "sale_price": 96.9,
-        "sale_ppu": 969,
+        "original_price": 99.9,
+        "original_ppu": 999,
+        "sale_price": 99.9,
+        "sale_ppu": 999,
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -2583,7 +2798,7 @@
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
         "item_name": "Kytice chrysanthemy",
-        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/696f9a9c-36ca-4cb3-b16c-6a3ffd4f3725/6ab5d4a6-abfa-40b2-a75c-b9bd1311f6a1.jpeg?h=225&w=225",
+        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/b50db76a-cc9c-4cf2-84e1-8425fc783614/c70d19b4-f996-46a8-8dc2-2198aaf99bf6_551754729.jpeg?h=225&w=225",
         "original_price": 79.9,
         "original_ppu": 79.9,
         "sale_price": 79.9,
@@ -2594,24 +2809,12 @@
     {
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
-        "item_name": "Tesco Mix ořechů a sušeného ovoce 200g",
-        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/3d1c1b05-b95d-41f2-bb37-5a25be297308/76a3b625-2259-43f8-b8eb-fe0d3b13aafe_1151507700.jpeg?h=225&w=225",
-        "original_price": 69.9,
-        "original_ppu": 349.5,
-        "sale_price": 54.9,
-        "sale_ppu": 274.5,
-        "unit_code": "kg",
-        "sale_requirement": "tesco_clubcard"
-    },
-    {
-        "source": "tesco",
-        "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Ananasová šťáva 1l",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/0218f936-1dad-4586-b867-f3fb2b3f96e3/196c3c1f-3d87-473d-9fb5-dcdf2248cfe4_1744597160.jpeg?h=225&w=225",
-        "original_price": 89.9,
-        "original_ppu": 89.9,
-        "sale_price": 89.9,
-        "sale_ppu": 89.9,
+        "original_price": 69.9,
+        "original_ppu": 69.9,
+        "sale_price": 69.9,
+        "sale_ppu": 69.9,
         "unit_code": "l",
         "sale_requirement": null
     },
@@ -2634,16 +2837,16 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/64223125-b4f6-49b5-8105-b13bff6a793d/28140da5-ccc0-49d1-9e3e-a884fd8c29cc_711708526.jpeg?h=225&w=225",
         "original_price": 47.9,
         "original_ppu": 191.6,
-        "sale_price": 37.9,
-        "sale_ppu": 151.6,
+        "sale_price": 47.9,
+        "sale_ppu": 191.6,
         "unit_code": "l",
-        "sale_requirement": "tesco_clubcard"
+        "sale_requirement": null
     },
     {
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Směs nepražených jader kešu ořechů a kandovaných klikev 100g",
-        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/22dd1ec2-0417-48bd-813f-828760609ce2/d1a9b157-110d-4d2b-b1bc-d4b4f92f06c2_83274699.jpeg?h=225&w=225",
+        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/9a1e55ba-6f40-44ed-9a03-beea55103eea/d96f63ee-6584-44b0-ade9-c7279016ab4e_1346242334.jpeg?h=225&w=225",
         "original_price": 39.9,
         "original_ppu": 399,
         "sale_price": 39.9,
@@ -2656,10 +2859,10 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Šťáva z růžového grapefruitu s dužinou 1l",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/59b11a84-9629-4d2a-a0f4-99629d45b75e/8f231088-06c4-4df2-a355-8ba6f0bfd07a_317577304.jpeg?h=225&w=225",
-        "original_price": 74.9,
-        "original_ppu": 74.9,
-        "sale_price": 74.9,
-        "sale_ppu": 74.9,
+        "original_price": 88.9,
+        "original_ppu": 88.9,
+        "sale_price": 88.9,
+        "sale_ppu": 88.9,
         "unit_code": "l",
         "sale_requirement": null
     },
@@ -2706,10 +2909,10 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/128c29ce-01f1-4148-9e1a-04db13f1bad5/7d5c015a-7954-4177-8dcd-bdd6335c5da3_1399179245.jpeg?h=225&w=225",
         "original_price": 49.9,
         "original_ppu": 249.5,
-        "sale_price": 49.9,
-        "sale_ppu": 249.5,
+        "sale_price": 36.9,
+        "sale_ppu": 184.5,
         "unit_code": "kg",
-        "sale_requirement": null
+        "sale_requirement": "tesco_clubcard"
     },
     {
         "source": "tesco",
@@ -2802,10 +3005,10 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/6da29980-2d5a-4043-b7e5-e7ea9e25fe78/0211f521-0db4-4a75-8df6-db5812b9daa9_587864119.jpeg?h=225&w=225",
         "original_price": 34.9,
         "original_ppu": 174.5,
-        "sale_price": 34.9,
-        "sale_ppu": 174.5,
+        "sale_price": 27.9,
+        "sale_ppu": 139.5,
         "unit_code": "kg",
-        "sale_requirement": null
+        "sale_requirement": "tesco_clubcard"
     },
     {
         "source": "tesco",
@@ -2847,13 +3050,25 @@
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Finest Lyofilizované maliny v bílé čokoládě 100g",
-        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/baedd8ae-c766-4d15-9607-edbc27af45e1/07a89c5e-d757-4637-b5dc-ecd82488acda_1763507465.jpeg?h=225&w=225",
+        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/b067ab0a-2099-4b12-a428-7dbd97c6e949/27f9b847-3f0f-4739-99f0-b9f66a2afb09_1822930798.jpeg?h=225&w=225",
         "original_price": 99.9,
         "original_ppu": 999,
         "sale_price": 99.9,
         "sale_ppu": 999,
         "unit_code": "kg",
         "sale_requirement": null
+    },
+    {
+        "source": "tesco",
+        "product_category": "Ovoce a zelenina",
+        "item_name": "České Houby Hřib smrkový 30g",
+        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/58b9c9d0-8b9b-4558-9836-74bd3e58793c/b02f79b2-e7cd-41ee-9ad4-f9ee7f2cedd5_2047516517.jpeg?h=225&w=225",
+        "original_price": 89.9,
+        "original_ppu": 2996.67,
+        "sale_price": 69.9,
+        "sale_ppu": 2330.0,
+        "unit_code": "kg",
+        "sale_requirement": "tesco_clubcard"
     },
     {
         "source": "tesco",
@@ -2874,10 +3089,10 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/29adc704-99ce-4828-a0a4-9660e9b428d4/e817f3eb-6922-4781-b486-022f13de70f1_1199125800.jpeg?h=225&w=225",
         "original_price": 139.9,
         "original_ppu": 60.83,
-        "sale_price": 99.9,
-        "sale_ppu": 43.43,
+        "sale_price": 139.9,
+        "sale_ppu": 60.83,
         "unit_code": "kg",
-        "sale_requirement": "tesco_clubcard"
+        "sale_requirement": null
     },
     {
         "source": "tesco",
@@ -2942,49 +3157,25 @@
     {
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
-        "item_name": "Tesco Kytice růže 35 cm 9 ks",
-        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/90f780be-486f-471c-8fd7-64bf172b418e/1a427216-d14f-4335-a501-87aef5e6c01d.jpeg?h=225&w=225",
-        "original_price": 59.9,
-        "original_ppu": 6.66,
-        "sale_price": 59.9,
-        "sale_ppu": 6.66,
-        "unit_code": "kus",
-        "sale_requirement": null
-    },
-    {
-        "source": "tesco",
-        "product_category": "Ovoce a zelenina",
         "item_name": "Rauch Juice Bar 99,9% ananas-pomeranč-maracuja 800ml",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/df97e9b4-70f4-4f69-88cd-8b179a98d998/998c58a4-0945-4291-a694-0e18ca438085_543711552.jpeg?h=225&w=225",
         "original_price": 82.9,
         "original_ppu": 103.62,
-        "sale_price": 82.9,
-        "sale_ppu": 103.62,
+        "sale_price": 64.9,
+        "sale_ppu": 81.13,
         "unit_code": "l",
-        "sale_requirement": null
+        "sale_requirement": "tesco_clubcard"
     },
     {
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Bio zelené fazolové lusky celé 300g",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/fa8c151b-6ef9-4de9-9486-f9d07bce35e8/e5ef0692-9415-4b41-a5d9-7cab5cf019a7_1405351234.jpeg?h=225&w=225",
-        "original_price": 35.9,
-        "original_ppu": 119.67,
-        "sale_price": 35.9,
-        "sale_ppu": 119.67,
+        "original_price": 29.9,
+        "original_ppu": 99.67,
+        "sale_price": 29.9,
+        "sale_ppu": 99.67,
         "unit_code": "kg",
-        "sale_requirement": null
-    },
-    {
-        "source": "tesco",
-        "product_category": "Ovoce a zelenina",
-        "item_name": "Mrkev svazek",
-        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/f863ad40-82c6-4f3e-afa2-cbb5518c1f1c/be762526-9a64-422f-a6ee-af6294bda6cf_357888753.jpeg?h=225&w=225",
-        "original_price": 19.9,
-        "original_ppu": 19.9,
-        "sale_price": 19.9,
-        "sale_ppu": 19.9,
-        "unit_code": "kus",
         "sale_requirement": null
     },
     {
@@ -2994,10 +3185,10 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/2db8f12c-f05c-4485-947e-725adfc45a97/9bcbbbb9-4486-40f7-8ba2-85736617d3cf_1545885415.jpeg?h=225&w=225",
         "original_price": 82.9,
         "original_ppu": 103.62,
-        "sale_price": 82.9,
-        "sale_ppu": 103.62,
+        "sale_price": 64.9,
+        "sale_ppu": 81.13,
         "unit_code": "l",
-        "sale_requirement": null
+        "sale_requirement": "tesco_clubcard"
     },
     {
         "source": "tesco",
@@ -3018,10 +3209,10 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/904fcd71-67e8-48c7-a624-84bb2c3fe5be/cf69254f-326b-46b7-8bb0-3a1166065963_665766237.jpeg?h=225&w=225",
         "original_price": 69.9,
         "original_ppu": 349.5,
-        "sale_price": 54.9,
-        "sale_ppu": 274.5,
+        "sale_price": 69.9,
+        "sale_ppu": 349.5,
         "unit_code": "kg",
-        "sale_requirement": "tesco_clubcard"
+        "sale_requirement": null
     },
     {
         "source": "tesco",
@@ -3042,10 +3233,10 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/a375e8d5-3340-4f2c-9dc6-ccce6e0e9d41/eb7ab0d8-3f34-4e20-ad34-207909086af0_463063234.jpeg?h=225&w=225",
         "original_price": 82.9,
         "original_ppu": 103.62,
-        "sale_price": 82.9,
-        "sale_ppu": 103.62,
+        "sale_price": 64.9,
+        "sale_ppu": 81.13,
         "unit_code": "l",
-        "sale_requirement": null
+        "sale_requirement": "tesco_clubcard"
     },
     {
         "source": "tesco",
@@ -3090,10 +3281,10 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/d53e1353-97a9-4656-a6b5-f8c0185a8d52/39ffed8a-51a8-430a-9078-29d8150aa37e_1397029990.jpeg?h=225&w=225",
         "original_price": 69.9,
         "original_ppu": 349.5,
-        "sale_price": 54.9,
-        "sale_ppu": 274.5,
+        "sale_price": 69.9,
+        "sale_ppu": 349.5,
         "unit_code": "kg",
-        "sale_requirement": "tesco_clubcard"
+        "sale_requirement": null
     },
     {
         "source": "tesco",
@@ -3111,7 +3302,7 @@
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Konopná semena loupaná 100g",
-        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/cf5d6540-f58a-472c-809b-47efb9714f26/891391a1-9568-48e2-a370-acdbedb0afe0_1524058772.jpeg?h=225&w=225",
+        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/8590a6a0-d395-4617-97f6-224b630d6415/1c1cd9ed-60f4-439c-884a-d5e213dafabd_877951055.jpeg?h=225&w=225",
         "original_price": 39.9,
         "original_ppu": 399,
         "sale_price": 29.9,
@@ -3162,10 +3353,10 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/6ea4810e-b2b9-4f52-b465-3deaf358436a/e71494ac-b3c4-4647-a36f-355e47aabde7_1502435987.jpeg?h=225&w=225",
         "original_price": 82.9,
         "original_ppu": 103.62,
-        "sale_price": 82.9,
-        "sale_ppu": 103.62,
+        "sale_price": 64.9,
+        "sale_ppu": 81.13,
         "unit_code": "l",
-        "sale_requirement": null
+        "sale_requirement": "tesco_clubcard"
     },
     {
         "source": "tesco",
@@ -3244,10 +3435,10 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Směs ovocných šťáv a dření 1l",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/2cefe008-77a0-4540-8a2a-ef32034f2db9/92ac497c-43c9-46e8-b619-5618292d091a_1259322590.jpeg?h=225&w=225",
-        "original_price": 89.9,
-        "original_ppu": 89.9,
-        "sale_price": 89.9,
-        "sale_ppu": 89.9,
+        "original_price": 99.9,
+        "original_ppu": 99.9,
+        "sale_price": 99.9,
+        "sale_ppu": 99.9,
         "unit_code": "l",
         "sale_requirement": null
     },
@@ -3268,10 +3459,10 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Citrus Juice 1l",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/15488057-7eda-44c3-b20f-886cbb92d79d/0f40f502-d6da-452e-93e8-231ffe346834_313185363.jpeg?h=225&w=225",
-        "original_price": 74.9,
-        "original_ppu": 74.9,
-        "sale_price": 74.9,
-        "sale_ppu": 74.9,
+        "original_price": 88.9,
+        "original_ppu": 88.9,
+        "sale_price": 88.9,
+        "sale_ppu": 88.9,
         "unit_code": "l",
         "sale_requirement": null
     },
@@ -3330,10 +3521,10 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/901f82a2-51f4-4255-b7de-03a77e763bac/d512b292-13ea-4a22-94f2-cef57aea6366_1144266804.jpeg?h=225&w=225",
         "original_price": 69.9,
         "original_ppu": 349.5,
-        "sale_price": 54.9,
-        "sale_ppu": 274.5,
+        "sale_price": 69.9,
+        "sale_ppu": 349.5,
         "unit_code": "kg",
-        "sale_requirement": "tesco_clubcard"
+        "sale_requirement": null
     },
     {
         "source": "tesco",
@@ -3352,10 +3543,10 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Loupaná slunečnicová semena v mléčné, hořké a bílé čokoládě 100g",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/4d8edd73-22cf-473a-8774-62f154590369/64fbdc10-67b3-45ee-ad0f-5e2a88cec29e_783327150.jpeg?h=225&w=225",
-        "original_price": 34.9,
-        "original_ppu": 349,
-        "sale_price": 34.9,
-        "sale_ppu": 349,
+        "original_price": 35.9,
+        "original_ppu": 359,
+        "sale_price": 35.9,
+        "sale_ppu": 359,
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -3378,20 +3569,20 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/5f5a2fde-ddf5-402a-ad35-46aac58a387e/c98bfa4c-21c1-4ceb-833f-85f765ab9538_2080710759.jpeg?h=225&w=225",
         "original_price": 47.9,
         "original_ppu": 191.6,
-        "sale_price": 37.9,
-        "sale_ppu": 151.6,
+        "sale_price": 47.9,
+        "sale_ppu": 191.6,
         "unit_code": "l",
-        "sale_requirement": "tesco_clubcard"
+        "sale_requirement": null
     },
     {
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Kokosové kostky v mléčné čokoládě 120g",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/d62cd283-b30c-49b7-bd80-8edf327dea8c/e1ccdbd1-f4f8-41fe-a75d-a0416f9294ba_406048766.jpeg?h=225&w=225",
-        "original_price": 39.9,
-        "original_ppu": 332.5,
-        "sale_price": 39.9,
-        "sale_ppu": 332.5,
+        "original_price": 46.9,
+        "original_ppu": 390.83,
+        "sale_price": 46.9,
+        "sale_ppu": 390.83,
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -3414,20 +3605,20 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/08bce156-3413-4b1e-ba47-917fe857a50d/2df646f3-e0bc-437e-8189-68b30f5f8c3a_1072215492.jpeg?h=225&w=225",
         "original_price": 82.9,
         "original_ppu": 103.62,
-        "sale_price": 82.9,
-        "sale_ppu": 103.62,
+        "sale_price": 64.9,
+        "sale_ppu": 81.13,
         "unit_code": "l",
-        "sale_requirement": null
+        "sale_requirement": "tesco_clubcard"
     },
     {
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Směs ovocných šťáv a dření s kokosovým mlékem 750ml",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/137743df-11f3-4487-9ac4-2c6b0ca37a0c/6e7ca05b-14bc-40e7-b1f6-f5e669528876_317172075.jpeg?h=225&w=225",
-        "original_price": 75.9,
-        "original_ppu": 101.2,
-        "sale_price": 75.9,
-        "sale_ppu": 101.2,
+        "original_price": 78.9,
+        "original_ppu": 105.2,
+        "sale_price": 78.9,
+        "sale_ppu": 105.2,
         "unit_code": "l",
         "sale_requirement": null
     },
@@ -3508,10 +3699,10 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Směs ovocných šťáv a dření 750ml",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/9cc61a6a-58af-4e23-a25d-eb4c6c24b0db/3d035d22-27c8-4b0a-9e14-2a67fe664039_1744460898.jpeg?h=225&w=225",
-        "original_price": 75.9,
-        "original_ppu": 101.2,
-        "sale_price": 75.9,
-        "sale_ppu": 101.2,
+        "original_price": 78.9,
+        "original_ppu": 105.2,
+        "sale_price": 78.9,
+        "sale_ppu": 105.2,
         "unit_code": "l",
         "sale_requirement": null
     },
@@ -3544,10 +3735,10 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Směs ovocných šťáv a dření 750ml",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/cacb9c18-e75e-41a4-82eb-344863c29853/f6a873fb-81a9-446b-bb7b-099456a2debe_1949742959.jpeg?h=225&w=225",
-        "original_price": 75.9,
-        "original_ppu": 101.2,
-        "sale_price": 75.9,
-        "sale_ppu": 101.2,
+        "original_price": 78.9,
+        "original_ppu": 105.2,
+        "sale_price": 78.9,
+        "sale_ppu": 105.2,
         "unit_code": "l",
         "sale_requirement": null
     },
@@ -3567,7 +3758,7 @@
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Slunečnicová semena pražená neloupaná 200g",
-        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/71288a5f-a199-459b-a051-39db962c39f2/361d1e43-f650-4110-a968-e15562462ce1_668739932.jpeg?h=225&w=225",
+        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/277550ab-3d5b-4cfe-b023-017551988f2c/7cb6c6a0-2d5b-4069-b323-852d163dc1f5_516869841.jpeg?h=225&w=225",
         "original_price": 23.9,
         "original_ppu": 119.5,
         "sale_price": 18.9,
@@ -3616,10 +3807,10 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Lískové ořechy jádra pražená v mléčné čokoládě a skořici 120g",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/a4a52f9b-cb07-402e-b2ee-4876037d5409/ef9108e5-baef-47ec-9fdf-566b6f9b61a8_1463615067.jpeg?h=225&w=225",
-        "original_price": 47.9,
-        "original_ppu": 399.17,
-        "sale_price": 47.9,
-        "sale_ppu": 399.17,
+        "original_price": 56.9,
+        "original_ppu": 474.17,
+        "sale_price": 56.9,
+        "sale_ppu": 474.17,
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -3640,10 +3831,10 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Ugo Bylinková limonáda levandule jahoda citrón 500ml",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/53dfead8-ef1e-4595-bdcf-3aa1de8009e9/dffd9965-38fb-4656-a08f-e1647a1c59e0_2008941298.jpeg?h=225&w=225",
-        "original_price": 46.9,
-        "original_ppu": 93.8,
-        "sale_price": 46.9,
-        "sale_ppu": 93.8,
+        "original_price": 44.9,
+        "original_ppu": 89.8,
+        "sale_price": 44.9,
+        "sale_ppu": 89.8,
         "unit_code": "l",
         "sale_requirement": null
     },
@@ -3688,10 +3879,10 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Ugo Bylinková limonáda pomeranč a máta zázvor 500ml",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/1d853802-ff84-4bcc-8ad5-4541bd5f5b89/db23cad5-ef3b-43d8-b70b-7244c1be2e8d_560369128.jpeg?h=225&w=225",
-        "original_price": 46.9,
-        "original_ppu": 93.8,
-        "sale_price": 46.9,
-        "sale_ppu": 93.8,
+        "original_price": 44.9,
+        "original_ppu": 89.8,
+        "sale_price": 44.9,
+        "sale_ppu": 89.8,
         "unit_code": "l",
         "sale_requirement": null
     },
@@ -3712,10 +3903,10 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Kešu ořechy jádra pražená v mléčné čokoládě 120g",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/c550a51c-55c8-4c08-8168-b1c6a086eac2/a517229e-6570-405f-b86b-873c540c822e_6288422.jpeg?h=225&w=225",
-        "original_price": 54.9,
-        "original_ppu": 457.5,
-        "sale_price": 54.9,
-        "sale_ppu": 457.5,
+        "original_price": 56.9,
+        "original_ppu": 474.17,
+        "sale_price": 56.9,
+        "sale_ppu": 474.17,
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -3738,10 +3929,10 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/84d220aa-895a-4794-b667-a06fed9458d8/6760bcd2-05bb-4c95-942c-36440232ce92_808968706.jpeg?h=225&w=225",
         "original_price": 69.9,
         "original_ppu": 349.5,
-        "sale_price": 54.9,
-        "sale_ppu": 274.5,
+        "sale_price": 69.9,
+        "sale_ppu": 349.5,
         "unit_code": "kg",
-        "sale_requirement": "tesco_clubcard"
+        "sale_requirement": null
     },
     {
         "source": "tesco",
@@ -3758,6 +3949,18 @@
     {
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
+        "item_name": "Tesco Lískové ořechy jádra pražená v mléčné čokoládě 120g",
+        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/69e83608-2d88-4032-884e-726ca65c3105/445e591d-54f9-4d5d-b8b5-026790eceaff_58533437.jpeg?h=225&w=225",
+        "original_price": 56.9,
+        "original_ppu": 474.17,
+        "sale_price": 56.9,
+        "sale_ppu": 474.17,
+        "unit_code": "kg",
+        "sale_requirement": null
+    },
+    {
+        "source": "tesco",
+        "product_category": "Ovoce a zelenina",
         "item_name": "Rauch Juice Bar 100% pomerančovo-mangovo-mrkvová šťáva 330ml",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/250fb50c-3459-4a4a-8d95-25d960039481/49e50ea4-3ca2-4ec1-80d1-ddba02e4afe4_792077264.jpeg?h=225&w=225",
         "original_price": 44.9,
@@ -3765,18 +3968,6 @@
         "sale_price": 44.9,
         "sale_ppu": 136.06,
         "unit_code": "l",
-        "sale_requirement": null
-    },
-    {
-        "source": "tesco",
-        "product_category": "Ovoce a zelenina",
-        "item_name": "Tesco Kytice Provance",
-        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/0afee41f-9783-4c41-8f88-85f31c8ed67e/509e0b14-0071-4051-8d03-1dec37e58e5d_376250718.jpeg?h=225&w=225",
-        "original_price": 299.9,
-        "original_ppu": 299.9,
-        "sale_price": 299.9,
-        "sale_ppu": 299.9,
-        "unit_code": "kus",
         "sale_requirement": null
     },
     {
@@ -3810,10 +4001,10 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/5f49a75c-3168-49f2-acd3-6b3126194f7d/736c9b55-a884-441c-b5de-82be647f41ef_480000312.jpeg?h=225&w=225",
         "original_price": 35.9,
         "original_ppu": 359,
-        "sale_price": 27.9,
-        "sale_ppu": 279.0,
+        "sale_price": 35.9,
+        "sale_ppu": 359,
         "unit_code": "kg",
-        "sale_requirement": "tesco_clubcard"
+        "sale_requirement": null
     },
     {
         "source": "tesco",
@@ -3822,10 +4013,10 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/08b1582a-14d5-4e15-9042-059ea7260527/bed2d05c-1b13-48b3-b7aa-da3fef4a9378_579434838.jpeg?h=225&w=225",
         "original_price": 59.9,
         "original_ppu": 1996.67,
-        "sale_price": 59.9,
-        "sale_ppu": 1996.67,
+        "sale_price": 44.9,
+        "sale_ppu": 1496.67,
         "unit_code": "kg",
-        "sale_requirement": null
+        "sale_requirement": "tesco_clubcard"
     },
     {
         "source": "tesco",
@@ -3854,12 +4045,24 @@
     {
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
+        "item_name": "Tesco Arašídy loupané pražené v mléčné čokoládě 120g",
+        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/8f6a84c2-cb4b-44b5-880e-27e7aff28734/e64f9f94-624f-4fc0-80e6-6ac35cbce7e7_564645244.jpeg?h=225&w=225",
+        "original_price": 32.9,
+        "original_ppu": 274.17,
+        "sale_price": 32.9,
+        "sale_ppu": 274.17,
+        "unit_code": "kg",
+        "sale_requirement": null
+    },
+    {
+        "source": "tesco",
+        "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Mandle jádra pražená v bílé čokoládě s karamelem 120g",
-        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/7469bdd5-1285-4dd6-877c-c8a231fe2330/aec55bae-f3ef-452f-815b-7b9a97c3206d_1626305450.jpeg?h=225&w=225",
-        "original_price": 61.9,
-        "original_ppu": 515.83,
-        "sale_price": 61.9,
-        "sale_ppu": 515.83,
+        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/0181c2f9-0154-40af-926d-1652fd20c1f8/565ec690-ad0f-485b-a768-13d8c3ad2465_836609162.jpeg?h=225&w=225",
+        "original_price": 63.9,
+        "original_ppu": 532.5,
+        "sale_price": 63.9,
+        "sale_ppu": 532.5,
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -3867,7 +4070,7 @@
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Směs rozinek, meruňkových kostek a kandovaných klikev v hořké čokoládě 120g",
-        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/2f89f0fa-4295-40d3-8509-6c65034b3cd5/685137ad-1fe9-4806-a5f2-4492d7cb2dbf_1121033066.jpeg?h=225&w=225",
+        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/ae6920e0-b61f-427d-8f29-122cb3af13cd/97a6bf00-f641-438b-aae7-b8b8ffbc379c_198094753.jpeg?h=225&w=225",
         "original_price": 47.9,
         "original_ppu": 399.17,
         "sale_price": 47.9,
@@ -3879,7 +4082,7 @@
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Rozinky v hořké čokoládě 120g",
-        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/90661e3d-8cff-4a1b-a313-0c1716667f5a/2a064829-3832-4a10-bd11-ca1053749ca3_1673713754.jpeg?h=225&w=225",
+        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/604f8a3d-1925-4e05-9988-60bdff8b765f/1304842e-9952-4057-adac-6570e0fad70e_1469278524.jpeg?h=225&w=225",
         "original_price": 41.9,
         "original_ppu": 349.17,
         "sale_price": 41.9,
@@ -3891,11 +4094,11 @@
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Mandle jádra pražená v bílé čokoládě a kokosu 120g",
-        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/cf74126a-ce64-43a0-aca2-abe8290fed2c/e16bce96-34ff-479d-83d6-101083cf5e0d_696239807.jpeg?h=225&w=225",
-        "original_price": 61.9,
-        "original_ppu": 515.83,
-        "sale_price": 61.9,
-        "sale_ppu": 515.83,
+        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/ef1d7885-7521-4770-b9c9-ebcc8dd10f92/c337cf47-880c-45f8-b40b-863f63847008_342492197.jpeg?h=225&w=225",
+        "original_price": 63.9,
+        "original_ppu": 532.5,
+        "sale_price": 63.9,
+        "sale_ppu": 532.5,
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -3903,11 +4106,35 @@
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Meruňkové kostky v bílé čokoládě 120g",
-        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/4a987853-ff82-4b4e-b4ac-68459806ff91/cacdcad3-c042-4d8d-8160-49841fe9c80f_1287700776.jpeg?h=225&w=225",
+        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/2d6a7544-b450-4714-b82e-8a49b8eabacf/489e891e-2a73-454b-9c01-dfe9dd894165_703835366.jpeg?h=225&w=225",
         "original_price": 47.9,
         "original_ppu": 399.17,
         "sale_price": 47.9,
         "sale_ppu": 399.17,
+        "unit_code": "kg",
+        "sale_requirement": null
+    },
+    {
+        "source": "tesco",
+        "product_category": "Ovoce a zelenina",
+        "item_name": "Tesco Směs skořápkových plodů, rozinek a proslazených krájených klikví 55g",
+        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/609f41f9-856f-4932-9142-51fe239bdd0a/75cda874-23e7-4a85-8ed8-e68095c5c426_929850606.jpeg?h=225&w=225",
+        "original_price": 24.9,
+        "original_ppu": 452.73,
+        "sale_price": 24.9,
+        "sale_ppu": 452.73,
+        "unit_code": "kg",
+        "sale_requirement": null
+    },
+    {
+        "source": "tesco",
+        "product_category": "Ovoce a zelenina",
+        "item_name": "Tesco Směs pražených skořápkových plodů 55g",
+        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/a5f844bb-354a-4363-b3fa-8dd126990fc4/6632a6f3-cc9b-4efd-bbcd-e32c123a0e55_970407096.jpeg?h=225&w=225",
+        "original_price": 24.9,
+        "original_ppu": 452.73,
+        "sale_price": 24.9,
+        "sale_ppu": 452.73,
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -3998,6 +4225,18 @@
     {
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
+        "item_name": "Tesco Směs bio jader skořápkových plodů a sušeného a proslazeného bio ovoce 125g",
+        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/5f6e77ae-0623-40ca-ad9f-ff1877f81d52/c74324ae-3763-403e-93ae-1b8c8e99b9da_166709023.jpeg?h=225&w=225",
+        "original_price": 74.9,
+        "original_ppu": 599.2,
+        "sale_price": 59.9,
+        "sale_ppu": 479.2,
+        "unit_code": "kg",
+        "sale_requirement": "tesco_clubcard"
+    },
+    {
+        "source": "tesco",
+        "product_category": "Ovoce a zelenina",
         "item_name": "Jablka Ambrosia volná",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/b8356c9d-257b-4477-9672-a869afc9d072/87ee63d1-b1c3-4d2f-a0fb-5e169afd7596_1908976126.jpeg?h=225&w=225",
         "original_price": 11.38,
@@ -4026,10 +4265,10 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/66f706ba-d3d2-43d5-aabc-aca65aad9d2e/4ea84692-42ad-457e-8993-c1c38669cc66_2007810642.jpeg?h=225&w=225",
         "original_price": 64.9,
         "original_ppu": 162.25,
-        "sale_price": 64.9,
-        "sale_ppu": 162.25,
+        "sale_price": 47.9,
+        "sale_ppu": 119.75,
         "unit_code": "l",
-        "sale_requirement": null
+        "sale_requirement": "tesco_clubcard"
     },
     {
         "source": "tesco",
@@ -4048,10 +4287,10 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Ugo Cold Brew Tea jahoda, bucco a máta 500ml",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/b456abdf-476b-44b9-aad8-57753391e93d/fbdf5069-e863-42d0-ae5d-5657e2801251_749375338.jpeg?h=225&w=225",
-        "original_price": 44.9,
-        "original_ppu": 89.8,
-        "sale_price": 44.9,
-        "sale_ppu": 89.8,
+        "original_price": 49.9,
+        "original_ppu": 99.8,
+        "sale_price": 49.9,
+        "sale_ppu": 99.8,
         "unit_code": "l",
         "sale_requirement": null
     },
@@ -4142,6 +4381,18 @@
     {
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
+        "item_name": "Tesco Směs rozinek, pražených loupaných arašídů a jader skořápkových plodů 200g",
+        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/1c650a1d-5a95-4315-b364-7c914e5136c7/23ab477f-fd76-4668-b05c-f11d6f38608f_1409477582.jpeg?h=225&w=225",
+        "original_price": 59.9,
+        "original_ppu": 299.5,
+        "sale_price": 59.9,
+        "sale_ppu": 299.5,
+        "unit_code": "kg",
+        "sale_requirement": null
+    },
+    {
+        "source": "tesco",
+        "product_category": "Ovoce a zelenina",
         "item_name": "Tesco 100% pomerančová šťáva s dužninou 200ml",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/7db997a3-2cbc-4a2e-ba3c-df2bf527c653/0987b6f1-9434-4e19-96df-89a1e1efe1dd_916854713.jpeg?h=225&w=225",
         "original_price": 22.9,
@@ -4161,17 +4412,24 @@
         "sale_price": 19.9,
         "sale_ppu": 99.5,
         "unit_code": "l",
-        "sale_requirement": "tesco_clubcard"
+        "sale_requirement": null
     },
     {
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco 100 % ananasová šťáva 180ml",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/9e35ed00-0f06-4d4e-8dfe-10fa4ca89c3e/94da44be-f6ed-48b4-8c45-c832e8df2575_1600458953.jpeg?h=225&w=225",
+<<<<<<< HEAD
         "original_price": 21.9,
         "original_ppu": 121.67,
         "sale_price": 21.9,
         "sale_ppu": 121.67,
+=======
+        "original_price": 29.9,
+        "original_ppu": 166.11,
+        "sale_price": 29.9,
+        "sale_ppu": 166.11,
+>>>>>>> 3ab677cd3cc5b13ceb07d96685439e6f8e9fb6b1
         "unit_code": "l",
         "sale_requirement": null
     },
@@ -4194,10 +4452,10 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/dd3c0608-7d78-4949-ab5e-0d7eef34c5b1/d3126007-c8a4-46d1-a62c-3219ca2d8977_1083397779.jpeg?h=225&w=225",
         "original_price": 74.9,
         "original_ppu": 374.5,
-        "sale_price": 74.9,
-        "sale_ppu": 374.5,
+        "sale_price": 59.9,
+        "sale_ppu": 299.5,
         "unit_code": "kg",
-        "sale_requirement": null
+        "sale_requirement": "tesco_clubcard"
     },
     {
         "source": "tesco",
@@ -4206,8 +4464,8 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/5adebe5b-142a-444b-969a-844d7aa82c87/b1e88424-041c-423a-90c7-68582364720b_1559494325.jpeg?h=225&w=225",
         "original_price": 29.9,
         "original_ppu": 299,
-        "sale_price": 22.9,
-        "sale_ppu": 229.0,
+        "sale_price": 19.9,
+        "sale_ppu": 199.0,
         "unit_code": "kg",
         "sale_requirement": "tesco_clubcard"
     },
@@ -4230,10 +4488,10 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/b1d76b60-70ec-4f6d-b1c4-389517178643/018956d0-77b9-47c3-a065-dee25c341171_608993636.jpeg?h=225&w=225",
         "original_price": 34.9,
         "original_ppu": 279.2,
-        "sale_price": 34.9,
-        "sale_ppu": 279.2,
+        "sale_price": 24.9,
+        "sale_ppu": 199.2,
         "unit_code": "kg",
-        "sale_requirement": null
+        "sale_requirement": "tesco_clubcard"
     },
     {
         "source": "tesco",
@@ -4242,10 +4500,10 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/ee1b127e-da1c-45e0-bcdb-ee1dd4c42f7a/392469ae-9273-44b1-b161-e069301e665e_1256722397.jpeg?h=225&w=225",
         "original_price": 34.9,
         "original_ppu": 279.2,
-        "sale_price": 34.9,
-        "sale_ppu": 279.2,
+        "sale_price": 24.9,
+        "sale_ppu": 199.2,
         "unit_code": "kg",
-        "sale_requirement": null
+        "sale_requirement": "tesco_clubcard"
     },
     {
         "source": "tesco",
@@ -4254,22 +4512,10 @@
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/20abeadd-baf7-4310-a80c-e5249fddac35/414d85c6-f06e-4eea-9a44-f1d364886f5a_2035997042.jpeg?h=225&w=225",
         "original_price": 34.9,
         "original_ppu": 279.2,
-        "sale_price": 34.9,
-        "sale_ppu": 279.2,
+        "sale_price": 24.9,
+        "sale_ppu": 199.2,
         "unit_code": "kg",
-        "sale_requirement": null
-    },
-    {
-        "source": "tesco",
-        "product_category": "Ovoce a zelenina",
-        "item_name": "Baby leaves mix praný 125g",
-        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/e65d4193-1b32-4e00-8222-2fd175e36068/655999ff-761d-435b-ae6c-ef7b750928ac_1453812971.jpeg?h=225&w=225",
-        "original_price": 34.9,
-        "original_ppu": 279.2,
-        "sale_price": 34.9,
-        "sale_ppu": 279.2,
-        "unit_code": "kg",
-        "sale_requirement": null
+        "sale_requirement": "tesco_clubcard"
     },
     {
         "source": "tesco",
@@ -4300,10 +4546,10 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Phalaenopsis 1 stonek květináč 12 cm",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/3adcc7fc-83d9-4e64-87be-bc0836d9525c/703ed823-b555-43ca-a99c-c0d00f06524c_1880289391.jpeg?h=225&w=225",
-        "original_price": 149.9,
-        "original_ppu": 149.9,
-        "sale_price": 149.9,
-        "sale_ppu": 149.9,
+        "original_price": 119.9,
+        "original_ppu": 119.9,
+        "sale_price": 119.9,
+        "sale_ppu": 119.9,
         "unit_code": "kus",
         "sale_requirement": null
     },
@@ -4312,10 +4558,10 @@
         "product_category": "Ovoce a zelenina",
         "item_name": "Limeñita Šťáva z klementinek s dužinou 750ml",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/17a547f7-d2a2-46b0-b036-9130d6642ea8/acb45b91-4a15-405b-bb94-0063a5257861_332475375.jpeg?h=225&w=225",
-        "original_price": 84.9,
-        "original_ppu": 113.2,
-        "sale_price": 84.9,
-        "sale_ppu": 113.2,
+        "original_price": 86.9,
+        "original_ppu": 115.87,
+        "sale_price": 86.9,
+        "sale_ppu": 115.87,
         "unit_code": "l",
         "sale_requirement": null
     },
@@ -4358,18 +4604,6 @@
     {
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
-        "item_name": "Dýně okrasná",
-        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/740e7ead-53d2-40e7-a08d-d5f7e1b52cb1/a6b6c266-81ff-4d27-af58-2ad854ba0d8c_568921350.jpeg?h=225&w=225",
-        "original_price": 19.9,
-        "original_ppu": 19.9,
-        "sale_price": 19.9,
-        "sale_ppu": 19.9,
-        "unit_code": "kus",
-        "sale_requirement": null
-    },
-    {
-        "source": "tesco",
-        "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Kytice Germini",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/f37c7096-fec2-4e4d-bfd3-5c0440411c68/4df0dd0a-68ac-4870-811e-7dd193d45a6f_1546324422.jpeg?h=225&w=225",
         "original_price": 79.9,
@@ -4377,18 +4611,6 @@
         "sale_price": 79.9,
         "sale_ppu": 79.9,
         "unit_code": "kus",
-        "sale_requirement": null
-    },
-    {
-        "source": "tesco",
-        "product_category": "Ovoce a zelenina",
-        "item_name": "Švestky",
-        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/7ec80f01-7b28-4c7c-b7fc-b17b76b51232/fa19ebdd-1480-4f93-8fc1-efd5ff712e97_1879667403.jpeg?h=225&w=225",
-        "original_price": 4.09,
-        "original_ppu": 49.9,
-        "sale_price": 4.09,
-        "sale_ppu": 49.9,
-        "unit_code": "kg",
         "sale_requirement": null
     },
     {
@@ -4406,36 +4628,24 @@
     {
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
-        "item_name": "Tesco Švestky 1kg",
-        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/a6b2a7be-bd66-42c8-9392-4d3dd3cc4e22/76dea036-5311-4071-bcf1-9a87101c5ef3_73187716.jpeg?h=225&w=225",
-        "original_price": 49.9,
-        "original_ppu": 49.9,
-        "sale_price": 49.9,
-        "sale_ppu": 49.9,
-        "unit_code": "kg",
-        "sale_requirement": null
-    },
-    {
-        "source": "tesco",
-        "product_category": "Ovoce a zelenina",
         "item_name": "The Gutsy Captain Kombucha Original 400ml",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/48328bb9-3710-4cde-bf25-ad5c1039e783/93b000e1-9694-4945-836d-d46a6db3351f_2139375625.jpeg?h=225&w=225",
         "original_price": 64.9,
         "original_ppu": 162.25,
-        "sale_price": 64.9,
-        "sale_ppu": 162.25,
+        "sale_price": 47.9,
+        "sale_ppu": 119.75,
         "unit_code": "l",
-        "sale_requirement": null
+        "sale_requirement": "tesco_clubcard"
     },
     {
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
         "item_name": "Tesco Cuketa bio 500g",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/816589d0-4547-4e37-9b8f-9709366ddbe5/9b9feec7-d230-44dc-ae9f-7da04fdaf59b_48948574.jpeg?h=225&w=225",
-        "original_price": 44.9,
-        "original_ppu": 89.8,
-        "sale_price": 44.9,
-        "sale_ppu": 89.8,
+        "original_price": 49.9,
+        "original_ppu": 99.8,
+        "sale_price": 49.9,
+        "sale_ppu": 99.8,
         "unit_code": "kg",
         "sale_requirement": null
     },
@@ -4466,48 +4676,24 @@
     {
         "source": "tesco",
         "product_category": "Ovoce a zelenina",
+        "item_name": "Phalaenopsis barvený 2 stonky květináč 12 cm",
+        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/51f9fe4b-bd93-4b31-9ea0-1222326fe7ad/0dbdde77-4027-4252-88a4-3986951a7d10_1467377315.jpeg?h=225&w=225",
+        "original_price": 339.9,
+        "original_ppu": 339.9,
+        "sale_price": 339.9,
+        "sale_ppu": 339.9,
+        "unit_code": "kus",
+        "sale_requirement": null
+    },
+    {
+        "source": "tesco",
+        "product_category": "Ovoce a zelenina",
         "item_name": "Prémiové růže 14 stonků zlatá zeleň 40 cm",
         "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/a3a15aac-614d-402d-bf37-972274b95be1/335c6302-cf47-4e5e-9ed0-b43adfd29725_578966832.jpeg?h=225&w=225",
         "original_price": 299.9,
         "original_ppu": 299.9,
         "sale_price": 299.9,
         "sale_ppu": 299.9,
-        "unit_code": "kus",
-        "sale_requirement": null
-    },
-    {
-        "source": "tesco",
-        "product_category": "Ovoce a zelenina",
-        "item_name": "Fairtrade kytice růží",
-        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/6a43f278-7c5f-4c34-89c3-b6da22108cf0/db28624c-8e1e-4ed7-a814-8d76ce8e56f7_1539400372.jpeg?h=225&w=225",
-        "original_price": 169.9,
-        "original_ppu": 169.9,
-        "sale_price": 169.9,
-        "sale_ppu": 169.9,
-        "unit_code": "kus",
-        "sale_requirement": null
-    },
-    {
-        "source": "tesco",
-        "product_category": "Ovoce a zelenina",
-        "item_name": "Rainbow kytice růží",
-        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/d2fe9faf-130f-4c23-a1e6-c4538a061651/26c68701-fe98-4883-961f-0a481d4a2ee6_799264942.jpeg?h=225&w=225",
-        "original_price": 369.9,
-        "original_ppu": 369.9,
-        "sale_price": 369.9,
-        "sale_ppu": 369.9,
-        "unit_code": "kus",
-        "sale_requirement": null
-    },
-    {
-        "source": "tesco",
-        "product_category": "Ovoce a zelenina",
-        "item_name": "Luxury kytice",
-        "image_url": "https://digitalcontent.api.tesco.com/v2/media/ghs/8ac9b7ae-1afb-4a1a-bcda-a75a6b6fcb5c/383b0376-5247-4a31-bd15-83ffa145713e_343020153.jpeg?h=225&w=225",
-        "original_price": 499.9,
-        "original_ppu": 499.9,
-        "sale_price": 499.9,
-        "sale_ppu": 499.9,
         "unit_code": "kus",
         "sale_requirement": null
     },
