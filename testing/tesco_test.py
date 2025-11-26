@@ -547,6 +547,8 @@ def clean_tesco_data(data, category_name):
             sale_price = regular_price
             sale_ppu = price_per_unit_default
             
+            product_url = f"https://nakup.itesco.cz/groceries/cs-CZ/products/{item['node']['id']}"
+
             sale_requirement = None
 
             promotions = item["node"]["sellers"]["results"][0]["promotions"]
@@ -580,6 +582,7 @@ def clean_tesco_data(data, category_name):
                 'sale_price': sale_price, # "143,84 Kč"
                 'sale_ppu': sale_ppu,  # eg "89.9", we need to add the unit from the unit_code
                 'unit_code': unit_code, # eg kg, g, l etc.
+                'product_url': product_url,
                 'sale_requirement': sale_requirement  # Indicate that sale price requires Tesco Clubcard
             })
         except KeyError as e:
