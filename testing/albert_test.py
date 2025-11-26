@@ -102,6 +102,11 @@ def clean_albert_data(json_data):
         unit_code = price_info.get('unitCode')
         unit_price_formatted = float(price_info.get('unitPrice'))
 
+        # 3. Extract product URL (may be relative)
+        product_url = product.get('url')
+        if product_url and not product_url.startswith(('http://', 'https://')):
+            product_url = 'https://www.albert.cz/' + product_url.lstrip('/')
+
         products_data.append({
             'source': 'albert',
             'product_category': category,
@@ -111,6 +116,7 @@ def clean_albert_data(json_data):
             'sale_price': current_price, # "143,84 Kč"
             'sale_ppu': unit_price_formatted,  # eg "89.9", we need to add the unit from the unit_code
             'unit_code': unit_code, # eg kg, g, l etc.
+            'product_url': product_url,
             'sale_requirement': None  # Indicate what the sale price requires
         })
 
@@ -166,7 +172,7 @@ if __name__ == "__main__":
             except Exception as e:
                 print(f"Failed to parse JSON for category {code}: {e}")
                 continue
-            sleep(1)  # Be polite and avoid hitting the server too quickly
+            sleep(0.1)  # Be polite and avoid hitting the server too quickly
 
 
     for product in all_products:

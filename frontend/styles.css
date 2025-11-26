@@ -17,7 +17,9 @@ body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial; margin:0;background:var(
 .card .title{font-weight:600;font-size:14px}
 .card .metaRow{display:flex;justify-content:space-between;align-items:center;font-size:13px}
 .price{font-weight:700;color:var(--accent)}
+.original-price{margin-left:8px;color:var(--muted);text-decoration:line-through;font-weight:600;font-size:12px}
 .ppu{color:var(--muted);font-size:12px}
+.original-ppu{color:var(--muted);text-decoration:line-through;font-size:11px;margin-top:2px}
 .badge{background:#ffead5;color:#7a4a00;padding:4px 6px;border-radius:8px;font-size:12px}
 .footer{text-align:center;padding:14px;color:var(--muted)}
 .notes{margin-top:12px;color:var(--muted);font-size:13px}

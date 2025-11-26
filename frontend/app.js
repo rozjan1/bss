@@ -108,9 +108,41 @@ function render(){
     img.addEventListener('click', ()=> window.open(img.src, '_blank'))
     const title = document.createElement('div'); title.className='title'; title.textContent = p.item_name || p.name || 'Unnamed'
     const metaRow = document.createElement('div'); metaRow.className='metaRow'
-  const price = document.createElement('div'); price.className='price'; price.textContent = fmtPrice(p._price)
-  const ppu = document.createElement('div'); ppu.className='ppu'; ppu.textContent = (p.sale_ppu??p.original_ppu??'') ? `${p.sale_ppu??p.original_ppu} Kč / ${p.unit_code??''}` : ''
-    metaRow.appendChild(price); metaRow.appendChild(ppu)
+  // Determine sale vs original prices (numeric)
+  const saleVal = parsePrice(p.sale_price ?? p.sale_price)
+  const origVal = parsePrice(p.original_price ?? p.original_price)
+
+  // Primary visible price: prefer sale price if present otherwise use normalized price
+  const primaryPrice = saleVal != null ? saleVal : p._price
+  const price = document.createElement('div'); price.className='price'; price.textContent = fmtPrice(primaryPrice)
+
+  // If there's an original price different from the primary price, show it as strikethrough
+  if(origVal != null && (saleVal == null || origVal !== saleVal) && origVal !== primaryPrice){
+    const origPrice = document.createElement('div'); origPrice.className = 'original-price'; origPrice.textContent = fmtPrice(origVal)
+    // place original price next to main price
+    const priceWrapper = document.createElement('div'); priceWrapper.style.display = 'flex'; priceWrapper.style.alignItems = 'center'
+    priceWrapper.appendChild(price);
+    priceWrapper.appendChild(origPrice);
+    metaRow.appendChild(priceWrapper)
+  } else {
+    metaRow.appendChild(price)
+  }
+
+  // Per-unit pricing: show current ppu and, if available, original ppu as strikethrough
+  const ppuText = (p.sale_ppu ?? p.original_ppu ?? '') ? `${p.sale_ppu ?? p.original_ppu} Kč / ${p.unit_code ?? ''}` : ''
+  const ppu = document.createElement('div'); ppu.className='ppu'; ppu.textContent = ppuText
+  if((p.original_ppu != null) && (p.sale_ppu == null || p.original_ppu !== p.sale_ppu)){
+    const origPpuText = p.original_ppu ? `${p.original_ppu} Kč / ${p.unit_code ?? ''}` : ''
+    if(origPpuText){
+      const origPpu = document.createElement('div'); origPpu.className = 'original-ppu'; origPpu.textContent = origPpuText
+      const ppuWrapper = document.createElement('div'); ppuWrapper.style.display = 'flex'; ppuWrapper.style.flexDirection = 'column'; ppuWrapper.appendChild(ppu); ppuWrapper.appendChild(origPpu)
+      metaRow.appendChild(ppuWrapper)
+    } else {
+      metaRow.appendChild(ppu)
+    }
+  } else {
+    metaRow.appendChild(ppu)
+  }
     const cat = document.createElement('div'); cat.className='ppu'; cat.textContent = p.product_category || ''
     const badge = document.createElement('div'); if(p.sale_requirement){ badge.className='badge'; badge.textContent = p.sale_requirement }
     card.appendChild(img); card.appendChild(title); card.appendChild(metaRow); card.appendChild(cat); if(p.sale_requirement) card.appendChild(badge)
