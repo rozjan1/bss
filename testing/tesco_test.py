@@ -12,7 +12,7 @@ facets = {
   "b;TWFzbyUyMGElMjBsYWglQzUlQUZka3k": "Maso a lahudky",
   "b;TXJhJUM1JUJFZW4lQzMlQTk": "Mražené",
   "b;VHJ2YW5saXYlQzMlQTk": "Trvanlivé",
-  "b;TiVDMyVBMXBvamU": "Nápoje",
+  "b;TiVDMyVBMXBvamU=": "Nápoje",
   "b;U3BlY2klQzMlQTFsbiVDMyVBRCUyMHYlQzMlQkQlQzUlQkVpdmE": "Speciální výživa"
 }
 

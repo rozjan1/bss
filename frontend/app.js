@@ -40,8 +40,16 @@ function normalizeProduct(p){
 async function loadSource(url){
   selectors.meta.textContent = 'Loading products…'
   try{
-    const res = await fetch(url)
-    const raw = await res.json()
+    let raw = []
+    if(url === 'all'){
+      // fetch all option values except the 'all' entry and merge results
+      const opts = Array.from(selectors.source.options).map(o=>o.value).filter(v=>v && v !== 'all')
+      const fetches = await Promise.all(opts.map(u=>fetch(u).then(r=>r.json()).catch(e=>{ console.warn('failed to load',u,e); return [] })))
+      raw = fetches.flat()
+    } else {
+      const res = await fetch(url)
+      raw = await res.json()
+    }
     products = raw.map(normalizeProduct)
     filtered = products.slice()
     populateCategories()
