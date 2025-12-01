@@ -100,7 +100,8 @@ def clean_albert_data(json_data):
         # NOTE: formatted_value and current_price can be equal if the item isnt on sale
 
         unit_code = price_info.get('unitCode')
-        unit_price_formatted = float(price_info.get('unitPrice'))
+        # "supplementaryPriceLabel1": "1 kg = 199,60 Kč", so this is kinda neccessary. sorry
+        unit_price_formatted = float(price_info.get('supplementaryPriceLabel1', '0').split('=')[1].split('Kč')[0].replace(',', '.').replace(" ", "").strip()) if price_info.get('supplementaryPriceLabel1') else None
 
         # 3. Extract product URL (may be relative)
         product_url = product.get('url')
@@ -163,7 +164,6 @@ if __name__ == "__main__":
             if is_product_response_empty(response.json()):
                 print(f"No more products found for category {code} on page {page_index}. Stopping.")
                 break
-
 
             try:
                 albert_data = response.json()
