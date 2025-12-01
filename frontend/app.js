@@ -30,10 +30,29 @@ function parsePrice(raw){
 
 function normalizeProduct(p){
   // attach a normalized numeric price used for sorting/filtering
-  const sale = parsePrice(p.sale_price ?? p.sale_price)
-  const orig = parsePrice(p.original_price ?? p.original_price)
+  const sale = parsePrice(p.sale_price)
+  const orig = parsePrice(p.original_price)
   const fallback = parsePrice(p.price ?? p.original_price)
-  p._price = sale ?? orig ?? fallback ?? (p.sale_ppu ?? p.original_ppu ?? null)
+  p._price = sale ?? orig ?? fallback ?? null
+
+  // Ensure product_url exists if provided by source JSON
+  if(!p.product_url){
+    // common direct field
+    if(p.url) p.product_url = p.url
+    else if(p.product_url) p.product_url = p.product_url
+    // try typical Tesco derivation if source indicates tesco and nested id exists
+    else if((p.source || '').toLowerCase().includes('tesco')){
+      try{
+        let id = null
+        if(p.data && p.data.category && Array.isArray(p.data.category.results) && p.data.category.results[0] && p.data.category.results[0].node && p.data.category.results[0].node.id){
+          id = p.data.category.results[0].node.id
+        }
+        id = id || p.id || p.tpnb || p.baseProductId || (p.sellers && p.sellers.results && p.sellers.results[0] && p.sellers.results[0].id) || null
+        if(id) p.product_url = `https://nakup.itesco.cz/groceries/cs-CZ/products/${id}`
+      }catch(e){ /* ignore */ }
+    }
+  }
+
   return p
 }
 
@@ -114,7 +133,22 @@ function render(){
     const img = document.createElement('img'); img.src = p.image_url || p.image || '';
     img.alt = p.item_name || p.name || ''
     img.addEventListener('click', ()=> window.open(img.src, '_blank'))
-    const title = document.createElement('div'); title.className='title'; title.textContent = p.item_name || p.name || 'Unnamed'
+    const title = document.createElement('div'); title.className='title'
+    const nameText = p.item_name || p.name || 'Unnamed'
+    if(p.product_url){
+      const a = document.createElement('a'); a.href = p.product_url; a.textContent = nameText; a.target = '_blank'; a.rel = 'noopener noreferrer'
+      title.appendChild(a)
+      // make the whole title clickable (but avoid double-open when clicking the anchor)
+      title.style.cursor = 'pointer'
+      title.addEventListener('click', (e)=>{
+        const tag = (e.target && e.target.tagName) ? e.target.tagName.toLowerCase() : ''
+        if(tag !== 'a'){
+          window.open(p.product_url, '_blank', 'noopener')
+        }
+      })
+    } else {
+      title.textContent = nameText
+    }
     const metaRow = document.createElement('div'); metaRow.className='metaRow'
   // Determine sale vs original prices (numeric)
   const saleVal = parsePrice(p.sale_price ?? p.sale_price)
