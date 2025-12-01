@@ -10,3 +10,6 @@ wheels/
 .venv
 
 frontend/data/*.json
+*.json
+testing/albert_products.json
+testing/tesco_products.json
