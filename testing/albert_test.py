@@ -112,9 +112,9 @@ def clean_albert_data(json_data):
             'source': 'albert',
             'product_category': category,
             'item_name': name,
-            'image_url': image_url,
-            'original_price': formatted_value, #  "286,40 Kč"
-            'sale_price': current_price, # "143,84 Kč"
+            'image_url': image_url, # float("43,84 Kč".split(" ")[0].replace(",", "."))
+            'original_price': float(formatted_value.split(" ")[0].replace(",", ".")), #  "286,40 Kč"
+            'sale_price': float(current_price.split(" ")[0].replace(",", ".")), # "143,84 Kč"
             'sale_ppu': unit_price_formatted,  # eg "89.9", we need to add the unit from the unit_code
             'unit_code': unit_code, # eg kg, g, l etc.
             'product_url': product_url,
