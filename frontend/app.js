@@ -149,6 +149,7 @@ function render(){
     } else {
       title.textContent = nameText
     }
+    const source = document.createElement('div'); source.className='source'; source.textContent = p.source || ''; source.style.fontStyle = 'italic'; source.style.fontSize = 'small'; source.style.color = '#666'
     const metaRow = document.createElement('div'); metaRow.className='metaRow'
   // Determine sale vs original prices (numeric)
   const saleVal = parsePrice(p.sale_price ?? p.sale_price)
@@ -187,7 +188,7 @@ function render(){
   }
     const cat = document.createElement('div'); cat.className='ppu'; cat.textContent = p.product_category || ''
     const badge = document.createElement('div'); if(p.sale_requirement){ badge.className='badge'; badge.textContent = p.sale_requirement }
-    card.appendChild(img); card.appendChild(title); card.appendChild(metaRow); card.appendChild(cat); if(p.sale_requirement) card.appendChild(badge)
+    card.appendChild(img); card.appendChild(title); card.appendChild(source); card.appendChild(metaRow); card.appendChild(cat); if(p.sale_requirement) card.appendChild(badge)
     selectors.grid.appendChild(card)
   }
   renderPager()
