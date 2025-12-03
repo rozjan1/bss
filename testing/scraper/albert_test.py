@@ -73,6 +73,7 @@ def clean_albert_data(json_data):
         name = product.get('name')
         price_info = product.get('price', {})
         images = product.get('images', [])
+        print(f"Processing product: {name}")
 
         # 1. Extract Image URL (prefer 'xlarge' and 'PRIMARY', otherwise the first image)
         image_url = None
@@ -101,7 +102,7 @@ def clean_albert_data(json_data):
 
         unit_code = price_info.get('unitCode')
         # "supplementaryPriceLabel1": "1 kg = 199,60 Kč", so this is kinda neccessary. sorry
-        unit_price_formatted = float(price_info.get('supplementaryPriceLabel1', '0').split('=')[1].split('Kč')[0].replace(',', '.').replace(" ", "").strip()) if price_info.get('supplementaryPriceLabel1') else None
+        unit_price_formatted = float(price_info.get('supplementaryPriceLabel1', '0').split('=')[1].split('Kč')[0].replace('.', '').replace(',', '.').replace(" ", "").strip()) if price_info.get('supplementaryPriceLabel1') else None
 
         # 3. Extract product URL (may be relative)
         product_url = product.get('url')
@@ -113,8 +114,8 @@ def clean_albert_data(json_data):
             'product_category': category,
             'item_name': name,
             'image_url': image_url, # float("43,84 Kč".split(" ")[0].replace(",", "."))
-            'original_price': float(formatted_value.split(" ")[0].replace(",", ".")), #  "286,40 Kč"
-            'sale_price': float(current_price.split(" ")[0].replace(",", ".")), # "143,84 Kč"
+            'original_price': float(formatted_value.split(" ")[0].replace(".", "").replace(",", ".")), #  "286,40 Kč"
+            'sale_price': float(current_price.split(" ")[0].replace(".", "").replace(",", ".")), # "143,84 Kč"
             'sale_ppu': unit_price_formatted,  # eg "89.9", we need to add the unit from the unit_code
             'unit_code': unit_code, # eg kg, g, l etc.
             'product_url': product_url,

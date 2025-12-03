@@ -73,7 +73,7 @@ async function loadSource(url){
     filtered = products.slice()
     populateCategories()
     page = 1
-    render()
+    applyAllFilters() // This will apply current sorting and filters
   }catch(e){ selectors.meta.textContent = 'Failed to load: '+e.message }
 }
 
