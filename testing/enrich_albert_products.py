@@ -6,8 +6,8 @@ from typing import Dict, Any
 
 from albert_get_product_info import AlbertProductInfoFetcher
 
-INPUT_FILE = 'albert_products.json'
-OUTPUT_FILE = 'albert_products_enriched.json'
+INPUT_FILE = 'scraper/albert_products.json'
+OUTPUT_FILE = 'scraper/albert_products_enriched.json'
 NUM_WORKERS = 8
 
 # Per-thread worker that fetches nutrition/allergy info and attaches it to the product record.
@@ -25,12 +25,13 @@ class EnricherWorker(threading.Thread):
             try:
                 product = self.task_queue.get_nowait()
             except Empty:
+                print(f"Worker {self.worker_id}: finished")
                 return
 
             url = product.get('product_url') or product.get('url')
             # Some items may not have a URL; skip them gracefully
             if not url:
-                enriched = {**product, 'nutrition': {}, 'allergies': {}}
+                enriched = {**product, 'nutrition': {}, 'allergies': {}, 'ingredients': None}
                 with self.lock:
                     self.results.append(enriched)
                 self.task_queue.task_done()
@@ -43,9 +44,11 @@ class EnricherWorker(threading.Thread):
                 try:
                     info = self.fetcher.fetch(url)
                     # attach the fetched info to the product
-                    enriched = {**product, 'nutrition': info.get('nutrients', {}), 'allergies': info.get('allergies', {})}
+                    enriched = {**product, 'nutrition': info.get('nutrients', {}), 'allergies': info.get('allergies', {}), 'ingredients': info.get('ingredients')}
                     with self.lock:
                         self.results.append(enriched)
+                        if len(self.results) % 100 == 0:
+                            print(f"Progress: {len(self.results)} products enriched")
                     break
 
                 except Exception as e:
@@ -60,7 +63,7 @@ class EnricherWorker(threading.Thread):
                     else:
                         # Non-rate-limit error: record empty nutrition and move on
                         print(f"Worker {self.worker_id}: error fetching {url}: {e}")
-                        enriched = {**product, 'nutrition': {}, 'allergies': {}}
+                        enriched = {**product, 'nutrition': {}, 'allergies': {}, 'ingredients': None}
                         with self.lock:
                             self.results.append(enriched)
                         break
@@ -69,9 +72,13 @@ class EnricherWorker(threading.Thread):
 
 
 def enrich_products(input_path: str = INPUT_FILE, output_path: str = OUTPUT_FILE, num_workers: int = NUM_WORKERS):
+    print(f"Loading products from {input_path}...")
     with open(input_path, 'r', encoding='utf-8') as f:
         products = json.load(f)
 
+    print(f"Found {len(products)} products to enrich")
+    print(f"Starting {num_workers} workers...\n")
+    
     task_queue: Queue = Queue()
     for p in products:
         task_queue.put(p)
@@ -84,18 +91,22 @@ def enrich_products(input_path: str = INPUT_FILE, output_path: str = OUTPUT_FILE
         w.start()
 
     # Wait for all tasks to finish
+    print(f"\nWaiting for all workers to complete...")
     task_queue.join()
+    print(f"All workers finished!\n")
 
     # Save results in the same input order if possible (we appended as completed order)
     # To preserve order, map by product identifier if available. We'll try to keep original order
     # by matching product_url field.
+    print(f"Reordering results to match input order...")
     url_to_enriched = {r.get('product_url') or r.get('url'): r for r in results}
-    ordered_results = [url_to_enriched.get(p.get('product_url') or p.get('url'), {**p, 'nutrition': {}, 'allergies': {}}) for p in products]
+    ordered_results = [url_to_enriched.get(p.get('product_url') or p.get('url'), {**p, 'nutrition': {}, 'allergies': {}, 'ingredients': None}) for p in products]
 
+    print(f"Saving enriched data to {output_path}...")
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(ordered_results, f, ensure_ascii=False, indent=2)
 
-    print(f"Enriched {len(ordered_results)} products to {output_path}")
+    print(f"\n✓ Successfully enriched {len(ordered_results)} products to {output_path}")
 
 
 if __name__ == '__main__':

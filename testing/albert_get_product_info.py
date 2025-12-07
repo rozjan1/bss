@@ -1,6 +1,7 @@
 import requests
 import json
 from urllib.parse import urlparse, parse_qs
+from typing import Dict
 
 
 # Lightweight fetcher for Albert.cz product details
@@ -86,62 +87,72 @@ class AlbertProductInfoFetcher:
             raise ValueError('Could not extract product code from URL')
         return url_or_code
 
-    def fetch(self, url_or_code: str) -> dict:
-        """Fetch product info for the given product URL or product code.
+    def fetch(self, url_or_code: str) -> Dict:
+            """Fetch product info for the given product URL or product code.
 
-        Returns a dict: {'nutrients': {...}, 'allergies': {...}}
-        Raises requests.HTTPError for HTTP errors and ValueError for parsing issues.
-        """
-        product_code = self._extract_product_code(url_or_code)
+            Returns a dict: {'nutrients': {...}, 'allergies': {...}, 'ingredients': '...'}
+            Raises requests.HTTPError for HTTP errors and ValueError for parsing issues.
+            """
+            product_code = self._extract_product_code(url_or_code)
 
-        params = {
-            'operationName': 'ProductDetails',
-            'variables': json.dumps({'productCode': product_code, 'lang': 'cs'}),
-        }
-        # merge the extensions param
-        params.update(self._extensions)
-
-        response = requests.get('https://www.albert.cz/api/v1/', params=params, cookies=self.cookies, headers=self.headers)
-        response.raise_for_status()
-        product_info = response.json()
-
-        wsNutriFactData = (
-            product_info.get('data', {})
-                .get('productDetails', {})
-                .get('wsNutriFactData')
-        )
-
-        if not wsNutriFactData:
-            # return empty structure if nutrition data isn't present
-            return {'nutrients': {}, 'allergies': {}}
-
-        # --- Clean nutrients into a flat dict ---
-        nutrients = {}
-        try:
-            nutrients = {
-                n['id']: (n.get('valueList') or [{}])[0].get('value')
-                for n in wsNutriFactData.get('nutrients', [])[0].get('nutrients', [])
+            # Assuming 'requests' and 'json' are imported
+            params = {
+                'operationName': 'ProductDetails',
+                'variables': json.dumps({'productCode': product_code, 'lang': 'cs'}),
             }
-        except Exception:
-            # fall back to empty
+            # merge the extensions param
+            params.update(self._extensions)
+
+            response = requests.get('https://www.albert.cz/api/v1/', params=params, cookies=self.cookies, headers=self.headers)
+            response.raise_for_status()
+            product_info = response.json()
+
+            # Safely drill down to the nutrition/allergy data
+            wsNutriFactData = (
+                product_info.get('data', {})
+                    .get('productDetails', {})
+                    .get('wsNutriFactData')
+            )
+
+            if not wsNutriFactData:
+                # return empty structure if nutrition data isn't present
+                return {'nutrients': {}, 'allergies': {}, 'ingredients': None}
+
+            # --- Clean nutrients into a flat dict ---
             nutrients = {}
+            try:
+                # The structure is [ { 'nutrients': [ {nutrient data} ] } ]
+                nutrients = {
+                    n['id']: (n.get('valueList') or [{}])[0].get('value')
+                    for n in wsNutriFactData.get('nutrients', [])[0].get('nutrients', [])
+                }
+            except (IndexError, AttributeError):
+                # Fall back to empty if the nutrients list is empty or structure is missing
+                nutrients = {}
+            except Exception:
+                nutrients = {}
 
-        # --- Format allergy info cleanly ---
-        allergies = {}
-        try:
-            allergies = {
-                a['title']: a.get('values') or None
-                for a in wsNutriFactData.get('allegery', [])
-            }
-        except Exception:
+            # --- Format allergy info cleanly ---
             allergies = {}
+            try:
+                allergies = {
+                    a['title']: a.get('values') or []
+                    for a in wsNutriFactData.get('allegery', [])
+                }
+            except Exception:
+                allergies = {}
 
-        normalized = {
-            'nutrients': nutrients,
-            'allergies': allergies
-        }
+            # --- Extract Ingredients (New) ---
+            # Returns the ingredient string or None if the key is missing
+            ingredients = wsNutriFactData.get('ingredients')
 
-        return normalized
+            normalized = {
+                'nutrients': nutrients,
+                'allergies': allergies,
+                'ingredients': ingredients
+            }
+
+            return normalized
 
 
 if __name__ == '__main__':
