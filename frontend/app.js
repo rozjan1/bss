@@ -84,9 +84,13 @@ function populateCategories(){
 
 function escapeHtml(s){ return (s+'').replace(/[&<>"']/g, c=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c])) }
 
+function removeDiacritics(str) {
+  return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+}
+
 function applyAllFilters(){
   const q = selectors.search.value.trim().toLowerCase()
-  const terms = q.split(/\s+/).filter(Boolean)
+  const terms = q.split(/\s+/).filter(Boolean).map(term => removeDiacritics(term))
   const cat = selectors.category.value
   const min = parseFloat(selectors.priceMin.value)
   const max = parseFloat(selectors.priceMax.value)
@@ -107,7 +111,7 @@ function applyAllFilters(){
     }
 
     if(terms.length > 0){ 
-      const name = (p.item_name||p.name||p.title||'').toLowerCase()
+      const name = removeDiacritics((p.item_name||p.name||p.title||'').toLowerCase())
       if(!terms.every(term => name.includes(term))) return false
     }
     return true
