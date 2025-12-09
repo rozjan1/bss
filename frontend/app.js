@@ -195,7 +195,7 @@ function render(){
     
     const detailBtn = document.createElement('button');
     detailBtn.className = 'detail-btn';
-    detailBtn.textContent = 'Details';
+    detailBtn.textContent = 'Informace';
     detailBtn.onclick = (e) => { e.stopPropagation(); showDetails(p); };
 
     card.appendChild(img); card.appendChild(title); card.appendChild(source); card.appendChild(metaRow); card.appendChild(cat); 
@@ -258,13 +258,6 @@ function showDetails(p){
   title.textContent = p.item_name || p.name || 'Product Details';
   body.innerHTML = '';
 
-  // Ingredients
-  if(p.ingredients){
-    const div = document.createElement('div'); div.className = 'detail-section';
-    div.innerHTML = `<h3>Složení</h3><div class="detail-text">${escapeHtml(p.ingredients)}</div>`;
-    body.appendChild(div);
-  }
-
   // Allergies
   if(p.allergies){
     const div = document.createElement('div'); div.className = 'detail-section';
@@ -294,13 +287,14 @@ function showDetails(p){
     
     if(!hasAllergyInfo) html += 'No allergy information provided.';
     html += `</div>`;
+    div.innerHTML = html;
     body.appendChild(div);
   }
 
   // Nutrition
-  if(p.nutrition){
+  if(p.nutrition && typeof p.nutrition === 'object' && Object.keys(p.nutrition).length > 0){
     const div = document.createElement('div'); div.className = 'detail-section';
-    let html = `<h3>Nutrition</h3><table class="nutrition-table">`;
+    let html = `<h3>Výživové hodnoty</h3><table class="nutrition-table">`;
     for(const [key, val] of Object.entries(p.nutrition)){
       html += `<tr><th>${escapeHtml(key)}</th><td>${escapeHtml(val)}</td></tr>`;
     }
@@ -309,8 +303,15 @@ function showDetails(p){
     body.appendChild(div);
   }
 
+  // Ingredients
+  if(p.ingredients){
+    const div = document.createElement('div'); div.className = 'detail-section';
+    div.innerHTML = `<h3>Složení</h3><div class="detail-text">${escapeHtml(p.ingredients)}</div>`;
+    body.appendChild(div);
+  }
+
   if(!p.ingredients && (!p.allergies || Object.keys(p.allergies).length === 0) && !p.nutrition){
-    body.innerHTML = '<p>No detailed information available for this product.</p>';
+    body.innerHTML = '<p>Podrobné informace o tomto produktu nejsou k dispozici.</p>';
   }
 
   modal.style.display = "block";
