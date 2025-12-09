@@ -192,7 +192,15 @@ function render(){
   }
     const cat = document.createElement('div'); cat.className='ppu'; cat.textContent = p.product_category || ''
     const badge = document.createElement('div'); if(p.sale_requirement){ badge.className='badge'; badge.textContent = p.sale_requirement }
-    card.appendChild(img); card.appendChild(title); card.appendChild(source); card.appendChild(metaRow); card.appendChild(cat); if(p.sale_requirement) card.appendChild(badge)
+    
+    const detailBtn = document.createElement('button');
+    detailBtn.className = 'detail-btn';
+    detailBtn.textContent = 'Details';
+    detailBtn.onclick = (e) => { e.stopPropagation(); showDetails(p); };
+
+    card.appendChild(img); card.appendChild(title); card.appendChild(source); card.appendChild(metaRow); card.appendChild(cat); 
+    if(p.sale_requirement) card.appendChild(badge)
+    card.appendChild(detailBtn)
     selectors.grid.appendChild(card)
   }
   renderPager()
@@ -219,3 +227,93 @@ selectors.saleOnly.addEventListener('change', applyAllFilters)
 
 // initial load
 loadSource(selectors.source.value)
+
+function setupModal(){
+  if(document.getElementById('detailModal')) return;
+  const modalHtml = `
+    <div id="detailModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modalTitle" style="margin-top:0; padding-right:20px;"></h2>
+        <div id="modalBody"></div>
+      </div>
+    </div>
+  `;
+  document.body.insertAdjacentHTML('beforeend', modalHtml);
+  
+  const modal = document.getElementById('detailModal');
+  const span = document.getElementsByClassName("close")[0];
+  
+  span.onclick = function() { modal.style.display = "none"; }
+  window.onclick = function(event) {
+    if (event.target == modal) { modal.style.display = "none"; }
+  }
+}
+
+function showDetails(p){
+  const modal = document.getElementById('detailModal');
+  const title = document.getElementById('modalTitle');
+  const body = document.getElementById('modalBody');
+  
+  title.textContent = p.item_name || p.name || 'Product Details';
+  body.innerHTML = '';
+
+  // Ingredients
+  if(p.ingredients){
+    const div = document.createElement('div'); div.className = 'detail-section';
+    div.innerHTML = `<h3>Složení</h3><div class="detail-text">${escapeHtml(p.ingredients)}</div>`;
+    body.appendChild(div);
+  }
+
+  // Allergies
+  if(p.allergies){
+    const div = document.createElement('div'); div.className = 'detail-section';
+    let html = `<h3>Alergie</h3><div class="detail-text">`;
+    
+    let hasAllergyInfo = false;
+    // Handle both object (albert) and potentially other formats if any
+    if(typeof p.allergies === 'object' && !Array.isArray(p.allergies)){
+      for(const [type, items] of Object.entries(p.allergies)){
+        if(Array.isArray(items) && items.length > 0){
+          hasAllergyInfo = true;
+          html += `<div style="margin-bottom:4px"><strong>${escapeHtml(type)}:</strong> `;
+          items.forEach(item => {
+            const cls = type === 'Neobsahuje' ? 'safe' : (type === 'Může obsahovat' ? 'trace' : '');
+            html += `<span class="allergy-tag ${cls}">${escapeHtml(item)}</span>`;
+          });
+          html += `</div>`;
+        }
+      }
+    } else if (Array.isArray(p.allergies)) {
+       // Fallback if allergies is just a list of strings
+       hasAllergyInfo = true;
+       p.allergies.forEach(item => {
+          html += `<span class="allergy-tag">${escapeHtml(item)}</span>`;
+       });
+    }
+    
+    if(!hasAllergyInfo) html += 'No allergy information provided.';
+    html += `</div>`;
+    body.appendChild(div);
+  }
+
+  // Nutrition
+  if(p.nutrition){
+    const div = document.createElement('div'); div.className = 'detail-section';
+    let html = `<h3>Nutrition</h3><table class="nutrition-table">`;
+    for(const [key, val] of Object.entries(p.nutrition)){
+      html += `<tr><th>${escapeHtml(key)}</th><td>${escapeHtml(val)}</td></tr>`;
+    }
+    html += `</table>`;
+    div.innerHTML = html;
+    body.appendChild(div);
+  }
+
+  if(!p.ingredients && (!p.allergies || Object.keys(p.allergies).length === 0) && !p.nutrition){
+    body.innerHTML = '<p>No detailed information available for this product.</p>';
+  }
+
+  modal.style.display = "block";
+}
+
+setupModal();

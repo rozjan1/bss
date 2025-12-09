@@ -30,3 +30,22 @@ body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial; margin:0;background:var(
 .price-inputs { display: flex; gap: 8px; margin-bottom: 8px; }
 .price-inputs input { width: 100%; padding: 8px; border-radius: 8px; border: 1px solid #dfe6f2; }
 .checkbox-label { display: flex; align-items: center; gap: 8px; margin-top: 8px; cursor: pointer; font-size: 14px; }
+
+/* Modal styles */
+.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.5); backdrop-filter: blur(2px); }
+.modal-content { background-color: #fff; margin: 5% auto; padding: 24px; border: 1px solid #e6e9ef; width: 90%; max-width: 600px; border-radius: 12px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04); position: relative; }
+.close { position: absolute; right: 20px; top: 16px; color: #9ca3af; font-size: 28px; font-weight: bold; cursor: pointer; line-height: 1; }
+.close:hover { color: #111; }
+.detail-btn { background: none; border: 1px solid #dfe6f2; border-radius: 6px; padding: 4px 8px; cursor: pointer; font-size: 12px; color: var(--muted); margin-top: 4px; width: 100%; }
+.detail-btn:hover { background: #f8fbff; color: var(--accent); border-color: var(--accent); }
+
+.detail-section { margin-bottom: 20px; }
+.detail-section h3 { margin: 0 0 8px 0; font-size: 15px; font-weight: 600; color: #374151; border-bottom: 1px solid #eee; padding-bottom: 6px; }
+.detail-text { font-size: 14px; line-height: 1.5; color: #4b5563; }
+.nutrition-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.nutrition-table td, .nutrition-table th { border-bottom: 1px solid #eee; padding: 6px 4px; text-align: left; }
+.nutrition-table th { font-weight: 600; color: #374151; }
+.nutrition-table tr:last-child td { border-bottom: none; }
+.allergy-tag { display: inline-block; background: #fee2e2; color: #991b1b; padding: 2px 8px; border-radius: 12px; font-size: 12px; margin-right: 4px; margin-bottom: 4px; }
+.allergy-tag.safe { background: #dcfce7; color: #166534; }
+.allergy-tag.trace { background: #fef3c7; color: #92400e; }
