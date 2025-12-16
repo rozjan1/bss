@@ -1,8 +1,9 @@
 import requests
 import json
 from time import sleep
+from typing import Dict, Any
 
-def extract_billa_data(billa_data):
+def get_billa_data(billa_data):
     """
     Transforms product data from the Billa eshop format to a unified structure.
 
@@ -100,7 +101,6 @@ def extract_billa_data(billa_data):
 
     return transformed_products
 
-
 cookies = {
     'XSRF-TOKEN': '9438d651-5e76-45b3-ae10-f3531882e07e',
     'OptanonAlertBoxClosed': '2025-12-03T10:14:03.198Z',
@@ -183,7 +183,7 @@ for category in categories:
             print(f"No more products for category {category} at page {page_index}. Stopping pagination.")
             break
 
-        all_products.extend(extract_billa_data(data))
+        all_products.extend(get_billa_data(data))
         sleep(0.1)
 
 with open('billa_products.json', 'w', encoding='utf-8') as f:
