@@ -9,25 +9,17 @@ def extract_product_details(product_data: Dict[str, Any]) -> Dict[str, Any]:
     Billa product detail JSON into the desired target structure.
     """
     print("\n" + "="*60)
-    print("DEBUG: Starting extract_product_details")
-    print("="*60)
-    
+
     # --- 1. Locate Necessary Nested Data ---
     
     # We look inside the first element of additionalInformation
-    print("DEBUG: Extracting nested data...")
-    additional_info = product_data.get("additionalInformation", [{}])
-    print(f"DEBUG: additional_info has {len(additional_info)} items")
-    
+    additional_info = product_data.get("additionalInformation", [{}])    
     food_info = additional_info[0].get("foodInformation", {})
     print(f"DEBUG: food_info keys: {list(food_info.keys())}")
     
     calculated_nutrition = food_info.get("calculatedNutrition", {})
-    print(f"DEBUG: calculated_nutrition keys: {list(calculated_nutrition.keys())}")
     
     # --- 2. Extract NUTRITION Data ---
-    
-    print("\nDEBUG: Extracting nutrition data...")
     nutrition_output = {"Výživové údaje na": None}
     
     # Get the base unit (e.g., "100g")
@@ -37,7 +29,6 @@ def extract_product_details(product_data: Dict[str, Any]) -> Dict[str, Any]:
 
     # Process the list of nutrients
     nutrition_data = calculated_nutrition.get("data", [])
-    print(f"DEBUG: Found {len(nutrition_data)} nutrition items")
     
     for item in nutrition_data:
         name = item.get("name", "").strip()
@@ -50,7 +41,6 @@ def extract_product_details(product_data: Dict[str, Any]) -> Dict[str, Any]:
             
         try:
             num_value = float(value)
-            print(f"DEBUG: Converted to float: {num_value}")
             
             # Map and format the nutrient name/value
             if name in ["KJ", "Energetická hodnota (kJ)"]:
@@ -85,8 +75,6 @@ def extract_product_details(product_data: Dict[str, Any]) -> Dict[str, Any]:
     print(f"DEBUG: Nutrition output: {nutrition_output}")
 
     # --- 3. Extract ALLERGIES Data ---
-    
-    print("\nDEBUG: Extracting allergies data...")
     # In the Billa structure, 'allergens' or 'allergyAdvice' contains positive findings (Contains).
     # Since the JSON doesn't provide explicit 'May contain' or 'Does not contain' lists, 
     # we only populate the 'Obsahuje' (Contains) list.
@@ -105,42 +93,31 @@ def extract_product_details(product_data: Dict[str, Any]) -> Dict[str, Any]:
     # Or, use the nested 'allergyAdvice' list
     nested_allergens = [
         item.get("value1") for item in food_info.get("allergyAdvice", [])
-    ]
-    print(f"DEBUG: Nested allergens: {nested_allergens}")
-    
+    ]    
     # Combine and clean the allergen list (capitalize first letter, remove duplicates)
     combined_allergens = set(
         [a.strip().capitalize() for a in top_level_allergens + nested_allergens if a]
-    )
-    print(f"DEBUG: Combined allergens: {combined_allergens}")
-    
+    )    
     # Split the list in half and only keep the second half (text-based allergens)
     sorted_allergens = sorted(list(combined_allergens))
     half_index = len(sorted_allergens) // 2
     allergies_output["Obsahuje"] = sorted_allergens[half_index:]
-    print(f"DEBUG: Allergies output (second half only): {allergies_output}")
     
     # --- 4. Extract INGREDIENTS Data ---
     
-    print("\nDEBUG: Extracting ingredients data...")
     # The ingredients are in 'foodInformation.ingredientsText'. We remove HTML tags (like <strong>)
     ingredients_text = food_info.get("ingredientsText", "")
-    print(f"DEBUG: Raw ingredients text length: {len(ingredients_text)}")
     
     # Simple cleanup to remove bold tags 
     ingredients_text_cleaned = ingredients_text.replace("<strong>", "").replace("</strong>", "").strip()
-    print(f"DEBUG: Cleaned ingredients preview: {ingredients_text_cleaned[:100]}...")
 
     # --- 5. Assemble Final Output ---
-    
-    print("\nDEBUG: Assembling final output...")
     final_output = {
         "nutrition": nutrition_output,
         "allergies": allergies_output,
         "ingredients": ingredients_text_cleaned
     }
     
-    print("DEBUG: extract_product_details completed successfully")
     print("="*60 + "\n")
     return final_output
 
@@ -186,7 +163,7 @@ except Exception as e:
     print(f"ERROR: Failed to load billa_products.json: {e}")
     raise
 
-product_details = []
+enriched_products = []
 for idx, product in enumerate(products, 1):
     try:
         print(f"\n{'='*60}")
@@ -194,17 +171,14 @@ for idx, product in enumerate(products, 1):
         print(f"{'='*60}")
         
         product_url = product.get("product_url")
-        print(f"Product URL: {product_url}")
         
         product_id = product_url.split("-")[-1]
         product_id = product_id[:2] + "-" + product_id[2:]  
-        print(f"Product ID: {product_id}")
         
         api_url = f"https://shop.billa.cz/api/product-discovery/products/{product_id}"
         print(f"Fetching from: {api_url}")
         
         response = requests.get(api_url, cookies=cookies, headers=headers)
-        print(f"Response status code: {response.status_code}")
         
         if response.status_code != 200:
             print(f"WARNING: Non-200 status code for product {product_id}")
@@ -215,7 +189,10 @@ for idx, product in enumerate(products, 1):
         print(f"Successfully parsed JSON response")
         
         extracted_details = extract_product_details(product_data)
-        product_details.append(extracted_details)
+        
+        # Merge the original product data with extracted details
+        enriched_product = {**product, **extracted_details}
+        enriched_products.append(enriched_product)
         print(f"Product {idx} processed successfully")
         
     except Exception as e:
@@ -223,17 +200,15 @@ for idx, product in enumerate(products, 1):
         print(f"Product URL: {product.get('product_url', 'N/A')}")
         print(f"Error type: {type(e).__name__}")
         print(f"Error message: {e}")
-        import traceback
-        print(f"Traceback:\n{traceback.format_exc()}")
         continue
 
 print(f"\n{'='*60}")
-print(f"Processed {len(product_details)} products successfully")
+print(f"Processed {len(enriched_products)} products successfully")
 print(f"Writing results to billa_product_details.json...")
 
 try:
     with open("billa_product_details.json", "w", encoding="utf-8") as f:
-        json.dump(product_details, f, ensure_ascii=False, indent=2)
+        json.dump(enriched_products, f, ensure_ascii=False, indent=2)
     print("Successfully wrote results to file")
 except Exception as e:
     print(f"ERROR: Failed to write output file: {e}")
