@@ -1,56 +1,90 @@
 import json
 import requests
+import threading
+import time
+from queue import Queue, Empty
 from typing import Dict, Any
+from loguru import logger
 
-# Renaming the helper function for clarity in its purpose
+INPUT_FILE = 'billa_products.json'
+OUTPUT_FILE = 'billa_products_enriched.json'
+NUM_WORKERS = 8
+
+COOKIES = {
+    'XSRF-TOKEN': '9438d651-5e76-45b3-ae10-f3531882e07e',
+    'OptanonAlertBoxClosed': '2025-12-03T10:14:03.198Z',
+    'jts-rw': '{"u":"1291176475684166985018"}',
+    '_clck': '1w71g7t%5E2%5Eg1v%5E0%5E2163',
+    'OptanonConsent': 'isGpcEnabled=0&datestamp=Mon+Dec+15+2025+11%3A31%3A36+GMT%2B0100+(Central+European+Standard+Time)&version=202510.1.0&browserGpcFlag=0&isIABGlobal=false&hosts=&genVendors=&consentId=bed1a886-4afa-4f63-8413-d365969d56a9&interactionCount=1&isAnonUser=1&landingPath=NotLandingPage&groups=C0001%3A1%2CC0002%3A0%2CC0004%3A0&intType=2&geolocation=%3B&AwaitingReconsent=false',
+    'jctr_sid': '46932176580361793767834',
+    '_clsk': 'lt9s0x%5E1765803647627%5E7%5E1%5Ey.clarity.ms%2Fcollect',
+    '_uetsid': '73cb2e80d99811f0b5ab1da802272ddc',
+    '_uetvid': 'cff49a00d03011f087907952d7f53f2e',
+}
+
+HEADERS = {
+    'accept': 'application/json, text/plain, */*',
+    'accept-language': 'en-US,en;q=0.9',
+    'credentials': 'include',
+    'priority': 'u=1, i',
+    'referer': 'https://shop.billa.cz/produkt/jihoceska-niva-45-82351105',
+    'sec-ch-ua': '"Google Chrome";v="141", "Not?A_Brand";v="8", "Chromium";v="141"',
+    'sec-ch-ua-mobile': '?0',
+    'sec-ch-ua-platform': '"macOS"',
+    'sec-fetch-dest': 'empty',
+    'sec-fetch-mode': 'cors',
+    'sec-fetch-site': 'same-origin',
+    'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36',
+    'x-request-id': '2d9d874b-6de1-4123-97b0-b2bd33cd8b36-1765794695485',
+    'x-xsrf-token': '9438d651-5e76-45b3-ae10-f3531882e07e',
+}
+
 def extract_product_details(product_data: Dict[str, Any]) -> Dict[str, Any]:
     """
     Extracts and formats nutrition, allergies, and ingredients from the 
     Billa product detail JSON into the desired target structure.
     """
-    print("\n" + "="*60)
-    print("DEBUG: Starting extract_product_details")
-    print("="*60)
-    
+    logger.debug("Starting extract_product_details")
+
     # --- 1. Locate Necessary Nested Data ---
     
     # We look inside the first element of additionalInformation
-    print("DEBUG: Extracting nested data...")
+    logger.debug("Extracting nested data...")
     additional_info = product_data.get("additionalInformation", [{}])
-    print(f"DEBUG: additional_info has {len(additional_info)} items")
+    logger.debug(f"additional_info has {len(additional_info)} items")
     
     food_info = additional_info[0].get("foodInformation", {})
-    print(f"DEBUG: food_info keys: {list(food_info.keys())}")
+    logger.debug(f"food_info keys: {list(food_info.keys())}")
     
     calculated_nutrition = food_info.get("calculatedNutrition", {})
-    print(f"DEBUG: calculated_nutrition keys: {list(calculated_nutrition.keys())}")
+    logger.debug(f"calculated_nutrition keys: {list(calculated_nutrition.keys())}")
     
     # --- 2. Extract NUTRITION Data ---
     
-    print("\nDEBUG: Extracting nutrition data...")
+    logger.debug("Extracting nutrition data...")
     nutrition_output = {"Výživové údaje na": None}
     
     # Get the base unit (e.g., "100g")
     base_unit = calculated_nutrition.get("headers", {}).get("per100Header", "na 100g").replace("na ", "")
     nutrition_output["Výživové údaje na"] = base_unit.strip()
-    print(f"DEBUG: Base unit: {base_unit.strip()}")
+    logger.debug(f"Base unit: {base_unit.strip()}")
 
     # Process the list of nutrients
     nutrition_data = calculated_nutrition.get("data", [])
-    print(f"DEBUG: Found {len(nutrition_data)} nutrition items")
+    logger.debug(f"Found {len(nutrition_data)} nutrition items")
     
     for item in nutrition_data:
         name = item.get("name", "").strip()
         value = item.get("valuePer100", "").strip()
-        print(f"DEBUG: Processing nutrient - name: '{name}', value: '{value}'")
+        logger.debug(f"Processing nutrient - name: '{name}', value: '{value}'")
 
         if not name or not value:
-            print(f"DEBUG: Skipping empty nutrient")
+            logger.debug("Skipping empty nutrient")
             continue
             
         try:
             num_value = float(value)
-            print(f"DEBUG: Converted to float: {num_value}")
+            logger.debug(f"Converted to float: {num_value}")
             
             # Map and format the nutrient name/value
             if name in ["KJ", "Energetická hodnota (kJ)"]:
@@ -79,14 +113,14 @@ def extract_product_details(product_data: Dict[str, Any]) -> Dict[str, Any]:
 
         except ValueError as e:
             # Skip non-numeric values
-            print(f"DEBUG: ValueError converting '{value}' to float: {e}")
+            logger.debug(f"ValueError converting '{value}' to float: {e}")
             continue
     
-    print(f"DEBUG: Nutrition output: {nutrition_output}")
+    logger.debug(f"Nutrition output: {nutrition_output}")
 
     # --- 3. Extract ALLERGIES Data ---
     
-    print("\nDEBUG: Extracting allergies data...")
+    logger.debug("Extracting allergies data...")
     # In the Billa structure, 'allergens' or 'allergyAdvice' contains positive findings (Contains).
     # Since the JSON doesn't provide explicit 'May contain' or 'Does not contain' lists, 
     # we only populate the 'Obsahuje' (Contains) list.
@@ -100,144 +134,179 @@ def extract_product_details(product_data: Dict[str, Any]) -> Dict[str, Any]:
     
     # Use the top-level 'allergens' list if available
     top_level_allergens = product_data.get("allergens", [])
-    print(f"DEBUG: Top-level allergens: {top_level_allergens}")
+    logger.debug(f"Top-level allergens: {top_level_allergens}")
     
     # Or, use the nested 'allergyAdvice' list
     nested_allergens = [
         item.get("value1") for item in food_info.get("allergyAdvice", [])
     ]
-    print(f"DEBUG: Nested allergens: {nested_allergens}")
+    logger.debug(f"Nested allergens: {nested_allergens}")
     
     # Combine and clean the allergen list (capitalize first letter, remove duplicates)
     combined_allergens = set(
         [a.strip().capitalize() for a in top_level_allergens + nested_allergens if a]
     )
-    print(f"DEBUG: Combined allergens: {combined_allergens}")
+    logger.debug(f"Combined allergens: {combined_allergens}")
     
     # Split the list in half and only keep the second half (text-based allergens)
     sorted_allergens = sorted(list(combined_allergens))
     half_index = len(sorted_allergens) // 2
     allergies_output["Obsahuje"] = sorted_allergens[half_index:]
-    print(f"DEBUG: Allergies output (second half only): {allergies_output}")
+    logger.debug(f"Allergies output (second half only): {allergies_output}")
     
     # --- 4. Extract INGREDIENTS Data ---
     
-    print("\nDEBUG: Extracting ingredients data...")
+    logger.debug("Extracting ingredients data...")
     # The ingredients are in 'foodInformation.ingredientsText'. We remove HTML tags (like <strong>)
     ingredients_text = food_info.get("ingredientsText", "")
-    print(f"DEBUG: Raw ingredients text length: {len(ingredients_text)}")
+    logger.debug(f"Raw ingredients text length: {len(ingredients_text)}")
     
     # Simple cleanup to remove bold tags 
     ingredients_text_cleaned = ingredients_text.replace("<strong>", "").replace("</strong>", "").strip()
-    print(f"DEBUG: Cleaned ingredients preview: {ingredients_text_cleaned[:100]}...")
+    logger.debug(f"Cleaned ingredients preview: {ingredients_text_cleaned[:100]}...")
 
     # --- 5. Assemble Final Output ---
     
-    print("\nDEBUG: Assembling final output...")
+    logger.debug("Assembling final output...")
     final_output = {
         "nutrition": nutrition_output,
         "allergies": allergies_output,
         "ingredients": ingredients_text_cleaned
     }
     
-    print("DEBUG: extract_product_details completed successfully")
-    print("="*60 + "\n")
+    logger.debug("extract_product_details completed successfully")
     return final_output
 
-cookies = {
-    'XSRF-TOKEN': '9438d651-5e76-45b3-ae10-f3531882e07e',
-    'OptanonAlertBoxClosed': '2025-12-03T10:14:03.198Z',
-    'jts-rw': '{"u":"1291176475684166985018"}',
-    '_clck': '1w71g7t%5E2%5Eg1v%5E0%5E2163',
-    'OptanonConsent': 'isGpcEnabled=0&datestamp=Mon+Dec+15+2025+11%3A31%3A36+GMT%2B0100+(Central+European+Standard+Time)&version=202510.1.0&browserGpcFlag=0&isIABGlobal=false&hosts=&genVendors=&consentId=bed1a886-4afa-4f63-8413-d365969d56a9&interactionCount=1&isAnonUser=1&landingPath=NotLandingPage&groups=C0001%3A1%2CC0002%3A0%2CC0004%3A0&intType=2&geolocation=%3B&AwaitingReconsent=false',
-    'jctr_sid': '46932176580361793767834',
-    '_clsk': 'lt9s0x%5E1765803647627%5E7%5E1%5Ey.clarity.ms%2Fcollect',
-    '_uetsid': '73cb2e80d99811f0b5ab1da802272ddc',
-    '_uetvid': 'cff49a00d03011f087907952d7f53f2e',
-}
+class EnricherWorker(threading.Thread):
+    """Worker thread for enriching Billa products in parallel."""
+    
+    def __init__(self, task_queue: Queue, results: list, lock: threading.Lock, worker_id: int):
+        super().__init__(daemon=True)
+        self.task_queue = task_queue
+        self.results = results
+        self.lock = lock
+        self.worker_id = worker_id
 
-headers = {
-    'accept': 'application/json, text/plain, */*',
-    'accept-language': 'en-US,en;q=0.9',
-    'credentials': 'include',
-    'priority': 'u=1, i',
-    'referer': 'https://shop.billa.cz/produkt/jihoceska-niva-45-82351105',
-    'sec-ch-ua': '"Google Chrome";v="141", "Not?A_Brand";v="8", "Chromium";v="141"',
-    'sec-ch-ua-mobile': '?0',
-    'sec-ch-ua-platform': '"macOS"',
-    'sec-fetch-dest': 'empty',
-    'sec-fetch-mode': 'cors',
-    'sec-fetch-site': 'same-origin',
-    'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36',
-    'x-request-id': '2d9d874b-6de1-4123-97b0-b2bd33cd8b36-1765794695485',
-    'x-xsrf-token': '9438d651-5e76-45b3-ae10-f3531882e07e',
-    # 'cookie': 'XSRF-TOKEN=9438d651-5e76-45b3-ae10-f3531882e07e; OptanonAlertBoxClosed=2025-12-03T10:14:03.198Z; jts-rw={"u":"1291176475684166985018"}; _clck=1w71g7t%5E2%5Eg1v%5E0%5E2163; OptanonConsent=isGpcEnabled=0&datestamp=Mon+Dec+15+2025+11%3A31%3A36+GMT%2B0100+(Central+European+Standard+Time)&version=202510.1.0&browserGpcFlag=0&isIABGlobal=false&hosts=&genVendors=&consentId=bed1a886-4afa-4f63-8413-d365969d56a9&interactionCount=1&isAnonUser=1&landingPath=NotLandingPage&groups=C0001%3A1%2CC0002%3A0%2CC0004%3A0&intType=2&geolocation=%3B&AwaitingReconsent=false; jctr_sid=46932176580361793767834; _clsk=lt9s0x%5E1765803647627%5E7%5E1%5Ey.clarity.ms%2Fcollect; _uetsid=73cb2e80d99811f0b5ab1da802272ddc; _uetvid=cff49a00d03011f087907952d7f53f2e',
-}
+    def run(self):
+        while True:
+            try:
+                product = self.task_queue.get_nowait()
+            except Empty:
+                logger.info(f"Worker {self.worker_id}: finished")
+                return
+
+            product_url = product.get("product_url")
+            
+            # Skip products without URLs
+            if not product_url:
+                enriched = {**product, 'nutrition': {}, 'allergies': {}, 'ingredients': None}
+                with self.lock:
+                    self.results.append(enriched)
+                self.task_queue.task_done()
+                continue
+
+            # Extract product ID from URL
+            try:
+                product_id = product_url.split("-")[-1]
+                product_id = product_id[:2] + "-" + product_id[2:]
+            except Exception as e:
+                logger.warning(f"Worker {self.worker_id}: Could not extract product ID from {product_url}: {e}")
+                enriched = {**product, 'nutrition': {}, 'allergies': {}, 'ingredients': None}
+                with self.lock:
+                    self.results.append(enriched)
+                self.task_queue.task_done()
+                continue
+
+            # Exponential backoff state per item
+            backoff = 1.0
+            max_backoff = 60.0
+            while True:
+                try:
+                    api_url = f"https://shop.billa.cz/api/product-discovery/products/{product_id}"
+                    response = requests.get(api_url, cookies=COOKIES, headers=HEADERS, timeout=10)
+                    
+                    if response.status_code != 200:
+                        logger.warning(f"Worker {self.worker_id}: Non-200 status ({response.status_code}) for {product_id}")
+                        enriched = {**product, 'nutrition': {}, 'allergies': {}, 'ingredients': None}
+                        with self.lock:
+                            self.results.append(enriched)
+                        break
+                    
+                    product_data = response.json()
+                    extracted_details = extract_product_details(product_data)
+                    enriched = {**product, **extracted_details}
+                    
+                    with self.lock:
+                        self.results.append(enriched)
+                        if len(self.results) % 100 == 0:
+                            logger.info(f"Progress: {len(self.results)} products enriched")
+                    break
+
+                except Exception as e:
+                    # If we detect HTTP 429 in the exception message, back off and retry
+                    msg = str(e).lower()
+                    if '429' in msg or 'rate' in msg or 'too many' in msg:
+                        sleep_time = min(max_backoff, backoff)
+                        logger.warning(f"Worker {self.worker_id}: rate limited for {product_id}, sleeping {sleep_time}s and retrying")
+                        time.sleep(sleep_time)
+                        backoff *= 2
+                        continue
+                    else:
+                        # Non-rate-limit error: record empty enrichment and move on
+                        logger.warning(f"Worker {self.worker_id}: error fetching {product_id}: {e}")
+                        enriched = {**product, 'nutrition': {}, 'allergies': {}, 'ingredients': None}
+                        with self.lock:
+                            self.results.append(enriched)
+                        break
+
+            self.task_queue.task_done()
 
 
-print("Starting main script...")
-print("Loading products from billa_products.json...")
-
-try:
-    with open("billa_products.json") as f:
-        products = json.load(f)
-    print(f"Loaded {len(products)} products")
-except Exception as e:
-    print(f"ERROR: Failed to load billa_products.json: {e}")
-    raise
-
-product_details = []
-for idx, product in enumerate(products, 1):
+def enrich_products(input_path: str = INPUT_FILE, output_path: str = OUTPUT_FILE, num_workers: int = NUM_WORKERS):
+    """Load products, enrich them using workers, and save results."""
+    logger.info(f"Loading products from {input_path}...")
+    
     try:
-        print(f"\n{'='*60}")
-        print(f"Processing product {idx}/{len(products)}")
-        print(f"{'='*60}")
-        
-        product_url = product.get("product_url")
-        print(f"Product URL: {product_url}")
-        
-        product_id = product_url.split("-")[-1]
-        product_id = product_id[:2] + "-" + product_id[2:]  
-        print(f"Product ID: {product_id}")
-        
-        api_url = f"https://shop.billa.cz/api/product-discovery/products/{product_id}"
-        print(f"Fetching from: {api_url}")
-        
-        response = requests.get(api_url, cookies=cookies, headers=headers)
-        print(f"Response status code: {response.status_code}")
-        
-        if response.status_code != 200:
-            print(f"WARNING: Non-200 status code for product {product_id}")
-            print(f"Response text: {response.text[:200]}")
-            continue
-        
-        product_data = response.json()
-        print(f"Successfully parsed JSON response")
-        
-        extracted_details = extract_product_details(product_data)
-        product_details.append(extracted_details)
-        print(f"Product {idx} processed successfully")
-        
+        with open(input_path, 'r', encoding='utf-8') as f:
+            products = json.load(f)
     except Exception as e:
-        print(f"ERROR: Failed to process product {idx}")
-        print(f"Product URL: {product.get('product_url', 'N/A')}")
-        print(f"Error type: {type(e).__name__}")
-        print(f"Error message: {e}")
-        import traceback
-        print(f"Traceback:\n{traceback.format_exc()}")
-        continue
+        logger.exception(f"Failed to load {input_path}: {e}")
+        raise
 
-print(f"\n{'='*60}")
-print(f"Processed {len(product_details)} products successfully")
-print(f"Writing results to billa_product_details.json...")
+    logger.info(f"Found {len(products)} products to enrich")
+    logger.info(f"Starting {num_workers} workers...")
+    
+    task_queue: Queue = Queue()
+    for p in products:
+        task_queue.put(p)
 
-try:
-    with open("billa_product_details.json", "w", encoding="utf-8") as f:
-        json.dump(product_details, f, ensure_ascii=False, indent=2)
-    print("Successfully wrote results to file")
-except Exception as e:
-    print(f"ERROR: Failed to write output file: {e}")
-    raise
+    results = []
+    lock = threading.Lock()
 
-print("Script completed successfully!")
-print(f"{'='*60}")
+    workers = [EnricherWorker(task_queue, results, lock, i) for i in range(num_workers)]
+    for w in workers:
+        w.start()
+
+    # Wait for all tasks to finish
+    logger.info("Waiting for all workers to complete...")
+    task_queue.join()
+    logger.info("All workers finished!")
+
+    # Preserve input order by mapping results by product_url
+    logger.info("Reordering results to match input order...")
+    url_to_enriched = {r.get('product_url'): r for r in results}
+    ordered_results = [url_to_enriched.get(p.get('product_url'), {**p, 'nutrition': {}, 'allergies': {}, 'ingredients': None}) for p in products]
+
+    logger.info(f"Saving enriched data to {output_path}...")
+    try:
+        with open(output_path, 'w', encoding='utf-8') as f:
+            json.dump(ordered_results, f, ensure_ascii=False, indent=2)
+    except Exception as e:
+        logger.exception(f"Failed to write output file: {e}")
+        raise
+
+    logger.info(f"Successfully enriched {len(ordered_results)} products to {output_path}")
+
+
+if __name__ == '__main__':
+    enrich_products()
