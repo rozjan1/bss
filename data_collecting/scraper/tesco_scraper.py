@@ -518,7 +518,7 @@ class TescoScraper(BaseScraper):
             return float(match.group(1).replace(',', '.'))
         return None
 
-    def parse_response(self, response_data: Dict[str, Any], category_name: str) -> Tuple[List[Product], bool]:
+    def parse_response(self, response_data: Dict[str, Any], category_name: str, page: int = 0) -> Tuple[List[Product], bool]:
         """Transform Tesco JSON data into Product objects and signal if more pages exist."""
         products: List[Product] = []
         
@@ -526,13 +526,12 @@ class TescoScraper(BaseScraper):
             results_list = response_data[0]["data"]["category"]["results"]
             page_info = response_data[0]["data"]["category"]["pageInformation"]
             total_count = page_info.get("totalCount", 0)
-            current_page = page_info.get("page", 0)
             count_per_page = page_info.get("count", len(results_list)) or self.page_size
         except (IndexError, KeyError) as e:
             logger.warning(f"Could not find 'results' list for category {category_name}: {e}")
             return products, False
         
-        logger.info(f"Processing {len(results_list)} products from category {category_name}, page {current_page}")
+        logger.info(f"Processing {len(results_list)} products from category {category_name}, page {page}")
         
         for item in results_list:
             try:
@@ -611,7 +610,7 @@ class TescoScraper(BaseScraper):
                 continue
         
         # Determine if there are likely more pages: total_count bigger than items seen so far
-        items_seen = (current_page + 1) * count_per_page
+        items_seen = (page + 1) * count_per_page
         has_more = total_count > items_seen and len(results_list) > 0
         return products, has_more
 
@@ -629,7 +628,7 @@ class TescoScraper(BaseScraper):
             if not response_data:
               break
                 
-            products, has_more = self.parse_response(response_data, category_name)
+            products, has_more = self.parse_response(response_data, category_name, page)
             if not products:
               break
                 
