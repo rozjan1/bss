@@ -9,7 +9,17 @@ const selectors = {
   priceMax: document.getElementById('priceMax'),
   saleOnly: document.getElementById('saleOnly'),
   applyFilters: document.getElementById('applyFilters'),
-  pager: document.getElementById('pager')
+  pager: document.getElementById('pager'),
+  advancedFiltersBtn: document.getElementById('advancedFiltersBtn')
+}
+
+// Advanced filters state
+let advancedFilters = {
+  excludeAllergens: [],
+  requireAllergenFree: [],
+  excludeIngredients: [],
+  nutritionMin: {},
+  nutritionMax: {}
 }
 
 let products = []
@@ -114,6 +124,52 @@ function applyAllFilters(){
       const name = removeDiacritics((p.item_name||p.name||p.title||'').toLowerCase())
       if(!terms.every(term => name.includes(term))) return false
     }
+
+    // Advanced filters - Allergens
+    if(advancedFilters.excludeAllergens.length > 0 && p.allergies){
+      const productAllergens = extractAllergensFromProduct(p)
+      const hasExcludedAllergen = advancedFilters.excludeAllergens.some(excluded => 
+        productAllergens.some(pa => pa.toLowerCase().includes(excluded.toLowerCase()))
+      )
+      if(hasExcludedAllergen) return false
+    }
+
+    if(advancedFilters.requireAllergenFree.length > 0 && p.allergies){
+      const productAllergens = extractAllergensFromProduct(p)
+      const hasForbiddenAllergen = advancedFilters.requireAllergenFree.some(required =>
+        productAllergens.some(pa => pa.toLowerCase().includes(required.toLowerCase()))
+      )
+      if(hasForbiddenAllergen) return false
+    }
+
+    // Advanced filters - Ingredients
+    if(advancedFilters.excludeIngredients.length > 0 && p.ingredients){
+      const ingredientsLower = removeDiacritics(p.ingredients.toLowerCase())
+      const hasExcludedIngredient = advancedFilters.excludeIngredients.some(excluded =>
+        ingredientsLower.includes(removeDiacritics(excluded.toLowerCase()))
+      )
+      if(hasExcludedIngredient) return false
+    }
+
+    // Advanced filters - Nutrition
+    if(p.nutrition && Object.keys(advancedFilters.nutritionMin).length > 0){
+      for(const [key, minVal] of Object.entries(advancedFilters.nutritionMin)){
+        if(minVal !== '' && minVal != null){
+          const productVal = parseNutritionValue(p.nutrition[key])
+          if(productVal == null || productVal < parseFloat(minVal)) return false
+        }
+      }
+    }
+
+    if(p.nutrition && Object.keys(advancedFilters.nutritionMax).length > 0){
+      for(const [key, maxVal] of Object.entries(advancedFilters.nutritionMax)){
+        if(maxVal !== '' && maxVal != null){
+          const productVal = parseNutritionValue(p.nutrition[key])
+          if(productVal == null || productVal > parseFloat(maxVal)) return false
+        }
+      }
+    }
+
     return true
   })
 
@@ -122,6 +178,58 @@ function applyAllFilters(){
   if(sort==='price-desc') filtered.sort((a,b)=>( (b._price??-Infinity)-(a._price??-Infinity) ))
   if(sort==='name-asc') filtered.sort((a,b)=> (a.item_name||a.name||'').localeCompare(b.item_name||b.name||'') )
   if(sort==='name-desc') filtered.sort((a,b)=> (b.item_name||b.name||'').localeCompare(a.item_name||a.name||'') )
+  
+  // Nutrition-based sorting
+  if(sort.startsWith('nutrition-')){
+    const parts = sort.split('-')
+    const nutrientType = parts[1]
+    const direction = parts[2] // 'asc' or 'desc'
+    
+    // Map nutrient types to actual nutrition keys
+    const nutrientKeyMap = {
+      'protein': ['Bílkoviny', 'Bílkoviny (g)', 'Protein'],
+      'energy': ['Energetická hodnota kcal', 'Energetická hodnota (kcal)', 'Energy kcal'],
+      'fat': ['Tuky', 'Tuky (g)', 'Fat'],
+      'carbs': ['Sacharidy', 'Sacharidy (g)', 'Carbohydrates'],
+      'sugar': ['z toho cukry', 'Z toho cukry', ' z toho cukry (g)', 'Sugar'],
+      'salt': ['Sůl', 'Sůl (g)', 'Salt']
+    }
+    
+    const possibleKeys = nutrientKeyMap[nutrientType] || []
+    
+    filtered.sort((a, b) => {
+      let valA = null
+      let valB = null
+      
+      // Find the first matching nutrition key for product A
+      if(a.nutrition){
+        for(const key of possibleKeys){
+          if(a.nutrition[key] != null){
+            valA = parseNutritionValue(a.nutrition[key])
+            break
+          }
+        }
+      }
+      
+      // Find the first matching nutrition key for product B
+      if(b.nutrition){
+        for(const key of possibleKeys){
+          if(b.nutrition[key] != null){
+            valB = parseNutritionValue(b.nutrition[key])
+            break
+          }
+        }
+      }
+      
+      // Products without nutrition data go to the end
+      if(valA == null && valB == null) return 0
+      if(valA == null) return 1
+      if(valB == null) return -1
+      
+      // Sort by direction
+      return direction === 'desc' ? valB - valA : valA - valB
+    })
+  }
   
   page = 1
   render()
@@ -225,8 +333,60 @@ selectors.applyFilters.addEventListener('click', applyAllFilters)
 selectors.priceMin.addEventListener('input', applyAllFilters)
 selectors.saleOnly.addEventListener('change', applyAllFilters)
 
+// Advanced filters button
+selectors.advancedFiltersBtn.addEventListener('click', () => {
+  setupAdvancedFiltersModal()
+  document.getElementById('advancedFiltersModal').style.display = 'block'
+})
+
 // initial load
 loadSource(selectors.source.value)
+
+function extractAllergensFromProduct(p){
+  const allergens = []
+  if(!p.allergies) return allergens
+  
+  if(typeof p.allergies === 'object' && !Array.isArray(p.allergies)){
+    // Object format with categories
+    for(const [type, items] of Object.entries(p.allergies)){
+      if(type !== 'Neobsahuje' && Array.isArray(items)){
+        allergens.push(...items)
+      }
+    }
+  } else if(Array.isArray(p.allergies)){
+    allergens.push(...p.allergies)
+  }
+  return allergens
+}
+
+function parseNutritionValue(val){
+  if(val == null) return null
+  if(typeof val === 'number') return val
+  // Extract numeric value from strings like "1,5 g" or "326 kJ"
+  const s = String(val).replace(/\s/g, '').replace(',', '.')
+  const match = s.match(/[\d.]+/)
+  return match ? parseFloat(match[0]) : null
+}
+
+function getAllUniqueAllergens(){
+  const allergenSet = new Set()
+  products.forEach(p => {
+    extractAllergensFromProduct(p).forEach(a => allergenSet.add(a))
+  })
+  return Array.from(allergenSet).sort()
+}
+
+function getAllNutritionKeys(){
+  const keySet = new Set()
+  products.forEach(p => {
+    if(p.nutrition && typeof p.nutrition === 'object'){
+      Object.keys(p.nutrition).forEach(k => {
+        if(k !== 'Výživové údaje na') keySet.add(k)
+      })
+    }
+  })
+  return Array.from(keySet).sort()
+}
 
 function setupModal(){
   if(document.getElementById('detailModal')) return;
@@ -248,6 +408,273 @@ function setupModal(){
   window.onclick = function(event) {
     if (event.target == modal) { modal.style.display = "none"; }
   }
+}
+
+function setupAdvancedFiltersModal(){
+  if(document.getElementById('advancedFiltersModal')) return;
+  
+  const modalHtml = `
+    <div id="advancedFiltersModal" class="modal">
+      <div class="modal-content" style="max-width: 800px; max-height: 85vh; overflow-y: auto;">
+        <span class="close-advanced">&times;</span>
+        <h2 style="margin-top:0; padding-right:20px;">Advanced Filters</h2>
+        <div id="advancedFiltersBody">
+          
+          <div class="detail-section">
+            <h3>Exclude Products With Allergens</h3>
+            <div id="excludeAllergensContainer" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;"></div>
+            <input id="customAllergenExclude" type="text" placeholder="Add custom allergen to exclude..." 
+                   style="width: 100%; margin-top: 8px; padding: 8px; border-radius: 8px; border: 1px solid #dfe6f2;" />
+          </div>
+
+          <div class="detail-section">
+            <h3>Must Be Free Of (Strict)</h3>
+            <div id="requireAllergenFreeContainer" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;"></div>
+            <input id="customAllergenRequired" type="text" placeholder="Add custom allergen requirement..." 
+                   style="width: 100%; margin-top: 8px; padding: 8px; border-radius: 8px; border: 1px solid #dfe6f2;" />
+          </div>
+
+          <div class="detail-section">
+            <h3>Exclude Ingredients</h3>
+            <div id="excludeIngredientsDisplay" style="margin-top: 8px; display: flex; flex-wrap: wrap; gap: 8px;"></div>
+            <input id="excludeIngredientsInput" type="text" placeholder="Type ingredient to exclude (e.g., 'palm oil', 'sugar')..." 
+                   style="width: 100%; margin-top: 8px; padding: 8px; border-radius: 8px; border: 1px solid #dfe6f2;" />
+          </div>
+
+          <div class="detail-section">
+            <h3>Nutrition Filters</h3>
+            <div id="nutritionFiltersContainer"></div>
+          </div>
+
+          <div style="display: flex; gap: 12px; margin-top: 20px;">
+            <button id="applyAdvancedFilters" style="flex: 1; padding: 10px; background: var(--accent); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;">
+              Apply Filters
+            </button>
+            <button id="clearAdvancedFilters" style="flex: 1; padding: 10px; background: #e5e7eb; color: #374151; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;">
+              Clear All
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+  document.body.insertAdjacentHTML('beforeend', modalHtml);
+  
+  const modal = document.getElementById('advancedFiltersModal');
+  const span = document.getElementsByClassName("close-advanced")[0];
+  
+  span.onclick = function() { modal.style.display = "none"; }
+  
+  // Populate allergens checkboxes
+  populateAllergenOptions()
+  
+  // Populate nutrition filters
+  populateNutritionFilters()
+  
+  // Add ingredient exclusion
+  setupIngredientExclusion()
+  
+  // Apply button
+  document.getElementById('applyAdvancedFilters').onclick = function(){
+    applyAdvancedFiltersFromModal()
+    modal.style.display = "none"
+    applyAllFilters()
+  }
+  
+  // Clear button
+  document.getElementById('clearAdvancedFilters').onclick = function(){
+    advancedFilters = {
+      excludeAllergens: [],
+      requireAllergenFree: [],
+      excludeIngredients: [],
+      nutritionMin: {},
+      nutritionMax: {}
+    }
+    populateAllergenOptions()
+    populateNutritionFilters()
+    document.getElementById('excludeIngredientsDisplay').innerHTML = ''
+    updateAdvancedFilterBadge()
+    applyAllFilters()
+  }
+}
+
+function populateAllergenOptions(){
+  const allergens = getAllUniqueAllergens()
+  const excludeContainer = document.getElementById('excludeAllergensContainer')
+  const requireContainer = document.getElementById('requireAllergenFreeContainer')
+  
+  excludeContainer.innerHTML = ''
+  requireContainer.innerHTML = ''
+  
+  allergens.forEach(allergen => {
+    // Exclude checkbox
+    const excludeLabel = document.createElement('label')
+    excludeLabel.style.cssText = 'display: flex; align-items: center; gap: 4px; padding: 4px 8px; background: #f3f4f6; border-radius: 6px; font-size: 13px; cursor: pointer;'
+    const excludeCheck = document.createElement('input')
+    excludeCheck.type = 'checkbox'
+    excludeCheck.value = allergen
+    excludeCheck.checked = advancedFilters.excludeAllergens.includes(allergen)
+    excludeLabel.appendChild(excludeCheck)
+    excludeLabel.appendChild(document.createTextNode(allergen))
+    excludeContainer.appendChild(excludeLabel)
+    
+    // Required free checkbox
+    const requireLabel = document.createElement('label')
+    requireLabel.style.cssText = 'display: flex; align-items: center; gap: 4px; padding: 4px 8px; background: #fef3c7; border-radius: 6px; font-size: 13px; cursor: pointer;'
+    const requireCheck = document.createElement('input')
+    requireCheck.type = 'checkbox'
+    requireCheck.value = allergen
+    requireCheck.checked = advancedFilters.requireAllergenFree.includes(allergen)
+    requireLabel.appendChild(requireCheck)
+    requireLabel.appendChild(document.createTextNode(allergen))
+    requireContainer.appendChild(requireLabel)
+  })
+  
+  // Custom allergen inputs
+  document.getElementById('customAllergenExclude').addEventListener('keydown', e => {
+    if(e.key === 'Enter' && e.target.value.trim()){
+      const val = e.target.value.trim()
+      if(!advancedFilters.excludeAllergens.includes(val)){
+        advancedFilters.excludeAllergens.push(val)
+        populateAllergenOptions()
+      }
+      e.target.value = ''
+    }
+  })
+  
+  document.getElementById('customAllergenRequired').addEventListener('keydown', e => {
+    if(e.key === 'Enter' && e.target.value.trim()){
+      const val = e.target.value.trim()
+      if(!advancedFilters.requireAllergenFree.includes(val)){
+        advancedFilters.requireAllergenFree.push(val)
+        populateAllergenOptions()
+      }
+      e.target.value = ''
+    }
+  })
+}
+
+function populateNutritionFilters(){
+  const nutritionKeys = getAllNutritionKeys()
+  const container = document.getElementById('nutritionFiltersContainer')
+  container.innerHTML = ''
+  
+  nutritionKeys.forEach(key => {
+    const row = document.createElement('div')
+    row.style.cssText = 'display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-size: 13px;'
+    
+    const label = document.createElement('span')
+    label.textContent = key
+    label.style.cssText = 'flex: 1; min-width: 150px;'
+    
+    const minInput = document.createElement('input')
+    minInput.type = 'number'
+    minInput.placeholder = 'Min'
+    minInput.step = 'any'
+    minInput.value = advancedFilters.nutritionMin[key] || ''
+    minInput.style.cssText = 'width: 80px; padding: 6px; border-radius: 6px; border: 1px solid #dfe6f2;'
+    minInput.dataset.key = key
+    minInput.dataset.type = 'min'
+    
+    const maxInput = document.createElement('input')
+    maxInput.type = 'number'
+    maxInput.placeholder = 'Max'
+    maxInput.step = 'any'
+    maxInput.value = advancedFilters.nutritionMax[key] || ''
+    maxInput.style.cssText = 'width: 80px; padding: 6px; border-radius: 6px; border: 1px solid #dfe6f2;'
+    maxInput.dataset.key = key
+    maxInput.dataset.type = 'max'
+    
+    row.appendChild(label)
+    row.appendChild(minInput)
+    row.appendChild(document.createTextNode(' – '))
+    row.appendChild(maxInput)
+    container.appendChild(row)
+  })
+}
+
+function setupIngredientExclusion(){
+  const input = document.getElementById('excludeIngredientsInput')
+  const display = document.getElementById('excludeIngredientsDisplay')
+  
+  const renderTags = () => {
+    display.innerHTML = ''
+    advancedFilters.excludeIngredients.forEach(ingredient => {
+      const tag = document.createElement('span')
+      tag.style.cssText = 'display: inline-flex; align-items: center; gap: 6px; background: #fee2e2; color: #991b1b; padding: 4px 10px; border-radius: 12px; font-size: 12px;'
+      tag.textContent = ingredient
+      
+      const removeBtn = document.createElement('span')
+      removeBtn.textContent = '×'
+      removeBtn.style.cssText = 'cursor: pointer; font-weight: bold; font-size: 16px;'
+      removeBtn.onclick = () => {
+        advancedFilters.excludeIngredients = advancedFilters.excludeIngredients.filter(i => i !== ingredient)
+        renderTags()
+      }
+      
+      tag.appendChild(removeBtn)
+      display.appendChild(tag)
+    })
+  }
+  
+  input.addEventListener('keydown', e => {
+    if(e.key === 'Enter' && e.target.value.trim()){
+      const val = e.target.value.trim()
+      if(!advancedFilters.excludeIngredients.includes(val)){
+        advancedFilters.excludeIngredients.push(val)
+        renderTags()
+      }
+      e.target.value = ''
+    }
+  })
+  
+  renderTags()
+}
+
+function updateAdvancedFilterBadge(){
+  const badge = document.getElementById('advancedFilterBadge')
+  if(!badge) return
+  
+  let count = 0
+  count += advancedFilters.excludeAllergens.length
+  count += advancedFilters.requireAllergenFree.length
+  count += advancedFilters.excludeIngredients.length
+  count += Object.keys(advancedFilters.nutritionMin).length
+  count += Object.keys(advancedFilters.nutritionMax).length
+  
+  if(count > 0){
+    badge.textContent = `(${count})`
+    badge.style.display = 'inline'
+    badge.style.cssText = 'display: inline; background: #ef4444; color: white; padding: 2px 6px; border-radius: 10px; font-size: 11px; margin-left: 4px; font-weight: bold;'
+  } else {
+    badge.style.display = 'none'
+  }
+}
+
+function applyAdvancedFiltersFromModal(){
+  // Collect allergen exclusions
+  advancedFilters.excludeAllergens = Array.from(
+    document.querySelectorAll('#excludeAllergensContainer input[type="checkbox"]:checked')
+  ).map(el => el.value)
+  
+  // Collect required allergen-free
+  advancedFilters.requireAllergenFree = Array.from(
+    document.querySelectorAll('#requireAllergenFreeContainer input[type="checkbox"]:checked')
+  ).map(el => el.value)
+  
+  // Collect nutrition filters
+  advancedFilters.nutritionMin = {}
+  advancedFilters.nutritionMax = {}
+  
+  document.querySelectorAll('#nutritionFiltersContainer input[data-type="min"]').forEach(input => {
+    if(input.value) advancedFilters.nutritionMin[input.dataset.key] = input.value
+  })
+  
+  document.querySelectorAll('#nutritionFiltersContainer input[data-type="max"]').forEach(input => {
+    if(input.value) advancedFilters.nutritionMax[input.dataset.key] = input.value
+  })
+  
+  updateAdvancedFilterBadge()
 }
 
 function showDetails(p){

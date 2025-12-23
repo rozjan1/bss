@@ -23,6 +23,20 @@
         <option value="price-desc">Price: high → low</option>
         <option value="name-asc">Name: A → Z</option>
         <option value="name-desc">Name: Z → A</option>
+        <optgroup label="Nutrition">
+          <option value="nutrition-protein-desc">Most Protein</option>
+          <option value="nutrition-protein-asc">Least Protein</option>
+          <option value="nutrition-energy-desc">Most Energy (kcal)</option>
+          <option value="nutrition-energy-asc">Least Energy (kcal)</option>
+          <option value="nutrition-fat-desc">Most Fat</option>
+          <option value="nutrition-fat-asc">Least Fat</option>
+          <option value="nutrition-carbs-desc">Most Carbs</option>
+          <option value="nutrition-carbs-asc">Least Carbs</option>
+          <option value="nutrition-sugar-desc">Most Sugar</option>
+          <option value="nutrition-sugar-asc">Least Sugar</option>
+          <option value="nutrition-salt-desc">Most Salt</option>
+          <option value="nutrition-salt-asc">Least Salt</option>
+        </optgroup>
       </select>
     </div>
   </header>
@@ -43,7 +57,10 @@
         <input type="checkbox" id="saleOnly" /> Only on sale
       </label>
       <button id="applyFilters">Apply</button>
-      <div class="notes">Tip: click a product to open image in full size.</div>
+      <button id="advancedFiltersBtn" style="margin-top: 8px;">
+        Advanced Filters <span id="advancedFilterBadge" style="display: none;"></span>
+      </button>
+      <div class="notes">Tip: Sort by nutrition (protein, energy, etc.) and combine with filters for best results!</div>
     </aside>
 
     <section class="content">
