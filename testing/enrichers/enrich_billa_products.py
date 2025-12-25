@@ -84,9 +84,8 @@ def extract_product_details(product_data: Dict[str, Any]) -> Dict[str, Any]:
     
     allergies_output = {
         "Obsahuje": [],
-        "Neobsahuje": [],
         "Může obsahovat": [],
-        "Inconnu": []
+        "Neobsahuje": [],
     }
     
     # Use the top-level 'allergens' list if available

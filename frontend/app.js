@@ -29,42 +29,7 @@ const PAGE_SIZE = 48
 
 function fmtPrice(v){ if(v==null) return '—'; return Number(v).toFixed(2) + ' Kč' }
 
-function parsePrice(raw){
-  if(raw == null) return null
-  if(typeof raw === 'number') return raw
-  // try to extract numeric parts (handles "9,90 Kč" or "9.90" )
-  const s = String(raw).replace(/\s|Kč|CZK/gi, '').replace(',', '.').replace(/[^0-9.\-]/g,'')
-  const n = parseFloat(s)
-  return Number.isFinite(n) ? n : null
-}
-
-function normalizeProduct(p){
-  // attach a normalized numeric price used for sorting/filtering
-  const sale = parsePrice(p.sale_price)
-  const orig = parsePrice(p.original_price)
-  const fallback = parsePrice(p.price ?? p.original_price)
-  p._price = sale ?? orig ?? fallback ?? null
-
-  // Ensure product_url exists if provided by source JSON
-  if(!p.product_url){
-    // common direct field
-    if(p.url) p.product_url = p.url
-    else if(p.product_url) p.product_url = p.product_url
-    // try typical Tesco derivation if source indicates tesco and nested id exists
-    else if((p.source || '').toLowerCase().includes('tesco')){
-      try{
-        let id = null
-        if(p.data && p.data.category && Array.isArray(p.data.category.results) && p.data.category.results[0] && p.data.category.results[0].node && p.data.category.results[0].node.id){
-          id = p.data.category.results[0].node.id
-        }
-        id = id || p.id || p.tpnb || p.baseProductId || (p.sellers && p.sellers.results && p.sellers.results[0] && p.sellers.results[0].id) || null
-        if(id) p.product_url = `https://nakup.itesco.cz/groceries/cs-CZ/products/${id}`
-      }catch(e){ /* ignore */ }
-    }
-  }
-
-  return p
-}
+// Product data is now normalized by the Python backend script
 
 async function loadSource(url){
   selectors.meta.textContent = 'Loading products…'
@@ -79,7 +44,8 @@ async function loadSource(url){
       const res = await fetch(url)
       raw = await res.json()
     }
-    products = raw.map(normalizeProduct)
+    // Products are already normalized by backend Python script
+    products = raw
     filtered = products.slice()
     populateCategories()
     page = 1
@@ -109,7 +75,7 @@ function applyAllFilters(){
   filtered = products.filter(p=>{
     if(cat && (p.product_category||p.category||'') !== cat) return false
     
-    const price = p._price
+    const price = p.price
     if(price != null) {
       if(!isNaN(min) && min > 0 && price < min) return false
       if(!isNaN(max) && max > 0 && price > max) return false
@@ -174,8 +140,8 @@ function applyAllFilters(){
   })
 
   const sort = selectors.sort.value
-  if(sort==='price-asc') filtered.sort((a,b)=>( (a._price??Infinity)-(b._price??Infinity) ))
-  if(sort==='price-desc') filtered.sort((a,b)=>( (b._price??-Infinity)-(a._price??-Infinity) ))
+  if(sort==='price-asc') filtered.sort((a,b)=>( (a.price??Infinity)-(b.price??Infinity) ))
+  if(sort==='price-desc') filtered.sort((a,b)=>( (b.price??-Infinity)-(a.price??-Infinity) ))
   if(sort==='name-asc') filtered.sort((a,b)=> (a.item_name||a.name||'').localeCompare(b.item_name||b.name||'') )
   if(sort==='name-desc') filtered.sort((a,b)=> (b.item_name||b.name||'').localeCompare(a.item_name||a.name||'') )
   
@@ -185,14 +151,14 @@ function applyAllFilters(){
     const nutrientType = parts[1]
     const direction = parts[2] // 'asc' or 'desc'
     
-    // Map nutrient types to actual nutrition keys
+    // Map nutrient types to normalized and legacy nutrition keys
     const nutrientKeyMap = {
-      'protein': ['Bílkoviny', 'Bílkoviny (g)', 'Protein'],
-      'energy': ['Energetická hodnota kcal', 'Energetická hodnota (kcal)', 'Energy kcal'],
-      'fat': ['Tuky', 'Tuky (g)', 'Fat'],
-      'carbs': ['Sacharidy', 'Sacharidy (g)', 'Carbohydrates'],
-      'sugar': ['z toho cukry', 'Z toho cukry', ' z toho cukry (g)', 'Sugar'],
-      'salt': ['Sůl', 'Sůl (g)', 'Salt']
+      'protein': ['protein', 'Bílkoviny', 'Bílkoviny (g)', 'Protein'],
+      'energy': ['energy_kcal', 'Energetická hodnota kcal', 'Energetická hodnota (kcal)', 'Energy kcal'],
+      'fat': ['fat', 'Tuky', 'Tuky (g)', 'Fat'],
+      'carbs': ['carbohydrates', 'Sacharidy', 'Sacharidy (g)', 'Carbohydrates'],
+      'sugar': ['sugar', 'z toho cukry', 'Z toho cukry', ' z toho cukry (g)', 'Sugar'],
+      'salt': ['salt', 'Sůl', 'Sůl (g)', 'Salt']
     }
     
     const possibleKeys = nutrientKeyMap[nutrientType] || []
@@ -263,12 +229,12 @@ function render(){
     }
     const source = document.createElement('div'); source.className='source'; source.textContent = p.source || ''; source.style.fontStyle = 'italic'; source.style.fontSize = 'small'; source.style.color = '#666'
     const metaRow = document.createElement('div'); metaRow.className='metaRow'
-  // Determine sale vs original prices (numeric)
-  const saleVal = parsePrice(p.sale_price ?? p.sale_price)
-  const origVal = parsePrice(p.original_price ?? p.original_price)
+  // Determine sale vs original prices (already normalized as floats)
+  const saleVal = p.sale_price
+  const origVal = p.original_price
 
-  // Primary visible price: prefer sale price if present otherwise use normalized price
-  const primaryPrice = saleVal != null ? saleVal : p._price
+  // Primary visible price: prefer sale price if present otherwise use normalized price field
+  const primaryPrice = saleVal != null ? saleVal : p.price
   const price = document.createElement('div'); price.className='price'; price.textContent = fmtPrice(primaryPrice)
 
   // If there's an original price different from the primary price, show it as strikethrough
@@ -346,22 +312,40 @@ function extractAllergensFromProduct(p){
   const allergens = []
   if(!p.allergies) return allergens
   
+  // Handle normalized format
   if(typeof p.allergies === 'object' && !Array.isArray(p.allergies)){
-    // Object format with categories
+    // Check for normalized format
+    if('contains' in p.allergies && Array.isArray(p.allergies.contains)){
+      allergens.push(...p.allergies.contains)
+    }
+    if('may_contain' in p.allergies && Array.isArray(p.allergies.may_contain)){
+      allergens.push(...p.allergies.may_contain)
+    }
+    
+    // Also support old format (for backwards compatibility)
     for(const [type, items] of Object.entries(p.allergies)){
-      if(type !== 'Neobsahuje' && Array.isArray(items)){
+      if(type !== 'Neobsahuje' && type !== 'free_from' && Array.isArray(items)){
         allergens.push(...items)
       }
     }
   } else if(Array.isArray(p.allergies)){
     allergens.push(...p.allergies)
   }
-  return allergens
+  return [...new Set(allergens)]  // Remove duplicates
 }
 
 function parseNutritionValue(val){
   if(val == null) return null
+  
+  // Handle normalized format: {value: 7.0, unit: "g"}
+  if(typeof val === 'object' && val.value !== undefined){
+    return typeof val.value === 'number' ? val.value : parseFloat(val.value)
+  }
+  
+  // Handle numeric values
   if(typeof val === 'number') return val
+  
+  // Handle string values (backwards compatibility)
   // Extract numeric value from strings like "1,5 g" or "326 kJ"
   const s = String(val).replace(/\s/g, '').replace(',', '.')
   const match = s.match(/[\d.]+/)
@@ -381,7 +365,10 @@ function getAllNutritionKeys(){
   products.forEach(p => {
     if(p.nutrition && typeof p.nutrition === 'object'){
       Object.keys(p.nutrition).forEach(k => {
-        if(k !== 'Výživové údaje na') keySet.add(k)
+        // Skip metadata fields
+        if(k !== 'Výživové údaje na' && k !== 'per_serving'){
+          keySet.add(k)
+        }
       })
     }
   })
@@ -691,17 +678,49 @@ function showDetails(p){
     let html = `<h3>Alergie</h3><div class="detail-text">`;
     
     let hasAllergyInfo = false;
-    // Handle both object (albert) and potentially other formats if any
+    
+    // Handle normalized format
     if(typeof p.allergies === 'object' && !Array.isArray(p.allergies)){
-      for(const [type, items] of Object.entries(p.allergies)){
-        if(Array.isArray(items) && items.length > 0){
+      // Check for normalized format
+      if('contains' in p.allergies || 'may_contain' in p.allergies || 'free_from' in p.allergies){
+        if(p.allergies.contains && p.allergies.contains.length > 0){
           hasAllergyInfo = true;
-          html += `<div style="margin-bottom:4px"><strong>${escapeHtml(type)}:</strong> `;
-          items.forEach(item => {
-            const cls = type === 'Neobsahuje' ? 'safe' : (type === 'Může obsahovat' ? 'trace' : '');
-            html += `<span class="allergy-tag ${cls}">${escapeHtml(item)}</span>`;
+          html += `<div style="margin-bottom:4px"><strong>Obsahuje:</strong> `;
+          p.allergies.contains.forEach(item => {
+            html += `<span class="allergy-tag">${escapeHtml(item)}</span>`;
           });
           html += `</div>`;
+        }
+        
+        if(p.allergies.may_contain && p.allergies.may_contain.length > 0){
+          hasAllergyInfo = true;
+          html += `<div style="margin-bottom:4px"><strong>Může obsahovat:</strong> `;
+          p.allergies.may_contain.forEach(item => {
+            html += `<span class="allergy-tag trace">${escapeHtml(item)}</span>`;
+          });
+          html += `</div>`;
+        }
+        
+        if(p.allergies.free_from && p.allergies.free_from.length > 0){
+          hasAllergyInfo = true;
+          html += `<div style="margin-bottom:4px"><strong>Neobsahuje:</strong> `;
+          p.allergies.free_from.forEach(item => {
+            html += `<span class="allergy-tag safe">${escapeHtml(item)}</span>`;
+          });
+          html += `</div>`;
+        }
+      } else {
+        // Handle old format (backwards compatibility)
+        for(const [type, items] of Object.entries(p.allergies)){
+          if(Array.isArray(items) && items.length > 0){
+            hasAllergyInfo = true;
+            html += `<div style="margin-bottom:4px"><strong>${escapeHtml(type)}:</strong> `;
+            items.forEach(item => {
+              const cls = type === 'Neobsahuje' ? 'safe' : (type === 'Může obsahovat' ? 'trace' : '');
+              html += `<span class="allergy-tag ${cls}">${escapeHtml(item)}</span>`;
+            });
+            html += `</div>`;
+          }
         }
       }
     } else if (Array.isArray(p.allergies)) {
@@ -722,8 +741,40 @@ function showDetails(p){
   if(p.nutrition && typeof p.nutrition === 'object' && Object.keys(p.nutrition).length > 0){
     const div = document.createElement('div'); div.className = 'detail-section';
     let html = `<h3>Výživové hodnoty</h3><table class="nutrition-table">`;
+    
+    // Handle per_serving info if present
+    if(p.nutrition.per_serving){
+      html += `<tr><th colspan="2" style="text-align:left; font-style:italic;">Výživové údaje na: ${escapeHtml(p.nutrition.per_serving)}</th></tr>`;
+    }
+    
+    // Map normalized keys to readable names
+    const nutrientNames = {
+      'energy_kj': 'Energetická hodnota',
+      'energy_kcal': 'Energetická hodnota',
+      'protein': 'Bílkoviny',
+      'fat': 'Tuky',
+      'saturated_fat': 'Z toho nasycené mastné kyseliny',
+      'carbohydrates': 'Sacharidy',
+      'sugar': 'Z toho cukry',
+      'fiber': 'Vláknina',
+      'salt': 'Sůl',
+      'sodium': 'Sodík'
+    };
+    
     for(const [key, val] of Object.entries(p.nutrition)){
-      html += `<tr><th>${escapeHtml(key)}</th><td>${escapeHtml(val)}</td></tr>`;
+      if(key === 'per_serving') continue;
+      
+      let displayValue;
+      if(typeof val === 'object' && val.value !== undefined){
+        // Normalized format: {value: 7.0, unit: "g"}
+        displayValue = `${val.value} ${val.unit || ''}`;
+      } else {
+        // Legacy format or string
+        displayValue = escapeHtml(val);
+      }
+      
+      const displayName = nutrientNames[key] || key;
+      html += `<tr><th>${escapeHtml(displayName)}</th><td>${displayValue}</td></tr>`;
     }
     html += `</table>`;
     div.innerHTML = html;
