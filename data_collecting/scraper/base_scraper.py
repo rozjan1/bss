@@ -65,6 +65,9 @@ class BaseScraper(ABC):
 
     def save_to_json(self, filename: str):
         """Standardized saving method."""
+        output_path = Path(filename)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+
         logger.info(f"Saving {len(self.all_products)} products to {filename}")
         with open(filename, 'w', encoding='utf-8') as f:
             json_data = [p.model_dump(mode='json') for p in self.all_products]
