@@ -1,13 +1,8 @@
 from base_scraper import BaseScraper
 from typing import List, Dict, Any
-from time import sleep
 from loguru import logger
-import sys
-from pathlib import Path
-
-# Add parent directory to path to import models
-sys.path.insert(0, str(Path(__file__).parent.parent))
 from models.models import Product
+from utils.price_utils import parse_price_string
 
 
 class AlbertScraper(BaseScraper):
@@ -127,8 +122,11 @@ class AlbertScraper(BaseScraper):
                     continue
                 
                 # Parse prices (remove currency and convert commas to dots)
-                original_price = float(formatted_value.split(" ")[0].replace(".", "").replace(",", "."))
-                sale_price = float(current_price.split(" ")[0].replace(".", "").replace(",", "."))
+                original_price = parse_price_string(formatted_value)
+                sale_price = parse_price_string(current_price)
+                
+                if original_price is None or sale_price is None:
+                    continue
                 
                 unit_code = price_info.get('unitCode')
                 
@@ -136,8 +134,10 @@ class AlbertScraper(BaseScraper):
                 unit_price_formatted = None
                 if price_info.get('supplementaryPriceLabel1'):
                     try:
-                        unit_price_str = price_info.get('supplementaryPriceLabel1', '0').split('=')[1].split('Kč')[0].replace('.', '').replace(',', '.').replace(" ", "").strip()
-                        unit_price_formatted = float(unit_price_str)
+                        # Example: "1 ks = 12,90 Kč"
+                        label_parts = price_info.get('supplementaryPriceLabel1', '').split('=')
+                        if len(label_parts) > 1:
+                            unit_price_formatted = parse_price_string(label_parts[1])
                     except (IndexError, ValueError):
                         pass
                 
@@ -171,37 +171,7 @@ class AlbertScraper(BaseScraper):
         
         return products
 
-    def _is_response_empty(self, response: dict) -> bool:
-        """Check if the response has any products."""
-        try:
-            products_list = response['data']['categoryProductSearch']['products']
-            return len(products_list) == 0
-        except KeyError:
-            logger.warning("JSON structure is missing expected keys")
-            return True
 
-    def run(self):
-        """Main scraping loop for all Albert categories."""
-        logger.info(f"Starting {self.source_name} scraper")
-        
-        for code, name in self.categories.items():
-            logger.info(f"Scraping category: {code} ({name})")
-            
-            for page_index in range(0, 500):  # Large upper bound
-                logger.debug(f"Fetching category {code}, page {page_index}")
-                
-                response_data = self.fetch_category(code, page_index)
-                
-                if not response_data or self._is_response_empty(response_data):
-                    logger.info(f"No more products for category {code} on page {page_index}")
-                    break
-                
-                products = self.parse_response(response_data, name)
-                self.all_products.extend(products)
-                
-                sleep(0.1)  # Be polite to the server
-        
-        logger.info(f"Scraped {len(self.all_products)} products from {self.source_name}")
 
 
 if __name__ == "__main__":

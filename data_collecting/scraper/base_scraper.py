@@ -4,6 +4,7 @@ import json
 import sys
 from pathlib import Path
 from typing import List, Dict, Any
+from time import sleep
 from loguru import logger
 
 # Add parent directory to path to import models
@@ -15,6 +16,7 @@ class BaseScraper(ABC):
         self.source_name = source_name
         self.session = requests.Session()
         self.all_products: List[Product] = []
+        self.categories: Dict[str, str] = {}
 
     @abstractmethod
     def fetch_category(self, category_code: str, page: int) -> Dict[str, Any]:
@@ -26,10 +28,40 @@ class BaseScraper(ABC):
         """Method to transform raw JSON into the Product Pydantic model."""
         pass
 
-    @abstractmethod
+    def should_continue(self, response_data: Dict[str, Any], page: int, products: List[Product]) -> bool:
+        """Hook to determine if pagination should continue."""
+        return True
+
     def run(self):
         """The main loop orchestrating pagination and category switching."""
-        pass
+        logger.info(f"Starting {self.source_name} scraper")
+        
+        for code, name in self.categories.items():
+            logger.info(f"Scraping category: {code} ({name})")
+            
+            for page_index in range(0, 500):  # Large upper bound
+                logger.debug(f"Fetching category {code}, page {page_index}")
+                
+                response_data = self.fetch_category(code, page_index)
+                
+                if not response_data:
+                    logger.info(f"No response data for category {code} at page {page_index}")
+                    break
+                
+                products = self.parse_response(response_data, name)
+                if not products:
+                    logger.info(f"No products found for category {code} at page {page_index}")
+                    break
+
+                self.all_products.extend(products)
+                
+                if not self.should_continue(response_data, page_index, products):
+                    logger.info(f"Stopping pagination for category {code} at page {page_index}")
+                    break
+                
+                sleep(0.1)  # Be polite to the server
+        
+        logger.info(f"Scraped {len(self.all_products)} products from {self.source_name}")
 
     def save_to_json(self, filename: str):
         """Standardized saving method."""

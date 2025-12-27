@@ -1,19 +1,13 @@
 from base_scraper import BaseScraper
 from typing import List, Dict, Any
-from time import sleep
 from loguru import logger
-import sys
-from pathlib import Path
-
-# Add parent directory to path to import models
-sys.path.insert(0, str(Path(__file__).parent.parent))
 from models.models import Product
 
 
 class BillaScraper(BaseScraper):
     def __init__(self):
         super().__init__("billa")
-        self.categories = [
+        categories_list = [
             "ovoce-a-zelenina-1165",
             "pecivo-1198",
             "chlazene-mlecne-a-rostlinne-vyrobky-1207",
@@ -25,6 +19,7 @@ class BillaScraper(BaseScraper):
             "napoje-1474",
             "specialni-a-rostlinna-vyziva-1576"
         ]
+        self.categories = {c: c for c in categories_list}
         
         self.session.cookies.update({
             'XSRF-TOKEN': '9438d651-5e76-45b3-ae10-f3531882e07e',
@@ -152,28 +147,7 @@ class BillaScraper(BaseScraper):
         
         return products
 
-    def run(self):
-        """Main scraping loop for all Billa categories."""
-        logger.info(f"Starting {self.source_name} scraper")
-        
-        for category in self.categories:
-            logger.info(f"Scraping category: {category}")
-            
-            for page_index in range(0, 500):  # Large upper bound
-                logger.debug(f"Fetching category {category}, page {page_index}")
-                
-                response_data = self.fetch_category(category, page_index)
-                
-                if not response_data or not response_data.get('results'):
-                    logger.info(f"No more products for category {category} at page {page_index}")
-                    break
-                
-                products = self.parse_response(response_data, category)
-                self.all_products.extend(products)
-                
-                sleep(0.1)  # Be polite to the server
-        
-        logger.info(f"Scraped {len(self.all_products)} products from {self.source_name}")
+
 
 
 if __name__ == "__main__":
