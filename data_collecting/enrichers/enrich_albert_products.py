@@ -3,11 +3,12 @@ import threading
 import time
 from queue import Queue, Empty
 from typing import Dict, Any
+from loguru import logger
 
 from albert_get_product_info import AlbertProductInfoFetcher
 
-INPUT_FILE = 'scraper/albert_products.json'
-OUTPUT_FILE = 'scraper/albert_products_enriched.json'
+INPUT_FILE = 'albert_products.json'
+OUTPUT_FILE = 'albert_products_enriched.json'
 NUM_WORKERS = 8
 
 # Per-thread worker that fetches nutrition/allergy info and attaches it to the product record.
@@ -25,12 +26,13 @@ class EnricherWorker(threading.Thread):
             try:
                 product = self.task_queue.get_nowait()
             except Empty:
-                print(f"Worker {self.worker_id}: finished")
+                logger.info(f"Worker {self.worker_id}: finished")
                 return
 
             url = product.get('product_url') or product.get('url')
             # Some items may not have a URL; skip them gracefully
             if not url:
+                logger.warning(f"Worker {self.worker_id}: {product.get('name', 'Unknown product')} missing URL, skipping enrichment")
                 enriched = {**product, 'nutrition': {}, 'allergies': {}, 'ingredients': None}
                 with self.lock:
                     self.results.append(enriched)
@@ -48,7 +50,7 @@ class EnricherWorker(threading.Thread):
                     with self.lock:
                         self.results.append(enriched)
                         if len(self.results) % 100 == 0:
-                            print(f"Progress: {len(self.results)} products enriched")
+                            logger.info(f"Progress: {len(self.results)} products enriched")
                     break
 
                 except Exception as e:
@@ -56,13 +58,13 @@ class EnricherWorker(threading.Thread):
                     msg = str(e).lower()
                     if '429' in msg or 'rate' in msg or 'too many' in msg:
                         sleep_time = min(max_backoff, backoff)
-                        print(f"Worker {self.worker_id}: rate limited when fetching {url}, sleeping {sleep_time}s and retrying")
+                        logger.warning(f"Worker {self.worker_id}: rate limited when fetching {url}, sleeping {sleep_time}s and retrying")
                         time.sleep(sleep_time)
                         backoff *= 2
                         continue
                     else:
                         # Non-rate-limit error: record empty nutrition and move on
-                        print(f"Worker {self.worker_id}: error fetching {url}: {e}")
+                        logger.warning(f"Worker {self.worker_id}: error fetching {url}: {e}")
                         enriched = {**product, 'nutrition': {}, 'allergies': {}, 'ingredients': None}
                         with self.lock:
                             self.results.append(enriched)
@@ -72,12 +74,12 @@ class EnricherWorker(threading.Thread):
 
 
 def enrich_products(input_path: str = INPUT_FILE, output_path: str = OUTPUT_FILE, num_workers: int = NUM_WORKERS):
-    print(f"Loading products from {input_path}...")
+    logger.info(f"Loading products from {input_path}...")
     with open(input_path, 'r', encoding='utf-8') as f:
         products = json.load(f)
 
-    print(f"Found {len(products)} products to enrich")
-    print(f"Starting {num_workers} workers...\n")
+    logger.info(f"Found {len(products)} products to enrich")
+    logger.info(f"Starting {num_workers} workers...")
     
     task_queue: Queue = Queue()
     for p in products:
@@ -91,22 +93,22 @@ def enrich_products(input_path: str = INPUT_FILE, output_path: str = OUTPUT_FILE
         w.start()
 
     # Wait for all tasks to finish
-    print(f"\nWaiting for all workers to complete...")
+    logger.info("Waiting for all workers to complete...")
     task_queue.join()
-    print(f"All workers finished!\n")
+    logger.info("All workers finished!")
 
     # Save results in the same input order if possible (we appended as completed order)
     # To preserve order, map by product identifier if available. We'll try to keep original order
     # by matching product_url field.
-    print(f"Reordering results to match input order...")
+    logger.info("Reordering results to match input order...")
     url_to_enriched = {r.get('product_url') or r.get('url'): r for r in results}
     ordered_results = [url_to_enriched.get(p.get('product_url') or p.get('url'), {**p, 'nutrition': {}, 'allergies': {}, 'ingredients': None}) for p in products]
 
-    print(f"Saving enriched data to {output_path}...")
+    logger.info(f"Saving enriched data to {output_path}...")
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(ordered_results, f, ensure_ascii=False, indent=2)
 
-    print(f"\n✓ Successfully enriched {len(ordered_results)} products to {output_path}")
+    logger.info(f"Successfully enriched {len(ordered_results)} products to {output_path}")
 
 
 if __name__ == '__main__':
