@@ -1,21 +1,16 @@
 from base_scraper import BaseScraper
-from typing import List, Dict, Any, Tuple
-from time import sleep
+from typing import List, Dict, Any
 from loguru import logger
 import re
-import sys
-from pathlib import Path
-
-# Add parent directory to path to import models
-sys.path.insert(0, str(Path(__file__).parent.parent))
 from models.models import Product
+from utils.price_utils import extract_price_with_currency
 
 
 class TescoScraper(BaseScraper):
     def __init__(self):
         super().__init__("tesco")
         self.page_size = 1000  # Tesco returns up to 1000 items per call
-        self.facets = {
+        self.categories = {
             "b;T3ZvY2UlMjBhJTIwemVsZW5pbmE=": "Ovoce a zelenina",
             "b;TWwlQzMlQTklQzQlOERuJUMzJUE5LCUyMHZlamNlJTIwYSUyMG1hcmdhciVDMyVBRG55": "Mléko, vejce a margaríny",
             "b;UGVrJUMzJUExcm5hJTdDVm9sbiVDMyVBOSUyMHBlJUM0JThEaXZv=": "Pekárna",
@@ -511,27 +506,19 @@ class TescoScraper(BaseScraper):
             logger.error(f"Request failed for category {category_code}: {e}")
             return {}
 
-    def _extract_price(self, text: str) -> float:
-        """Extract price from text with regex."""
-        match = re.search(r'(\d{1,3}(?:[.,]\d{1,2})?)\s*Kč', text)
-        if match:
-            return float(match.group(1).replace(',', '.'))
-        return None
 
-    def parse_response(self, response_data: Dict[str, Any], category_name: str, page: int = 0) -> Tuple[List[Product], bool]:
-        """Transform Tesco JSON data into Product objects and signal if more pages exist."""
+
+    def parse_response(self, response_data: Dict[str, Any], category_name: str) -> List[Product]:
+        """Transform Tesco JSON data into Product objects."""
         products: List[Product] = []
         
         try:
             results_list = response_data[0]["data"]["category"]["results"]
-            page_info = response_data[0]["data"]["category"]["pageInformation"]
-            total_count = page_info.get("totalCount", 0)
-            count_per_page = page_info.get("count", len(results_list)) or self.page_size
         except (IndexError, KeyError) as e:
             logger.warning(f"Could not find 'results' list for category {category_name}: {e}")
-            return products, False
+            return products
         
-        logger.info(f"Processing {len(results_list)} products from category {category_name}, page {page}")
+        logger.info(f"Processing {len(results_list)} products from category {category_name}")
         
         for item in results_list:
             try:
@@ -573,7 +560,7 @@ class TescoScraper(BaseScraper):
                     
                     if "s Clubcard" in description:
                         if not re.search(r'\d{1,3}%.*předtím', description):
-                            extracted_price = self._extract_price(description)
+                            extracted_price = extract_price_with_currency(description)
                             if extracted_price is not None:
                               sale_price = extracted_price
                         
@@ -609,38 +596,22 @@ class TescoScraper(BaseScraper):
                 logger.warning(f"Error processing item: {e}")
                 continue
         
-        # Determine if there are likely more pages: total_count bigger than items seen so far
-        items_seen = (page + 1) * count_per_page
-        has_more = total_count > items_seen and len(results_list) > 0
-        return products, has_more
+        return products
 
-    def run(self):
-        """Main scraping loop for all Tesco categories."""
-        logger.info(f"Starting {self.source_name} scraper")
-        
-        for code, category_name in self.facets.items():
-          logger.info(f"Scraping category: {code} ({category_name})")
+    def should_continue(self, response_data: Dict[str, Any], page: int, products: List[Product]) -> bool:
+        try:
+            results_list = response_data[0]["data"]["category"]["results"]
+            page_info = response_data[0]["data"]["category"]["pageInformation"]
+            total_count = page_info.get("totalCount", 0)
+            count_per_page = page_info.get("count", len(results_list)) or self.page_size
             
-          page = 0
-          while True:
-            response_data = self.fetch_category(code, page)
-                
-            if not response_data:
-              break
-                
-            products, has_more = self.parse_response(response_data, category_name, page)
-            if not products:
-              break
-                
-            self.all_products.extend(products)
-                
-            if not has_more:
-              break
-                
-            page += 1
-            sleep(0.5)  # Be polite to the server
-        
-        logger.info(f"Scraped {len(self.all_products)} products from {self.source_name}")
+            items_seen = (page + 1) * count_per_page
+            has_more = total_count > items_seen and len(results_list) > 0
+            return has_more
+        except (IndexError, KeyError, TypeError):
+            return False
+
+
 
 
 if __name__ == "__main__":
