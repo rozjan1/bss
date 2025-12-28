@@ -503,7 +503,6 @@ class TescoScraper(BaseScraper):
           )
 
 
-
     def parse_response(self, response_data: Dict[str, Any], category_name: str) -> List[Product]:
         """Transform Tesco JSON data into Product objects."""
         products: List[Product] = []
