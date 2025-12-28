@@ -32,6 +32,16 @@ class BaseScraper(ABC):
         """Hook to determine if pagination should continue."""
         return True
 
+    def request_json(self, method: str, url: str, error_message: str, **kwargs) -> Dict[str, Any]:
+        """Thin wrapper around requests that logs and returns an empty dict on failure."""
+        try:
+            response = self.session.request(method=method, url=url, **kwargs)
+            response.raise_for_status()
+            return response.json()
+        except Exception as e:
+            logger.error(f"{error_message}: {e}")
+            return {}
+
     def run(self):
         """The main loop orchestrating pagination and category switching."""
         logger.info(f"Starting {self.source_name} scraper")
@@ -62,6 +72,11 @@ class BaseScraper(ABC):
                 sleep(0.1)  # Be polite to the server
         
         logger.info(f"Scraped {len(self.all_products)} products from {self.source_name}")
+
+    def run_and_save(self, filename: str):
+        """Convenience helper to run the scraper and persist results."""
+        self.run()
+        self.save_to_json(filename)
 
     def save_to_json(self, filename: str):
         """Standardized saving method."""

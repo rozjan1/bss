@@ -58,18 +58,14 @@ class BillaScraper(BaseScraper):
             'enablePersonalization': 'false',
             'pageSize': '500',
         }
-        
-        try:
-            response = self.session.get(
-                f'https://shop.billa.cz/api/product-discovery/categories/{category_code}/products',
-                params=params,
-                timeout=15,
-            )
-            response.raise_for_status()
-            return response.json()
-        except Exception as e:
-            logger.error(f"Request failed for category {category_code} page {page}: {e}")
-            return {}
+
+        return self.request_json(
+            method="get",
+            url=f'https://shop.billa.cz/api/product-discovery/categories/{category_code}/products',
+            error_message=f"Request failed for category {category_code} page {page}",
+            params=params,
+            timeout=15,
+        )
 
     def parse_response(self, response_data: Dict[str, Any], category_name: str) -> List[Product]:
         """Transform Billa JSON data into Product objects."""
@@ -152,5 +148,4 @@ class BillaScraper(BaseScraper):
 
 if __name__ == "__main__":
     scraper = BillaScraper()
-    scraper.run()
-    scraper.save_to_json('output/billa_products.json')
+    scraper.run_and_save('output/billa_products.json')

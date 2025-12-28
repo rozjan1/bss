@@ -493,18 +493,14 @@ class TescoScraper(BaseScraper):
             }
             """
         }]
-        
-        try:
-            response = self.session.post(
-                'https://xapi.tesco.com/',
-                json=payload,
-                timeout=30
-            )
-            response.raise_for_status()
-            return response.json()
-        except Exception as e:
-            logger.error(f"Request failed for category {category_code}: {e}")
-            return {}
+
+        return self.request_json(
+            method="post",
+            url='https://xapi.tesco.com/',
+            error_message=f"Request failed for category {category_code}",
+            json=payload,
+            timeout=30,
+          )
 
 
 
@@ -612,9 +608,6 @@ class TescoScraper(BaseScraper):
             return False
 
 
-
-
 if __name__ == "__main__":
     scraper = TescoScraper()
-    scraper.run()
-    scraper.save_to_json('output/tesco_products.json')
+    scraper.run_and_save('output/tesco_products.json')

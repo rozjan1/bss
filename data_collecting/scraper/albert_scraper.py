@@ -63,18 +63,14 @@ class AlbertScraper(BaseScraper):
             'variables': f'{{"lang":"cs","searchQuery":":relevance","sort":"relevance","category":"{category_code}","pageNumber":{page},"pageSize":50,"filterFlag":true,"fields":"PRODUCT_TILE","plainChildCategories":true}}',
             'extensions': '{"persistedQuery":{"version":1,"sha256Hash":"afce78bc1a2f0fe85f8592403dd44fae5dd8dce455b6eeeb1fd6857cc61b00a2"}}',
         }
-        
-        try:
-            response = self.session.get(
-                'https://www.albert.cz/api/v1/',
-                params=params,
-                timeout=15
-            )
-            response.raise_for_status()
-            return response.json()
-        except Exception as e:
-            logger.error(f"Request failed for category {category_code} page {page}: {e}")
-            return {}
+
+        return self.request_json(
+            method="get",
+            url='https://www.albert.cz/api/v1/',
+            error_message=f"Request failed for category {category_code} page {page}",
+            params=params,
+            timeout=15,
+        )
 
     def parse_response(self, response_data: Dict[str, Any], category_name: str) -> List[Product]:
         """Transform Albert JSON data into Product objects."""
@@ -176,5 +172,4 @@ class AlbertScraper(BaseScraper):
 
 if __name__ == "__main__":
     scraper = AlbertScraper()
-    scraper.run()
-    scraper.save_to_json('output/albert_products.json')
+    scraper.run_and_save('output/albert_products.json')
