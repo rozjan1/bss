@@ -39,9 +39,8 @@ def run_scraping_stage():
     
     # List of scrapers to run
     scrapers = [
-        "albert_scraper.py",
-        "billa_scraper.py",
-        "tesco_scraper.py"
+        f.name for f in SCRAPER_DIR.glob("*_scraper.py")
+        if f.name != "base_scraper.py"
     ]
     
     for scraper in scrapers:
