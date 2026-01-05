@@ -25,10 +25,10 @@ class BaseScraper(ABC):
         self.checkpoint_file = self.checkpoint_dir / f"{source_name}_checkpoint.json"
         self.partial_data_file = self.checkpoint_dir / f"{source_name}_partial_data.json"
 
-        # Logging configuration
+        # If folder doesnt exist, create it
         self.logs_dir = Path(__file__).parent / "logs"
         self.logs_dir.mkdir(parents=True, exist_ok=True)
-        # saving logs to a file
+        # Saving logs to a file
         logger.add(self.logs_dir / "scraper.log", level="ERROR", rotation="1 day")
         logger.add(self.logs_dir / "errors.log", level="DEBUG", rotation="1 day")
 
