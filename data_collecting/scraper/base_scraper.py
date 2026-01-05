@@ -25,6 +25,13 @@ class BaseScraper(ABC):
         self.checkpoint_file = self.checkpoint_dir / f"{source_name}_checkpoint.json"
         self.partial_data_file = self.checkpoint_dir / f"{source_name}_partial_data.json"
 
+        # Logging configuration
+        self.logs_dir = Path(__file__).parent / "logs"
+        self.logs_dir.mkdir(parents=True, exist_ok=True)
+        # saving logs to a file
+        logger.add(self.logs_dir / "scraper.log", level="ERROR", rotation="1 day")
+        logger.add(self.logs_dir / "errors.log", level="DEBUG", rotation="1 day")
+
     @abstractmethod
     def fetch_category(self, category_code: str, page: int) -> Dict[str, Any]:
         """Method to call the specific API for a retailer."""
@@ -124,15 +131,26 @@ class BaseScraper(ABC):
         """Hook to determine if pagination should continue."""
         return True
 
-    def request_json(self, method: str, url: str, error_message: str, **kwargs) -> Dict[str, Any]:
+    def request_json(self, method: str, url: str, error_message: str, max_retries: int = 5, **kwargs) -> Dict[str, Any]:
         """Thin wrapper around requests that logs and returns an empty dict on failure."""
-        try:
-            response = self.session.request(method=method, url=url, **kwargs)
-            response.raise_for_status()
-            return response.json()
-        except Exception as e:
-            logger.error(f"{error_message}: {e}")
-            return {}
+        for attempt in range(max_retries):
+            try:
+                response = self.session.request(method=method, url=url, **kwargs)
+                response.raise_for_status()
+                return response.json()
+            except requests.exceptions.HTTPError as e:
+                if e.response.status_code == 503:
+                    if attempt < max_retries - 1:
+                        wait_time = 2 ** attempt
+                        logger.warning(f"503 Service Unavailable. Retrying in {wait_time}s...")
+                        sleep(wait_time)
+                        continue
+                logger.error(f"{error_message}: {e}")
+                return {}
+            except Exception as e:
+                logger.error(f"{error_message}: {e}")
+                return {}
+        return {}
 
     def run(self, resume: bool = True):
         """The main loop orchestrating pagination and category switching with checkpoint support."""
