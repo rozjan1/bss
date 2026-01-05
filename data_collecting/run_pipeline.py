@@ -14,7 +14,7 @@ def run_command(command, cwd, description):
     print(f"--- Starting: {description} ---")
     start_time = time.time()
     try:
-        # We use 'uv run' to execute the scripts, matching the user's workflow
+        # using uv run since thats what I use
         result = subprocess.run(
             command,
             cwd=cwd,
@@ -75,6 +75,7 @@ def run_normalization_stage():
     # Example:
     # cmd = ["uv", "run", "normalize_data.py"]
     # run_command(cmd, NORMALIZATION_DIR, "Data Normalizer")
+    # This will convert all the data into a unified format and into a singular file/database
     print("Skipping normalization stage (not implemented yet)...")
     print()
 
