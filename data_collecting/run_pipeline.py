@@ -100,8 +100,8 @@ def main():
     print("-" * 30)
     
     run_scraping_stage()
-    #run_enriching_stage()
-    #run_normalization_stage()
+    run_enriching_stage()
+    run_normalization_stage()
     
     print("Pipeline execution completed.")
 

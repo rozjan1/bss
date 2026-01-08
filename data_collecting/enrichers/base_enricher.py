@@ -4,6 +4,7 @@ import time
 from queue import Queue, Empty
 from typing import Dict, Any, List, Optional
 from abc import ABC, abstractmethod
+from pathlib import Path
 from loguru import logger
 
 class BaseProductEnricher(ABC):
@@ -11,6 +12,12 @@ class BaseProductEnricher(ABC):
         self.input_file = input_file
         self.output_file = output_file
         self.num_workers = num_workers
+
+        # Configure logging
+        self.logs_dir = Path(__file__).parent / "logs"
+        self.logs_dir.mkdir(parents=True, exist_ok=True)
+        # Add a file sink for logs
+        logger.add(self.logs_dir / "enricher.log", rotation="1 day", level="INFO")
 
     def enrich_products(self):
         logger.info(f"Loading products from {self.input_file}...")
