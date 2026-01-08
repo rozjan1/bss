@@ -175,7 +175,7 @@ headers = {
     'sec-fetch-user': '?1',
     'upgrade-insecure-requests': '1',
     'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36',
-    # CRITICAL: Manually set the 'Cookie' header string
+    # Manually set the 'Cookie' header string
     'Cookie': raw_cookie_string
 }
 class TescoEnricher(BaseProductEnricher):
