@@ -1,6 +1,9 @@
 import json
 import re
 import requests
+from typing import Dict, Any
+from loguru import logger
+from base_enricher import BaseProductEnricher
 
 def extract_product_info(html_content: str, product_id: str) -> dict:
     """
@@ -174,33 +177,50 @@ headers = {
     # CRITICAL: Manually set the 'Cookie' header string
     'Cookie': raw_cookie_string
 }
-print(raw_cookie_string)
-try:
-    print(f"Making request to fetch product ID {PRODUCT_ID}...")
-    # Pass the URL and the combined headers to the request
-    response = requests.get(
-        f'https://nakup.itesco.cz/groceries/cs-CZ/products/{PRODUCT_ID}', 
-        headers=headers
-    )
-    print("Blablabla")
-    print(response.text)
-    response.encoding = 'windows-1250'
-    
-    # 5. Extract and print the final information
-    product_data = extract_product_info(response.text, PRODUCT_ID)
-    
-    # Check if the extraction failed to find the JSON or the product, 
-    # indicating a successful request but scraping failure.
-    if product_data.get('error'):
-        print(f"Error during extraction/parsing: {product_data['error']}")
-        # Print the HTML text if extraction failed for debugging
-        print("\n--- BEGIN HTML CONTENT (for debugging extraction) ---\n")
-        print(response.text)
-        print("\n--- END HTML CONTENT ---")
-    else:
-        # Success output
-        print("\n--- Extracted Product Info ---")
-        print(json.dumps(product_data, indent=4, ensure_ascii=False))
+class TescoEnricher(BaseProductEnricher):
+    def __init__(self):
+        super().__init__(
+            input_file='tesco_products.json',
+            output_file='tesco_products_enriched.json',
+            num_workers=8
+        )
 
-except Exception as e:
-    print(f"An unexpected error occurred during the HTTP request: {e}")
+    def get_product_info(self, product: Dict[str, Any]) -> Dict[str, Any]:
+        product_url = product.get('product_url') or product.get('url')
+        if not product_url:
+            return {'nutrition': {}, 'allergies': {}, 'ingredients': None}
+
+        # Extract ID
+        try:
+             product_id = product_url.rstrip('/').split('/')[-1]
+        except Exception:
+             logger.warning(f"Could not extract product ID from {product_url}")
+             return {'nutrition': {}, 'allergies': {}, 'ingredients': None}
+
+        api_url = f'https://nakup.itesco.cz/groceries/cs-CZ/products/{product_id}'
+        # Use simple get with the global 'headers' defined above
+        # Note: headers include cookies
+        response = requests.get(api_url, headers=headers, timeout=10)
+        
+        if response.status_code != 200:
+             raise Exception(f"Non-200 status ({response.status_code}) for {product_id}")
+        
+        response.encoding = 'windows-1250'
+        
+        info = extract_product_info(response.text, product_id)
+        
+        if info.get('error'):
+             logger.warning(f"Error for {product_id}: {info['error']}")
+             return {'nutrition': {}, 'allergies': {}, 'ingredients': None}
+             
+        # Map to standard structure
+        return {
+            'nutrition': {}, # Not extracted by current script
+            'allergies': {'Obsahuje': info.get('allergens', [])},
+            'ingredients': " ".join(info.get('ingredients', []) or []) if isinstance(info.get('ingredients'), list) else info.get('ingredients'),
+            'description': info.get('description')
+        }
+
+if __name__ == '__main__':
+    enricher = TescoEnricher()
+    enricher.enrich_products()
