@@ -172,4 +172,4 @@ class AlbertScraper(BaseScraper):
 
 if __name__ == "__main__":
     scraper = AlbertScraper()
-    scraper.run_and_save('output/albert_products.json')
+    scraper.run_and_save('../data/albert_raw.json')

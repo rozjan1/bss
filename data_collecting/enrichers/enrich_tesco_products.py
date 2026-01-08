@@ -3,6 +3,7 @@ import re
 import requests
 from typing import Dict, Any
 from loguru import logger
+from pathlib import Path
 from base_enricher import BaseProductEnricher
 
 def extract_product_info(html_content: str, product_id: str) -> dict:
@@ -180,8 +181,8 @@ headers = {
 class TescoEnricher(BaseProductEnricher):
     def __init__(self):
         super().__init__(
-            input_file='tesco_products.json',
-            output_file='tesco_products_enriched.json',
+            input_file=str(Path(__file__).parent.parent / 'data' / 'tesco_raw.json'),
+            output_file=str(Path(__file__).parent.parent / 'data' / 'tesco_enriched.json'),
             num_workers=8
         )
 

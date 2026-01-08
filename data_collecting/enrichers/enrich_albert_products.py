@@ -1,4 +1,5 @@
 from typing import Dict, Any
+from pathlib import Path
 from loguru import logger
 from base_enricher import BaseProductEnricher
 from albert_get_product_info import AlbertProductInfoFetcher
@@ -6,8 +7,8 @@ from albert_get_product_info import AlbertProductInfoFetcher
 class AlbertEnricher(BaseProductEnricher):
     def __init__(self):
         super().__init__(
-            input_file='albert_products.json',
-            output_file='albert_products_enriched.json',
+            input_file=str(Path(__file__).parent.parent / 'data' / 'albert_raw.json'),
+            output_file=str(Path(__file__).parent.parent / 'data' / 'albert_enriched.json'),
             num_workers=8
         )
         self.fetcher = AlbertProductInfoFetcher()

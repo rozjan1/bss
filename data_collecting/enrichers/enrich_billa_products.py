@@ -2,6 +2,7 @@ import json
 import requests
 from typing import Dict, Any, Optional
 from loguru import logger
+from pathlib import Path
 from base_enricher import BaseProductEnricher
 
 COOKIES = {
@@ -36,8 +37,8 @@ HEADERS = {
 class BillaEnricher(BaseProductEnricher):
     def __init__(self):
         super().__init__(
-            input_file='billa_products.json',
-            output_file='billa_products_enriched.json',
+            input_file=str(Path(__file__).parent.parent / 'data' / 'billa_raw.json'),
+            output_file=str(Path(__file__).parent.parent / 'data' / 'billa_enriched.json'),
             num_workers=8
         )
 

@@ -6,6 +6,9 @@ import time
 # Define paths
 BASE_DIR = Path(__file__).parent
 SCRAPER_DIR = BASE_DIR / "scraper"
+ENRICHER_DIR = BASE_DIR / "enrichers"
+NORMALIZATION_DIR = BASE_DIR / "normalization"
+DATA_DIR = BASE_DIR / "data"
 
 def run_command(command, cwd, description):
     """
@@ -39,7 +42,7 @@ def run_scraping_stage():
     
     # List of scrapers to run
     scrapers = [
-        "albert_scraper.py",
+        #"albert_scraper.py", # Disabled since albert removed their online product listings
         "billa_scraper.py",
         "tesco_scraper.py"
     ]
@@ -56,37 +59,49 @@ def run_scraping_stage():
 
 def run_enriching_stage():
     """
-    Placeholder for data enriching stage.
+    Runs all enrichers to augment data.
     """
-    print("=== STAGE 2: ENRICHING (Future) ===")
-    # TODO: Implement enriching logic
-    # Example:
-    # cmd = ["uv", "run", "enrich_data.py"]
-    # run_command(cmd, ENRICHER_DIR, "Data Enricher")
-    print("Skipping enriching stage (not implemented yet)...")
+    print("=== STAGE 2: ENRICHING ===")
+    
+    enrichers = [
+        # "enrich_albert_products.py", # Disabled since albert removed their online product listings
+        "enrich_billa_products.py",
+        "enrich_tesco_products.py"
+    ]
+    
+    for enricher in enrichers:
+        cmd = ["uv", "run", enricher]
+        success = run_command(cmd, ENRICHER_DIR, f"Enricher: {enricher}")
+        
+        if not success:
+            print(f"Warning: {enricher} failed, continuing with others...")
     print()
 
 def run_normalization_stage():
     """
-    Placeholder for data normalization stage.
+    Runs data normalization.
     """
-    print("=== STAGE 3: NORMALIZATION (Future) ===")
-    # TODO: Implement normalization logic
-    # Example:
-    # cmd = ["uv", "run", "normalize_data.py"]
-    # run_command(cmd, NORMALIZATION_DIR, "Data Normalizer")
-    # This will convert all the data into a unified format and into a singular file/database
-    print("Skipping normalization stage (not implemented yet)...")
+    print("=== STAGE 3: NORMALIZATION ===")
+    
+    normalizer = "normalize_data.py"
+    cmd = ["uv", "run", normalizer]
+    
+    run_command(cmd, NORMALIZATION_DIR, f"Normalizer: {normalizer}")
     print()
 
 def main():
     print("Starting Data Pipeline...")
     print(f"Project Root: {BASE_DIR}")
+    
+    # Create the shared data directory
+    DATA_DIR.mkdir(exist_ok=True)
+    print(f"Ensured data directory exists at: {DATA_DIR}")
+
     print("-" * 30)
     
     run_scraping_stage()
-    run_enriching_stage()
-    run_normalization_stage()
+    #run_enriching_stage()
+    #run_normalization_stage()
     
     print("Pipeline execution completed.")
 

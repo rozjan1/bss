@@ -609,4 +609,4 @@ class TescoScraper(BaseScraper):
 
 if __name__ == "__main__":
     scraper = TescoScraper()
-    scraper.run_and_save('output/tesco_products.json')
+    scraper.run_and_save('../data/tesco_raw.json')
