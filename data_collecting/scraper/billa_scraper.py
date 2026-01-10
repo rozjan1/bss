@@ -148,4 +148,4 @@ class BillaScraper(BaseScraper):
 
 if __name__ == "__main__":
     scraper = BillaScraper()
-    scraper.run_and_save('output/billa_products.json')
+    scraper.run_and_save('../data/billa_raw.json')

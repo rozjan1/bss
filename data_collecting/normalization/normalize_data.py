@@ -306,13 +306,13 @@ class ProductNormalizer:
         output_dir.mkdir(parents=True, exist_ok=True)
         
         # Find all JSON files
-        json_files = list(input_dir.glob('*.json'))
+        json_files = list(input_dir.glob('*_enriched.json'))
         
         if not json_files:
-            print(f"No JSON files found in {input_dir}")
+            print(f"No enriched JSON files found in {input_dir}")
             return
         
-        print(f"\nFound {len(json_files)} JSON files to process")
+        print(f"\nFound {len(json_files)} enriched JSON files to process")
         print("=" * 60)
         
         for json_file in json_files:
@@ -339,8 +339,12 @@ def main():
     # Setup paths
     script_dir = Path(__file__).parent
     project_root = script_dir.parent.parent
-    input_dir = project_root / 'frontend' / 'data'
-    output_dir = project_root / 'frontend' / 'data'  # Overwrite original files
+    
+    # Input: Read from the intermediate data_collecting/data folder
+    input_dir = project_root / 'data_collecting' / 'data'
+    
+    # Output: Write to the frontend/data folder for the app to use
+    output_dir = project_root / 'frontend' / 'data'
     
     print("Product Data Normalization Script")
     print("=" * 60)
