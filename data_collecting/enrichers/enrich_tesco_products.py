@@ -5,11 +5,12 @@ from typing import Dict, Any
 from loguru import logger
 from pathlib import Path
 from base_enricher import BaseProductEnricher
+from bs4 import BeautifulSoup
 
 def extract_product_info(html_content: str, product_id: str) -> dict:
     """
     Dynamically extracts ingredients, allergens, and description for a product
-    from embedded JSON data, without relying on hardcoded script types or cache keys.
+    from embedded JSON data OR directly from HTML structure (fallback).
 
     Args:
         html_content: A string containing the entire HTML document.
@@ -24,7 +25,77 @@ def extract_product_info(html_content: str, product_id: str) -> dict:
         "description": None
     }
 
-    # --- 1. Find and extract the JSON data containing the product info (Dynamic) ---
+    # --- STRATEGY 1: Parse from HTML DOM (More robust for SSR/Client-rendered HTML) ---
+    try:
+        soup = BeautifulSoup(html_content, 'html.parser')
+        
+        # Helper to find accordion sections by header text
+        def get_section_text(header_keyword):
+            # Find all accordion headers
+            headers = soup.find_all(attrs={"data-testid": "accordion-control"})
+            for header in headers:
+                if header_keyword.lower() in header.get_text().strip().lower():
+                    # Find the associated panel
+                    #The panel ID is usually in aria-controls of the button
+                    panel_id = header.get('aria-controls')
+                    if panel_id:
+                        panel = soup.find(id=panel_id)
+                        if panel:
+                            return panel
+            return None
+
+        # 1. Description
+        # Look for "Popis produktu"
+        desc_panel = get_section_text("Popis produktu")
+        if desc_panel:
+            # Usually under a header "Popis" inside the panel
+            # or just take all text in the panel
+            description_container = desc_panel.find(class_="OobGYfu9hvCUvH6") # Fallback to class seen in HTML
+            if not description_container:
+                 # Try finding the 'Popis' sub-header and taking next sibling
+                 sub_headers = desc_panel.find_all("h3")
+                 for sub in sub_headers:
+                     if "Popis" in sub.get_text():
+                         description_container = sub.find_next_sibling("div")
+                         break
+            
+            if description_container:
+                results['description'] = description_container.get_text(strip=True)
+            else:
+                 # Fallback: just get all text from panel
+                 results['description'] = desc_panel.get_text(" ", strip=True)
+
+        # 2. Ingredients & Allergens (Usually in "Složení")
+        ing_panel = get_section_text("Složení")
+        if ing_panel:
+            # Ingredients
+            # Look for sub-header "Ingredience"
+            ing_header = ing_panel.find('h3', string=lambda t: t and "Ingredience" in t)
+            if ing_header:
+                ing_div = ing_header.find_next_sibling('div')
+                if ing_div:
+                    # Clean text (remove 'strong' tags if needed, but get_text does that)
+                    results['ingredients'] = [ing_div.get_text(strip=True)]
+            
+            # Allergens
+            # Look for sub-header "Informace o alergenech"
+            allergen_header = ing_panel.find('h3', string=lambda t: t and "Informace o alergenech" in t)
+            if allergen_header:
+                allergen_div = allergen_header.find_next_sibling('div')
+                if allergen_div:
+                    val = allergen_div.get_text(strip=True).replace("Obsahuj: ", "").replace("Obsahuje:", "").strip()
+                    results['allergens'] = [val]
+
+        # If we found data, return it. If not, try the JSON fallback.
+        if any(results.values()):
+            return results
+
+    except Exception as e:
+        # Log error but continue to JSON strategy
+        pass
+        # logger.warning(f"DOM parsing failed: {e}")
+
+    # --- STRATEGY 2: Find and extract the JSON data containing the product info (Legacy/Backup) ---
     
     json_regexes = [
         # 1. Matches the correct tag type from your HTML output

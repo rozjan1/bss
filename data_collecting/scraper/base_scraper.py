@@ -32,6 +32,10 @@ class BaseScraper(ABC):
         logger.add(self.logs_dir / "scraper.log", level="ERROR", rotation="1 day")
         logger.add(self.logs_dir / "errors.log", level="DEBUG", rotation="1 day")
 
+        # Raw data directory
+        self.raw_data_dir = Path(__file__).parent / "data" / "raw" / source_name
+        self.raw_data_dir.mkdir(parents=True, exist_ok=True)
+
     @abstractmethod
     def fetch_category(self, category_code: str, page: int) -> Dict[str, Any]:
         """Method to call the specific API for a retailer."""
@@ -102,6 +106,19 @@ class BaseScraper(ABC):
         except Exception as e:
             logger.error(f"Failed to load partial data: {e}")
             return []
+
+    def save_raw_data(self, response_data: Dict[str, Any], category_code: str, page: int):
+        """Save raw API response to allow future reprocessing."""
+        try:
+            # Create a filename safe for filesystems
+            safe_category = "".join(c for c in category_code if c.isalnum() or c in ('-', '_')).strip()
+            filename = self.raw_data_dir / f"{safe_category}_page_{page}.json"
+            
+            with open(filename, 'w', encoding='utf-8') as f:
+                json.dump(response_data, f, ensure_ascii=False, indent=2)
+            # logger.debug(f"Raw data saved: {filename}")
+        except Exception as e:
+            logger.error(f"Failed to save raw data for {category_code} page {page}: {e}")
 
     def clear_checkpoint(self):
         """Clear checkpoint files after successful completion."""
@@ -192,6 +209,9 @@ class BaseScraper(ABC):
                     logger.info(f"No response data for category {code} at page {page_index}")
                     break
                 
+                # Save raw response for future features
+                self.save_raw_data(response_data, code, page_index)
+
                 products = self.parse_response(response_data, name)
                 if not products:
                     logger.info(f"No products found for category {code} at page {page_index}")
@@ -202,6 +222,7 @@ class BaseScraper(ABC):
                 # Save checkpoint and partial data periodically
                 self.save_checkpoint(code, page_index)
                 self.save_partial_data()
+                self.save_raw_data(response_data, code, page_index)
                 
                 if not self.should_continue(response_data, page_index, products):
                     logger.info(f"Stopping pagination for category {code} at page {page_index}")
