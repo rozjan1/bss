@@ -37,7 +37,7 @@ HEADERS = {
 class BillaEnricher(BaseProductEnricher):
     def __init__(self):
         super().__init__(
-            input_file=str(Path(__file__).parent.parent / 'data' / 'billa_raw.json'),
+            input_file=str(Path(__file__).parent.parent / 'data' / 'billa_processed.json'),
             output_file=str(Path(__file__).parent.parent / 'data' / 'billa_enriched.json'),
             num_workers=8
         )

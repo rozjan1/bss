@@ -15,7 +15,6 @@ class BaseScraper(ABC):
     def __init__(self, source_name: str, enable_checkpoints: bool = True):
         self.source_name = source_name
         self.session = requests.Session()
-        self.all_products: List[Product] = []
         self.categories: Dict[str, str] = {}
         
         # Checkpoint configuration
@@ -23,7 +22,6 @@ class BaseScraper(ABC):
         self.checkpoint_dir = Path(__file__).parent / "checkpoints"
         self.checkpoint_dir.mkdir(parents=True, exist_ok=True)
         self.checkpoint_file = self.checkpoint_dir / f"{source_name}_checkpoint.json"
-        self.partial_data_file = self.checkpoint_dir / f"{source_name}_partial_data.json"
 
         # If folder doesnt exist, create it
         self.logs_dir = Path(__file__).parent / "logs"
@@ -32,9 +30,13 @@ class BaseScraper(ABC):
         logger.add(self.logs_dir / "scraper.log", level="ERROR", rotation="1 day")
         logger.add(self.logs_dir / "errors.log", level="DEBUG", rotation="1 day")
 
-        # Raw data directory
-        self.raw_data_dir = Path(__file__).parent / "data" / "raw" / source_name
+        # Raw data directory - stored in main data_collecting folder for easy access
+        # Path goes up one level from scraper/ to data_collecting/
+        self.raw_data_dir = Path(__file__).parent.parent / "data" / "raw" / source_name
         self.raw_data_dir.mkdir(parents=True, exist_ok=True)
+        
+        # Track scraped files count
+        self.scraped_files_count = 0
 
     @abstractmethod
     def fetch_category(self, category_code: str, page: int) -> Dict[str, Any]:
@@ -50,7 +52,7 @@ class BaseScraper(ABC):
             "source": self.source_name,
             "last_category": category_code,
             "last_page": page,
-            "total_products": len(self.all_products),
+            "total_files_scraped": self.scraped_files_count,
             "timestamp": str(Path(__file__).stat().st_mtime if self.checkpoint_file.exists() else "")
         }
         
@@ -78,35 +80,6 @@ class BaseScraper(ABC):
             logger.error(f"Failed to load checkpoint: {e}")
             return None, None
 
-    def save_partial_data(self):
-        """Save partial/intermediate results."""
-        if not self.enable_checkpoints:
-            return
-        
-        try:
-            with open(self.partial_data_file, 'w', encoding='utf-8') as f:
-                json_data = [p.model_dump(mode='json') for p in self.all_products]
-                json.dump(json_data, f, ensure_ascii=False, indent=2)
-            logger.debug(f"Partial data saved: {len(self.all_products)} products")
-        except Exception as e:
-            logger.error(f"Failed to save partial data: {e}")
-
-    def load_partial_data(self) -> List[Product]:
-        """Load partial data from previous run."""
-        if not self.enable_checkpoints or not self.partial_data_file.exists():
-            return []
-        
-        try:
-            with open(self.partial_data_file, 'r', encoding='utf-8') as f:
-                json_data = json.load(f)
-            
-            products = [Product(**item) for item in json_data]
-            logger.info(f"Partial data loaded: {len(products)} products")
-            return products
-        except Exception as e:
-            logger.error(f"Failed to load partial data: {e}")
-            return []
-
     def save_raw_data(self, response_data: Dict[str, Any], category_code: str, page: int):
         """Save raw API response to allow future reprocessing."""
         try:
@@ -116,6 +89,8 @@ class BaseScraper(ABC):
             
             with open(filename, 'w', encoding='utf-8') as f:
                 json.dump(response_data, f, ensure_ascii=False, indent=2)
+            
+            self.scraped_files_count += 1
             # logger.debug(f"Raw data saved: {filename}")
         except Exception as e:
             logger.error(f"Failed to save raw data for {category_code} page {page}: {e}")
@@ -128,9 +103,7 @@ class BaseScraper(ABC):
         try:
             if self.checkpoint_file.exists():
                 self.checkpoint_file.unlink()
-            if self.partial_data_file.exists():
-                self.partial_data_file.unlink()
-            logger.info("Checkpoint and partial data cleared")
+            logger.info("Checkpoint cleared")
         except Exception as e:
             logger.error(f"Failed to clear checkpoint: {e}")
 
@@ -139,12 +112,7 @@ class BaseScraper(ABC):
         """Method to call the specific API for a retailer."""
         pass
 
-    @abstractmethod
-    def parse_response(self, response_data: Dict[str, Any], category_name: str) -> List[Product]:
-        """Method to transform raw JSON into the Product Pydantic model."""
-        pass
-
-    def should_continue(self, response_data: Dict[str, Any], page: int, products: List[Product]) -> bool:
+    def should_continue(self, response_data: Dict[str, Any], page: int) -> bool:
         """Hook to determine if pagination should continue."""
         return True
 
@@ -171,11 +139,7 @@ class BaseScraper(ABC):
 
     def run(self, resume: bool = True):
         """The main loop orchestrating pagination and category switching with checkpoint support."""
-        logger.info(f"Starting {self.source_name} scraper")
-        
-        # Load partial data if resuming
-        if resume:
-            self.all_products = self.load_partial_data()
+        logger.info(f"Starting {self.source_name} scraper (raw data collection only)")
         
         # Get resume point from checkpoint
         resume_category, resume_page = None, None
@@ -209,42 +173,23 @@ class BaseScraper(ABC):
                     logger.info(f"No response data for category {code} at page {page_index}")
                     break
                 
-                # Save raw response for future features
+                # Save raw response
                 self.save_raw_data(response_data, code, page_index)
-
-                products = self.parse_response(response_data, name)
-                if not products:
-                    logger.info(f"No products found for category {code} at page {page_index}")
-                    break
-
-                self.all_products.extend(products)
                 
-                # Save checkpoint and partial data periodically
+                # Save checkpoint periodically
                 self.save_checkpoint(code, page_index)
-                self.save_partial_data()
-                self.save_raw_data(response_data, code, page_index)
                 
-                if not self.should_continue(response_data, page_index, products):
+                if not self.should_continue(response_data, page_index):
                     logger.info(f"Stopping pagination for category {code} at page {page_index}")
                     break
                 
                 sleep(0.1)  # Be polite to the server
         
-        logger.info(f"Scraped {len(self.all_products)} products from {self.source_name}")
+        logger.info(f"Scraped {self.scraped_files_count} raw files from {self.source_name}")
         # Clear checkpoint after successful completion
         self.clear_checkpoint()
 
-    def run_and_save(self, filename: str, resume: bool = True):
-        """Convenience helper to run the scraper and persist results."""
+    def run_and_save(self, resume: bool = True):
+        """Run the scraper to collect raw data only."""
         self.run(resume=resume)
-        self.save_to_json(filename)
-
-    def save_to_json(self, filename: str):
-        """Standardized saving method."""
-        output_path = Path(filename)
-        output_path.parent.mkdir(parents=True, exist_ok=True)
-
-        logger.info(f"Saving {len(self.all_products)} products to {filename}")
-        with open(filename, 'w', encoding='utf-8') as f:
-            json_data = [p.model_dump(mode='json') for p in self.all_products]
-            json.dump(json_data, f, ensure_ascii=False, indent=2)
+        logger.info(f"Raw data collection complete. Files saved to {self.raw_data_dir}")

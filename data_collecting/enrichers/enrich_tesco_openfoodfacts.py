@@ -31,7 +31,7 @@ class TescoOpenFoodFactsEnricher(BaseProductEnricher):
     
     def __init__(self):
         super().__init__(
-            input_file=str(Path(__file__).parent.parent / 'data' / 'tesco_raw.json'),
+            input_file=str(Path(__file__).parent.parent / 'data' / 'tesco_processed.json'),
             output_file=str(Path(__file__).parent.parent / 'data' / 'tesco_enriched.json'),
             num_workers=4  # Use fewer workers to be respectful to the API
         )
