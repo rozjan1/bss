@@ -40,6 +40,9 @@ class TescoProcessor(BaseProcessor):
                 title = node["title"]
                 image_url = node["defaultImageUrl"]
                 
+                # Extract GTIN/barcode
+                gtin = node.get("gtin")
+                
                 # Pricing
                 seller_info = node["sellers"]["results"][0]
                 regular_price_raw = seller_info["price"].get("price")
@@ -99,7 +102,8 @@ class TescoProcessor(BaseProcessor):
                     sale_ppu=sale_ppu,
                     unit_code=unit_code,
                     product_url=product_url,
-                    sale_requirement=sale_requirement
+                    sale_requirement=sale_requirement,
+                    gtin=gtin  # Add GTIN/barcode
                 )
                 
                 products.append(product_obj)

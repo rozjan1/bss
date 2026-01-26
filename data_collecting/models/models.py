@@ -24,6 +24,7 @@ class Product(BaseModel):
     unit_code: Optional[str] = None
     product_url: HttpUrl
     sale_requirement: Optional[str] = None # e.g., "tesco_clubcard", "billa_card"
+    gtin: Optional[str] = None  # Barcode/GTIN for product identification
     
     # These fields can be populated later by your enrichers
     ingredients: Optional[str] = None

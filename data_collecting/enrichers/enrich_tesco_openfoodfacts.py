@@ -42,22 +42,22 @@ class TescoOpenFoodFactsEnricher(BaseProductEnricher):
         Fetch product information from OpenFoodFacts using barcode.
         
         Args:
-            product: Product dict that should contain a 'barcode' field
+            product: Product dict that should contain a 'gtin' field
             
         Returns:
             Dict with 'nutrition', 'allergies', 'ingredients'
         """
-        # Try multiple possible barcode field names
+        # Try multiple possible barcode field names (prioritize gtin for Tesco)
         barcode = (
+            product.get('gtin') or      # Primary field from Tesco processor
             product.get('barcode') or 
             product.get('ean') or 
-            product.get('gtin') or
             product.get('ean13')
-        ) # Tesco only uses gtin, but this makes it more robust
+        )
         
         if not barcode:
             logger.warning(
-                f"Product {product.get('item_name', 'Unknown')} missing barcode, "
+                f"Product {product.get('item_name', 'Unknown')} missing barcode/gtin, "
                 "cannot enrich from OpenFoodFacts"
             )
             return {
