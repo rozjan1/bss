@@ -109,9 +109,7 @@ class BillaEnricher(BaseProductEnricher):
         
         allergies_output = {
             "Obsahuje": [],
-            "Neobsahuje": [],
-            "Může obsahovat": [],
-            "Inconnu": []
+            "Může obsahovat": []
         }
         
         top_level_allergens = product_data.get("allergens", [])
