@@ -63,7 +63,8 @@ class TescoOpenFoodFactsEnricher(BaseProductEnricher):
             return {
                 'nutrition': {}, 
                 'allergies': {
-                    'Obsahuje': []
+                    'Obsahuje': [],
+                    'Může obsahovat': []
                 }, 
                 'ingredients': None
             }
@@ -71,16 +72,14 @@ class TescoOpenFoodFactsEnricher(BaseProductEnricher):
         try:
             info = self.fetcher.fetch(barcode)
             
-            # Ensure the allergies format matches what Tesco expects
-            # (Tesco original only had 'Obsahuje' array)
+            # Keep allergens separated into "Obsahuje" and "Může obsahovat"
             if 'allergies' in info and isinstance(info['allergies'], dict):
-                # Combine "Obsahuje" and "Může obsahovat" into single list
                 contains = info['allergies'].get('Obsahuje', [])
                 may_contain = info['allergies'].get('Může obsahovat', [])
-                all_allergens = contains + may_contain
                 
                 info['allergies'] = {
-                    'Obsahuje': all_allergens
+                    'Obsahuje': contains,
+                    'Může obsahovat': may_contain
                 }
             
             return info
