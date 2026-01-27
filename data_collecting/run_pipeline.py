@@ -90,8 +90,8 @@ def run_enriching_stage():
     enrichers = [
         # "enrich_albert_products.py", # Disabled since albert removed their online product listings
         "enrich_billa_products.py",
-        #"enrich_tesco_products.py"
-        "enrich_tesco_openfoodfacts.py"
+        "enrich_tesco_products.py"
+        #"enrich_tesco_openfoodfacts.py"
     ]
     
     for enricher in enrichers:

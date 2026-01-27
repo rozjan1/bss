@@ -173,15 +173,16 @@ class BaseScraper(ABC):
                     logger.info(f"No response data for category {code} at page {page_index}")
                     break
                 
-                # Save raw response
+                # Check if pagination should continue BEFORE saving
+                if not self.should_continue(response_data, page_index):
+                    logger.info(f"Stopping pagination for category {code} at page {page_index} (empty results)")
+                    break
+                
+                # Save raw response only if we should continue
                 self.save_raw_data(response_data, code, page_index)
                 
                 # Save checkpoint periodically
                 self.save_checkpoint(code, page_index)
-                
-                if not self.should_continue(response_data, page_index):
-                    logger.info(f"Stopping pagination for category {code} at page {page_index}")
-                    break
                 
                 sleep(0.1)  # Be polite to the server
         
