@@ -13,6 +13,12 @@ const selectors = {
   advancedFiltersBtn: document.getElementById('advancedFiltersBtn')
 }
 
+const DATA_SOURCES = {
+  tesco: 'data/tesco_products.json',
+  // albert: 'data/albert_products.json', // Excluded since albert stopped their Eshop
+  billa: 'data/billa_products.json'
+}
+
 // Advanced filters state
 let advancedFilters = {
   excludeAllergens: [],
@@ -32,17 +38,17 @@ function fmtPrice(v){ if(v==null) return '—'; return Number(v).toFixed(2) + ' 
 
 // Product data is now normalized by the Python backend script
 
-async function loadSource(url){
+async function loadSource(sourceId){
   selectors.meta.textContent = 'Loading products…'
   try{
     let raw = []
-    if(url === 'all'){
+    if(sourceId === 'all'){
       // fetch all option values except the 'all' entry and merge results
       const opts = Array.from(selectors.source.options).map(o=>o.value).filter(v=>v && v !== 'all')
-      const fetches = await Promise.all(opts.map(u=>fetch(u).then(r=>r.json()).catch(e=>{ console.warn('failed to load',u,e); return [] })))
+      const fetches = await Promise.all(opts.map(id=>fetch(DATA_SOURCES[id]).then(r=>r.json()).catch(e=>{ console.warn('failed to load',id,e); return [] })))
       raw = fetches.flat()
     } else {
-      const res = await fetch(url)
+      const res = await fetch(DATA_SOURCES[sourceId])
       raw = await res.json()
     }
     // Products are already normalized by backend Python script
@@ -436,308 +442,41 @@ function setupAdvancedFiltersModal(){
     <div id="advancedFiltersModal" class="modal">
       <div class="modal-content" style="max-width: 800px; max-height: 85vh; overflow-y: auto;">
         <span class="close-advanced">&times;</span>
-        <h2 style="margin-top:0; padding-right:20px;">Advanced Filters</h2>
+        <h2 style="margin-top:0; padding-right:20px;">Pokročilé filtry</h2>
         <div id="advancedFiltersBody">
           
           <div class="detail-section">
-            <h3>Exclude Products With Allergens</h3>
+            <h3>Vyloučit produkty s alergeny</h3>
             <div id="excludeAllergensContainer" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;"></div>
-            <input id="customAllergenExclude" type="text" placeholder="Add custom allergen to exclude..." 
+            <input id="customAllergenExclude" type="text" placeholder="Přidat vlastní alergen k vyloučení..." 
                    style="width: 100%; margin-top: 8px; padding: 8px; border-radius: 8px; border: 1px solid #dfe6f2;" />
           </div>
 
           <div class="detail-section">
-            <h3>Must Be Free Of (Strict)</h3>
+            <h3>Musí být bez (přísné)</h3>
             <div id="requireAllergenFreeContainer" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;"></div>
-            <input id="customAllergenRequired" type="text" placeholder="Add custom allergen requirement..." 
+            <input id="customAllergenRequired" type="text" placeholder="Přidat vlastní požadavek na alergen..." 
                    style="width: 100%; margin-top: 8px; padding: 8px; border-radius: 8px; border: 1px solid #dfe6f2;" />
           </div>
 
           <div class="detail-section">
-            <h3>Exclude Ingredients</h3>
+            <h3>Vyloučit ingredience</h3>
             <div id="excludeIngredientsDisplay" style="margin-top: 8px; display: flex; flex-wrap: wrap; gap: 8px;"></div>
-            <input id="excludeIngredientsInput" type="text" placeholder="Type ingredient to exclude (e.g., 'palm oil', 'sugar')..." 
+            <input id="excludeIngredientsInput" type="text" placeholder="Zadejte ingredienci k vyloučení (např. 'palmoý olej', 'cukr')..." 
                    style="width: 100%; margin-top: 8px; padding: 8px; border-radius: 8px; border: 1px solid #dfe6f2;" />
           </div>
 
           <div class="detail-section">
-            <h3>Nutrition Filters</h3>
+            <h3>Filtry výživy</h3>
             <div id="nutritionFiltersContainer"></div>
           </div>
 
           <div style="display: flex; gap: 12px; margin-top: 20px;">
             <button id="applyAdvancedFilters" style="flex: 1; padding: 10px; background: var(--accent); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;">
-              Apply Filters
+              Použít filtry
             </button>
             <button id="clearAdvancedFilters" style="flex: 1; padding: 10px; background: #e5e7eb; color: #374151; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;">
-              Clear All
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  `;
-  document.body.insertAdjacentHTML('beforeend', modalHtml);
-  
-  const modal = document.getElementById('advancedFiltersModal');
-  const span = document.getElementsByClassName("close-advanced")[0];
-  
-  span.onclick = function() { modal.style.display = "none"; }
-  
-  // Populate allergens checkboxes
-  populateAllergenOptions()
-  
-  // Populate nutrition filters
-  populateNutritionFilters()
-  
-  // Add ingredient exclusion
-  setupIngredientExclusion()
-  
-  // Apply button
-  document.getElementById('applyAdvancedFilters').onclick = function(){
-    applyAdvancedFiltersFromModal()
-    modal.style.display = "none"
-    applyAllFilters()
-  }
-  
-  // Clear button
-  document.getElementById('clearAdvancedFilters').onclick = function(){
-    advancedFilters = {
-      excludeAllergens: [],
-      requireAllergenFree: [],
-      excludeIngredients: [],
-      nutritionMin: {},
-      nutritionMax: {}
-    }
-    populateAllergenOptions()
-    populateNutritionFilters()
-    document.getElementById('excludeIngredientsDisplay').innerHTML = ''
-    updateAdvancedFilterBadge()
-    applyAllFilters()
-  }
-}
-
-function populateAllergenOptions(){
-  const allergens = getAllUniqueAllergens()
-  const excludeContainer = document.getElementById('excludeAllergensContainer')
-  const requireContainer = document.getElementById('requireAllergenFreeContainer')
-  
-  excludeContainer.innerHTML = ''
-  requireContainer.innerHTML = ''
-  
-  allergens.forEach(allergen => {
-    // Exclude checkbox
-    const excludeLabel = document.createElement('label')
-    excludeLabel.style.cssText = 'display: flex; align-items: center; gap: 4px; padding: 4px 8px; background: #f3f4f6; border-radius: 6px; font-size: 13px; cursor: pointer;'
-    const excludeCheck = document.createElement('input')
-    excludeCheck.type = 'checkbox'
-    excludeCheck.value = allergen
-    excludeCheck.checked = advancedFilters.excludeAllergens.includes(allergen)
-    excludeLabel.appendChild(excludeCheck)
-    excludeLabel.appendChild(document.createTextNode(allergen))
-    excludeContainer.appendChild(excludeLabel)
-    
-    // Required free checkbox
-    const requireLabel = document.createElement('label')
-    requireLabel.style.cssText = 'display: flex; align-items: center; gap: 4px; padding: 4px 8px; background: #fef3c7; border-radius: 6px; font-size: 13px; cursor: pointer;'
-    const requireCheck = document.createElement('input')
-    requireCheck.type = 'checkbox'
-    requireCheck.value = allergen
-    requireCheck.checked = advancedFilters.requireAllergenFree.includes(allergen)
-    requireLabel.appendChild(requireCheck)
-    requireLabel.appendChild(document.createTextNode(allergen))
-    requireContainer.appendChild(requireLabel)
-  })
-  
-  // Custom allergen inputs
-  document.getElementById('customAllergenExclude').addEventListener('keydown', e => {
-    if(e.key === 'Enter' && e.target.value.trim()){
-      const val = e.target.value.trim()
-      if(!advancedFilters.excludeAllergens.includes(val)){
-        advancedFilters.excludeAllergens.push(val)
-        populateAllergenOptions()
-      }
-      e.target.value = ''
-    }
-  })
-  
-  document.getElementById('customAllergenRequired').addEventListener('keydown', e => {
-    if(e.key === 'Enter' && e.target.value.trim()){
-      const val = e.target.value.trim()
-      if(!advancedFilters.requireAllergenFree.includes(val)){
-        advancedFilters.requireAllergenFree.push(val)
-        populateAllergenOptions()
-      }
-      e.target.value = ''
-    }
-  })
-}
-
-function populateNutritionFilters(){
-  const nutritionKeys = getAllNutritionKeys()
-  const container = document.getElementById('nutritionFiltersContainer')
-  container.innerHTML = ''
-  
-  nutritionKeys.forEach(key => {
-    const row = document.createElement('div')
-    row.style.cssText = 'display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-size: 13px;'
-    
-    const label = document.createElement('span')
-    label.textContent = key
-    label.style.cssText = 'flex: 1; min-width: 150px;'
-    
-    const minInput = document.createElement('input')
-    minInput.type = 'number'
-    minInput.placeholder = 'Min'
-    minInput.step = 'any'
-    minInput.value = advancedFilters.nutritionMin[key] || ''
-    minInput.style.cssText = 'width: 80px; padding: 6px; border-radius: 6px; border: 1px solid #dfe6f2;'
-    minInput.dataset.key = key
-    minInput.dataset.type = 'min'
-    
-    const maxInput = document.createElement('input')
-    maxInput.type = 'number'
-    maxInput.placeholder = 'Max'
-    maxInput.step = 'any'
-    maxInput.value = advancedFilters.nutritionMax[key] || ''
-    maxInput.style.cssText = 'width: 80px; padding: 6px; border-radius: 6px; border: 1px solid #dfe6f2;'
-    maxInput.dataset.key = key
-    maxInput.dataset.type = 'max'
-    
-    row.appendChild(label)
-    row.appendChild(minInput)
-    row.appendChild(document.createTextNode(' – '))
-    row.appendChild(maxInput)
-    container.appendChild(row)
-  })
-}
-
-function setupIngredientExclusion(){
-  const input = document.getElementById('excludeIngredientsInput')
-  const display = document.getElementById('excludeIngredientsDisplay')
-  
-  const renderTags = () => {
-    display.innerHTML = ''
-    advancedFilters.excludeIngredients.forEach(ingredient => {
-      const tag = document.createElement('span')
-      tag.style.cssText = 'display: inline-flex; align-items: center; gap: 6px; background: #fee2e2; color: #991b1b; padding: 4px 10px; border-radius: 12px; font-size: 12px;'
-      tag.textContent = ingredient
-      
-      const removeBtn = document.createElement('span')
-      removeBtn.textContent = '×'
-      removeBtn.style.cssText = 'cursor: pointer; font-weight: bold; font-size: 16px;'
-      removeBtn.onclick = () => {
-        advancedFilters.excludeIngredients = advancedFilters.excludeIngredients.filter(i => i !== ingredient)
-        renderTags()
-      }
-      
-      tag.appendChild(removeBtn)
-      display.appendChild(tag)
-    })
-  }
-  
-  input.addEventListener('keydown', e => {
-    if(e.key === 'Enter' && e.target.value.trim()){
-      const val = e.target.value.trim()
-      if(!advancedFilters.excludeIngredients.includes(val)){
-        advancedFilters.excludeIngredients.push(val)
-        renderTags()
-      }
-      e.target.value = ''
-    }
-  })
-  
-  renderTags()
-}
-
-function updateAdvancedFilterBadge(){
-  const badge = document.getElementById('advancedFilterBadge')
-  if(!badge) return
-  
-  let count = 0
-  count += advancedFilters.excludeAllergens.length
-  count += advancedFilters.requireAllergenFree.length
-  count += advancedFilters.excludeIngredients.length
-  count += Object.keys(advancedFilters.nutritionMin).length
-  count += Object.keys(advancedFilters.nutritionMax).length
-  
-  if(count > 0){
-    badge.textContent = `(${count})`
-    badge.style.display = 'inline'
-    badge.style.cssText = 'display: inline; background: #ef4444; color: white; padding: 2px 6px; border-radius: 10px; font-size: 11px; margin-left: 4px; font-weight: bold;'
-  } else {
-    badge.style.display = 'none'
-  }
-}
-
-function applyAdvancedFiltersFromModal(){
-  // Collect allergen exclusions
-  advancedFilters.excludeAllergens = Array.from(
-    document.querySelectorAll('#excludeAllergensContainer input[type="checkbox"]:checked')
-  ).map(el => el.value)
-  
-  // Collect required allergen-free
-  advancedFilters.requireAllergenFree = Array.from(
-    document.querySelectorAll('#requireAllergenFreeContainer input[type="checkbox"]:checked')
-  ).map(el => el.value)
-  
-  // Collect nutrition filters
-  advancedFilters.nutritionMin = {}
-  advancedFilters.nutritionMax = {}
-  
-  document.querySelectorAll('#nutritionFiltersContainer input[data-type="min"]').forEach(input => {
-    if(input.value) advancedFilters.nutritionMin[input.dataset.key] = input.value
-  })
-  
-  document.querySelectorAll('#nutritionFiltersContainer input[data-type="max"]').forEach(input => {
-    if(input.value) advancedFilters.nutritionMax[input.dataset.key] = input.value
-  })
-  
-  updateAdvancedFilterBadge()
-}
-
-function setupAdvancedFiltersModal(){
-  if(document.getElementById('advancedFiltersModal')) return;
-  
-  const modalHtml = `
-    <div id="advancedFiltersModal" class="modal">
-      <div class="modal-content" style="max-width: 800px; max-height: 85vh; overflow-y: auto;">
-        <span class="close-advanced">&times;</span>
-        <h2 style="margin-top:0; padding-right:20px;">Advanced Filters</h2>
-        <div id="advancedFiltersBody">
-          
-          <div class="detail-section">
-            <h3>Exclude Products With Allergens</h3>
-            <div id="excludeAllergensContainer" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;"></div>
-            <input id="customAllergenExclude" type="text" placeholder="Add custom allergen to exclude..." 
-                   style="width: 100%; margin-top: 8px; padding: 8px; border-radius: 8px; border: 1px solid #dfe6f2;" />
-          </div>
-
-          <div class="detail-section">
-            <h3>Must Be Free Of (Strict)</h3>
-            <div id="requireAllergenFreeContainer" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;"></div>
-            <input id="customAllergenRequired" type="text" placeholder="Add custom allergen requirement..." 
-                   style="width: 100%; margin-top: 8px; padding: 8px; border-radius: 8px; border: 1px solid #dfe6f2;" />
-          </div>
-
-          <div class="detail-section">
-            <h3>Exclude Ingredients</h3>
-            <div id="excludeIngredientsDisplay" style="margin-top: 8px; display: flex; flex-wrap: wrap; gap: 8px;"></div>
-            <input id="excludeIngredientsInput" type="text" placeholder="Type ingredient to exclude (e.g., 'palm oil', 'sugar')..." 
-                   style="width: 100%; margin-top: 8px; padding: 8px; border-radius: 8px; border: 1px solid #dfe6f2;" />
-          </div>
-
-          <div class="detail-section">
-            <h3>Nutrition Filters</h3>
-            <div id="nutritionFiltersContainer"></div>
-          </div>
-
-          <div style="display: flex; gap: 12px; margin-top: 20px;">
-            <button id="applyAdvancedFilters" style="flex: 1; padding: 10px; background: var(--accent); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;">
-              Apply Filters
-            </button>
-            <button id="clearAdvancedFilters" style="flex: 1; padding: 10px; background: #e5e7eb; color: #374151; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;">
-              Clear All
+              Vymazat vše
             </button>
           </div>
         </div>
