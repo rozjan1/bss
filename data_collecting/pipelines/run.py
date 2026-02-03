@@ -1,5 +1,6 @@
 import subprocess
 import sys
+import argparse
 from pathlib import Path
 import time
 
@@ -38,14 +39,14 @@ def run_command(command, cwd, description):
 def run_scraping_stage():
     """
     Runs all scrapers to collect raw API data.
-    This stage ONLY collects raw responses without processing.
+    This stage ONLaY collects raw responses without processing.
     """
     print("=== STAGE 1: SCRAPING (Raw Data Collection) ===")
     
     # List of scrapers to run
     scrapers = [
         #"albert_scraper.py", # Disabled since albert removed their online product listings
-        "billa_scraper.py",
+        #"billa_scraper.py",
         "tesco_scraper.py"
     ]
     
@@ -68,7 +69,7 @@ def run_processing_stage():
     print("=== STAGE 2: PROCESSING (Data Extraction) ===")
     
     processors = [
-        "billa_processor.py",
+        #"billa_processor.py",
         "tesco_processor.py"
     ]
     
@@ -89,7 +90,7 @@ def run_enriching_stage():
     
     enrichers = [
         # "enrich_albert_products.py", # Disabled since albert removed their online product listings
-        "enrich_billa_products.py",
+        #"enrich_billa_products.py",
         "enrich_tesco_products.py"
         #"enrich_tesco_openfoodfacts.py"
     ]
@@ -118,6 +119,11 @@ def run_normalization_stage():
     print()
 
 def main():
+    parser = argparse.ArgumentParser(description="Professional Data Pipeline Runner")
+    parser.add_argument("--stage", choices=["scrape", "process", "enrich", "normalize"], help="Run a specific stage only")
+    parser.add_argument("--skip-scrape", action="store_true", help="Skip the scraping stage")
+    args = parser.parse_args()
+
     print("=" * 60)
     print("PROFESSIONAL DATA PIPELINE")
     print("=" * 60)
@@ -136,10 +142,18 @@ def main():
     print()
     print("-" * 60)
     
-    run_scraping_stage()
-    run_processing_stage()
-    run_enriching_stage()
-    run_normalization_stage()
+    if not args.stage or args.stage == "scrape":
+        if not args.skip_scrape:
+            run_scraping_stage()
+    
+    if not args.stage or args.stage == "process":
+        run_processing_stage()
+        
+    if not args.stage or args.stage == "enrich":
+        run_enriching_stage()
+        
+    if not args.stage or args.stage == "normalize":
+        run_normalization_stage()
     
     print("=" * 60)
     print("Pipeline execution completed successfully!")
