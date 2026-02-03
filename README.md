@@ -1,6 +1,6 @@
 # BSS
 
-A modular data pipeline for collecting, normalizing, and analyzing grocery product data from major supermarkets (currently Tesco, Billa, Albert). The system handles the complete ETL process—from raw HTML/API scraping to data normalization and visualization.
+A modular data pipeline for collecting and analyzing grocery product data from major supermarkets (currently Tesco, Billa, Albert). The system handles the complete ETL process—from raw HTML/API scraping to data visualization.
 
 ## Project Structure
 
@@ -11,7 +11,6 @@ bss/
 │   ├── scraper/            # Stage 1: Raw data acquisition
 │   ├── processors/         # Stage 2: Data extraction and structuring
 │   ├── enrichers/          # Stage 3: Third-party data augmentation
-│   ├── normalization/      # Stage 4: Unit standardization and merging
 │   ├── pipelines/          # Pipeline orchestration
 │   └── utils/              # Shared utilities
 ├── frontend/               # Dockerized data viewer
@@ -51,7 +50,6 @@ uv run data_collecting/pipelines/run.py
 uv run data_collecting/pipelines/run.py --stage scrape
 uv run data_collecting/pipelines/run.py --stage process
 uv run data_collecting/pipelines/run.py --stage enrich
-uv run data_collecting/pipelines/run.py --stage normalize
 ```
 
 ### Architecture
@@ -59,7 +57,6 @@ uv run data_collecting/pipelines/run.py --stage normalize
 1.  **Scraping** (`scraper/`): Fetches and caches raw responses (HTML/JSON) in `data/raw/` to enable offline development and checkpoints.
 2.  **Processing** (`processors/`): Parses raw cached data into structured product objects, removing duplicates.
 3.  **Enriching** (`enrichers/`): Augments product data with nutritional values and allergens using external sources.
-4.  **Normalization** (`normalization/`): Standardizes units (e.g., kJ/kcal), cleanses text, and merges datasets for the frontend.
 
 ### Frontend
 
@@ -79,5 +76,5 @@ To add a new data source (e.g., `Kaufland`), implement the standard interfaces:
 
 ## Data Lifecycle
 
-`Source API` → `Scraper` (Raw Cache) → `Processor` (Structured JSON) → `Enricher` (Augmented JSON) → `Normalizer` (Final Dataset) → `Frontend`
+`Source API` -> `Scraper` (Raw Cache) -> `Processor` (Structured JSON) -> `Enricher` (Augmented JSON) -> `Frontend`
 
