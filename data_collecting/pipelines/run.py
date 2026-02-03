@@ -9,7 +9,6 @@ BASE_DIR = Path(__file__).parent.parent
 SCRAPER_DIR = BASE_DIR / "scraper"
 PROCESSOR_DIR = BASE_DIR / "processors"
 ENRICHER_DIR = BASE_DIR / "enrichers"
-NORMALIZATION_DIR = BASE_DIR / "normalization"
 DATA_DIR = BASE_DIR / "data"
 
 def run_command(command, cwd, description):
@@ -103,24 +102,9 @@ def run_enriching_stage():
             print(f"Warning: {enricher} failed, continuing with others...")
     print()
 
-def run_normalization_stage():
-    """
-    Runs data normalization.
-    This stage standardizes formats across all enriched data.
-    """
-    print("=== STAGE 4: NORMALIZATION (Data Standardization) ===")
-    print("Note: This stage is prepared but not yet fully implemented.")
-    print("Current normalization will be run when ready.")
-    
-    normalizer = "normalize_data.py"
-    cmd = ["uv", "run", normalizer]
-    
-    run_command(cmd, NORMALIZATION_DIR, f"Normalizer: {normalizer}")
-    print()
-
 def main():
     parser = argparse.ArgumentParser(description="Professional Data Pipeline Runner")
-    parser.add_argument("--stage", choices=["scrape", "process", "enrich", "normalize"], help="Run a specific stage only")
+    parser.add_argument("--stage", choices=["scrape", "process", "enrich"], help="Run a specific stage only")
     parser.add_argument("--skip-scrape", action="store_true", help="Skip the scraping stage")
     args = parser.parse_args()
 
@@ -138,7 +122,6 @@ def main():
     print("  1. SCRAPING     - Collect raw API responses")
     print("  2. PROCESSING   - Extract structured data from raw responses")
     print("  3. ENRICHING    - Add nutritional information")
-    print("  4. NORMALIZATION - Standardize data formats (prepared)")
     print()
     print("-" * 60)
     
@@ -152,8 +135,6 @@ def main():
     if not args.stage or args.stage == "enrich":
         run_enriching_stage()
         
-    if not args.stage or args.stage == "normalize":
-        run_normalization_stage()
     
     print("=" * 60)
     print("Pipeline execution completed successfully!")
