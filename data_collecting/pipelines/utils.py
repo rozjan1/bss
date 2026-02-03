@@ -15,7 +15,7 @@ import subprocess
 import sys
 
 
-BASE_DIR = Path(__file__).parent
+BASE_DIR = Path(__file__).parent.parent
 DATA_DIR = BASE_DIR / "data"
 RAW_DIR = BASE_DIR / "data" / "raw"  # Raw data now in data_collecting/data/raw/
 

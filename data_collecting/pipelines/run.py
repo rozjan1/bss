@@ -4,7 +4,7 @@ from pathlib import Path
 import time
 
 # Define paths
-BASE_DIR = Path(__file__).parent
+BASE_DIR = Path(__file__).parent.parent
 SCRAPER_DIR = BASE_DIR / "scraper"
 PROCESSOR_DIR = BASE_DIR / "processors"
 ENRICHER_DIR = BASE_DIR / "enrichers"
