@@ -1,6 +1,8 @@
-# BSS
+# Better Supermarket Search (BSS)
 
 A modular data pipeline for collecting and analyzing grocery product data from major supermarkets (currently Tesco, Billa, Albert). The system handles the complete ETL process—from raw HTML/API scraping to data visualization.
+
+> **Note:** This project was created as a refresher exercise to better my skills with data pipelines and ETL processes.
 
 ## Project Structure
 

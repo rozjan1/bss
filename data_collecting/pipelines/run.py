@@ -45,8 +45,8 @@ def run_scraping_stage():
     # List of scrapers to run
     scrapers = [
         #"albert_scraper.py", # Disabled since albert removed their online product listings
-        #"billa_scraper.py",
-        "tesco_scraper.py"
+        "billa_scraper.py",
+        #"tesco_scraper.py"
     ]
     
     for scraper in scrapers:
@@ -68,8 +68,8 @@ def run_processing_stage():
     print("=== STAGE 2: PROCESSING (Data Extraction) ===")
     
     processors = [
-        #"billa_processor.py",
-        "tesco_processor.py"
+        "billa_processor.py",
+        #"tesco_processor.py"
     ]
     
     for processor in processors:
@@ -89,8 +89,8 @@ def run_enriching_stage():
     
     enrichers = [
         # "enrich_albert_products.py", # Disabled since albert removed their online product listings
-        #"enrich_billa_products.py",
-        "enrich_tesco_products.py"
+        "enrich_billa_products.py",
+        #"enrich_tesco_products.py"
         #"enrich_tesco_openfoodfacts.py"
     ]
     

@@ -65,7 +65,6 @@ class BillaEnricher(BaseProductEnricher):
         return self._extract_product_details(product_data)
 
     def _extract_product_details(self, product_data: Dict[str, Any]) -> Dict[str, Any]:
-        logger.debug("Starting extract_product_details")
         additional_info = product_data.get("additionalInformation", [{}])
         food_info = additional_info[0].get("foodInformation", {})
         calculated_nutrition = food_info.get("calculatedNutrition", {})
