@@ -45,14 +45,14 @@ class BillaEnricher(BaseProductEnricher):
     def get_product_info(self, product: Dict[str, Any]) -> Dict[str, Any]:
         product_url = product.get("product_url")
         if not product_url:
-            return {'nutrition': {}, 'allergies': {}, 'ingredients': None}
+            return {'nutrition': {}, 'allergens': {}, 'ingredients': None}
 
         try:
             product_id = product_url.split("-")[-1]
             product_id = product_id[:2] + "-" + product_id[2:]
         except Exception:
             logger.warning(f"Could not extract product ID from {product_url}")
-            return {'nutrition': {}, 'allergies': {}, 'ingredients': None}
+            return {'nutrition': {}, 'allergens': {}, 'ingredients': None}
 
         # Uses global COOKIES and HEADERS
         api_url = f"https://shop.billa.cz/api/product-discovery/products/{product_id}"
@@ -106,10 +106,9 @@ class BillaEnricher(BaseProductEnricher):
 
             except ValueError:
                 continue
-        
-        allergies_output = {
-            "Obsahuje": [],
-            "Může obsahovat": []
+
+        allergens_output = {
+            "Obsahuje": []
         }
         
         top_level_allergens = product_data.get("allergens", [])
@@ -123,14 +122,14 @@ class BillaEnricher(BaseProductEnricher):
         
         sorted_allergens = sorted(list(combined_allergens))
         half_index = len(sorted_allergens) // 2
-        allergies_output["Obsahuje"] = sorted_allergens[half_index:]
+        allergens_output["Obsahuje"] = sorted_allergens[half_index:]
         
         ingredients_text = food_info.get("ingredientsText", "")
         ingredients_text_cleaned = ingredients_text.replace("<strong>", "").replace("</strong>", "").strip()
 
         return {
             "nutrition": nutrition_output,
-            "allergies": allergies_output,
+            "allergens": allergens_output,
             "ingredients": ingredients_text_cleaned
         }
 
