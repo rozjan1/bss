@@ -12,4 +12,4 @@ Build and run (from repo root)
 docker compose up --build frontend
 ```
 
-Open http://localhost:8080 to view.
+Open http://localhost:8888 to view.
